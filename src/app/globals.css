@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-ev-black text-ev-offwhite antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-ev-crimson/40 text-ev-white;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply border border-white/10 bg-white/[0.04] backdrop-blur-xl;
+  }
+
+  .glass-strong {
+    @apply border border-white/15 bg-white/[0.08] backdrop-blur-2xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-brand bg-clip-text text-transparent;
+  }
+
+  .section-padding {
+    @apply px-5 py-20 md:px-8 md:py-28 lg:px-12 lg:py-32;
+  }
+
+  .container-content {
+    @apply mx-auto w-full max-w-content;
+  }
+
+  .heading-display {
+    @apply font-display font-bold leading-[0.95] tracking-tight;
+  }
+
+  .link-underline {
+    @apply relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-ev-crimson after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  /* Neo-brutalist mockup system */
+  .paper-bg {
+    @apply bg-ev-paper;
+    background-image: theme("backgroundImage.paper-texture");
+    background-size: 256px 256px;
+  }
+
+  .brutal-text {
+    @apply font-brutal uppercase leading-[0.9] tracking-tight;
+    text-shadow: 4px 4px 0 #000, 5px 5px 0 #000;
+  }
+
+  .brutal-text-lg {
+    text-shadow: 6px 6px 0 #000, 7px 7px 0 #000;
+  }
+
+  .pill-nav {
+    @apply flex items-center justify-between rounded-full bg-gradient-pill px-4 py-2 shadow-brutal md:px-6 md:py-2.5;
+  }
+
+  .subscribe-btn {
+    @apply rounded-full bg-ev-neon-yellow px-4 py-1.5 font-brutal text-xs uppercase tracking-wide text-ev-neon-red transition-transform hover:scale-105 md:px-5 md:py-2 md:text-sm;
+    text-shadow: none;
+  }
+
+  .stamp-edge-bottom {
+    height: 16px;
+    background: #000;
+    mask-image: radial-gradient(circle at 8px 0, transparent 8px, black 8px);
+    mask-size: 16px 16px;
+    mask-repeat: repeat-x;
+    -webkit-mask-image: radial-gradient(circle at 8px 0, transparent 8px, black 8px);
+    -webkit-mask-size: 16px 16px;
+    -webkit-mask-repeat: repeat-x;
+  }
+
+  .stamp-edge-top {
+    height: 16px;
+    background: #fff;
+    mask-image: radial-gradient(circle at 8px 16px, transparent 8px, black 8px);
+    mask-size: 16px 16px;
+    mask-repeat: repeat-x;
+    -webkit-mask-image: radial-gradient(circle at 8px 16px, transparent 8px, black 8px);
+    -webkit-mask-size: 16px 16px;
+    -webkit-mask-repeat: repeat-x;
+  }
+
+  .checkerboard-divider {
+    @apply h-12 w-full bg-checkerboard md:h-16;
+  }
+
+  .progress-o {
+    @apply relative inline-flex h-[0.85em] w-[1.1em] items-center overflow-hidden rounded-full border-[3px] border-ev-neon-cyan bg-black/20 align-middle;
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.4);
+  }
+
+  .progress-o-fill {
+    @apply h-full rounded-full bg-gradient-progress animate-progress-fill;
+  }
+
+  .audience-pill {
+    @apply h-10 rounded-full md:h-12;
+  }
+
+  .audience-pill-cream {
+    @apply audience-pill bg-ev-neon-cream;
+  }
+
+  .audience-pill-pink {
+    @apply audience-pill bg-ev-neon-pink;
+  }
+
+  .audience-pill-yellow {
+    @apply audience-pill bg-ev-neon-yellow;
+  }
+
+  .audience-pill-cyan {
+    @apply audience-pill bg-ev-neon-cyan;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
