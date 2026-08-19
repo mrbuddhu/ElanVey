@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans, Archivo_Black } from "next/font/google";
+import { Syne, DM_Sans, Archivo_Black, Playfair_Display } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { siteConfig } from "@/data/site";
@@ -21,6 +21,12 @@ const brutal = Archivo_Black({
 const sans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
+});
+
+const serif = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-serif",
   display: "swap",
 });
 
@@ -72,7 +78,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${display.variable} ${brutal.variable} ${sans.variable}`}>
+    <html lang="en" className={`${display.variable} ${brutal.variable} ${sans.variable} ${serif.variable}`}>
       <body className="font-sans">
         <Navbar />
         <main>{children}</main>

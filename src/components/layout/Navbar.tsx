@@ -5,7 +5,13 @@ import { useEffect, useState } from "react";
 import { navigation } from "@/data/navigation";
 import { ElanVeyLogo } from "@/components/brand/ElanVeyLogo";
 
-function PillHeader() {
+function PillHeader({
+  menuOpen,
+  onToggleMenu,
+}: {
+  menuOpen: boolean;
+  onToggleMenu: () => void;
+}) {
   return (
     <div className="pill-nav w-full max-w-lg">
       <Link href="/" className="flex items-center gap-2">
@@ -14,9 +20,38 @@ function PillHeader() {
           ◆
         </span>
       </Link>
-      <Link href="/subscription" className="subscribe-btn">
-        Subscribe Now
-      </Link>
+
+      <div className="flex items-center gap-2 md:gap-3">
+        <button
+          type="button"
+          className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
+          onClick={onToggleMenu}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+        >
+          <span
+            className={`block h-0.5 w-5 rounded-full transition-all duration-300 ${
+              menuOpen
+                ? "translate-y-[3.5px] rotate-45 bg-ev-white"
+                : "bg-ev-black"
+            }`}
+          />
+          <span
+            className={`block h-0.5 w-5 rounded-full transition-all duration-300 ${
+              menuOpen
+                ? "-translate-y-[3.5px] -rotate-45 bg-ev-white"
+                : "bg-ev-black"
+            }`}
+          />
+        </button>
+
+        <Link
+          href="/subscription"
+          className="subscribe-btn hidden md:inline-flex"
+        >
+          Subscribe Now
+        </Link>
+      </div>
     </div>
   );
 }
@@ -42,69 +77,51 @@ export function Navbar() {
     <>
       <header
         className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ${
-          scrolled && !menuOpen
-            ? "bg-ev-black/90 py-3 backdrop-blur-xl"
-            : "bg-transparent py-4 md:py-5"
+          scrolled && !menuOpen ? "py-3 md:py-4" : "py-4 md:py-5"
         }`}
       >
         <nav
-          className="container-content relative flex items-center justify-center px-5 md:px-8 lg:justify-between lg:px-12"
+          className="container-content relative flex items-center justify-center px-5 md:px-8 lg:justify-center lg:px-12"
           aria-label="Main navigation"
         >
-          {/* Mobile: pill header matching mockup */}
+          {/* Mobile: pill header with hamburger inside */}
           <div className="w-full max-w-md lg:hidden">
-            <PillHeader />
+            <PillHeader
+              menuOpen={menuOpen}
+              onToggleMenu={() => setMenuOpen(!menuOpen)}
+            />
           </div>
 
-          <button
-            type="button"
-            className="absolute right-5 top-1/2 z-50 flex h-10 w-10 -translate-y-1/2 flex-col items-center justify-center gap-1.5 lg:hidden"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label={menuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={menuOpen}
-          >
-            <span
-              className={`block h-0.5 w-5 rounded-full transition-all duration-300 ${
-                menuOpen
-                  ? "translate-y-[3.5px] rotate-45 bg-ev-white"
-                  : "bg-ev-black"
-              }`}
-            />
-            <span
-              className={`block h-0.5 w-5 rounded-full transition-all duration-300 ${
-                menuOpen
-                  ? "-translate-y-[3.5px] -rotate-45 bg-ev-white"
-                  : "bg-ev-black"
-              }`}
-            />
-          </button>
+          {/* Desktop: floating pill-style navbar */}
+          <div className="hidden lg:block w-full max-w-5xl">
+            <div className="pill-nav w-full">
+              <Link href="/" className="flex items-center gap-2 flex-shrink-0">
+                <ElanVeyLogo className="h-7 w-auto md:h-8" />
+                <span className="text-ev-neon-yellow" aria-hidden>
+                  ◆
+                </span>
+              </Link>
 
-          {/* Desktop: full nav */}
-          <Link
-            href="/"
-            className="hidden font-display text-lg font-bold tracking-[0.15em] text-ev-white transition-opacity hover:opacity-80 lg:block lg:text-xl"
-            onClick={() => setMenuOpen(false)}
-          >
-            ELAN VEY
-          </Link>
+              <ul className="flex items-center gap-6 xl:gap-8">
+                {navigation.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="font-medium text-sm tracking-wide text-white/90 transition-all hover:text-ev-neon-yellow relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-ev-neon-yellow after:transition-all hover:after:w-full"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
 
-          <ul className="hidden items-center gap-8 lg:flex">
-            {navigation.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="link-underline text-sm font-medium text-ev-offwhite/80 transition-colors hover:text-ev-white"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          <div className="hidden lg:block">
-            <Link href="/subscription" className="subscribe-btn !px-6 !py-2.5">
-              Subscribe Now
-            </Link>
+              <Link
+                href="/subscription"
+                className="subscribe-btn !px-6 !py-2.5 flex-shrink-0 !shadow-none"
+              >
+                Subscribe Now
+              </Link>
+            </div>
           </div>
         </nav>
       </header>
@@ -117,8 +134,8 @@ export function Navbar() {
         }`}
         aria-hidden={!menuOpen}
       >
-        <div className="flex flex-1 flex-col justify-center px-8 pt-20">
-          <ul className="space-y-6">
+        <div className="flex flex-1 flex-col justify-center overflow-y-auto px-8 py-20">
+          <ul className="space-y-4 sm:space-y-6">
             {navigation.map((item, i) => (
               <li
                 key={item.href}
@@ -129,7 +146,7 @@ export function Navbar() {
               >
                 <Link
                   href={item.href}
-                  className={`font-brutal block text-4xl uppercase text-ev-neon-yellow transition-all duration-500 ${
+                  className={`font-brutal block text-3xl uppercase text-ev-neon-yellow transition-all duration-500 sm:text-4xl ${
                     menuOpen
                       ? "translate-y-0 opacity-100"
                       : "translate-y-8 opacity-0"
@@ -144,7 +161,7 @@ export function Navbar() {
             ))}
           </ul>
           <div
-            className={`mt-12 transition-all duration-500 ${
+            className={`mt-10 shrink-0 transition-all duration-500 sm:mt-12 ${
               menuOpen
                 ? "translate-y-0 opacity-100"
                 : "translate-y-8 opacity-0"

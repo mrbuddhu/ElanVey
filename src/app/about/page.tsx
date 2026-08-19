@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
+import { BrutalPanel } from "@/components/ui/BrutalPanel";
 import { CTABlock } from "@/components/ui/CTABlock";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
@@ -43,16 +44,17 @@ export default function AboutPage() {
         title="Built for brands that lead"
         subtitle="Elan Vey exists at the intersection of creative ambition and strategic precision — helping brands define who they are and where they're going."
         large
+        accent="mixed"
       />
 
-      <Section>
+      <Section tone="paper" className="!pt-0">
         <div className="container-content">
-          <div className="grid gap-16 lg:grid-cols-2">
+          <div className="grid gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="heading-display text-3xl text-ev-white md:text-4xl">
+              <h2 className="brutal-text text-2xl text-ev-neon-pink md:text-4xl">
                 Our story
               </h2>
-              <div className="mt-8 space-y-6 text-ev-muted leading-relaxed">
+              <div className="mt-8 space-y-6 font-bold leading-relaxed text-ev-black/80">
                 <p>
                   Elan Vey was founded on a simple conviction: ambitious brands
                   deserve a partner that matches their standards. Not a vendor.
@@ -71,45 +73,34 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="relative">
-              <div
-                className="absolute inset-0 bg-gradient-glow opacity-40"
-                aria-hidden
-              />
-              <div className="glass-strong relative aspect-[4/5] p-8">
-                <p className="font-display text-8xl font-bold gradient-text opacity-20">
-                  EV
-                </p>
-                <p className="absolute bottom-8 left-8 right-8 text-sm uppercase tracking-widest text-ev-muted">
-                  Premium · Creative · Strategic
-                </p>
-              </div>
-            </div>
+            <BrutalPanel variant="yellow" className="flex aspect-[4/5] flex-col justify-between">
+              <p className="font-brutal text-8xl text-ev-neon-red opacity-40">
+                EV
+              </p>
+              <p className="font-brutal text-sm uppercase tracking-widest text-ev-black">
+                Premium · Creative · Strategic
+              </p>
+            </BrutalPanel>
           </div>
         </div>
       </Section>
 
-      <Section className="bg-ev-charcoal/50">
+      <div className="checkerboard-divider" aria-hidden />
+
+      <Section tone="dark">
         <div className="container-content">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.3em] text-ev-crimson">
-            What drives us
-          </p>
-          <h2 className="heading-display mb-16 text-4xl text-ev-white md:text-5xl">
+          <p className="brutal-label-dark">What drives us</p>
+          <h2 className="brutal-text brutal-text-light mb-12 mt-4 text-3xl text-ev-neon-yellow md:text-5xl">
             Mission & values
           </h2>
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2">
             {values.map((item, i) => (
-              <div
-                key={item.title}
-                className="border-l-2 border-ev-crimson/50 pl-8"
-              >
-                <span className="font-display text-sm text-ev-crimson">
-                  0{i + 1}
-                </span>
-                <h3 className="heading-display mt-2 text-2xl text-ev-white">
+              <div key={item.title} className="border-[3px] border-white p-6">
+                <span className="font-brutal text-ev-neon-pink">0{i + 1}</span>
+                <h3 className="brutal-text brutal-text-light mt-2 text-xl text-ev-neon-cyan">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-ev-muted leading-relaxed">
+                <p className="mt-4 font-bold leading-relaxed text-white/70">
                   {item.content}
                 </p>
               </div>
@@ -118,47 +109,48 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section>
-        <div className="container-content">
-          <div className="max-w-3xl">
-            <h2 className="heading-display text-3xl text-ev-white md:text-4xl">
-              What sets us apart
-            </h2>
-            <p className="mt-6 text-lg text-ev-muted leading-relaxed">
-              Elan Vey isn&apos;t another agency promising results. We&apos;re a
-              premium creative partner focused on strategic depth, editorial
-              quality, and real-world opportunity — including exclusive access to
-              Lavent Marketing&apos;s expertise and network.
-            </p>
-            <ul className="mt-8 space-y-4">
-              {[
-                "Editorial-grade creative direction",
-                "Strategy-first approach to every engagement",
-                "Lavent Marketing exposure & learning access",
-                "Subscription model for ongoing partnership",
-                "Premium standards in every deliverable",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-center gap-3 text-ev-offwhite"
-                >
-                  <span className="h-px w-8 bg-ev-crimson" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
+      <div className="stamp-edge-top" aria-hidden />
+
+      <Section tone="paper">
+        <div className="container-content max-w-3xl">
+          <h2 className="brutal-text text-2xl text-ev-neon-yellow md:text-4xl">
+            What sets us apart
+          </h2>
+          <p className="mt-6 text-lg font-bold leading-relaxed text-ev-black/80">
+            Elan Vey isn&apos;t another agency promising results. We&apos;re a
+            premium creative partner focused on strategic depth, editorial
+            quality, and real-world opportunity — including exclusive access to
+            Lavent Marketing&apos;s expertise and network.
+          </p>
+          <ul className="mt-8 space-y-4">
+            {[
+              "Editorial-grade creative direction",
+              "Strategy-first approach to every engagement",
+              "Lavent Marketing exposure & learning access",
+              "Subscription model for ongoing partnership",
+              "Premium standards in every deliverable",
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-center gap-3 font-brutal text-sm uppercase text-ev-black"
+              >
+                <span className="text-ev-neon-pink">◆</span>
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </Section>
 
       <CTABlock
+        dark={false}
         title="Want to work with us?"
         description="Let's discuss how Elan Vey can help elevate your brand."
       >
         <Button href="/contact" size="lg">
           Get in Touch
         </Button>
-        <Button href="/founders" variant="outline" size="lg">
+        <Button href="/founders" variant="secondary" size="lg">
           Meet the Founders
         </Button>
       </CTABlock>

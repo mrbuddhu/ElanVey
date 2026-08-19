@@ -37,6 +37,7 @@ const config: Config = {
         display: ["var(--font-display)", "system-ui", "sans-serif"],
         brutal: ["var(--font-brutal)", "Impact", "system-ui", "sans-serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
       },
       backgroundImage: {
         "gradient-brand":
@@ -49,8 +50,7 @@ const config: Config = {
           "linear-gradient(90deg, #66FF00 0%, #0066FF 100%)",
         "checkerboard":
           "repeating-conic-gradient(#000 0% 25%, #fff 0% 50%) 50% / 20px 20px",
-        "paper-texture":
-          "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E\")",
+        "paper-texture": "url(\"/images/bg-paper.png\")",
       },
       boxShadow: {
         brutal: "4px 4px 0px 0px #000000",

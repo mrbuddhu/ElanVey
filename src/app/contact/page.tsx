@@ -18,45 +18,32 @@ export default function ContactPage() {
         label="Contact"
         title="Let's talk"
         subtitle="Ready to elevate your brand? Reach out and let's explore how Elan Vey can help you grow."
+        accent="yellow"
       />
 
-      <Section className="!pt-0">
+      <Section tone="paper" className="!pt-0">
         <div className="container-content">
           <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
             <div className="lg:col-span-2">
-              <h2 className="heading-display text-2xl text-ev-white md:text-3xl">
+              <h2 className="brutal-text text-2xl text-ev-neon-pink md:text-3xl">
                 Get in touch
               </h2>
-              <p className="mt-4 text-ev-muted leading-relaxed">
+              <p className="mt-4 font-bold leading-relaxed text-ev-black/80">
                 Whether you&apos;re interested in our services, subscription, or
                 just want to learn more — we&apos;d love to hear from you.
               </p>
 
               <div className="mt-10 space-y-6">
-                <div>
-                  <p className="text-xs uppercase tracking-widest text-ev-muted">
-                    Email
-                  </p>
-                  <p className="mt-1 text-ev-offwhite">
-                    {siteConfig.contact.email}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-widest text-ev-muted">
-                    Phone
-                  </p>
-                  <p className="mt-1 text-ev-offwhite">
-                    {siteConfig.contact.phone}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-widest text-ev-muted">
-                    Address
-                  </p>
-                  <p className="mt-1 text-ev-offwhite">
-                    {siteConfig.contact.address}
-                  </p>
-                </div>
+                {[
+                  { label: "Email", value: siteConfig.contact.email },
+                  { label: "Phone", value: siteConfig.contact.phone },
+                  { label: "Address", value: siteConfig.contact.address },
+                ].map((item) => (
+                  <div key={item.label}>
+                    <p className="brutal-label">{item.label}</p>
+                    <p className="mt-1 font-bold text-ev-black">{item.value}</p>
+                  </div>
+                ))}
               </div>
             </div>
 

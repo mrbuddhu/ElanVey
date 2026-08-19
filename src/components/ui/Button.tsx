@@ -15,15 +15,17 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "bg-gradient-brand text-ev-white hover:opacity-90 shadow-lg shadow-ev-crimson/20",
-  secondary: "glass-strong text-ev-white hover:bg-white/10",
-  ghost: "text-ev-offwhite hover:text-ev-white hover:bg-white/5",
+    "border-[3px] border-black bg-ev-neon-yellow font-brutal uppercase text-ev-neon-red shadow-brutal hover:scale-105",
+  secondary:
+    "border-[3px] border-black bg-ev-neon-cream font-brutal uppercase text-ev-black shadow-brutal hover:scale-105",
+  ghost:
+    "font-bold text-ev-black underline decoration-2 underline-offset-4 hover:text-ev-neon-pink",
   outline:
-    "border border-white/20 text-ev-offwhite hover:border-ev-crimson/50 hover:text-ev-white",
+    "border-[3px] border-black bg-transparent font-brutal uppercase text-ev-black hover:bg-ev-neon-yellow",
 };
 
 const sizes: Record<ButtonSize, string> = {
-  sm: "px-4 py-2 text-sm",
+  sm: "px-4 py-2 text-xs",
   md: "px-6 py-3 text-sm",
   lg: "px-8 py-4 text-base",
 };
@@ -41,7 +43,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    const classes = `inline-flex items-center justify-center gap-2 rounded-none font-medium tracking-wide transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ev-crimson ${variants[variant]} ${sizes[size]} ${className}`;
+    const classes = `inline-flex items-center justify-center gap-2 transition-transform duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ev-neon-pink ${variants[variant]} ${sizes[size]} ${className}`;
 
     if (href) {
       if (external) {

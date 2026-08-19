@@ -1,7 +1,7 @@
-import { HeroSection } from "@/components/home/HeroSection";
-import { WhoIsElanVeySection } from "@/components/home/WhoIsElanVeySection";
-import { VeyForwardSection } from "@/components/home/VeyForwardSection";
-import { ProcessSection } from "@/components/home/ProcessSection";
+import { SectionOne } from "@/components/home/SectionOne";
+import { SectionTwo } from "@/components/home/SectionTwo";
+import { SectionThree } from "@/components/home/SectionThree";
+import { SectionFour } from "@/components/home/SectionFour";
 import { LaventSection } from "@/components/home/LaventSection";
 import { SubscriptionPreview } from "@/components/home/SubscriptionPreview";
 import { ReviewsPreview } from "@/components/home/ReviewsPreview";
@@ -10,10 +10,10 @@ import { FinalCTA } from "@/components/home/FinalCTA";
 export default function HomePage() {
   return (
     <>
-      <HeroSection />
-      <WhoIsElanVeySection />
-      <VeyForwardSection />
-      <ProcessSection />
+      <SectionOne />
+      <SectionTwo />
+      <SectionThree />
+      <SectionFour />
       <LaventSection />
       <SubscriptionPreview />
       <ReviewsPreview />

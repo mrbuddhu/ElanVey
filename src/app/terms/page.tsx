@@ -12,13 +12,15 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <>
-      <PageHero label="Legal" title="Terms of Service" />
-      <Section className="!pt-0">
+      <PageHero label="Legal" title="Terms of Service" accent="yellow" />
+      <Section tone="paper" className="!pt-0">
         <div className="container-content max-w-3xl">
-          <p className="text-ev-muted leading-relaxed">
-            [TERMS OF SERVICE — Replace with the final terms content when
-            available.]
-          </p>
+          <div className="brutal-card">
+            <p className="font-bold leading-relaxed text-ev-black/80">
+              [TERMS OF SERVICE — Replace with the final terms content when
+              available.]
+            </p>
+          </div>
         </div>
       </Section>
     </>

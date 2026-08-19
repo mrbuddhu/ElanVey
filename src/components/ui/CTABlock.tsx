@@ -4,43 +4,31 @@ interface CTABlockProps {
   title: string;
   description?: string;
   children?: ReactNode;
-  variant?: "default" | "gradient";
+  dark?: boolean;
 }
 
 export function CTABlock({
   title,
   description,
   children,
-  variant = "default",
+  dark = true,
 }: CTABlockProps) {
   return (
-    <div
-      className={`relative overflow-hidden section-padding ${
-        variant === "gradient" ? "bg-ev-charcoal" : ""
-      }`}
-    >
-      {variant === "gradient" && (
-        <>
-          <div
-            className="pointer-events-none absolute inset-0 bg-gradient-brand opacity-[0.07]"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute -left-1/4 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-ev-crimson/20 blur-[120px]"
-            aria-hidden
-          />
-          <div
-            className="pointer-events-none absolute -right-1/4 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-ev-pink/15 blur-[120px]"
-            aria-hidden
-          />
-        </>
-      )}
-      <div className="container-content relative text-center">
-        <h2 className="heading-display mx-auto max-w-4xl text-3xl text-ev-white sm:text-4xl md:text-5xl lg:text-6xl">
+    <div className={`section-padding ${dark ? "section-dark" : "paper-bg"}`}>
+      <div className="container-content text-center">
+        <h2
+          className={`brutal-text mx-auto max-w-4xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl ${
+            dark ? "brutal-text-light text-ev-neon-yellow" : "text-ev-neon-pink"
+          }`}
+        >
           {title}
         </h2>
         {description && (
-          <p className="mx-auto mt-6 max-w-xl text-ev-muted md:text-lg">
+          <p
+            className={`mx-auto mt-6 max-w-xl font-bold md:text-lg ${
+              dark ? "text-white/80" : "text-ev-black"
+            }`}
+          >
             {description}
           </p>
         )}
@@ -50,6 +38,7 @@ export function CTABlock({
           </div>
         )}
       </div>
+      {dark && <div className="stamp-edge-top mt-10 md:mt-14" aria-hidden />}
     </div>
   );
 }

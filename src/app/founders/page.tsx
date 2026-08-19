@@ -21,45 +21,37 @@ export default function FoundersPage() {
         title="The people behind Elan Vey"
         subtitle="Vision, conviction, and a commitment to helping ambitious brands reach their full potential."
         large
+        accent="cyan"
       />
 
-      <Section className="!pt-0">
-        <div className="container-content space-y-24">
+      <Section tone="paper" className="!pt-0">
+        <div className="container-content space-y-20">
           {founders.map((founder, i) => (
             <article
               key={founder.id}
-              className={`grid items-center gap-12 lg:grid-cols-2 ${
+              className={`grid items-center gap-10 lg:grid-cols-2 ${
                 i % 2 === 1 ? "lg:[direction:rtl]" : ""
               }`}
             >
               <div className="lg:[direction:ltr]">
-                <div className="relative aspect-[3/4] overflow-hidden bg-ev-charcoal">
-                  <div
-                    className="absolute inset-0 bg-gradient-glow opacity-30"
-                    aria-hidden
-                  />
-                  <div className="flex h-full items-center justify-center">
-                    <span className="font-display text-6xl font-bold text-white/10">
-                      [PHOTO]
-                    </span>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-ev-black/80 to-transparent" />
+                <div className="brutal-card flex aspect-[3/4] items-center justify-center bg-ev-neon-cyan">
+                  <span className="font-brutal text-5xl text-ev-black/30">
+                    [PHOTO]
+                  </span>
                 </div>
               </div>
 
               <div className="lg:[direction:ltr]">
-                <p className="text-xs uppercase tracking-[0.3em] text-ev-crimson">
-                  {founder.role}
-                </p>
-                <h2 className="heading-display mt-4 text-4xl text-ev-white md:text-5xl">
+                <p className="brutal-label">{founder.role}</p>
+                <h2 className="brutal-text mt-4 text-3xl text-ev-neon-yellow md:text-4xl">
                   {founder.name}
                 </h2>
-                <p className="mt-6 text-ev-muted leading-relaxed">
+                <p className="mt-6 font-bold leading-relaxed text-ev-black/80">
                   {founder.bio}
                 </p>
                 {founder.quote && (
-                  <blockquote className="mt-8 border-l-2 border-ev-crimson pl-6">
-                    <p className="font-display text-lg italic text-ev-offwhite">
+                  <blockquote className="brutal-card-yellow mt-8">
+                    <p className="font-brutal text-lg uppercase leading-snug text-ev-black">
                       &ldquo;{founder.quote}&rdquo;
                     </p>
                   </blockquote>
@@ -70,28 +62,29 @@ export default function FoundersPage() {
         </div>
       </Section>
 
-      <Section className="bg-ev-charcoal/50">
+      <div className="checkerboard-divider" aria-hidden />
+
+      <Section tone="dark">
         <div className="container-content max-w-3xl text-center">
-          <h2 className="heading-display text-3xl text-ev-white md:text-4xl">
+          <h2 className="brutal-text brutal-text-light text-3xl text-ev-neon-pink md:text-4xl">
             Founder philosophy
           </h2>
-          <p className="mt-8 text-lg text-ev-muted leading-relaxed">
+          <p className="mt-8 text-lg font-bold leading-relaxed text-white/70">
             [FOUNDER PHILOSOPHY — Replace with the collective founder vision
-            and philosophy when available. This section should communicate the
-            core beliefs that drive Elan Vey&apos;s approach to creative
-            strategy and brand partnership.]
+            and philosophy when available.]
           </p>
         </div>
       </Section>
 
       <CTABlock
+        dark={false}
         title="Work with the team"
         description="Connect with Elan Vey and start building your brand's future."
       >
         <Button href="/contact" size="lg">
           Get in Touch
         </Button>
-        <Button href="/about" variant="outline" size="lg">
+        <Button href="/about" variant="secondary" size="lg">
           About Elan Vey
         </Button>
       </CTABlock>

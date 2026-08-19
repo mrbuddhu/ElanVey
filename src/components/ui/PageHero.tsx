@@ -6,6 +6,8 @@ interface PageHeroProps {
   subtitle?: string;
   children?: ReactNode;
   large?: boolean;
+  dark?: boolean;
+  accent?: "yellow" | "pink" | "cyan" | "mixed";
 }
 
 export function PageHero({
@@ -14,35 +16,55 @@ export function PageHero({
   subtitle,
   children,
   large = false,
+  dark = false,
+  accent = "yellow",
 }: PageHeroProps) {
+  const accentClass =
+    accent === "pink"
+      ? "text-ev-neon-pink"
+      : accent === "cyan"
+        ? "text-ev-neon-cyan"
+        : accent === "mixed"
+          ? "text-ev-neon-yellow"
+          : "text-ev-neon-yellow";
+
   return (
-    <div className="relative overflow-hidden section-padding pb-16 md:pb-20">
-      <div
-        className="pointer-events-none absolute -right-32 -top-32 h-[500px] w-[500px] rounded-full bg-gradient-glow opacity-60"
-        aria-hidden
-      />
+    <div
+      className={`relative overflow-hidden section-padding pb-12 md:pb-16 ${
+        dark ? "section-dark" : "paper-bg"
+      }`}
+    >
       <div className="container-content relative">
         {label && (
-          <p className="mb-6 font-sans text-xs font-medium uppercase tracking-[0.3em] text-ev-muted">
+          <p
+            className={`mb-6 font-brutal text-xs uppercase tracking-[0.3em] ${
+              dark ? "text-ev-neon-yellow" : "text-ev-neon-pink"
+            }`}
+          >
             {label}
           </p>
         )}
         <h1
-          className={`heading-display gradient-text text-balance ${
+          className={`brutal-text text-balance ${accentClass} ${
             large
-              ? "text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
-              : "text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
-          }`}
+              ? "text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+              : "text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+          } ${dark ? "brutal-text-light" : ""}`}
         >
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-8 max-w-2xl text-lg text-ev-muted md:text-xl">
+          <p
+            className={`mt-8 max-w-2xl text-base font-bold leading-snug md:text-lg ${
+              dark ? "text-white/80" : "text-ev-black"
+            }`}
+          >
             {subtitle}
           </p>
         )}
         {children && <div className="mt-10">{children}</div>}
       </div>
+      {!dark && <div className="stamp-edge-bottom mt-10 md:mt-14" aria-hidden />}
     </div>
   );
 }

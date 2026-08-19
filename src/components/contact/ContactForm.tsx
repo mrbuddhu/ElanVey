@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { Button } from "@/components/ui/Button";
-import { GlassPanel } from "@/components/ui/GlassPanel";
+import { BrutalPanel } from "@/components/ui/BrutalPanel";
 
 interface FormData {
   name: string;
@@ -33,19 +33,13 @@ export function ContactForm() {
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
 
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
-    }
-
+    if (!formData.name.trim()) newErrors.name = "Name is required";
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Please enter a valid email address";
     }
-
-    if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
-    }
+    if (!formData.message.trim()) newErrors.message = "Message is required";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -54,7 +48,6 @@ export function ContactForm() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-
     setLoading(true);
     await new Promise((resolve) => setTimeout(resolve, 800));
     setLoading(false);
@@ -73,45 +66,27 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <GlassPanel strong glow className="text-center">
+      <BrutalPanel variant="yellow" className="text-center">
         <div className="py-8">
-          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center border border-ev-crimson/30 bg-ev-crimson/10">
-            <svg
-              className="h-8 w-8 text-ev-crimson"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              aria-hidden
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-          </div>
-          <h3 className="heading-display text-2xl text-ev-white">
+          <p className="font-brutal text-5xl text-ev-neon-pink">✓</p>
+          <h3 className="brutal-text mt-4 text-2xl text-ev-black">
             Message sent
           </h3>
-          <p className="mt-4 text-ev-muted">
+          <p className="mt-4 font-bold text-ev-black/70">
             Thank you for reaching out. We&apos;ll get back to you shortly.
           </p>
         </div>
-      </GlassPanel>
+      </BrutalPanel>
     );
   }
 
-  const inputClasses =
-    "w-full border border-white/10 bg-white/[0.03] px-4 py-3 text-ev-offwhite placeholder:text-ev-muted/50 transition-colors focus:border-ev-crimson/50 focus:outline-none focus:ring-1 focus:ring-ev-crimson/30";
-
   return (
-    <GlassPanel strong glow>
+    <BrutalPanel variant="cream">
       <form onSubmit={handleSubmit} noValidate className="space-y-6">
         <div className="grid gap-6 sm:grid-cols-2">
           <div>
-            <label htmlFor="name" className="mb-2 block text-sm text-ev-muted">
-              Name <span className="text-ev-crimson">*</span>
+            <label htmlFor="name" className="mb-2 block font-brutal text-xs uppercase">
+              Name <span className="text-ev-neon-pink">*</span>
             </label>
             <input
               type="text"
@@ -119,21 +94,19 @@ export function ContactForm() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className={inputClasses}
+              className="brutal-input"
               placeholder="Your name"
               aria-invalid={!!errors.name}
-              aria-describedby={errors.name ? "name-error" : undefined}
             />
             {errors.name && (
-              <p id="name-error" className="mt-1 text-sm text-ev-crimson">
+              <p className="mt-1 text-sm font-bold text-ev-neon-red">
                 {errors.name}
               </p>
             )}
           </div>
-
           <div>
-            <label htmlFor="email" className="mb-2 block text-sm text-ev-muted">
-              Email <span className="text-ev-crimson">*</span>
+            <label htmlFor="email" className="mb-2 block font-brutal text-xs uppercase">
+              Email <span className="text-ev-neon-pink">*</span>
             </label>
             <input
               type="email"
@@ -141,13 +114,12 @@ export function ContactForm() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className={inputClasses}
+              className="brutal-input"
               placeholder="you@company.com"
               aria-invalid={!!errors.email}
-              aria-describedby={errors.email ? "email-error" : undefined}
             />
             {errors.email && (
-              <p id="email-error" className="mt-1 text-sm text-ev-crimson">
+              <p className="mt-1 text-sm font-bold text-ev-neon-red">
                 {errors.email}
               </p>
             )}
@@ -156,7 +128,7 @@ export function ContactForm() {
 
         <div className="grid gap-6 sm:grid-cols-2">
           <div>
-            <label htmlFor="phone" className="mb-2 block text-sm text-ev-muted">
+            <label htmlFor="phone" className="mb-2 block font-brutal text-xs uppercase">
               Phone
             </label>
             <input
@@ -165,16 +137,12 @@ export function ContactForm() {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className={inputClasses}
+              className="brutal-input"
               placeholder="[PHONE]"
             />
           </div>
-
           <div>
-            <label
-              htmlFor="company"
-              className="mb-2 block text-sm text-ev-muted"
-            >
+            <label htmlFor="company" className="mb-2 block font-brutal text-xs uppercase">
               Company
             </label>
             <input
@@ -183,18 +151,15 @@ export function ContactForm() {
               name="company"
               value={formData.company}
               onChange={handleChange}
-              className={inputClasses}
+              className="brutal-input"
               placeholder="Your company"
             />
           </div>
         </div>
 
         <div>
-          <label
-            htmlFor="message"
-            className="mb-2 block text-sm text-ev-muted"
-          >
-            Message <span className="text-ev-crimson">*</span>
+          <label htmlFor="message" className="mb-2 block font-brutal text-xs uppercase">
+            Message <span className="text-ev-neon-pink">*</span>
           </label>
           <textarea
             id="message"
@@ -202,13 +167,12 @@ export function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             rows={5}
-            className={`${inputClasses} resize-none`}
+            className="brutal-input resize-none"
             placeholder="Tell us about your project or inquiry..."
             aria-invalid={!!errors.message}
-            aria-describedby={errors.message ? "message-error" : undefined}
           />
           {errors.message && (
-            <p id="message-error" className="mt-1 text-sm text-ev-crimson">
+            <p className="mt-1 text-sm font-bold text-ev-neon-red">
               {errors.message}
             </p>
           )}
@@ -218,6 +182,6 @@ export function ContactForm() {
           {loading ? "Sending..." : "Send Message"}
         </Button>
       </form>
-    </GlassPanel>
+    </BrutalPanel>
   );
 }

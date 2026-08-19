@@ -7,6 +7,7 @@ interface SectionProps {
   className?: string;
   id?: string;
   animate?: boolean;
+  tone?: "paper" | "dark";
 }
 
 export function Section({
@@ -14,6 +15,7 @@ export function Section({
   className = "",
   id,
   animate = true,
+  tone = "paper",
 }: SectionProps) {
   const ref = useRef<HTMLElement>(null);
 
@@ -43,7 +45,9 @@ export function Section({
     <section
       ref={ref}
       id={id}
-      className={`section-padding ${className}`}
+      className={`section-padding ${
+        tone === "dark" ? "section-dark" : "paper-bg"
+      } ${className}`}
     >
       {children}
     </section>

@@ -12,13 +12,15 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <>
-      <PageHero label="Legal" title="Privacy Policy" />
-      <Section className="!pt-0">
+      <PageHero label="Legal" title="Privacy Policy" accent="pink" />
+      <Section tone="paper" className="!pt-0">
         <div className="container-content max-w-3xl">
-          <p className="text-ev-muted leading-relaxed">
-            [PRIVACY POLICY — Replace with the final privacy policy content
-            when available.]
-          </p>
+          <div className="brutal-card">
+            <p className="font-bold leading-relaxed text-ev-black/80">
+              [PRIVACY POLICY — Replace with the final privacy policy content
+              when available.]
+            </p>
+          </div>
         </div>
       </Section>
     </>
