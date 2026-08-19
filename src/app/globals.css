@@ -155,23 +155,23 @@
   }
 
   .audience-pill {
-    @apply h-10 rounded-full md:h-12;
+    @apply h-12 rounded-full md:h-14 lg:h-16;
   }
 
   .audience-pill-cream {
-    @apply audience-pill border-[3px] border-black bg-ev-neon-cream;
+    @apply audience-pill border-[3px] border-black bg-ev-neon-cream shadow-brutal;
   }
 
   .audience-pill-pink {
-    @apply audience-pill border-[3px] border-black bg-ev-neon-pink;
+    @apply audience-pill border-[3px] border-black bg-ev-neon-pink shadow-brutal;
   }
 
   .audience-pill-yellow {
-    @apply audience-pill border-[3px] border-black bg-ev-neon-yellow;
+    @apply audience-pill border-[3px] border-black bg-ev-neon-yellow shadow-brutal;
   }
 
   .audience-pill-cyan {
-    @apply audience-pill border-[3px] border-black bg-ev-neon-cyan;
+    @apply audience-pill border-[3px] border-black bg-ev-neon-cyan shadow-brutal;
   }
 
   .brutal-input {
@@ -180,7 +180,7 @@
 
   .outline-hero-text {
     @apply font-brutal uppercase tracking-[0.08em] text-ev-neon-cream;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.85);
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.9);
     paint-order: stroke fill;
   }
 
@@ -195,32 +195,32 @@
   }
 
   .process-step-number {
-    @apply font-brutal text-6xl text-ev-neon-yellow md:text-7xl;
+    @apply font-brutal text-7xl text-ev-neon-yellow md:text-8xl lg:text-9xl;
     text-shadow: 3px 3px 0 #ff0066, 6px 6px 0 #990033;
   }
 
   .process-step-title {
-    @apply font-brutal text-xl uppercase text-ev-neon-yellow md:text-2xl;
+    @apply font-brutal text-2xl uppercase text-ev-neon-yellow md:text-3xl;
     text-shadow: 2px 2px 0 #ff0066, 4px 4px 0 #660022;
   }
 
   .how-we-work-title {
-    @apply font-brutal text-4xl uppercase text-ev-neon-yellow md:text-5xl lg:text-6xl;
+    @apply font-brutal text-5xl uppercase text-ev-neon-yellow md:text-6xl lg:text-7xl;
     text-shadow: 3px 3px 0 #ff0066, 5px 5px 0 #990033;
   }
 
   .caution-tape {
-    @apply absolute whitespace-nowrap border-[3px] border-black px-8 py-3 font-brutal text-sm uppercase shadow-brutal md:text-base;
+    @apply absolute whitespace-nowrap border-[3px] border-black px-10 py-4 font-brutal text-base uppercase shadow-brutal md:text-lg md:px-14 md:py-5 md:text-xl;
     transform: rotate(-8deg);
   }
 
   .caution-tape-alt {
-    @apply absolute whitespace-nowrap border-[3px] border-black px-8 py-3 font-brutal text-sm uppercase shadow-brutal md:text-base;
+    @apply absolute whitespace-nowrap border-[3px] border-black px-10 py-4 font-brutal text-base uppercase shadow-brutal md:text-lg md:px-14 md:py-5 md:text-xl;
     transform: rotate(6deg);
   }
 
   .team-badge {
-    @apply inline-block rotate-[-8deg] border-[3px] border-black bg-ev-neon-pink px-4 py-2 font-brutal text-xs uppercase text-ev-neon-yellow shadow-brutal md:text-sm;
+    @apply inline-block rotate-[-8deg] border-[3px] border-black bg-ev-neon-pink px-6 py-3 font-brutal text-sm uppercase text-ev-neon-yellow shadow-brutal md:px-8 md:py-4 md:text-base;
   }
 }
 
