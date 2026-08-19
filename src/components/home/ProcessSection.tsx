@@ -12,7 +12,7 @@ export function ProcessSection() {
           </h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {processSteps.map((step) => (
             <div key={step.index} className="brutal-card">
               <span className="font-brutal text-5xl text-ev-neon-yellow md:text-6xl">
