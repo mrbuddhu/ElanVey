@@ -50,7 +50,7 @@ const config: Config = {
           "linear-gradient(90deg, #66FF00 0%, #0066FF 100%)",
         "checkerboard":
           "repeating-conic-gradient(#000 0% 25%, #fff 0% 50%) 50% / 20px 20px",
-        "paper-texture": "url(\"/images/bg-paper.png\")",
+        "paper-texture": "url(\"/images/white-paper-texture.jpg\")",
       },
       boxShadow: {
         brutal: "4px 4px 0px 0px #000000",

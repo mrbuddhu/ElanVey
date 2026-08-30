@@ -9,7 +9,7 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "Customer Reviews",
   description:
-    "Read what clients say about working with Elan Vey — premium creative strategy and brand partnership.",
+    "Read real stories from people just like you who worked with Elan Vey.",
   alternates: { canonical: `${siteConfig.url}/reviews` },
 };
 
@@ -26,7 +26,7 @@ const summaryStats = [
   },
   {
     value: "100%",
-    label: "Client Retention",
+    label: "Come Back Rate",
     color: "bg-ev-neon-yellow",
   },
 ];
@@ -66,11 +66,11 @@ export default function ReviewsPage() {
     <>
       <PageHero
         label="Reviews"
-        title="Trusted by ambitious brands"
-        subtitle="Real feedback from partners who chose Elan Vey for their creative and strategic journey."
+        title="Loved by real people"
+        subtitle="Honest feedback from people just like you who trusted Elan Vey with their ideas."
         large
         accent="pink"
-        badge="Real Stories · Real Results"
+        badge="Real Stories · Real People"
       />
 
       <Section tone="paper" className="!pt-0" staggerChildren staggerDelay={70}>
@@ -105,7 +105,7 @@ export default function ReviewsPage() {
                 >
                   {isFeatured && (
                     <span className="ribbon-badge bg-ev-neon-yellow text-ev-neon-red">
-                      Featured
+                      Most Loved
                     </span>
                   )}
                   <StarRating rating={testimonial.rating} />
@@ -130,7 +130,7 @@ export default function ReviewsPage() {
                           : "border-black bg-ev-neon-yellow"
                       } font-brutal text-sm`}
                     >
-                      {testimonial.name.replace(/\[|\]/g, "").charAt(0)}
+                      {testimonial.name.charAt(0)}
                     </div>
                     <cite className="not-italic flex-1">
                       <div className="flex items-center gap-2 flex-wrap">
@@ -144,7 +144,7 @@ export default function ReviewsPage() {
                           title="Verified Client"
                         >
                           <span className="text-ev-neon-cyan">✓</span>
-                          Verified
+                          Real Client
                         </span>
                       </div>
                       <p
@@ -167,8 +167,8 @@ export default function ReviewsPage() {
 
       <CTABlock
         dark
-        title="Join our growing community"
-        description="Experience the Elan Vey difference for yourself."
+        title="Join our happy family"
+        description="Experience the Elan Vey difference for yourself. We can't wait to meet you!"
       >
         <Button href="/contact" size="lg">
           Start Your Journey

@@ -1,18 +1,18 @@
 export const siteConfig = {
   name: "Elan Vey",
-  tagline: "Premium creative strategy for ambitious brands",
+  tagline: "Creative designs that make your ideas shine",
   description:
-    "Elan Vey is a premium creative and strategic partner helping ambitious brands grow with confidence, clarity, and distinctive digital presence.",
+    "Elan Vey helps people and small projects stand out with creative designs, smart planning, and real marketing experience connected to Lavent Marketing.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://elanvey.com",
   ogImage: "/og-image.png",
   contact: {
-    email: "[CONTACT EMAIL]",
-    phone: "[CONTACT PHONE]",
-    address: "[BUSINESS ADDRESS]",
+    email: "elanvey@gmail.com",
+    phone: "+91 9827249743 / +91 9791611851",
+    address: "Rourkela, Odisha, 769001",
   },
   social: {
-    instagram: "[INSTAGRAM URL]",
-    linkedin: "[LINKEDIN URL]",
-    twitter: "[TWITTER URL]",
+    instagram: "https://instagram.com/elan.vey",
+    facebook: "https://facebook.com/elan.vey",
+    twitter: "#",
   },
 };

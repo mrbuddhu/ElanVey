@@ -17,8 +17,8 @@ export function Footer() {
               Elan Vey
             </Link>
             <p className="mt-4 max-w-sm text-sm font-bold leading-relaxed text-white/70">
-              {siteConfig.tagline}. Premium creative strategy for ambitious
-              brands ready to stand out.
+              {siteConfig.tagline}. Friendly creative help for everyone —
+              individuals, small shops, and all your big ideas.
             </p>
             <div className="mt-6">
               <Button href="/contact" variant="primary" size="sm">
@@ -60,19 +60,19 @@ export function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Instagram
+                    Instagram: elan.vey
                   </a>
                 </li>
               )}
-              {siteConfig.social.linkedin.startsWith("http") && (
+              {siteConfig.social.facebook.startsWith("http") && (
                 <li>
                   <a
-                    href={siteConfig.social.linkedin}
+                    href={siteConfig.social.facebook}
                     className="transition-colors hover:text-ev-neon-yellow"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    LinkedIn
+                    Facebook: elan.vey
                   </a>
                 </li>
               )}

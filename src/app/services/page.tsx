@@ -13,10 +13,10 @@ import { siteConfig } from "@/data/site";
 import { useEffect, useState } from "react";
 
 const serviceAccents: Record<string, { icon: string; color: string }> = {
-  "Brand Strategy": { icon: "◆", color: "text-ev-neon-pink" },
-  "Creative Direction": { icon: "✦", color: "text-ev-neon-cyan" },
-  "Digital Growth": { icon: "▲", color: "text-ev-neon-yellow" },
-  "Marketing Partnership": { icon: "●", color: "text-ev-neon-red" },
+  "Smart Planning": { icon: "◆", color: "text-ev-neon-pink" },
+  "Creative Design": { icon: "✦", color: "text-ev-neon-cyan" },
+  "Online Growth": { icon: "▲", color: "text-ev-neon-yellow" },
+  "Marketing Learning": { icon: "●", color: "text-ev-neon-red" },
 };
 
 export default function ServicesPage() {
@@ -34,11 +34,11 @@ export default function ServicesPage() {
     <>
       <PageHero
         label="Services"
-        title="Strategic creative excellence"
-        subtitle="Every service is designed to elevate your brand — from foundational strategy to ongoing digital growth."
+        title="Creative help for everyone"
+        subtitle="Every service is designed to help you shine — from getting the basics right to growing your presence online month after month."
         large
         accent="pink"
-        badge="4 Core Services · 1 Integrated Partner"
+        badge="4 Core Services · 1 Friendly Team"
       />
 
       <Section id="process" tone="paper" className="!pt-0" staggerChildren staggerDelay={80}>
@@ -51,8 +51,8 @@ export default function ServicesPage() {
               </h2>
             </div>
             <p className="max-w-md text-base font-bold leading-relaxed text-ev-black/80 md:text-lg">
-              Five steps — from vision to growth — designed to make your brand
-              stand out and your audience grow.
+              Five simple steps — from first chat to final result — designed to
+              make you stand out and help your audience grow.
             </p>
           </div>
 
@@ -122,7 +122,7 @@ export default function ServicesPage() {
                     className="relative hover-lift"
                   >
                     <div className="flex items-center justify-between mb-4">
-                      <h3 className="brutal-label">Key Benefits</h3>
+                      <h3 className="brutal-label">What You Get</h3>
                       {accent && (
                         <span className={`font-brutal text-3xl ${accent.color}`}>
                           {accent.icon}
@@ -168,10 +168,10 @@ export default function ServicesPage() {
       <CTABlock
         dark
         title="Not sure where to start?"
-        description="We'll help you identify the right services for your brand's goals."
+        description="We'll help you figure out the right services for your goals and budget."
       >
         <Button href="/contact" size="lg">
-          Book a Consultation
+          Book a Free Chat
         </Button>
       </CTABlock>
     </>

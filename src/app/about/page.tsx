@@ -9,7 +9,7 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Elan Vey — our mission, vision, philosophy, and approach to premium creative strategy.",
+    "Learn about Elan Vey — who we are, what drives us, and how we help people just like you bring their ideas to life.",
   alternates: { canonical: `${siteConfig.url}/about` },
 };
 
@@ -17,64 +17,64 @@ const values = [
   {
     title: "Mission",
     content:
-      "To empower ambitious brands with the strategic clarity and creative excellence they need to stand out, grow, and lead in their space.",
+      "To give every person and small idea the creative tools and honest guidance they need to stand out, grow, and feel proud of what they share with the world.",
     accent: "pink" as const,
   },
   {
     title: "Vision",
     content:
-      "A world where every ambitious brand has access to premium creative strategy — not as a luxury, but as a foundation for meaningful growth.",
+      "A world where great design and smart planning aren't luxuries for a select few — but something anyone with a dream can access.",
     accent: "cyan" as const,
   },
   {
     title: "Philosophy",
     content:
-      "We believe premium comes from restraint, not excess. Every decision — from typography to strategy — should have purpose, conviction, and clarity.",
+      "We believe good work comes from care, not complexity. Every choice — from the colors we pick to the words we write — should have a clear, honest purpose.",
     accent: "yellow" as const,
   },
   {
     title: "Approach",
     content:
-      "We combine editorial creative direction with rigorous strategic thinking. No templates. No generic solutions. Every engagement is tailored to the brand's unique ambition.",
+      "We combine bold, eye-catching design with down-to-earth planning. No confusing jargon. No copy-paste templates. Every project is custom-made just for you.",
     accent: "cream" as const,
   },
 ];
 
 const stats = [
-  { number: "50+", label: "Brand Partners", color: "bg-ev-neon-pink text-white" },
+  { number: "50+", label: "Happy Clients", color: "bg-ev-neon-pink text-white" },
   { number: "7+", label: "Years Active", color: "bg-ev-neon-cyan" },
   { number: "100%", label: "Client Retention", color: "bg-ev-neon-yellow" },
-  { number: "2×", label: "Avg. Growth Rate", color: "bg-ev-neon-cream" },
+  { number: "2×", label: "Avg. Growth", color: "bg-ev-neon-cream" },
 ];
 
 const differentiators = [
   {
-    title: "Editorial-grade creative direction",
+    title: "Bold, eye-catching designs",
     icon: "◆",
     color: "bg-ev-neon-pink text-white",
   },
   {
-    title: "Strategy-first approach to every engagement",
+    title: "Simple, honest planning first",
     icon: "▲",
     color: "bg-ev-neon-cyan",
   },
   {
-    title: "Lavent Marketing exposure & learning access",
+    title: "Lavent Marketing learning access",
     icon: "●",
     color: "bg-ev-neon-yellow",
   },
   {
-    title: "Subscription model for ongoing partnership",
+    title: "Month-to-month subscription plan",
     icon: "■",
     color: "bg-ev-neon-cream",
   },
   {
-    title: "Premium standards in every deliverable",
+    title: "Top quality in every single thing we make",
     icon: "★",
     color: "bg-ev-neon-pink text-white",
   },
   {
-    title: "Tailored solutions — no generic templates",
+    title: "Custom made — never generic templates",
     icon: "✦",
     color: "bg-ev-neon-cyan",
   },
@@ -85,11 +85,11 @@ export default function AboutPage() {
     <>
       <PageHero
         label="About Us"
-        title="Built for brands that lead"
-        subtitle="Elan Vey exists at the intersection of creative ambition and strategic precision — helping brands define who they are and where they're going."
+        title="Built for people like you"
+        subtitle="Elan Vey lives where creative spark meets clear thinking — helping you show the world who you are and where you're going."
         large
         accent="mixed"
-        badge="Premium Since Day One"
+        badge="Here For You Since Day One"
       />
 
       <Section tone="paper" className="!pt-0" staggerChildren staggerDelay={70}>
@@ -117,20 +117,22 @@ export default function AboutPage() {
               </h2>
               <div className="mt-8 space-y-6 font-bold leading-relaxed text-ev-black/80">
                 <p>
-                  Elan Vey was founded on a simple conviction: ambitious brands
-                  deserve a partner that matches their standards. Not a vendor.
-                  Not a template. A strategic creative ally invested in their
-                  growth.
+                  Elan Vey started with a simple belief: everyone deserves a
+                  creative partner who actually listens. Not someone who talks
+                  in confusing terms. Not one-size-fits-all templates. A real
+                  team invested in your success, whatever that means to you.
                 </p>
                 <p>
-                  [BRAND STORY — Replace with the official Elan Vey founding
-                  story and background when available.]
+                  We saw too many hardworking people struggle because they
+                  didn&apos;t know how to present themselves online. So we set
+                  out to change that — making great design and smart strategy
+                  friendly, affordable, and accessible to everyone.
                 </p>
                 <p>
-                  Today, we work with brands ready to invest in their presence
-                  — combining brand strategy, creative direction, digital growth,
-                  and exclusive access to real-world marketing opportunities
-                  through our connection with Lavent Marketing.
+                  Today, we work with individuals, families, small shop owners,
+                  students, and dreamers from all walks of life — giving them
+                  the design help, planning, and exclusive real-world marketing
+                  opportunities through our connection with Lavent Marketing.
                 </p>
               </div>
             </div>
@@ -143,7 +145,7 @@ export default function AboutPage() {
                   EV
                 </p>
                 <p className="font-brutal text-sm uppercase tracking-widest text-ev-black">
-                  Premium · Creative · Strategic
+                  Creative · Honest · For Everyone
                 </p>
               </BrutalPanel>
               <div
@@ -210,9 +212,10 @@ export default function AboutPage() {
             What sets us apart
           </h2>
           <p className="mt-6 max-w-2xl text-lg font-bold leading-relaxed text-ev-black/80 stagger-child">
-            Elan Vey isn&apos;t another agency promising results. We&apos;re a
-            premium creative partner focused on strategic depth, editorial
-            quality, and real-world opportunity.
+            Elan Vey isn&apos;t another big agency making promises we can&apos;t
+            keep. We&apos;re a friendly creative team focused on real quality,
+            honest conversations, and giving you real opportunities through
+            Lavent Marketing.
           </p>
           <div className="mt-12 grid gap-5 sm:grid-cols-2">
             {differentiators.map((item) => (
@@ -235,7 +238,7 @@ export default function AboutPage() {
       <CTABlock
         dark={false}
         title="Want to work with us?"
-        description="Let's discuss how Elan Vey can help elevate your brand."
+        description="Let's chat about how Elan Vey can help you take the next step."
       >
         <Button href="/contact" size="lg">
           Get in Touch

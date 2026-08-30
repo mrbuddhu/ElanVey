@@ -9,7 +9,7 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "Founders",
   description:
-    "Meet the founders of Elan Vey — the visionaries behind premium creative strategy for ambitious brands.",
+    "Meet the friendly founders of Elan Vey — real people passionate about helping you succeed.",
   alternates: { canonical: `${siteConfig.url}/founders` },
 };
 
@@ -25,10 +25,10 @@ export default function FoundersPage() {
       <PageHero
         label="Founders"
         title="The people behind Elan Vey"
-        subtitle="Vision, conviction, and a commitment to helping ambitious brands reach their full potential."
+        subtitle="Real people, honest values, and a true passion for helping others bring their ideas to life."
         large
         accent="cyan"
-        badge="Meet The Leadership Team"
+        badge="Meet The Team"
       />
 
       <Section tone="paper" className="!pt-0" staggerChildren staggerDelay={120}>
@@ -88,22 +88,28 @@ export default function FoundersPage() {
                 )}
 
                 <div className="mt-8 flex gap-3 flex-wrap">
-                  {["instagram", "linkedin", "twitter", "email"].map((social, si) => (
+                  {["instagram", "facebook", "email"].map((social, si) => (
                     <a
                       key={social}
-                      href="#"
+                      href={
+                        social === "instagram"
+                          ? siteConfig.social.instagram
+                          : social === "facebook"
+                            ? siteConfig.social.facebook
+                            : `mailto:${siteConfig.contact.email}`
+                      }
                       aria-label={`${founder.name} on ${social}`}
                       className="flex h-12 w-12 items-center justify-center border-[3px] border-black shadow-brutal transition-all hover:scale-110 hover:-translate-y-0.5 hover:shadow-brutal-lg bg-ev-neon-cream"
                       style={{ transitionDelay: `${si * 40}ms` }}
+                      target={social === "email" ? "_self" : "_blank"}
+                      rel="noopener noreferrer"
                     >
                       <span className="font-brutal text-sm">
                         {social === "instagram"
                           ? "IG"
-                          : social === "linkedin"
-                            ? "IN"
-                            : social === "twitter"
-                              ? "TW"
-                              : "@"}
+                          : social === "facebook"
+                            ? "FB"
+                            : "@"}
                       </span>
                     </a>
                   ))}
@@ -126,13 +132,15 @@ export default function FoundersPage() {
           </span>
           <div className="relative">
             <h2 className="brutal-text brutal-text-light text-3xl text-ev-neon-pink md:text-4xl lg:text-5xl">
-              Founder philosophy
+              Our promise to you
             </h2>
             <p className="mt-8 text-lg md:text-xl font-bold leading-relaxed text-white/80 pl-4 md:pl-8 border-l-[3px] border-ev-neon-yellow/60">
-              [FOUNDER PHILOSOPHY — Replace with the collective founder vision
-              and philosophy when available. This should feel like a direct,
-              personal statement about why Elan Vey exists, what it stands for,
-              and the impact it strives to create for every brand partner.]
+              Elan Vey exists for the dreamers, the doers, the small shop
+              owners, the students, the parents with side hustles, and anyone
+              who&apos;s ever felt like their ideas deserve to be seen. We
+              promise to always be honest, always be friendly, and always give
+              you our best work. Your success is our success, and we&apos;ll
+              treat every project with the same care we&apos;d give our own.
             </p>
             <div className="mt-8 flex items-center gap-4 pl-4 md:pl-8">
               <div className="flex -space-x-2">
@@ -142,7 +150,6 @@ export default function FoundersPage() {
                     className="flex h-10 w-10 items-center justify-center border-[3px] border-ev-black bg-ev-neon-cyan font-brutal text-xs"
                   >
                     {f.name
-                      .replace(/\[|\]/g, "")
                       .split(" ")
                       .map((n) => n[0])
                       .slice(0, 2)
@@ -167,7 +174,7 @@ export default function FoundersPage() {
       <CTABlock
         dark={false}
         title="Work with the team"
-        description="Connect with Elan Vey and start building your brand's future."
+        description="Connect with Elan Vey and start building something you'll be proud of."
       >
         <Button href="/contact" size="lg">
           Get in Touch

@@ -15,23 +15,23 @@ const termsSections = [
     number: "01",
     title: "Acceptance of Terms",
     paragraphs: [
-      "[ACCEPTANCE — Replace with text stating that by accessing or using Elan Vey's website, services, or engaging in any service agreement, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree, you may not use our services.]",
+      "By using Elan Vey's website or services, or agreeing to work with us, you confirm that you've read these terms, understood them, and agree to follow them along with all applicable laws and regulations. If you don't agree with any part, please don't use our services.",
     ],
   },
   {
     id: "services-description",
     number: "02",
-    title: "Services Description",
+    title: "What We Offer",
     paragraphs: [
-      "[SERVICES — Replace with description of services offered: brand strategy, creative direction, digital growth, marketing partnership opportunities, and subscription-based ongoing creative partnership. Specific scope, deliverables, and timelines are defined in individual service agreements or statements of work (SOWs).]",
+      "Elan Vey provides creative design work, planning help, online growth support, marketing learning opportunities connected to Lavent Marketing, and our monthly subscription partnership. The exact details of each project, what you'll get, and when you'll get it are agreed between us in writing before we start work.",
     ],
   },
   {
     id: "user-obligations",
     number: "03",
-    title: "Client Obligations",
+    title: "Your Responsibilities",
     paragraphs: [
-      "[CLIENT OBLIGATIONS — Replace with descriptions of client responsibilities: provide accurate information, materials and feedback in a timely manner, ensure all materials and content provided do not infringe third-party rights, cooperate in good faith throughout the engagement, and make required payments on time.]",
+      "When working together, we ask that you provide accurate information, reply to our questions when promised, send us any materials we need on time, make sure everything you give us doesn't break any rules or laws, work with us openly and in good faith, and pay any payments on the dates we agree.",
     ],
   },
   {
@@ -39,31 +39,31 @@ const termsSections = [
     number: "04",
     title: "Payment Terms",
     paragraphs: [
-      "[PAYMENT — Replace with details on payment: pricing structure, payment schedule (e.g., 50% deposit for projects, monthly in advance for subscriptions), accepted payment methods, late payment fees or consequences of non-payment, currency, and invoicing procedures. Refund policy and dispute resolution for billing issues.]",
+      "Pricing and payment dates are agreed before work starts. For one-off projects we typically ask a deposit to begin, with the final balance due on completion. For subscriptions, payment is due monthly in advance. We accept bank transfers and UPI payments. If payments are late, we may pause work until payment is received. If you have a billing question or issue, just let us know and we'll sort it out together.",
     ],
   },
   {
     id: "intellectual-property",
     number: "05",
-    title: "Intellectual Property Rights",
+    title: "Who Owns What",
     paragraphs: [
-      "[IP — Replace with IP ownership terms: Client retains ownership of their pre-existing materials and brand assets. Upon full payment, client receives ownership of final deliverables created specifically for the client (work made for hire as applicable). Elan Vey retains rights to its process, tools, methodology, templates, and portfolio display rights unless otherwise agreed.]",
+      "Anything you already own, you still own. Once we've received full payment for a project, you own the final work created especially for you. We keep ownership of our ways of working, tools, templates, and the right to show completed work in our portfolio unless you specifically ask us not to.",
     ],
   },
   {
     id: "confidentiality",
     number: "06",
-    title: "Confidentiality",
+    title: "Keeping Things Private",
     paragraphs: [
-      "[CONFIDENTIALITY — Replace with mutual non-disclosure obligations: both parties agree to hold in strict confidence all non-public business, technical, financial, client, and proprietary information disclosed during the engagement. Exceptions: publicly available information, required legal disclosure, prior written consent. Obligations survive termination.]",
+      "Both sides agree to keep confidential any private details shared while working together — things like plans and ideas, pricing, client lists, work secrets, and contact information. We don't share these unless they're already public, the law requires us, or both sides agree in writing. This applies even after work finishes.",
     ],
   },
   {
     id: "warranties-disclaimers",
     number: "07",
-    title: "Warranties & Disclaimers",
+    title: "What We Promise",
     paragraphs: [
-      "[DISCLAIMERS — Replace with: Services provided on an \"as is, as available\" basis. Elan Vey warrants services will be performed in a professional and workmanlike manner. ALL OTHER WARRANTIES, EXPRESS OR IMPLIED, ARE DISCLAIMED TO THE MAXIMUM EXTENT PERMITTED BY LAW, INCLUDING MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.]",
+      "We promise to perform our services in a professional, workmanlike manner and do our very best for you. Everything else is provided as-is to the fullest extent the law allows. We don't promise specific results as results depend on many factors outside our control.",
     ],
   },
   {
@@ -71,15 +71,15 @@ const termsSections = [
     number: "08",
     title: "Limitation of Liability",
     paragraphs: [
-      "[LIABILITY — Replace with: TO THE MAXIMUM EXTENT PERMITTED BY LAW, NEITHER PARTY SHALL BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS, REVENUE, DATA, OR USE. TOTAL AGGREGATE LIABILITY OF ELAN VEY UNDER THESE TERMS IS LIMITED TO THE TOTAL AMOUNTS PAID BY CLIENT TO ELAN VEY IN THE 12 MONTHS PRECEDING THE CLAIM.]",
+      "To the maximum extent allowed by law, neither side will be liable for indirect or special damages things like lost profits, lost data, or work interruption. Elan Vey's total liability under these terms is limited to whatever you actually paid us in the 12 months before the issue arose.",
     ],
   },
   {
     id: "termination",
     number: "09",
-    title: "Termination",
+    title: "Ending the Agreement",
     paragraphs: [
-      "[TERMINATION — Replace with: Project engagements: termination for cause upon material breach uncured within 30 days written notice. Subscriptions: either party may terminate by providing [30/60] days written notice; refunds (if any) are prorated. Sections that logically survive (IP, confidentiality, liability, payment owed) will survive termination.]",
+      "For one-off projects: either side can end things if the other side seriously breaks the agreement and doesn't fix it within 30 days of being told in writing. For subscriptions: either side can end by giving 30 days written notice. Any money already paid up to that point stays paid. Parts of this agreement that should logically continue like confidentiality, ownership, and liability survive termination.",
     ],
   },
   {
@@ -87,23 +87,23 @@ const termsSections = [
     number: "10",
     title: "Governing Law & Disputes",
     paragraphs: [
-      "[GOVERNING LAW — Replace with: These Terms and any disputes arising therefrom shall be governed by and construed in accordance with the laws of [JURISDICTION], without regard to its conflict of law principles. Any dispute shall first be resolved through good-faith negotiation, then mediation, and if unresolved, through binding arbitration or courts of [JURISDICTION].]",
+      "These Terms are governed by the laws of India, specifically the State of Odisha. If a disagreement comes up, we'll first try to sort it out friendly between ourselves. If that doesn't work, it will be resolved through the courts of Odisha, India.",
     ],
   },
   {
     id: "miscellaneous",
     number: "11",
-    title: "Miscellaneous",
+    title: "Other Important Bits",
     paragraphs: [
-      "[MISCELLANEOUS — Replace with: Severability (if a provision is unenforceable, the remaining provisions remain in effect); Entire Agreement (these terms, together with any executed SOW or service agreement, constitute the entire agreement between the parties); No Waiver; Assignment (Elan Vey may assign, client may not without prior written consent); Independent contractor relationship; Force Majeure; Notices in writing.]",
+      "If any part of these terms turns out to be unenforceable, the rest still stands. Together with any signed project agreements we sign, these terms make up the whole agreement between us. Elan Vey can transfer our responsibilities if needed, but you can't without our written permission. We're each independent contractors, not employees, partners, or employers of each other. Neither side will be delayed by things outside our reasonable control like natural disasters or government actions.",
     ],
   },
   {
     id: "contact-terms",
     number: "12",
-    title: "Contact",
+    title: "Questions About These Terms",
     paragraphs: [
-      `[CONTACT FOR TERMS — Replace with: For any questions about these Terms, please contact us at ${siteConfig.contact.email} or by mail at ${siteConfig.contact.address}. We will endeavor to respond to legitimate inquiries within a reasonable timeframe.]`,
+      `Got any questions about these terms? Don't be shy — contact us at ${siteConfig.contact.email}, call ${siteConfig.contact.phone}, or send a letter to ${siteConfig.contact.address}. We'll reply to genuine questions as quickly as we can.`,
     ],
   },
 ];
@@ -118,7 +118,7 @@ export default function TermsPage() {
         title="Terms of Service"
         subtitle={`Last updated: ${lastUpdated}`}
         accent="yellow"
-        badge="Read Before Using Our Services"
+        badge="Fair Terms Before We Get Started"
       />
       <Section tone="paper" className="!pt-0" staggerChildren staggerDelay={70}>
         <div className="container-content">
@@ -158,18 +158,15 @@ export default function TermsPage() {
                     Binding Agreement
                   </span>
                   <span className="inline-flex border-[3px] border-black bg-ev-neon-cyan px-4 py-2 font-brutal text-xs uppercase tracking-wider shadow-brutal">
-                    For All Clients & Users
+                    For Everyone Who Uses Us
                   </span>
                 </div>
                 <p className="mt-6 font-bold leading-relaxed text-ev-black/80">
-                  [INTRO PARAGRAPH — Replace with introduction: These Terms of
-                  Service (&quot;Terms&quot;) govern your access to and use of
-                  the Elan Vey website, products, and services (collectively,
-                  the &quot;Services&quot;). Please read these Terms carefully
-                  before using our Services. Your use of our Services is
-                  conditioned on your acceptance of and compliance with these
-                  Terms. These Terms apply to all visitors, users, and others
-                  who access or use the Services.]
+                  These Terms of Service (&quot;Terms&quot;) govern your access to and
+                  use of the Elan Vey website, products, and services. Please read them
+                  carefully before using our Services. Using our services means you
+                  accept these Terms. They apply to all visitors, clients, and
+                  anyone who accesses or uses the Services.
                 </p>
               </div>
 
@@ -191,13 +188,13 @@ export default function TermsPage() {
                   </div>
                   <div className="mt-6 pl-0 md:pl-8 space-y-4">
                     {section.paragraphs.map((p, pi) => (
-                      <p
-                        key={pi}
-                        className="font-bold leading-relaxed text-ev-black/80"
-                      >
-                        {p}
-                      </p>
-                    ))}
+                    <p
+                      key={pi}
+                      className="font-bold leading-relaxed text-ev-black/80"
+                    >
+                      {p}
+                    </p>
+                  ))}
                   </div>
                 </article>
               ))}

@@ -5,34 +5,34 @@ export interface SubscriptionBenefit {
 
 export const subscriptionBenefits: SubscriptionBenefit[] = [
   {
-    title: "Strategic Guidance",
+    title: "Guided Support",
     description:
-      "Ongoing strategic support to keep your brand direction clear and aligned with your goals.",
+      "Ongoing help and advice to keep you moving in the right direction with your goals.",
   },
   {
-    title: "Creative Direction",
+    title: "Creative Design Help",
     description:
-      "Consistent creative oversight ensuring every touchpoint reflects premium quality.",
+      "Consistent design quality across everything you make — so it always looks great.",
   },
   {
-    title: "Digital Presence",
+    title: "Online Presence",
     description:
-      "Active management and optimization of your digital brand presence.",
+      "We help manage and improve how you show up online for everyone to see.",
   },
   {
     title: "Lavent Marketing Access",
     description:
-      "Exposure to real-world marketing opportunities through our connection with Lavent Marketing.",
+      "Get exposed to real marketing work and chances to learn through our Lavent Marketing connection.",
   },
   {
-    title: "Priority Support",
+    title: "Priority Help",
     description:
-      "Direct access to the Elan Vey team with priority response and dedicated attention.",
+      "Direct access to our team with fast replies and the personal attention you need.",
   },
   {
-    title: "Growth Framework",
+    title: "Growth Roadmap",
     description:
-      "Structured approach to scaling your brand with measurable milestones and clear progress.",
+      "A simple, structured way to grow step by step with clear progress markers.",
   },
 ];
 
@@ -40,21 +40,21 @@ export const subscriptionFaqs = [
   {
     question: "What is the Elan Vey subscription?",
     answer:
-      "The Elan Vey subscription is a premium ongoing partnership that provides strategic, creative, and digital support for ambitious brands seeking consistent growth and premium positioning.",
+      "It's an ongoing partnership where we help you month after month — with planning, design work, online presence help, and real marketing learning through Lavent Marketing. Great value compared to paying for individual projects.",
   },
   {
     question: "How does the Lavent Marketing connection work?",
     answer:
-      "Subscribers gain access to exposure and learning opportunities connected with Lavent Marketing, a marketing agency. Specific details will be provided during onboarding.",
+      "Subscribers get exposure to real-world marketing opportunities and learning through our connection with Lavent Marketing. Full details are shared when you sign up.",
   },
   {
     question: "Is there a minimum commitment?",
     answer:
-      "[SUBSCRIPTION COMMITMENT DETAILS — Replace with actual terms when available.]",
+      "You can cancel anytime with 30 days notice. No long-term lock-ins, no hidden fees.",
   },
   {
     question: "How do I get started?",
     answer:
-      "Reach out through our contact page or subscription CTA. We'll schedule a conversation to understand your needs and determine the best path forward.",
+      "Send us a message on our contact page, or call us directly. We'll have a friendly chat to understand what you need and figure out the best way to help you.",
   },
 ];

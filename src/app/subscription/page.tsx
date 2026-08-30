@@ -25,26 +25,26 @@ const benefitAccents = [
 const howItWorks = [
   {
     step: "01",
-    title: "Apply",
-    desc: "Reach out and tell us about your brand, goals, and ambitions.",
+    title: "Reach Out",
+    desc: "Call us or send a message. Tell us about your ideas, your goals, and what you'd like help with.",
   },
   {
     step: "02",
-    title: "Onboard",
-    desc: "We align on strategy, set milestones, and begin the partnership.",
+    title: "Get Started",
+    desc: "We plan everything together, set simple milestones, and start our partnership right away.",
   },
   {
     step: "03",
-    title: "Grow",
-    desc: "Ongoing support, creative direction, and continuous optimization.",
+    title: "Grow With Us",
+    desc: "Month after month — ongoing support, creative help, and steady growth together.",
   },
 ];
 
 const subPerks = [
   "Cancel anytime, no hidden fees",
-  "Monthly strategy check-ins",
-  "Direct Slack / email support",
-  "Quarterly growth reviews",
+  "Monthly friendly check-ins",
+  "Direct WhatsApp / email support",
+  "Quarterly progress update",
 ];
 
 export default function SubscriptionPage() {
@@ -55,10 +55,10 @@ export default function SubscriptionPage() {
       <PageHero
         label="Subscription"
         title="Your ongoing creative partner"
-        subtitle="The Elan Vey subscription delivers consistent strategic guidance, creative direction, and growth support — month after month."
+        subtitle="The Elan Vey subscription gives you steady guidance, great designs, and growth help — month after month, with no stress."
         large
         accent="yellow"
-        badge="Limited Spots · Apply Today"
+        badge="Limited Spots · Chat With Us Today"
       />
 
       <Section tone="paper" className="!pt-0" staggerChildren staggerDelay={80}>
@@ -69,9 +69,9 @@ export default function SubscriptionPage() {
                 What&apos;s included
               </h2>
               <p className="mt-6 font-bold leading-relaxed text-ev-black/80 text-base md:text-lg">
-                A comprehensive partnership designed for brands committed to
-                long-term growth. Every subscription includes strategic,
-                creative, and operational support tailored to your needs.
+                A friendly all-in-one partnership for anyone who wants steady,
+                long-term progress. Every subscription includes planning help,
+                design work, and online support tailored to what you need.
               </p>
               <ul className="mt-8 space-y-3">
                 {subPerks.map((item, i) => (
@@ -91,28 +91,28 @@ export default function SubscriptionPage() {
             <div className="relative animate-on-scroll-slow">
               <BrutalPanel variant="yellow" className="hover-lift relative">
                 <span className="ribbon-badge bg-ev-neon-pink text-ev-neon-yellow">
-                  Most Popular
+                  Best Value
                 </span>
                 <p className="font-brutal text-xs uppercase tracking-widest text-ev-black">
                   Investment
                 </p>
                 <div className="mt-4 flex items-baseline gap-2">
-                  <p className="font-brutal text-5xl md:text-6xl text-ev-neon-red">
-                    [SUBSCRIPTION PRICE]
+                  <p className="font-brutal text-3xl md:text-4xl text-ev-neon-red">
+                    Call for Pricing
                   </p>
                 </div>
                 <p className="mt-2 text-sm font-bold text-ev-black/70">
-                  [BILLING PERIOD — e.g., per month]
+                  Monthly · No lock-in contracts
                 </p>
                 <div className="mt-4 inline-flex items-center gap-2 rounded-full border-[3px] border-black bg-ev-neon-cream px-3 py-1">
                   <span className="font-brutal text-xs text-ev-neon-red">
                     SAVE 20%
                   </span>
-                  <span className="text-xs font-bold">vs. project-based</span>
+                  <span className="text-xs font-bold">vs. one-off projects</span>
                 </div>
                 <div className="mt-8">
                   <Button href="/contact" className="w-full">
-                    Subscribe Now
+                    Call Us Now
                   </Button>
                 </div>
               </BrutalPanel>
@@ -195,7 +195,7 @@ export default function SubscriptionPage() {
       <Section tone="paper" staggerChildren staggerDelay={70}>
         <div className="container-content max-w-3xl">
           <h2 className="brutal-text mb-12 stagger-child text-3xl text-ev-neon-pink md:text-5xl">
-            Frequently asked questions
+            Common questions
           </h2>
           <div className="space-y-4">
             {subscriptionFaqs.map((faq, i) => (
@@ -241,7 +241,7 @@ export default function SubscriptionPage() {
       <CTABlock
         dark={false}
         title="Ready to subscribe?"
-        description="Take the first step toward consistent, premium brand growth."
+        description="Take the first step toward steady, worry-free creative growth."
       >
         <Button href="/contact" size="lg">
           Get Started

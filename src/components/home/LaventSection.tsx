@@ -58,7 +58,9 @@ export function LaventSection() {
                     Lavent Marketing
                   </p>
                   <p className="mt-3 text-base font-bold text-ev-black/70 md:text-lg">
-                    [Additional Lavent Marketing details to be confirmed]
+                    Learn real marketing by working alongside people who do it every
+                    day. Perfect for students, job-seekers, or anyone who
+                    wants to know how it all really works behind the scenes.
                   </p>
                 </div>
               </div>

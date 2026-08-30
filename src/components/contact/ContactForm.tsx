@@ -152,7 +152,7 @@ export function ContactForm() {
               onFocus={() => setFocused("phone")}
               onBlur={() => setFocused(null)}
               className={fieldStyle("phone")}
-              placeholder="[PHONE]"
+              placeholder="Your phone number"
             />
           </div>
           <div className="stagger-child">
@@ -168,7 +168,7 @@ export function ContactForm() {
               onFocus={() => setFocused("company")}
               onBlur={() => setFocused(null)}
               className={fieldStyle("company")}
-              placeholder="Your company"
+              placeholder="Your name or shop name"
             />
           </div>
         </div>

@@ -5,8 +5,8 @@ export function FinalCTA() {
   return (
     <CTABlock
       dark={false}
-      title="Ready to elevate your brand?"
-      description="Join Elan Vey and build the presence, strategy, and growth your brand deserves."
+      title="Ready to get started?"
+      description="Join Elan Vey and build the presence, strategy, and growth your ideas deserve."
     >
       <Button href="/contact" size="lg">
         Get Started Today

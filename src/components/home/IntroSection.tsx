@@ -12,15 +12,15 @@ export function IntroSection() {
           </div>
           <div className="lg:col-span-8">
             <h2 className="heading-display text-3xl text-ev-white sm:text-4xl md:text-5xl lg:text-6xl">
-              We help ambitious brands{" "}
+              We help real people like you{" "}
               <span className="text-ev-muted">build presence</span> that
-              commands attention
+              gets noticed
             </h2>
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-ev-muted">
-              Elan Vey is a premium creative and strategic partner. We combine
-              bold creative direction with clear strategic thinking — helping
-              brands define their identity, grow their digital presence, and
-              connect with the opportunities that accelerate their journey.
+              Elan Vey is here to give you a creative hand. We combine great
+              designs with simple, smart planning — helping you show the world
+              who you are, grow your online presence, and connect with real
+              marketing opportunities through Lavent Marketing.
             </p>
           </div>
         </div>

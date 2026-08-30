@@ -14,16 +14,17 @@ export function SubscriptionPreview() {
               <span className="text-ev-neon-pink">consistent growth</span>
             </h2>
             <p className="mt-6 text-base font-bold text-ev-black/80 md:text-lg">
-              The Elan Vey subscription is a premium ongoing partnership —
-              strategic guidance, creative direction, and digital presence
-              support designed for brands committed to long-term growth.
+              The Elan Vey subscription is a simple ongoing partnership —
+              planning help, design work, online presence support, and real
+              marketing learning — designed for anyone who wants steady,
+              long-term progress.
             </p>
             <div className="brutal-card-yellow mt-8 inline-block">
               <p className="font-brutal text-xs uppercase tracking-widest text-ev-black">
                 Starting from
               </p>
               <p className="font-brutal mt-1 text-3xl text-ev-neon-red">
-                [SUBSCRIPTION PRICE]
+                Contact for pricing
               </p>
             </div>
             <div className="mt-8">

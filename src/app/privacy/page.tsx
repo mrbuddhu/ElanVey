@@ -5,7 +5,7 @@ import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Elan Vey privacy policy.",
+  description: "Elan Vey privacy policy — how we look after your information.",
   alternates: { canonical: `${siteConfig.url}/privacy` },
 };
 
@@ -15,7 +15,7 @@ const privacySections = [
     number: "01",
     title: "Information We Collect",
     paragraphs: [
-      "[INFORMATION WE COLLECT — Replace with details about the types of personal information collected, including contact details (name, email, phone), company information, project inquiry details, and any other data provided through forms, communications, or our website analytics.]",
+      "When you get in touch with us, we collect only what we need to help you. This includes your name, email address, phone number, and any details you share about your project or questions. We also collect basic website visitor data like which pages people look at, so we can make our site better for everyone.",
     ],
   },
   {
@@ -23,7 +23,7 @@ const privacySections = [
     number: "02",
     title: "How We Use Your Information",
     paragraphs: [
-      "[HOW WE USE INFORMATION — Replace with descriptions of how collected data is used: to respond to inquiries, deliver services (brand strategy, creative direction, subscription), communicate updates, improve our website and offerings, fulfill legal obligations, and with explicit consent for marketing purposes.]",
+      "We use your information to reply to your messages, do the work you've asked us to do, send you friendly updates about your project, and make our website and services work better for you. We only use your details for things you'd reasonably expect or if the law says we must.",
     ],
   },
   {
@@ -31,15 +31,15 @@ const privacySections = [
     number: "03",
     title: "Information Sharing & Disclosure",
     paragraphs: [
-      "[INFORMATION SHARING — Replace with details on third-party sharing: we do not sell personal data; data may be shared with trusted service providers (email, analytics, hosting) only as needed to operate our services; required legal disclosures; Lavent Marketing partnership data handling if applicable.]",
+      "We never sell your personal information to anyone — ever. Sometimes we work with trusted service providers who help us run our email, hosting, or analytics tools and they only see what they need to do their job. We'll also share information if the law requires us to by court order or similar legal requirement. If you're part of our marketing learning through Lavent Marketing, we may share your details with them only as needed for those opportunities.",
     ],
   },
   {
     id: "data-security",
     number: "04",
-    title: "Data Security",
+    title: "Keeping Your Data Safe",
     paragraphs: [
-      "[DATA SECURITY — Replace with details on technical and organizational security measures implemented to protect personal information against unauthorized access, alteration, disclosure, or destruction. Note that no method of transmission over the internet is 100% secure.]",
+      "We take reasonable steps to protect your personal information from being seen, used, or changed without permission. That said, no method of sending things over the internet is 100% safe, so we can't guarantee absolute security — but we do our very best.",
     ],
   },
   {
@@ -47,7 +47,7 @@ const privacySections = [
     number: "05",
     title: "Your Rights & Choices",
     paragraphs: [
-      "[YOUR RIGHTS — Replace with description of individual rights under applicable law (GDPR, CCPA, etc.): access, correction, deletion, data portability, objection to processing, withdrawal of consent, right to lodge a complaint with supervisory authority, and contact method for exercising rights.]",
+      "You have the right to see what information we hold about you, ask us to correct anything that's wrong, or ask us to delete your details if you no longer want us to have them. You can also opt out of marketing messages at any time. Just send us an email or give us a call and we'll sort it out straight away.",
     ],
   },
   {
@@ -55,7 +55,7 @@ const privacySections = [
     number: "06",
     title: "Cookies & Tracking",
     paragraphs: [
-      "[COOKIES — Replace with cookie policy details: what cookies are used (essential, analytics, marketing), how to manage cookies via browser settings, third-party tools used (e.g., Google Analytics) and their opt-out links.]",
+      "Cookies are small text files stored on your device to help our website remember your preferences and understand how visitors use our site. You can turn cookies off in your browser settings any time — this might make some parts of the site not work as smoothly, though.",
     ],
   },
   {
@@ -63,7 +63,7 @@ const privacySections = [
     number: "07",
     title: "Children's Privacy",
     paragraphs: [
-      "[CHILDREN'S PRIVACY — Replace with statement that services are not intended for children under 13 (or relevant age), we do not knowingly collect data from children, and contact procedure if you believe we have inadvertently collected such information.]",
+      "Our services aren't aimed at children under the age of 13 and we don't knowingly collect personal information from anyone under 13. If you're a parent or guardian and believe your child has shared details with us, please get in touch and we will remove that information right away.",
     ],
   },
   {
@@ -71,15 +71,15 @@ const privacySections = [
     number: "08",
     title: "Changes to This Policy",
     paragraphs: [
-      "[POLICY CHANGES — Replace with statement that we may update this privacy policy periodically; the \"Last Updated\" date will be revised; material changes will be notified via prominent notice on our site or by email; continued use of services constitutes acceptance of revised policy.]",
+      "From time to time we may update this privacy policy. If we make important changes, we'll put a clear note on our website. By continuing to use our services after those changes, you accept the updated policy. The date at the top shows when it was last updated.",
     ],
   },
   {
     id: "contact-us",
     number: "09",
-    title: "Contact Us",
+    title: "Contact Us About Privacy",
     paragraphs: [
-      `[CONTACT FOR PRIVACY — Replace with contact details for privacy-related questions or requests: Email ${siteConfig.contact.email}, Address ${siteConfig.contact.address}, Phone ${siteConfig.contact.phone}. Response timeframe (typically within 30 days) for rights requests.]`,
+      `Got questions about privacy, want to access, or just want a friendly chat about how we look after your data? Reach out anytime. Email us at ${siteConfig.contact.email}, call us on ${siteConfig.contact.phone}, or write to us at ${siteConfig.contact.address}. We try to reply to privacy questions within 30 days.`,
     ],
   },
 ];
@@ -94,7 +94,7 @@ export default function PrivacyPage() {
         title="Privacy Policy"
         subtitle={`Last updated: ${lastUpdated}`}
         accent="pink"
-        badge="Your Privacy Matters"
+        badge="Your Privacy Matters To Us"
       />
       <Section tone="paper" className="!pt-0" staggerChildren staggerDelay={70}>
         <div className="container-content">
@@ -133,12 +133,12 @@ export default function PrivacyPage() {
                   </span>
                 </div>
                 <p className="mt-6 font-bold leading-relaxed text-ev-black/80">
-                  [INTRO PARAGRAPH — Replace with introduction explaining that
-                  this Privacy Policy describes how Elan Vey (&quot;we,&quot;
-                  &quot;us,&quot; &quot;our&quot;) collects, uses, discloses, and
-                  safeguards personal information when you use our services,
-                  website, or communicate with us. By using our services, you
-                  agree to the practices described in this policy.]
+                  This Privacy Policy explains how Elan Vey (&quot;we&quot;,
+                  &quot;us&quot;, &quot;our&quot;) collects, uses, and looks after
+                  personal information when you use our services, website, or get
+                  in touch with us. By using our services, you agree to what
+                  we describe in this policy. We always treat your information with
+                  the same care we'd want for our own.
                 </p>
               </div>
 
