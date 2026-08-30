@@ -1,9 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { navigation } from "@/data/navigation";
-import { ElanVeyLogo } from "@/components/brand/ElanVeyLogo";
 
 function PillHeader({
   menuOpen,
@@ -15,10 +15,14 @@ function PillHeader({
   return (
     <div className="pill-nav w-full max-w-lg">
       <Link href="/" className="flex items-center gap-2">
-        <ElanVeyLogo className="h-7 w-auto md:h-8" />
-        <span className="text-ev-neon-yellow" aria-hidden>
-          ◆
-        </span>
+        <Image
+          src="/images/Logo_text.png"
+          alt="Elan Vey"
+          width={120}
+          height={40}
+          className="h-8 w-auto md:h-10 object-contain"
+          priority
+        />
       </Link>
 
       <div className="flex items-center gap-2 md:gap-3">
@@ -96,10 +100,14 @@ export function Navbar() {
           <div className="hidden lg:block w-full max-w-5xl">
             <div className="pill-nav w-full">
               <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-                <ElanVeyLogo className="h-7 w-auto md:h-8" />
-                <span className="text-ev-neon-yellow" aria-hidden>
-                  ◆
-                </span>
+                <Image
+                  src="/images/Logo_text.png"
+                  alt="Elan Vey"
+                  width={140}
+                  height={48}
+                  className="h-8 w-auto md:h-9 object-contain"
+                  priority
+                />
               </Link>
 
               <ul className="flex items-center gap-6 xl:gap-8">
@@ -107,9 +115,12 @@ export function Navbar() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="font-medium text-sm tracking-wide text-white/90 transition-all hover:text-ev-neon-yellow relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-ev-neon-yellow after:transition-all hover:after:w-full"
+                      className="font-brutal uppercase text-xs tracking-[0.15em] text-white transition-all relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-ev-neon-yellow after:transition-all hover:after:w-full"
+                      style={{ textShadow: "1.5px 1.5px 0 #cc0044, 3px 3px 0 #660022" }}
                     >
-                      {item.label}
+                      <span className="hover:text-ev-neon-yellow transition-colors inline-block hover:-translate-y-[1px]">
+                        {item.label}
+                      </span>
                     </Link>
                   </li>
                 ))}

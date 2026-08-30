@@ -13,7 +13,9 @@ export function LaventSection() {
               <p className="brutal-label-dark text-sm md:text-base">Exclusive Benefit</p>
               <h2 className="brutal-text brutal-text-pink mt-5 text-4xl text-ev-neon-yellow sm:text-5xl md:text-6xl lg:text-7xl">
                 Connected with{" "}
-                <span className="text-ev-neon-pink">Lavent Marketing</span>
+                <span className="brutal-text-yellow-bg text-ev-neon-pink">
+                  Lavent Marketing
+                </span>
               </h2>
               <p className="mt-10 text-lg font-bold leading-relaxed text-white/80 md:text-xl lg:text-2xl">
                 When you onboard with Elan Vey, you gain access to real-world

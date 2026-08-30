@@ -15,7 +15,7 @@ export function ProcessSection() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {processSteps.map((step) => (
             <div key={step.index} className="brutal-card">
-              <span className="font-brutal text-5xl text-ev-neon-yellow md:text-6xl" style={{ textShadow: "2px 2px 0 #ff3388, 4px 4px 0 #990033" }}>
+              <span className="font-brutal text-5xl text-ev-neon-yellow md:text-6xl" style={{ textShadow: "1.5px 1.5px 0 #ff3388, 3px 3px 0 #660022" }}>
                 {step.index}
               </span>
               <h3 className="brutal-text mt-4 text-xl text-ev-black md:text-2xl">

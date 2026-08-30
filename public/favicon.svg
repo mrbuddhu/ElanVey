@@ -1,4 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" fill="#0a0a0a"/>
-  <text x="16" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#dc143c">EV</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="12" fill="#0a0a0a"/>
+  <g transform="translate(6 10) rotate(-20 26 22)">
+    <ellipse cx="26" cy="22" rx="22" ry="8" stroke="#FFE600" stroke-width="2.5" fill="none"/>
+    <ellipse cx="26" cy="22" rx="14" ry="10" fill="#FFE600"/>
+    <path d="M20 18 C 19 20, 19 24, 22 26 C 26 28, 30 26, 32 22 L 30 20 C 28 22, 25 23, 23 21 C 21 19, 21.5 17, 20 18 Z" fill="#0a0a0a"/>
+    <g transform="translate(22 -6)">
+      <path d="M8 0 L10 -4 L12 0 L16 -2 L12 2 L14 6 L8 4 L2 6 L4 2 L0 -2 Z" fill="#FFE600"/>
+      <path d="M24 14 L25.5 11 L27 14 L29.5 12.5 L27 15.5 L28.5 18.5 L24 17 L19.5 18.5 L21 15.5 L18.5 12.5 L21 14 Z" fill="#FFE600"/>
+    </g>
+  </g>
 </svg>
