@@ -29,6 +29,7 @@ export function ContactForm() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [focused, setFocused] = useState<string | null>(null);
 
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
@@ -49,7 +50,7 @@ export function ContactForm() {
     e.preventDefault();
     if (!validate()) return;
     setLoading(true);
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    await new Promise((resolve) => setTimeout(resolve, 1200));
     setLoading(false);
     setSubmitted(true);
   };
@@ -66,13 +67,15 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <BrutalPanel variant="yellow" className="text-center">
-        <div className="py-8">
-          <p className="font-brutal text-5xl text-ev-neon-pink">✓</p>
-          <h3 className="brutal-text mt-4 text-2xl text-ev-black">
+      <BrutalPanel variant="yellow" className="text-center hover-lift">
+        <div className="py-8 animate-on-scroll-slow visible">
+          <p className="font-brutal text-6xl text-ev-neon-pink inline-block animate-on-scroll-slow visible" style={{ transitionDelay: "0.1s" }}>
+            ✓
+          </p>
+          <h3 className="brutal-text mt-4 text-2xl md:text-3xl text-ev-black">
             Message sent
           </h3>
-          <p className="mt-4 font-bold text-ev-black/70">
+          <p className="mt-4 font-bold text-ev-black/70 text-base md:text-lg">
             Thank you for reaching out. We&apos;ll get back to you shortly.
           </p>
         </div>
@@ -80,11 +83,16 @@ export function ContactForm() {
     );
   }
 
+  const fieldStyle = (name: string) =>
+    `brutal-input transition-all duration-300 ${
+      focused === name ? "shadow-brutal translate-y-[-2px]" : ""
+    } ${errors[name as keyof FormErrors] ? "border-ev-neon-red ring-2 ring-ev-neon-red/30" : ""}`;
+
   return (
-    <BrutalPanel variant="cream">
+    <BrutalPanel variant="cream" className="hover-lift">
       <form onSubmit={handleSubmit} noValidate className="space-y-6">
         <div className="grid gap-6 sm:grid-cols-2">
-          <div>
+          <div className="stagger-child">
             <label htmlFor="name" className="mb-2 block font-brutal text-xs uppercase">
               Name <span className="text-ev-neon-pink">*</span>
             </label>
@@ -94,17 +102,19 @@ export function ContactForm() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="brutal-input"
+              onFocus={() => setFocused("name")}
+              onBlur={() => setFocused(null)}
+              className={fieldStyle("name")}
               placeholder="Your name"
               aria-invalid={!!errors.name}
             />
             {errors.name && (
-              <p className="mt-1 text-sm font-bold text-ev-neon-red">
+              <p className="mt-1 text-sm font-bold text-ev-neon-red animate-on-scroll visible">
                 {errors.name}
               </p>
             )}
           </div>
-          <div>
+          <div className="stagger-child">
             <label htmlFor="email" className="mb-2 block font-brutal text-xs uppercase">
               Email <span className="text-ev-neon-pink">*</span>
             </label>
@@ -114,7 +124,9 @@ export function ContactForm() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="brutal-input"
+              onFocus={() => setFocused("email")}
+              onBlur={() => setFocused(null)}
+              className={fieldStyle("email")}
               placeholder="you@company.com"
               aria-invalid={!!errors.email}
             />
@@ -127,7 +139,7 @@ export function ContactForm() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">
-          <div>
+          <div className="stagger-child">
             <label htmlFor="phone" className="mb-2 block font-brutal text-xs uppercase">
               Phone
             </label>
@@ -137,11 +149,13 @@ export function ContactForm() {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              className="brutal-input"
+              onFocus={() => setFocused("phone")}
+              onBlur={() => setFocused(null)}
+              className={fieldStyle("phone")}
               placeholder="[PHONE]"
             />
           </div>
-          <div>
+          <div className="stagger-child">
             <label htmlFor="company" className="mb-2 block font-brutal text-xs uppercase">
               Company
             </label>
@@ -151,13 +165,15 @@ export function ContactForm() {
               name="company"
               value={formData.company}
               onChange={handleChange}
-              className="brutal-input"
+              onFocus={() => setFocused("company")}
+              onBlur={() => setFocused(null)}
+              className={fieldStyle("company")}
               placeholder="Your company"
             />
           </div>
         </div>
 
-        <div>
+        <div className="stagger-child">
           <label htmlFor="message" className="mb-2 block font-brutal text-xs uppercase">
             Message <span className="text-ev-neon-pink">*</span>
           </label>
@@ -166,8 +182,10 @@ export function ContactForm() {
             name="message"
             value={formData.message}
             onChange={handleChange}
+            onFocus={() => setFocused("message")}
+            onBlur={() => setFocused(null)}
             rows={5}
-            className="brutal-input resize-none"
+            className={`${fieldStyle("message")} resize-none`}
             placeholder="Tell us about your project or inquiry..."
             aria-invalid={!!errors.message}
           />
@@ -178,9 +196,11 @@ export function ContactForm() {
           )}
         </div>
 
-        <Button type="submit" size="lg" className="w-full" disabled={loading}>
-          {loading ? "Sending..." : "Send Message"}
-        </Button>
+        <div className="stagger-child">
+          <Button type="submit" size="lg" className="w-full" loading={loading}>
+            Send Message
+          </Button>
+        </div>
       </form>
     </BrutalPanel>
   );

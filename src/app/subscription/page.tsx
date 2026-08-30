@@ -1,4 +1,7 @@
+"use client";
+
 import type { Metadata } from "next";
+import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { BrutalPanel } from "@/components/ui/BrutalPanel";
 import { CTABlock } from "@/components/ui/CTABlock";
@@ -10,14 +13,43 @@ import {
 } from "@/data/subscription";
 import { siteConfig } from "@/data/site";
 
-export const metadata: Metadata = {
-  title: "Subscription",
-  description:
-    "Join the Elan Vey subscription — premium ongoing creative strategy, digital presence, and Lavent Marketing access.",
-  alternates: { canonical: `${siteConfig.url}/subscription` },
-};
+const benefitAccents = [
+  { icon: "◆", color: "bg-ev-neon-pink text-white" },
+  { icon: "✦", color: "bg-ev-neon-cyan" },
+  { icon: "▲", color: "bg-ev-neon-yellow" },
+  { icon: "●", color: "bg-ev-neon-pink text-white" },
+  { icon: "★", color: "bg-ev-neon-cyan" },
+  { icon: "■", color: "bg-ev-neon-yellow" },
+];
+
+const howItWorks = [
+  {
+    step: "01",
+    title: "Apply",
+    desc: "Reach out and tell us about your brand, goals, and ambitions.",
+  },
+  {
+    step: "02",
+    title: "Onboard",
+    desc: "We align on strategy, set milestones, and begin the partnership.",
+  },
+  {
+    step: "03",
+    title: "Grow",
+    desc: "Ongoing support, creative direction, and continuous optimization.",
+  },
+];
+
+const subPerks = [
+  "Cancel anytime, no hidden fees",
+  "Monthly strategy check-ins",
+  "Direct Slack / email support",
+  "Quarterly growth reviews",
+];
 
 export default function SubscriptionPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
   return (
     <>
       <PageHero
@@ -26,93 +58,132 @@ export default function SubscriptionPage() {
         subtitle="The Elan Vey subscription delivers consistent strategic guidance, creative direction, and growth support — month after month."
         large
         accent="yellow"
+        badge="Limited Spots · Apply Today"
       />
 
-      <Section tone="paper" className="!pt-0">
+      <Section tone="paper" className="!pt-0" staggerChildren staggerDelay={80}>
         <div className="container-content">
-          <div className="grid gap-12 lg:grid-cols-2">
-            <div>
+          <div className="grid gap-12 lg:grid-cols-2 items-start">
+            <div className="animate-on-scroll-slow">
               <h2 className="brutal-text text-2xl text-ev-neon-pink md:text-4xl">
                 What&apos;s included
               </h2>
-              <p className="mt-6 font-bold leading-relaxed text-ev-black/80">
+              <p className="mt-6 font-bold leading-relaxed text-ev-black/80 text-base md:text-lg">
                 A comprehensive partnership designed for brands committed to
                 long-term growth. Every subscription includes strategic,
                 creative, and operational support tailored to your needs.
               </p>
+              <ul className="mt-8 space-y-3">
+                {subPerks.map((item, i) => (
+                  <li
+                    key={item}
+                    className="stagger-child flex items-center gap-3 font-bold"
+                    style={{ transitionDelay: `${i * 60}ms` }}
+                  >
+                    <span className="font-brutal text-ev-neon-cyan text-xl">
+                      ✓
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <BrutalPanel variant="yellow">
-              <p className="font-brutal text-xs uppercase tracking-widest text-ev-black">
-                Investment
-              </p>
-              <p className="font-brutal mt-2 text-5xl text-ev-neon-red">
-                [SUBSCRIPTION PRICE]
-              </p>
-              <p className="mt-2 text-sm font-bold text-ev-black/70">
-                [BILLING PERIOD — e.g., per month]
-              </p>
-              <div className="mt-8">
-                <Button href="/contact" className="w-full">
-                  Subscribe Now
-                </Button>
-              </div>
-            </BrutalPanel>
+            <div className="relative animate-on-scroll-slow">
+              <BrutalPanel variant="yellow" className="hover-lift relative">
+                <span className="ribbon-badge bg-ev-neon-pink text-ev-neon-yellow">
+                  Most Popular
+                </span>
+                <p className="font-brutal text-xs uppercase tracking-widest text-ev-black">
+                  Investment
+                </p>
+                <div className="mt-4 flex items-baseline gap-2">
+                  <p className="font-brutal text-5xl md:text-6xl text-ev-neon-red">
+                    [SUBSCRIPTION PRICE]
+                  </p>
+                </div>
+                <p className="mt-2 text-sm font-bold text-ev-black/70">
+                  [BILLING PERIOD — e.g., per month]
+                </p>
+                <div className="mt-4 inline-flex items-center gap-2 rounded-full border-[3px] border-black bg-ev-neon-cream px-3 py-1">
+                  <span className="font-brutal text-xs text-ev-neon-red">
+                    SAVE 20%
+                  </span>
+                  <span className="text-xs font-bold">vs. project-based</span>
+                </div>
+                <div className="mt-8">
+                  <Button href="/contact" className="w-full">
+                    Subscribe Now
+                  </Button>
+                </div>
+              </BrutalPanel>
+            </div>
           </div>
 
-          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {subscriptionBenefits.map((benefit, i) => (
-              <div
-                key={benefit.title}
-                className={`brutal-card ${i % 3 === 1 ? "bg-ev-neon-cyan" : i % 3 === 2 ? "bg-ev-neon-pink text-white" : ""}`}
-              >
-                <h3 className="font-brutal text-base uppercase">{benefit.title}</h3>
-                <p className="mt-3 text-sm font-bold opacity-80">
-                  {benefit.description}
-                </p>
-              </div>
-            ))}
+          <div className="mt-20">
+            <p className="brutal-label stagger-child">All Benefits Included</p>
+            <h3 className="brutal-text mt-4 mb-12 text-3xl md:text-5xl stagger-child">
+              Everything you need to{" "}
+              <span className="text-ev-neon-yellow">thrive</span>
+            </h3>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {subscriptionBenefits.map((benefit, i) => {
+                const accent = benefitAccents[i % benefitAccents.length];
+                return (
+                  <div
+                    key={benefit.title}
+                    className={`stagger-child brutal-card hover-lift ${accent.color}`}
+                  >
+                    <div className="flex items-start gap-3">
+                      <span className="font-brutal text-3xl">
+                        {accent.icon}
+                      </span>
+                      <h3 className="font-brutal text-base uppercase pt-1">
+                        {benefit.title}
+                      </h3>
+                    </div>
+                    <p className="mt-4 text-sm font-bold opacity-80">
+                      {benefit.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </Section>
 
       <div className="checkerboard-divider" aria-hidden />
 
-      <Section tone="dark">
+      <Section tone="dark" staggerChildren staggerDelay={90}>
         <div className="container-content">
-          <h2 className="brutal-text brutal-text-light mb-12 text-3xl text-ev-neon-yellow md:text-4xl">
+          <h2 className="brutal-text brutal-text-light mb-12 stagger-child text-3xl text-ev-neon-yellow md:text-5xl">
             How it works
           </h2>
-          <div className="grid gap-6 md:grid-cols-3">
-            {[
-              {
-                step: "01",
-                title: "Apply",
-                desc: "Reach out and tell us about your brand, goals, and ambitions.",
-              },
-              {
-                step: "02",
-                title: "Onboard",
-                desc: "We align on strategy, set milestones, and begin the partnership.",
-              },
-              {
-                step: "03",
-                title: "Grow",
-                desc: "Ongoing support, creative direction, and continuous optimization.",
-              },
-            ].map((item) => (
+          <div className="grid gap-6 items-start md:grid-cols-3">
+            {howItWorks.map((item, i) => (
               <div
                 key={item.step}
-                className="border-[3px] border-ev-neon-pink p-6"
+                className="stagger-child relative"
               >
-                <span className="font-brutal text-4xl text-ev-neon-yellow">
-                  {item.step}
-                </span>
-                <h3 className="brutal-text brutal-text-light mt-4 text-xl text-ev-neon-cyan">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm font-bold text-white/70">
-                  {item.desc}
-                </p>
+                <div className="w-full border-[3px] border-ev-neon-pink p-6 md:p-8 hover-lift">
+                  <span className="font-brutal text-5xl md:text-6xl text-ev-neon-yellow">
+                    {item.step}
+                  </span>
+                  <h3 className="brutal-text brutal-text-light mt-4 text-xl md:text-2xl text-ev-neon-cyan">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm md:text-base font-bold text-white/70">
+                    {item.desc}
+                  </p>
+                </div>
+                {i < howItWorks.length - 1 && (
+                  <span
+                    className="step-arrow absolute -right-5 top-1/2 -translate-y-1/2 z-10 hidden md:block"
+                    aria-hidden
+                  >
+                    →
+                  </span>
+                )}
               </div>
             ))}
           </div>
@@ -121,26 +192,47 @@ export default function SubscriptionPage() {
 
       <div className="stamp-edge-top" aria-hidden />
 
-      <Section tone="paper">
+      <Section tone="paper" staggerChildren staggerDelay={70}>
         <div className="container-content max-w-3xl">
-          <h2 className="brutal-text mb-12 text-3xl text-ev-neon-pink">
+          <h2 className="brutal-text mb-12 stagger-child text-3xl text-ev-neon-pink md:text-5xl">
             Frequently asked questions
           </h2>
           <div className="space-y-4">
-            {subscriptionFaqs.map((faq) => (
-              <details key={faq.question} className="group brutal-card">
-                <summary className="cursor-pointer list-none font-brutal uppercase [&::-webkit-details-marker]:hidden">
-                  <span className="flex items-center justify-between gap-4">
-                    {faq.question}
-                    <span className="text-ev-neon-pink transition-transform group-open:rotate-45">
-                      +
-                    </span>
+            {subscriptionFaqs.map((faq, i) => (
+              <div
+                key={faq.question}
+                className="stagger-child brutal-card hover-lift"
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full cursor-pointer list-none font-brutal uppercase [&::-webkit-details-marker]:hidden text-left flex items-center justify-between gap-4"
+                  aria-expanded={openFaq === i}
+                >
+                  <span className="pr-4">{faq.question}</span>
+                  <span
+                    className={`font-brutal text-2xl text-ev-neon-pink transition-transform duration-300 flex-shrink-0 ${
+                      openFaq === i ? "rotate-45" : ""
+                    }`}
+                    aria-hidden
+                  >
+                    +
                   </span>
-                </summary>
-                <div className="mt-4 border-t-[3px] border-black pt-4">
-                  <p className="font-bold text-ev-black/80">{faq.answer}</p>
+                </button>
+                <div
+                  className={`accordion-content ${
+                    openFaq === i ? "open" : ""
+                  }`}
+                >
+                  <div className="accordion-inner">
+                    <div className="mt-4 border-t-[3px] border-black pt-4">
+                      <p className="font-bold text-ev-black/80 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </details>
+              </div>
             ))}
           </div>
         </div>

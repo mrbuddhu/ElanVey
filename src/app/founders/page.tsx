@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   alternates: { canonical: `${siteConfig.url}/founders` },
 };
 
+const badgeColors = ["bg-ev-neon-yellow", "bg-ev-neon-cyan"];
+const photoColors = [
+  "bg-ev-neon-cyan",
+  "bg-ev-neon-pink",
+];
+
 export default function FoundersPage() {
   return (
     <>
@@ -22,40 +28,86 @@ export default function FoundersPage() {
         subtitle="Vision, conviction, and a commitment to helping ambitious brands reach their full potential."
         large
         accent="cyan"
+        badge="Meet The Leadership Team"
       />
 
-      <Section tone="paper" className="!pt-0">
-        <div className="container-content space-y-20">
+      <Section tone="paper" className="!pt-0" staggerChildren staggerDelay={120}>
+        <div className="container-content space-y-24">
           {founders.map((founder, i) => (
             <article
               key={founder.id}
-              className={`grid items-center gap-10 lg:grid-cols-2 ${
+              className={`stagger-child grid items-center gap-10 lg:grid-cols-2 ${
                 i % 2 === 1 ? "lg:[direction:rtl]" : ""
               }`}
             >
-              <div className="lg:[direction:ltr]">
-                <div className="brutal-card flex aspect-[3/4] items-center justify-center bg-ev-neon-cyan">
-                  <span className="font-brutal text-5xl text-ev-black/30">
+              <div className="lg:[direction:ltr] relative animate-on-scroll-slow">
+                <div
+                  className={`brutal-card flex aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] items-center justify-center hover-lift relative overflow-hidden ${photoColors[i % photoColors.length]}`}
+                >
+                  <div className="absolute inset-2 border-[3px] border-black/20 rounded-sm pointer-events-none" />
+                  <span className="font-brutal text-5xl text-ev-black/30 md:text-6xl">
                     [PHOTO]
                   </span>
+                  <div
+                    className="absolute top-4 left-4 h-8 w-8 border-t-[3px] border-l-[3px] border-black/50"
+                    aria-hidden
+                  />
+                  <div
+                    className="absolute bottom-4 right-4 h-8 w-8 border-b-[3px] border-r-[3px] border-black/50"
+                    aria-hidden
+                  />
                 </div>
+                <span
+                  className={`absolute -top-4 -right-4 rotate-[12deg] hidden border-[3px] border-black px-4 py-2 font-brutal text-xs uppercase tracking-wider shadow-brutal md:inline-block float-medium ${badgeColors[i % badgeColors.length]}`}
+                >
+                  {founder.role}
+                </span>
               </div>
 
-              <div className="lg:[direction:ltr]">
-                <p className="brutal-label">{founder.role}</p>
-                <h2 className="brutal-text mt-4 text-3xl text-ev-neon-yellow md:text-4xl">
+              <div className="lg:[direction:ltr] animate-on-scroll-slow">
+                <div className="md:hidden mb-4">
+                  <span
+                    className={`inline-block rotate-[-5deg] border-[3px] border-black px-4 py-2 font-brutal text-xs uppercase tracking-wider shadow-brutal ${badgeColors[i % badgeColors.length]}`}
+                  >
+                    {founder.role}
+                  </span>
+                </div>
+                <p className="hidden brutal-label md:block">{founder.role}</p>
+                <h2 className="brutal-text mt-4 text-3xl text-ev-neon-yellow md:text-4xl lg:text-5xl">
                   {founder.name}
                 </h2>
-                <p className="mt-6 font-bold leading-relaxed text-ev-black/80">
+                <p className="mt-6 font-bold leading-relaxed text-ev-black/80 text-base md:text-lg">
                   {founder.bio}
                 </p>
                 {founder.quote && (
-                  <blockquote className="brutal-card-yellow mt-8">
+                  <blockquote className="brutal-card-yellow mt-8 hover-lift">
                     <p className="font-brutal text-lg uppercase leading-snug text-ev-black">
                       &ldquo;{founder.quote}&rdquo;
                     </p>
                   </blockquote>
                 )}
+
+                <div className="mt-8 flex gap-3 flex-wrap">
+                  {["instagram", "linkedin", "twitter", "email"].map((social, si) => (
+                    <a
+                      key={social}
+                      href="#"
+                      aria-label={`${founder.name} on ${social}`}
+                      className="flex h-12 w-12 items-center justify-center border-[3px] border-black shadow-brutal transition-all hover:scale-110 hover:-translate-y-0.5 hover:shadow-brutal-lg bg-ev-neon-cream"
+                      style={{ transitionDelay: `${si * 40}ms` }}
+                    >
+                      <span className="font-brutal text-sm">
+                        {social === "instagram"
+                          ? "IG"
+                          : social === "linkedin"
+                            ? "IN"
+                            : social === "twitter"
+                              ? "TW"
+                              : "@"}
+                      </span>
+                    </a>
+                  ))}
+                </div>
               </div>
             </article>
           ))}
@@ -65,14 +117,50 @@ export default function FoundersPage() {
       <div className="checkerboard-divider" aria-hidden />
 
       <Section tone="dark">
-        <div className="container-content max-w-3xl text-center">
-          <h2 className="brutal-text brutal-text-light text-3xl text-ev-neon-pink md:text-4xl">
-            Founder philosophy
-          </h2>
-          <p className="mt-8 text-lg font-bold leading-relaxed text-white/70">
-            [FOUNDER PHILOSOPHY — Replace with the collective founder vision
-            and philosophy when available.]
-          </p>
+        <div className="container-content max-w-4xl relative animate-on-scroll-slow">
+          <span
+            className="absolute -top-4 -left-2 font-brutal text-8xl md:text-9xl text-ev-neon-pink/20 leading-none select-none"
+            aria-hidden
+          >
+            &ldquo;
+          </span>
+          <div className="relative">
+            <h2 className="brutal-text brutal-text-light text-3xl text-ev-neon-pink md:text-4xl lg:text-5xl">
+              Founder philosophy
+            </h2>
+            <p className="mt-8 text-lg md:text-xl font-bold leading-relaxed text-white/80 pl-4 md:pl-8 border-l-[3px] border-ev-neon-yellow/60">
+              [FOUNDER PHILOSOPHY — Replace with the collective founder vision
+              and philosophy when available. This should feel like a direct,
+              personal statement about why Elan Vey exists, what it stands for,
+              and the impact it strives to create for every brand partner.]
+            </p>
+            <div className="mt-8 flex items-center gap-4 pl-4 md:pl-8">
+              <div className="flex -space-x-2">
+                {founders.map((f) => (
+                  <div
+                    key={f.id}
+                    className="flex h-10 w-10 items-center justify-center border-[3px] border-ev-black bg-ev-neon-cyan font-brutal text-xs"
+                  >
+                    {f.name
+                      .replace(/\[|\]/g, "")
+                      .split(" ")
+                      .map((n) => n[0])
+                      .slice(0, 2)
+                      .join("")}
+                  </div>
+                ))}
+              </div>
+              <p className="font-brutal text-xs uppercase text-ev-neon-yellow tracking-widest">
+                — Elan Vey Founders
+              </p>
+            </div>
+          </div>
+          <span
+            className="absolute -bottom-16 right-0 font-brutal text-8xl md:text-9xl text-ev-neon-yellow/20 leading-none select-none rotate-180"
+            aria-hidden
+          >
+            &ldquo;
+          </span>
         </div>
       </Section>
 

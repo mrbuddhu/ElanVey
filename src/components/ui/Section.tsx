@@ -8,6 +8,9 @@ interface SectionProps {
   id?: string;
   animate?: boolean;
   tone?: "paper" | "dark";
+  staggerChildren?: boolean;
+  staggerDelay?: number;
+  variant?: "fade-up" | "slide-left" | "slide-right";
 }
 
 export function Section({
@@ -16,6 +19,9 @@ export function Section({
   id,
   animate = true,
   tone = "paper",
+  staggerChildren = false,
+  staggerDelay = 80,
+  variant = "fade-up",
 }: SectionProps) {
   const ref = useRef<HTMLElement>(null);
 
@@ -29,17 +35,34 @@ export function Section({
       ([entry]) => {
         if (entry.isIntersecting) {
           el.classList.add("visible");
+
+          if (staggerChildren) {
+            const children = el.querySelectorAll<HTMLElement>(".stagger-child");
+            children.forEach((child, index) => {
+              child.style.transitionDelay = `${index * staggerDelay}ms`;
+              requestAnimationFrame(() => {
+                child.classList.add("visible");
+              });
+            });
+          }
+
           observer.unobserve(el);
         }
       },
       { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
 
-    el.classList.add("animate-on-scroll");
+    if (variant === "slide-left") {
+      el.classList.add("slide-in-left");
+    } else if (variant === "slide-right") {
+      el.classList.add("slide-in-right");
+    } else {
+      el.classList.add("animate-on-scroll");
+    }
     observer.observe(el);
 
     return () => observer.disconnect();
-  }, [animate]);
+  }, [animate, staggerChildren, staggerDelay, variant]);
 
   return (
     <section

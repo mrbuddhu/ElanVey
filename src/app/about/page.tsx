@@ -18,21 +18,65 @@ const values = [
     title: "Mission",
     content:
       "To empower ambitious brands with the strategic clarity and creative excellence they need to stand out, grow, and lead in their space.",
+    accent: "pink" as const,
   },
   {
     title: "Vision",
     content:
       "A world where every ambitious brand has access to premium creative strategy — not as a luxury, but as a foundation for meaningful growth.",
+    accent: "cyan" as const,
   },
   {
     title: "Philosophy",
     content:
       "We believe premium comes from restraint, not excess. Every decision — from typography to strategy — should have purpose, conviction, and clarity.",
+    accent: "yellow" as const,
   },
   {
     title: "Approach",
     content:
       "We combine editorial creative direction with rigorous strategic thinking. No templates. No generic solutions. Every engagement is tailored to the brand's unique ambition.",
+    accent: "cream" as const,
+  },
+];
+
+const stats = [
+  { number: "50+", label: "Brand Partners", color: "bg-ev-neon-pink text-white" },
+  { number: "7+", label: "Years Active", color: "bg-ev-neon-cyan" },
+  { number: "100%", label: "Client Retention", color: "bg-ev-neon-yellow" },
+  { number: "2×", label: "Avg. Growth Rate", color: "bg-ev-neon-cream" },
+];
+
+const differentiators = [
+  {
+    title: "Editorial-grade creative direction",
+    icon: "◆",
+    color: "bg-ev-neon-pink text-white",
+  },
+  {
+    title: "Strategy-first approach to every engagement",
+    icon: "▲",
+    color: "bg-ev-neon-cyan",
+  },
+  {
+    title: "Lavent Marketing exposure & learning access",
+    icon: "●",
+    color: "bg-ev-neon-yellow",
+  },
+  {
+    title: "Subscription model for ongoing partnership",
+    icon: "■",
+    color: "bg-ev-neon-cream",
+  },
+  {
+    title: "Premium standards in every deliverable",
+    icon: "★",
+    color: "bg-ev-neon-pink text-white",
+  },
+  {
+    title: "Tailored solutions — no generic templates",
+    icon: "✦",
+    color: "bg-ev-neon-cyan",
   },
 ];
 
@@ -45,12 +89,29 @@ export default function AboutPage() {
         subtitle="Elan Vey exists at the intersection of creative ambition and strategic precision — helping brands define who they are and where they're going."
         large
         accent="mixed"
+        badge="Premium Since Day One"
       />
 
-      <Section tone="paper" className="!pt-0">
+      <Section tone="paper" className="!pt-0" staggerChildren staggerDelay={70}>
         <div className="container-content">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 pb-12 md:pb-20">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className={`stagger-child stat-pill ${stat.color} hover-lift`}
+              >
+                <span className="font-brutal text-3xl md:text-4xl">
+                  {stat.number}
+                </span>
+                <span className="mt-2 text-xs font-brutal uppercase tracking-wider opacity-80">
+                  {stat.label}
+                </span>
+              </div>
+            ))}
+          </div>
+
           <div className="grid gap-12 lg:grid-cols-2">
-            <div>
+            <div className="animate-on-scroll-slow">
               <h2 className="brutal-text text-2xl text-ev-neon-pink md:text-4xl">
                 Our story
               </h2>
@@ -73,31 +134,63 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <BrutalPanel variant="yellow" className="flex aspect-[4/5] flex-col justify-between">
-              <p className="font-brutal text-8xl text-ev-neon-red opacity-40">
-                EV
-              </p>
-              <p className="font-brutal text-sm uppercase tracking-widest text-ev-black">
-                Premium · Creative · Strategic
-              </p>
-            </BrutalPanel>
+            <div className="relative animate-on-scroll-slow">
+              <BrutalPanel
+                variant="yellow"
+                className="flex aspect-[4/5] flex-col justify-between hover-lift"
+              >
+                <p className="font-brutal text-8xl text-ev-neon-red opacity-40">
+                  EV
+                </p>
+                <p className="font-brutal text-sm uppercase tracking-widest text-ev-black">
+                  Premium · Creative · Strategic
+                </p>
+              </BrutalPanel>
+              <div
+                className="absolute -bottom-5 -right-5 hidden aspect-square w-24 rotate-[-10deg] border-[3px] border-black bg-ev-neon-pink shadow-brutal md:block float-gentle"
+                aria-hidden
+              />
+            </div>
           </div>
         </div>
       </Section>
 
       <div className="checkerboard-divider" aria-hidden />
 
-      <Section tone="dark">
+      <Section tone="dark" staggerChildren staggerDelay={90}>
         <div className="container-content">
-          <p className="brutal-label-dark">What drives us</p>
-          <h2 className="brutal-text brutal-text-light mb-12 mt-4 text-3xl text-ev-neon-yellow md:text-5xl">
+          <p className="brutal-label-dark stagger-child">What drives us</p>
+          <h2 className="brutal-text brutal-text-light mb-12 mt-4 text-3xl text-ev-neon-yellow md:text-5xl stagger-child">
             Mission & values
           </h2>
           <div className="grid gap-6 md:grid-cols-2">
             {values.map((item, i) => (
-              <div key={item.title} className="border-[3px] border-white p-6">
-                <span className="font-brutal text-ev-neon-pink">0{i + 1}</span>
-                <h3 className="brutal-text brutal-text-light mt-2 text-xl text-ev-neon-cyan">
+              <div
+                key={item.title}
+                className={`stagger-child border-[3px] p-6 md:p-8 hover-lift ${
+                  item.accent === "pink"
+                    ? "border-ev-neon-pink"
+                    : item.accent === "cyan"
+                      ? "border-ev-neon-cyan"
+                      : item.accent === "yellow"
+                        ? "border-ev-neon-yellow"
+                        : "border-white"
+                }`}
+              >
+                <span
+                  className={`font-brutal text-5xl ${
+                    item.accent === "pink"
+                      ? "text-ev-neon-pink"
+                      : item.accent === "cyan"
+                        ? "text-ev-neon-cyan"
+                        : item.accent === "yellow"
+                          ? "text-ev-neon-yellow"
+                          : "text-white"
+                  }`}
+                >
+                  0{i + 1}
+                </span>
+                <h3 className="brutal-text brutal-text-light mt-2 text-xl text-white md:text-2xl">
                   {item.title}
                 </h3>
                 <p className="mt-4 font-bold leading-relaxed text-white/70">
@@ -111,34 +204,31 @@ export default function AboutPage() {
 
       <div className="stamp-edge-top" aria-hidden />
 
-      <Section tone="paper">
-        <div className="container-content max-w-3xl">
-          <h2 className="brutal-text text-2xl text-ev-neon-yellow md:text-4xl">
+      <Section tone="paper" staggerChildren staggerDelay={70}>
+        <div className="container-content max-w-5xl">
+          <h2 className="brutal-text text-2xl text-ev-neon-yellow md:text-4xl stagger-child">
             What sets us apart
           </h2>
-          <p className="mt-6 text-lg font-bold leading-relaxed text-ev-black/80">
+          <p className="mt-6 max-w-2xl text-lg font-bold leading-relaxed text-ev-black/80 stagger-child">
             Elan Vey isn&apos;t another agency promising results. We&apos;re a
             premium creative partner focused on strategic depth, editorial
-            quality, and real-world opportunity — including exclusive access to
-            Lavent Marketing&apos;s expertise and network.
+            quality, and real-world opportunity.
           </p>
-          <ul className="mt-8 space-y-4">
-            {[
-              "Editorial-grade creative direction",
-              "Strategy-first approach to every engagement",
-              "Lavent Marketing exposure & learning access",
-              "Subscription model for ongoing partnership",
-              "Premium standards in every deliverable",
-            ].map((item) => (
-              <li
-                key={item}
-                className="flex items-center gap-3 font-brutal text-sm uppercase text-ev-black"
+          <div className="mt-12 grid gap-5 sm:grid-cols-2">
+            {differentiators.map((item) => (
+              <div
+                key={item.title}
+                className={`stagger-child flex items-start gap-4 border-[3px] border-black p-5 shadow-brutal hover-lift ${item.color}`}
               >
-                <span className="text-ev-neon-pink">◆</span>
-                {item}
-              </li>
+                <span className="font-brutal text-2xl flex-shrink-0">
+                  {item.icon}
+                </span>
+                <p className="font-brutal text-sm uppercase leading-snug">
+                  {item.title}
+                </p>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </Section>
 

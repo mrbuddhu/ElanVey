@@ -222,6 +222,112 @@
   .team-badge {
     @apply inline-block rotate-[-8deg] border-[3px] border-black bg-ev-neon-pink px-6 py-3 font-brutal text-sm uppercase text-ev-neon-yellow shadow-brutal md:px-8 md:py-4 md:text-base;
   }
+
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+      box-shadow 0.3s ease-out;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 8px 8px 0px 0px #000000;
+  }
+
+  .hero-stagger-label {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: heroSlideInLeft 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+  }
+
+  .hero-stagger-title {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: heroSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+  }
+
+  .hero-stagger-subtitle {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: heroFadeUp 0.7s ease-out 0.55s forwards;
+  }
+
+  .hero-stagger-children {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: heroFadeUp 0.7s ease-out 0.8s forwards;
+  }
+
+  .stagger-child {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .stagger-child.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .slide-in-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .slide-in-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .float-gentle {
+    animation: floatGentle 6s ease-in-out infinite;
+  }
+
+  .float-slow {
+    animation: floatGentle 9s ease-in-out infinite;
+  }
+
+  .float-medium {
+    animation: floatGentle 7.5s ease-in-out infinite;
+  }
+
+  .accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .accordion-content.open {
+    grid-template-rows: 1fr;
+  }
+
+  .accordion-inner {
+    overflow: hidden;
+  }
+
+  .ribbon-badge {
+    @apply absolute -top-3 -right-3 rotate-[15deg] border-[3px] border-black px-4 py-1.5 font-brutal text-xs uppercase shadow-brutal;
+  }
+
+  .stat-pill {
+    @apply flex flex-col items-center justify-center border-[3px] border-black px-4 py-3 shadow-brutal md:px-6 md:py-5;
+  }
+
+  .step-arrow {
+    @apply hidden text-5xl text-ev-neon-pink lg:block;
+    animation: stepArrowPulse 2s ease-in-out infinite;
+  }
 }
 
 @layer utilities {
@@ -232,11 +338,84 @@
   .animate-on-scroll {
     opacity: 0;
     transform: translateY(24px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  .animate-on-scroll-slow {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out 0.1s, transform 1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
+  }
+
+  .animate-on-scroll-slow.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroSlideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes heroSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+@keyframes stepArrowPulse {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateX(8px);
+    opacity: 1;
+  }
+}
+
+@keyframes buttonSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
