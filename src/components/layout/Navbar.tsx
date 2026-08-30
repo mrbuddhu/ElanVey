@@ -110,17 +110,11 @@ export function Navbar() {
                 />
               </Link>
 
-              <ul className="flex items-center gap-6 xl:gap-8">
+              <ul className="flex items-center gap-1 xl:gap-2">
                 {navigation.map((item) => (
                   <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="font-brutal uppercase text-xs tracking-[0.15em] text-white transition-all relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-ev-neon-yellow after:transition-all hover:after:w-full"
-                      style={{ textShadow: "1.5px 1.5px 0 #cc0044, 3px 3px 0 #660022" }}
-                    >
-                      <span className="hover:text-ev-neon-yellow transition-colors inline-block hover:-translate-y-[1px]">
-                        {item.label}
-                      </span>
+                    <Link href={item.href} className="nav-pill-link">
+                      {item.label}
                     </Link>
                   </li>
                 ))}
@@ -128,7 +122,7 @@ export function Navbar() {
 
               <Link
                 href="/subscription"
-                className="subscribe-btn !px-6 !py-2.5 flex-shrink-0 !shadow-none"
+                className="subscribe-btn !px-6 !py-2.5 flex-shrink-0"
               >
                 Subscribe Now
               </Link>

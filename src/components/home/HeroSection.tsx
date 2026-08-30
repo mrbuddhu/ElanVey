@@ -7,7 +7,7 @@ export function HeroSection() {
         {/* Desktop pill header duplicate for larger screens in hero area */}
         <div className="mb-10 hidden justify-center lg:flex">
           <div className="pill-nav max-w-xl">
-            <span className="font-brutal text-lg uppercase text-ev-neon-yellow">
+            <span className="font-brutal text-lg uppercase text-ev-black">
               ◎ Elan Vey ◆
             </span>
             <Link href="/subscription" className="subscribe-btn">
