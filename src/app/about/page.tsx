@@ -4,6 +4,7 @@ import { BrutalPanel } from "@/components/ui/BrutalPanel";
 import { CTABlock } from "@/components/ui/CTABlock";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
+import { founders } from "@/data/founders";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ const values = [
   {
     title: "Vision",
     content:
-      "A world where great design and smart planning aren't luxuries for a select few — but something anyone with a dream can access.",
+      "A world where great design and smart planning aren&apos;t luxuries for a select few — but something anyone with a dream can access.",
     accent: "cyan" as const,
   },
   {
@@ -80,13 +81,16 @@ const differentiators = [
   },
 ];
 
+const founderBadgeColors = ["bg-ev-neon-yellow", "bg-ev-neon-cyan"];
+const founderPhotoColors = ["bg-ev-neon-cyan", "bg-ev-neon-pink"];
+
 export default function AboutPage() {
   return (
     <>
       <PageHero
         label="About Us"
         title="Built for people like you"
-        subtitle="Elan Vey lives where creative spark meets clear thinking — helping you show the world who you are and where you're going."
+        subtitle="Elan Vey lives where creative spark meets clear thinking — helping you show the world who you are and where you&apos;re going."
         large
         accent="mixed"
         badge="Here For You Since Day One"
@@ -112,7 +116,7 @@ export default function AboutPage() {
 
           <div className="grid gap-12 lg:grid-cols-2">
             <div className="animate-on-scroll-slow">
-              <h2 className="brutal-text text-2xl text-ev-neon-pink md:text-4xl">
+              <h2 className="brutal-text brutal-text-charcoal text-2xl text-ev-neon-pink md:text-4xl">
                 Our story
               </h2>
               <div className="mt-8 space-y-6 font-bold leading-relaxed text-ev-black/80">
@@ -162,7 +166,7 @@ export default function AboutPage() {
       <Section tone="dark" staggerChildren staggerDelay={90}>
         <div className="container-content">
           <p className="brutal-label-dark stagger-child">What drives us</p>
-          <h2 className="brutal-text brutal-text-light mb-12 mt-4 text-3xl text-ev-neon-yellow md:text-5xl stagger-child">
+          <h2 className="brutal-text brutal-text-pink mb-12 mt-4 text-3xl text-ev-neon-yellow md:text-5xl stagger-child">
             Mission & values
           </h2>
           <div className="grid gap-6 md:grid-cols-2">
@@ -192,7 +196,7 @@ export default function AboutPage() {
                 >
                   0{i + 1}
                 </span>
-                <h3 className="brutal-text brutal-text-light mt-2 text-xl text-white md:text-2xl">
+                <h3 className="brutal-text brutal-text-grey mt-2 text-xl text-white md:text-2xl">
                   {item.title}
                 </h3>
                 <p className="mt-4 font-bold leading-relaxed text-white/70">
@@ -208,7 +212,7 @@ export default function AboutPage() {
 
       <Section tone="paper" staggerChildren staggerDelay={70}>
         <div className="container-content max-w-5xl">
-          <h2 className="brutal-text text-2xl text-ev-neon-yellow md:text-4xl stagger-child">
+          <h2 className="brutal-text brutal-text-orange text-2xl text-ev-neon-yellow md:text-4xl stagger-child">
             What sets us apart
           </h2>
           <p className="mt-6 max-w-2xl text-lg font-bold leading-relaxed text-ev-black/80 stagger-child">
@@ -235,15 +239,169 @@ export default function AboutPage() {
         </div>
       </Section>
 
+      <div className="checkerboard-divider" aria-hidden />
+
+      <Section id="founders" tone="paper" className="!pt-0" staggerChildren staggerDelay={120}>
+        <div className="container-content">
+          <div className="mb-12 md:mb-16 stagger-child">
+            <p className="brutal-label">The Team</p>
+            <h2 className="brutal-text brutal-text-pink mt-4 text-3xl text-ev-neon-yellow md:text-4xl lg:text-5xl">
+              Meet the people behind Elan Vey
+            </h2>
+            <p className="mt-6 max-w-2xl text-lg font-bold leading-relaxed text-ev-black/80">
+              Real people, honest values, and a true passion for helping others
+              bring their ideas to life.
+            </p>
+          </div>
+          <div className="space-y-20 md:space-y-24">
+            {founders.map((founder, i) => (
+              <article
+                key={founder.id}
+                className={`stagger-child grid items-center gap-10 lg:grid-cols-2 ${
+                  i % 2 === 1 ? "lg:[direction:rtl]" : ""
+                }`}
+              >
+                <div className="lg:[direction:ltr] relative animate-on-scroll-slow">
+                  <div
+                    className={`brutal-card flex aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] items-center justify-center hover-lift relative overflow-hidden ${founderPhotoColors[i % founderPhotoColors.length]}`}
+                  >
+                    <div className="absolute inset-2 border-[3px] border-black/20 rounded-sm pointer-events-none" />
+                    <span className="font-brutal text-5xl text-ev-black/30 md:text-6xl">
+                      [PHOTO]
+                    </span>
+                    <div
+                      className="absolute top-4 left-4 h-8 w-8 border-t-[3px] border-l-[3px] border-black/50"
+                      aria-hidden
+                    />
+                    <div
+                      className="absolute bottom-4 right-4 h-8 w-8 border-b-[3px] border-r-[3px] border-black/50"
+                      aria-hidden
+                    />
+                  </div>
+                  <span
+                    className={`absolute -top-4 -right-4 rotate-[12deg] hidden border-[3px] border-black px-4 py-2 font-brutal text-xs uppercase tracking-wider shadow-brutal md:inline-block float-medium ${founderBadgeColors[i % founderBadgeColors.length]}`}
+                  >
+                    {founder.role}
+                  </span>
+                </div>
+
+                <div className="lg:[direction:ltr] animate-on-scroll-slow">
+                  <div className="md:hidden mb-4">
+                    <span
+                      className={`inline-block rotate-[-5deg] border-[3px] border-black px-4 py-2 font-brutal text-xs uppercase tracking-wider shadow-brutal ${founderBadgeColors[i % founderBadgeColors.length]}`}
+                    >
+                      {founder.role}
+                    </span>
+                  </div>
+                  <p className="hidden brutal-label md:block">{founder.role}</p>
+                  <h2 className="brutal-text brutal-text-pink mt-4 text-3xl text-ev-neon-yellow md:text-4xl lg:text-5xl">
+                    {founder.name}
+                  </h2>
+                  <p className="mt-6 font-bold leading-relaxed text-ev-black/80 text-base md:text-lg">
+                    {founder.bio}
+                  </p>
+                  {founder.quote && (
+                    <blockquote className="brutal-card-yellow mt-8 hover-lift">
+                      <p className="font-brutal text-lg uppercase leading-snug text-ev-black">
+                        &ldquo;{founder.quote}&rdquo;
+                      </p>
+                    </blockquote>
+                  )}
+
+                  <div className="mt-8 flex gap-3 flex-wrap">
+                    {["instagram", "facebook", "email"].map((social, si) => (
+                      <a
+                        key={social}
+                        href={
+                          social === "instagram"
+                            ? siteConfig.social.instagram
+                            : social === "facebook"
+                              ? siteConfig.social.facebook
+                              : `mailto:${siteConfig.contact.email}`
+                        }
+                        aria-label={`${founder.name} on ${social}`}
+                        className="flex h-12 w-12 items-center justify-center border-[3px] border-black shadow-brutal transition-all hover:scale-110 hover:-translate-y-0.5 hover:shadow-brutal-lg bg-ev-neon-cream"
+                        style={{ transitionDelay: `${si * 40}ms` }}
+                        target={social === "email" ? "_self" : "_blank"}
+                        rel="noopener noreferrer"
+                      >
+                        <span className="font-brutal text-sm">
+                          {social === "instagram"
+                            ? "IG"
+                            : social === "facebook"
+                              ? "FB"
+                              : "@"}
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      <div className="checkerboard-divider" aria-hidden />
+
+      <Section tone="dark">
+        <div className="container-content max-w-4xl relative animate-on-scroll-slow">
+          <span
+            className="absolute -top-4 -left-2 font-brutal text-8xl md:text-9xl text-ev-neon-pink/20 leading-none select-none"
+            aria-hidden
+          >
+            &ldquo;
+          </span>
+          <div className="relative">
+            <h2 className="brutal-text brutal-text-charcoal text-3xl text-ev-neon-pink md:text-4xl lg:text-5xl">
+              Our promise to you
+            </h2>
+            <p className="mt-8 text-lg md:text-xl font-bold leading-relaxed text-white/80 pl-4 md:pl-8 border-l-[3px] border-ev-neon-yellow/60">
+              Elan Vey exists for the dreamers, the doers, the small shop
+              owners, the students, the parents with side hustles, and anyone
+              who&apos;s ever felt like their ideas deserve to be seen. We
+              promise to always be honest, always be friendly, and always give
+              you our best work. Your success is our success, and we&apos;ll
+              treat every project with the same care we&apos;d give our own.
+            </p>
+            <div className="mt-8 flex items-center gap-4 pl-4 md:pl-8">
+              <div className="flex -space-x-2">
+                {founders.map((f) => (
+                  <div
+                    key={f.id}
+                    className="flex h-10 w-10 items-center justify-center border-[3px] border-ev-black bg-ev-neon-cyan font-brutal text-xs"
+                  >
+                    {f.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .slice(0, 2)
+                      .join("")}
+                  </div>
+                ))}
+              </div>
+              <p className="font-brutal text-xs uppercase text-ev-neon-yellow tracking-widest">
+                — Elan Vey Founders
+              </p>
+            </div>
+          </div>
+          <span
+            className="absolute -bottom-16 right-0 font-brutal text-8xl md:text-9xl text-ev-neon-yellow/20 leading-none select-none rotate-180"
+            aria-hidden
+          >
+            &ldquo;
+          </span>
+        </div>
+      </Section>
+
       <CTABlock
         dark={false}
         title="Want to work with us?"
-        description="Let's chat about how Elan Vey can help you take the next step."
+        description="Let&apos;s chat about how Elan Vey can help you take the next step."
       >
         <Button href="/contact" size="lg">
           Get in Touch
         </Button>
-        <Button href="/founders" variant="secondary" size="lg">
+        <Button href="/about#founders" variant="secondary" size="lg">
           Meet the Founders
         </Button>
       </CTABlock>

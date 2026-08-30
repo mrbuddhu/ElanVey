@@ -23,7 +23,7 @@ const privacySections = [
     number: "02",
     title: "How We Use Your Information",
     paragraphs: [
-      "We use your information to reply to your messages, do the work you've asked us to do, send you friendly updates about your project, and make our website and services work better for you. We only use your details for things you'd reasonably expect or if the law says we must.",
+      "We use your information to reply to your messages, do the work you&apos;ve asked us to do, send you friendly updates about your project, and make our website and services work better for you. We only use your details for things you&apos;d reasonably expect or if the law says we must.",
     ],
   },
   {
@@ -31,7 +31,7 @@ const privacySections = [
     number: "03",
     title: "Information Sharing & Disclosure",
     paragraphs: [
-      "We never sell your personal information to anyone — ever. Sometimes we work with trusted service providers who help us run our email, hosting, or analytics tools and they only see what they need to do their job. We'll also share information if the law requires us to by court order or similar legal requirement. If you're part of our marketing learning through Lavent Marketing, we may share your details with them only as needed for those opportunities.",
+      "We never sell your personal information to anyone — ever. Sometimes we work with trusted service providers who help us run our email, hosting, or analytics tools and they only see what they need to do their job. We&apos;ll also share information if the law requires us to by court order or similar legal requirement. If you&apos;re part of our marketing learning through Lavent Marketing, we may share your details with them only as needed for those opportunities.",
     ],
   },
   {
@@ -39,7 +39,7 @@ const privacySections = [
     number: "04",
     title: "Keeping Your Data Safe",
     paragraphs: [
-      "We take reasonable steps to protect your personal information from being seen, used, or changed without permission. That said, no method of sending things over the internet is 100% safe, so we can't guarantee absolute security — but we do our very best.",
+      "We take reasonable steps to protect your personal information from being seen, used, or changed without permission. That said, no method of sending things over the internet is 100% safe, so we can&apos;t guarantee absolute security — but we do our very best.",
     ],
   },
   {
@@ -47,7 +47,7 @@ const privacySections = [
     number: "05",
     title: "Your Rights & Choices",
     paragraphs: [
-      "You have the right to see what information we hold about you, ask us to correct anything that's wrong, or ask us to delete your details if you no longer want us to have them. You can also opt out of marketing messages at any time. Just send us an email or give us a call and we'll sort it out straight away.",
+      "You have the right to see what information we hold about you, ask us to correct anything that&apos;s wrong, or ask us to delete your details if you no longer want us to have them. You can also opt out of marketing messages at any time. Just send us an email or give us a call and we&apos;ll sort it out straight away.",
     ],
   },
   {
@@ -61,9 +61,9 @@ const privacySections = [
   {
     id: "childrens-privacy",
     number: "07",
-    title: "Children's Privacy",
+    title: "Children&apos;s Privacy",
     paragraphs: [
-      "Our services aren't aimed at children under the age of 13 and we don't knowingly collect personal information from anyone under 13. If you're a parent or guardian and believe your child has shared details with us, please get in touch and we will remove that information right away.",
+      "Our services aren&apos;t aimed at children under the age of 13 and we don&apos;t knowingly collect personal information from anyone under 13. If you&apos;re a parent or guardian and believe your child has shared details with us, please get in touch and we will remove that information right away.",
     ],
   },
   {
@@ -71,7 +71,7 @@ const privacySections = [
     number: "08",
     title: "Changes to This Policy",
     paragraphs: [
-      "From time to time we may update this privacy policy. If we make important changes, we'll put a clear note on our website. By continuing to use our services after those changes, you accept the updated policy. The date at the top shows when it was last updated.",
+      "From time to time we may update this privacy policy. If we make important changes, we&apos;ll put a clear note on our website. By continuing to use our services after those changes, you accept the updated policy. The date at the top shows when it was last updated.",
     ],
   },
   {
@@ -138,7 +138,7 @@ export default function PrivacyPage() {
                   personal information when you use our services, website, or get
                   in touch with us. By using our services, you agree to what
                   we describe in this policy. We always treat your information with
-                  the same care we'd want for our own.
+                  the same care we&apos;d want for our own.
                 </p>
               </div>
 

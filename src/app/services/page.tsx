@@ -46,7 +46,7 @@ export default function ServicesPage() {
           <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end stagger-child">
             <div>
               <p className="brutal-label">How it works</p>
-              <h2 className="brutal-text mt-4 text-3xl text-ev-neon-yellow md:text-5xl">
+              <h2 className="brutal-text brutal-text-pink mt-4 text-3xl text-ev-neon-yellow md:text-5xl">
                 The Elan Vey Process
               </h2>
             </div>
@@ -93,7 +93,7 @@ export default function ServicesPage() {
               >
                 <div className="lg:col-span-5 lg:[direction:ltr] animate-on-scroll-slow">
                   <div className="flex items-baseline gap-4">
-                    <span className="font-brutal text-7xl text-ev-black/10 md:text-8xl">
+                    <span className="font-brutal text-7xl text-ev-black/10 md:text-8xl" style={{ textShadow: "2px 2px 0 rgba(255,0,102,0.2), 4px 4px 0 rgba(0,0,0,0.05)" }}>
                       {service.index}
                     </span>
                     {accent && (
@@ -103,7 +103,7 @@ export default function ServicesPage() {
                     )}
                   </div>
                   <span className="mt-4 block brutal-label">{service.tag}</span>
-                  <h2 className="brutal-text mt-4 text-3xl text-ev-neon-yellow md:text-4xl">
+                  <h2 className="brutal-text brutal-text-pink mt-4 text-3xl text-ev-neon-yellow md:text-4xl">
                     {service.name}
                   </h2>
                   <p className="mt-6 text-base font-bold leading-relaxed text-ev-black/80">

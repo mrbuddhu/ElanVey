@@ -77,7 +77,15 @@ export function PageHero({
             large
               ? "text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
               : "text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
-          } ${dark ? "brutal-text-light" : ""}`}
+          } ${
+            dark
+              ? accent === "pink"
+                ? "brutal-text-charcoal"
+                : accent === "cyan"
+                  ? "brutal-text-cyan"
+                  : "brutal-text-pink"
+              : ""
+          }`}
         >
           {title}
         </h1>

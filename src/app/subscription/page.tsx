@@ -156,7 +156,7 @@ export default function SubscriptionPage() {
 
       <Section tone="dark" staggerChildren staggerDelay={90}>
         <div className="container-content">
-          <h2 className="brutal-text brutal-text-light mb-12 stagger-child text-3xl text-ev-neon-yellow md:text-5xl">
+          <h2 className="brutal-text brutal-text-pink mb-12 stagger-child text-3xl text-ev-neon-yellow md:text-5xl">
             How it works
           </h2>
           <div className="grid gap-6 items-start md:grid-cols-3">
@@ -169,7 +169,7 @@ export default function SubscriptionPage() {
                   <span className="font-brutal text-5xl md:text-6xl text-ev-neon-yellow">
                     {item.step}
                   </span>
-                  <h3 className="brutal-text brutal-text-light mt-4 text-xl md:text-2xl text-ev-neon-cyan">
+                  <h3 className="brutal-text brutal-text-cyan mt-4 text-xl md:text-2xl text-ev-neon-cyan">
                     {item.title}
                   </h3>
                   <p className="mt-3 text-sm md:text-base font-bold text-white/70">

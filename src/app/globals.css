@@ -69,15 +69,35 @@
 
   .brutal-text {
     @apply font-brutal uppercase leading-[0.9] tracking-tight;
-    text-shadow: 4px 4px 0 #000, 5px 5px 0 #000;
+    text-shadow: 3px 3px 0 #2a2a2a, 5px 5px 0 #141414, 7px 7px 0 #000000;
   }
 
   .brutal-text-lg {
-    text-shadow: 6px 6px 0 #000, 7px 7px 0 #000;
+    text-shadow: 4px 4px 0 #2a2a2a, 7px 7px 0 #141414, 10px 10px 0 #000000;
   }
 
-  .brutal-text-light {
-    text-shadow: 4px 4px 0 #fff, 5px 5px 0 #fff;
+  .brutal-text-charcoal {
+    text-shadow: 3px 3px 0 #3a3a3a, 5px 5px 0 #222222, 7px 7px 0 #0a0a0a;
+  }
+
+  .brutal-text-grey {
+    text-shadow: 3px 3px 0 #555555, 5px 5px 0 #333333, 7px 7px 0 #111111;
+  }
+
+  .brutal-text-pink {
+    text-shadow: 3px 3px 0 #ff3388, 5px 5px 0 #cc0044, 7px 7px 0 #660022;
+  }
+
+  .brutal-text-cyan {
+    text-shadow: 3px 3px 0 #00ddff, 5px 5px 0 #0088bb, 7px 7px 0 #004466;
+  }
+
+  .brutal-text-yellow {
+    text-shadow: 3px 3px 0 #ffcc00, 5px 5px 0 #ff8800, 7px 7px 0 #cc4400;
+  }
+
+  .brutal-text-orange {
+    text-shadow: 3px 3px 0 #ffaa00, 5px 5px 0 #ff6600, 7px 7px 0 #cc3300;
   }
 
   .brutal-card {
@@ -180,7 +200,7 @@
 
   .outline-hero-text {
     @apply font-brutal uppercase tracking-[0.08em] text-ev-neon-cream;
-    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.9);
+    -webkit-text-stroke: 1.5px rgba(245, 240, 225, 0.9);
     paint-order: stroke fill;
   }
 
@@ -196,17 +216,17 @@
 
   .process-step-number {
     @apply font-brutal text-7xl text-ev-neon-yellow md:text-8xl lg:text-9xl;
-    text-shadow: 3px 3px 0 #ff0066, 6px 6px 0 #990033;
+    text-shadow: 3px 3px 0 #ff3388, 6px 6px 0 #cc0044, 9px 9px 0 #660022;
   }
 
   .process-step-title {
     @apply font-brutal text-2xl uppercase text-ev-neon-yellow md:text-3xl;
-    text-shadow: 2px 2px 0 #ff0066, 4px 4px 0 #660022;
+    text-shadow: 2px 2px 0 #ff3388, 4px 4px 0 #cc0044, 6px 6px 0 #660022;
   }
 
   .how-we-work-title {
     @apply font-brutal text-5xl uppercase text-ev-neon-yellow md:text-6xl lg:text-7xl;
-    text-shadow: 3px 3px 0 #ff0066, 5px 5px 0 #990033;
+    text-shadow: 3px 3px 0 #ff3388, 5px 5px 0 #cc0044, 8px 8px 0 #660022;
   }
 
   .caution-tape {

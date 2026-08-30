@@ -6,7 +6,7 @@ export function VeyForwardSection() {
     <section className="paper-bg relative overflow-hidden py-12 md:py-16">
       <div className="container-content px-5 md:px-8 lg:px-12">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="brutal-text text-3xl text-ev-neon-yellow sm:text-4xl md:text-5xl lg:text-6xl">
+          <h2 className="brutal-text brutal-text-pink text-3xl text-ev-neon-yellow sm:text-4xl md:text-5xl lg:text-6xl">
             The Vey Forward
           </h2>
           <p className="mx-auto mt-6 max-w-lg text-base font-bold leading-snug text-ev-black md:text-lg">

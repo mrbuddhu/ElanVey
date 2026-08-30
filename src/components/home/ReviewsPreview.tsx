@@ -29,7 +29,7 @@ export function ReviewsPreview() {
           <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <p className="brutal-label-dark">Testimonials</p>
-              <h2 className="brutal-text brutal-text-light mt-4 text-3xl text-ev-neon-yellow md:text-5xl">
+              <h2 className="brutal-text brutal-text-pink mt-4 text-3xl text-ev-neon-yellow md:text-5xl">
                 What clients say
               </h2>
             </div>

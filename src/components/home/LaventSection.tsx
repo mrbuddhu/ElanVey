@@ -11,7 +11,7 @@ export function LaventSection() {
           <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-24">
             <div>
               <p className="brutal-label-dark text-sm md:text-base">Exclusive Benefit</p>
-              <h2 className="brutal-text brutal-text-light mt-5 text-4xl text-ev-neon-yellow sm:text-5xl md:text-6xl lg:text-7xl">
+              <h2 className="brutal-text brutal-text-pink mt-5 text-4xl text-ev-neon-yellow sm:text-5xl md:text-6xl lg:text-7xl">
                 Connected with{" "}
                 <span className="text-ev-neon-pink">Lavent Marketing</span>
               </h2>

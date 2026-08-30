@@ -7,7 +7,7 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Elan Vey — we'd love to hear about your ideas and how we can help you.",
+    "Get in touch with Elan Vey — we&apos;d love to hear about your ideas and how we can help you.",
   alternates: { canonical: `${siteConfig.url}/contact` },
 };
 
@@ -39,8 +39,8 @@ export default function ContactPage() {
     <>
       <PageHero
         label="Contact"
-        title="Let's talk"
-        subtitle="Ready to take the next step? Reach out and let's chat about how Elan Vey can help you. We reply fast!"
+        title="Let&apos;s talk"
+        subtitle="Ready to take the next step? Reach out and let&apos;s chat about how Elan Vey can help you. We reply fast!"
         accent="yellow"
         badge="We Reply Within 24 Hours"
       />
@@ -72,7 +72,7 @@ export default function ContactPage() {
 
           <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
             <div className="lg:col-span-2 animate-on-scroll-slow">
-              <h2 className="brutal-text text-2xl text-ev-neon-pink md:text-3xl md:text-4xl">
+              <h2 className="brutal-text brutal-text-charcoal text-2xl text-ev-neon-pink md:text-3xl md:text-4xl">
                 Say hello!
               </h2>
               <p className="mt-4 font-bold leading-relaxed text-ev-black/80 text-base md:text-lg">

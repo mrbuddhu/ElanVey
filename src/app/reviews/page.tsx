@@ -168,7 +168,7 @@ export default function ReviewsPage() {
       <CTABlock
         dark
         title="Join our happy family"
-        description="Experience the Elan Vey difference for yourself. We can't wait to meet you!"
+        description="Experience the Elan Vey difference for yourself. We can&apos;t wait to meet you!"
       >
         <Button href="/contact" size="lg">
           Start Your Journey

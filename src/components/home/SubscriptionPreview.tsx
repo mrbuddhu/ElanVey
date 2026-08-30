@@ -9,7 +9,7 @@ export function SubscriptionPreview() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
             <p className="brutal-label">Subscription</p>
-            <h2 className="brutal-text mt-4 text-3xl text-ev-neon-yellow md:text-5xl">
+            <h2 className="brutal-text brutal-text-pink mt-4 text-3xl text-ev-neon-yellow md:text-5xl">
               Ongoing partnership for{" "}
               <span className="text-ev-neon-pink">consistent growth</span>
             </h2>

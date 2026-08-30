@@ -18,7 +18,7 @@ export function CTABlock({
       <div className="container-content text-center">
         <h2
           className={`brutal-text mx-auto max-w-4xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl ${
-            dark ? "brutal-text-light text-ev-neon-yellow" : "text-ev-neon-pink"
+            dark ? "brutal-text-pink text-ev-neon-yellow" : "brutal-text-orange text-ev-neon-pink"
           }`}
         >
           {title}
