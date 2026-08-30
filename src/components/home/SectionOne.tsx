@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   BlueStarIcon,
   PacManIcon,
@@ -6,7 +5,6 @@ import {
   WhiteTriangleIcon,
 } from "@/components/brand/AudienceIcons";
 import { audienceCategories, type AudienceItem } from "@/data/homeServices";
-import { Button } from "@/components/ui/Button";
 
 function AudienceCell({ item }: { item: AudienceItem }) {
   if (item.type === "pill") {
@@ -53,35 +51,20 @@ export function SectionOne() {
   return (
     <>
       <section className="paper-bg relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24 lg:pb-32">
-        <div className="container-content px-5 md:px-8 lg:px-12">
-          <div className="mx-auto max-w-5xl text-center lg:max-w-7xl">
-            <h1 className="brutal-text brutal-text-lg text-[2.75rem] leading-[0.9] sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
-              <span className="block text-ev-neon-yellow">Architect</span>
-              <span className="mt-2 block text-ev-neon-cyan md:mt-3">
-                Y
-                <span className="progress-o mx-1.5">
-                  <span className="progress-o-fill" />
-                </span>
-                ur
-              </span>
-              <span className="mt-2 block text-ev-neon-pink md:mt-3">
-                Limelight
-              </span>
-            </h1>
-
-            <p className="mx-auto mt-10 max-w-lg text-lg font-bold leading-snug text-ev-black md:max-w-2xl md:text-xl lg:max-w-3xl lg:text-2xl">
-              You create and we, Strategise, Optimise, Scale, Analyse, Build you
-              digitally.
-            </p>
-
-            <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6 md:mt-14">
-              <Button href="/services" size="lg">
-                Explore Services
-              </Button>
-              <Button href="/contact" variant="secondary" size="lg">
-                Start a Conversation
-              </Button>
-            </div>
+        <div className="container-content px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+          <div className="overflow-hidden border-[3px] border-black shadow-brutal-xl md:shadow-brutal-xl">
+            <video
+              className="block h-auto w-full object-cover"
+              src="/videos/ElanVeyHeroVideo.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls={false}
+              poster="/images/sections/Section1.jpeg"
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </section>
