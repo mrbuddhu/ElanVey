@@ -61,11 +61,11 @@ export function SectionOne() {
                 Your Brand, But Make It Slap ✨
               </h1>
               <p className="hero-stagger-subtitle mt-6 max-w-xl text-lg font-bold leading-relaxed text-ev-black/80 sm:text-xl md:text-2xl">
-                We turn your "meh" ideas into "no way" moments. Bold designs, viral content, and digital growth that actually hits different.
+                We turn your &quot;meh&quot; ideas into &quot;no way&quot; moments. Bold designs, viral content, and digital growth that actually hits different.
               </p>
               <div className="hero-stagger-children mt-8 flex flex-col gap-4 sm:flex-row sm:gap-6">
                 <Button href="/contact" variant="primary" size="lg">
-                  Let's Create Magic
+                  Let&apos;s Create Magic
                 </Button>
                 <Button href="/services" variant="secondary" size="lg">
                   See The Vibe
