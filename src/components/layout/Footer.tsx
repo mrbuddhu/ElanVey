@@ -14,14 +14,14 @@ export function Footer() {
               <img
                 src="/images/Logo_text.png"
                 alt="Elan Vey"
-                className="h-48 w-auto md:h-60 object-contain drop-shadow-[3px_3px_0_rgba(0,0,0,1)]"
+                className="h-24 w-auto md:h-32 object-contain drop-shadow-[3px_3px_0_rgba(0,0,0,1)]"
               />
             </Link>
-            <p className="mt-4 max-w-sm text-sm font-bold leading-relaxed text-white/70">
+            <p className="mt-3 max-w-sm text-sm font-bold leading-relaxed text-white/70">
               {siteConfig.tagline}. Friendly creative help for everyone —
               individuals, small shops, and all your big ideas.
             </p>
-            <div className="mt-6">
+            <div className="mt-4">
               <Button href="/contact" variant="primary" size="sm">
                 Start a Conversation
               </Button>

@@ -21,9 +21,9 @@ function AudienceCell({ item }: { item: AudienceItem }) {
 
     return (
       <div
-        className={`${colorClass} flex min-w-[140px] items-center justify-center px-6 sm:min-w-[180px] sm:px-8 md:min-w-[220px] md:px-12 lg:min-w-[260px]`}
+        className={`${colorClass} flex min-w-[200px] items-center justify-center px-8 py-4 sm:min-w-[280px] sm:px-12 sm:py-5 md:min-w-[320px] md:px-16 md:py-6 lg:min-w-[400px] lg:px-20 lg:py-8 border-[4px] border-black shadow-brutal-xl hover-lift transition-all`}
       >
-        <span className="font-brutal text-sm uppercase text-ev-black sm:text-base md:text-lg lg:text-xl">
+        <span className="font-brutal text-base uppercase text-ev-black sm:text-lg md:text-xl lg:text-2xl font-bold tracking-wider">
           {item.label}
         </span>
       </div>

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { HalftoneMoon } from "@/components/brand/SectionGraphics";
 import { howWeWorkIntro } from "@/data/homeServices";
 import { processSteps } from "@/data/process";
 
@@ -11,7 +10,11 @@ export function SectionFour() {
         <div className="gradient-pink-card p-3">
           <div className="gradient-pink-card-inner relative flex h-full min-h-[500px] flex-col overflow-hidden p-8 md:p-10 lg:p-12">
             <div className="absolute right-6 top-10 opacity-90 md:right-12 md:top-12">
-              <HalftoneMoon />
+              <img
+                src="/images/Moon.png"
+                alt="Moon graphic"
+                className="h-40 w-40 md:h-52 md:w-52 lg:h-64 lg:w-64 object-contain"
+              />
             </div>
 
             <div className="relative z-10 max-w-md">
