@@ -11,12 +11,10 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block">
-              <Image
+              <img
                 src="/images/Logo_text.png"
                 alt="Elan Vey"
-                width={180}
-                height={60}
-                className="h-9 w-auto md:h-10 object-contain drop-shadow-[3px_3px_0_rgba(0,0,0,1)]"
+                className="h-48 w-auto md:h-60 object-contain drop-shadow-[3px_3px_0_rgba(0,0,0,1)]"
               />
             </Link>
             <p className="mt-4 max-w-sm text-sm font-bold leading-relaxed text-white/70">

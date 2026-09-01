@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { navigation } from "@/data/navigation";
@@ -13,19 +12,16 @@ function PillHeader({
   onToggleMenu: () => void;
 }) {
   return (
-    <div className="pill-nav w-full max-w-lg">
-      <Link href="/" className="flex items-center gap-2">
-        <Image
-          src="/images/Logo_text.png"
-          alt="Elan Vey"
-          width={120}
-          height={40}
-          className="h-8 w-auto md:h-10 object-contain"
-          priority
-        />
-      </Link>
+    <div className="pill-nav w-full max-w-2xl">
+      <div className="flex items-center justify-between gap-4">
+        <Link href="/" className="flex items-center">
+          <img
+            src="/images/Logo_text.png"
+            alt="Elan Vey"
+            className="h-16 w-auto md:h-20 object-contain"
+          />
+        </Link>
 
-      <div className="flex items-center gap-2 md:gap-3">
         <button
           type="button"
           className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
@@ -51,9 +47,10 @@ function PillHeader({
 
         <Link
           href="/subscription"
-          className="subscribe-btn hidden md:inline-flex"
+          className="subscribe-btn inline-flex"
         >
-          Subscribe Now
+          <span className="hidden md:inline">Subscribe Now</span>
+          <span className="md:hidden">Subscribe</span>
         </Link>
       </div>
     </div>
@@ -97,16 +94,13 @@ export function Navbar() {
           </div>
 
           {/* Desktop: floating pill-style navbar */}
-          <div className="hidden lg:block w-full max-w-5xl">
+          <div className="hidden lg:block w-full max-w-7xl">
             <div className="pill-nav w-full">
-              <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-                <Image
+              <Link href="/" className="flex items-center flex-shrink-0">
+                <img
                   src="/images/Logo_text.png"
                   alt="Elan Vey"
-                  width={140}
-                  height={48}
-                  className="h-8 w-auto md:h-9 object-contain"
-                  priority
+                  className="h-16 w-auto md:h-20 object-contain"
                 />
               </Link>
 
@@ -165,22 +159,6 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <div
-            className={`mt-10 shrink-0 transition-all duration-500 sm:mt-12 ${
-              menuOpen
-                ? "translate-y-0 opacity-100"
-                : "translate-y-8 opacity-0"
-            }`}
-            style={{ transitionDelay: menuOpen ? "350ms" : "0ms" }}
-          >
-            <Link
-              href="/subscription"
-              className="subscribe-btn block w-full py-4 text-center text-base"
-              onClick={() => setMenuOpen(false)}
-            >
-              Subscribe Now
-            </Link>
-          </div>
         </div>
       </div>
     </>

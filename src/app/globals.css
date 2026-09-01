@@ -134,37 +134,23 @@
   }
 
   .pill-nav {
-    @apply relative flex items-center justify-between rounded-full px-4 py-2 md:px-6 md:py-2.5;
+    @apply relative flex items-center justify-between rounded-full px-3 py-[1px] md:px-4 md:py-[1px];
     background: linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.78) 0%,
-      rgba(255, 255, 255, 0.32) 48%,
-      rgba(255, 255, 255, 0.18) 100%
+      rgba(255, 102, 153, 0.75) 0%,
+      rgba(255, 51, 102, 0.45) 48%,
+      rgba(204, 0, 68, 0.35) 100%
     );
     backdrop-filter: blur(22px) saturate(180%);
     -webkit-backdrop-filter: blur(22px) saturate(180%);
-    border: 1.5px solid rgba(255, 255, 255, 0.85);
+    border: 1.5px solid rgba(255, 153, 204, 0.9);
     box-shadow:
-      0 18px 40px rgba(0, 0, 0, 0.16),
-      0 6px 14px rgba(0, 0, 0, 0.08),
-      0 1px 0 rgba(255, 255, 255, 0.9),
-      inset 0 1px 1px rgba(255, 255, 255, 0.95),
-      inset 0 -10px 18px rgba(255, 255, 255, 0.12),
-      inset 0 -1px 2px rgba(0, 0, 0, 0.1);
-  }
-
-  .pill-nav::before {
-    content: "";
-    pointer-events: none;
-    position: absolute;
-    inset: 1px 10% auto 10%;
-    height: 42%;
-    border-radius: 9999px;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.85) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
+      0 18px 40px rgba(255, 0, 102, 0.25),
+      0 6px 14px rgba(204, 0, 68, 0.15),
+      0 1px 0 rgba(255, 204, 230, 0.8),
+      inset 0 1px 1px rgba(255, 230, 240, 0.9),
+      inset 0 -10px 18px rgba(255, 102, 153, 0.15),
+      inset 0 -1px 2px rgba(153, 0, 51, 0.15);
   }
 
   .pill-nav > * {
@@ -173,7 +159,7 @@
   }
 
   .nav-pill-link {
-    @apply relative rounded-full px-3 py-1.5 font-brutal text-xs uppercase tracking-[0.15em] text-ev-black transition-all xl:px-4;
+    @apply relative rounded-full px-5 py-2.5 font-brutal text-base uppercase tracking-[0.15em] text-ev-black transition-all xl:px-6 xl:text-lg;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
   }
 
@@ -191,7 +177,7 @@
   }
 
   .subscribe-btn {
-    @apply relative rounded-full border border-white/70 px-4 py-1.5 font-brutal text-xs uppercase tracking-wide text-ev-neon-red transition-transform hover:scale-105 md:px-5 md:py-2 md:text-sm;
+    @apply relative rounded-full border border-white/70 px-8 py-3 font-brutal text-base uppercase tracking-wide text-ev-neon-red transition-transform hover:scale-105 md:px-10 md:py-3.5 md:text-lg;
     background: linear-gradient(180deg, #fff56a 0%, #ffe600 42%, #f0c400 100%);
     box-shadow:
       0 8px 16px rgba(255, 0, 51, 0.18),
