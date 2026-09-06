@@ -291,6 +291,23 @@
     @apply inline-block rotate-[-8deg] border-[3px] border-black bg-ev-neon-pink px-6 py-3 font-brutal text-sm uppercase text-ev-neon-yellow shadow-brutal md:px-8 md:py-4 md:text-base;
   }
 
+  .tape-marquee {
+    animation: tapeMarquee 18s linear infinite;
+  }
+
+  .tape-marquee-reverse {
+    animation-direction: reverse;
+  }
+
+  @keyframes tapeMarquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-35%);
+    }
+  }
+
   .hover-lift {
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
       box-shadow 0.3s ease-out;

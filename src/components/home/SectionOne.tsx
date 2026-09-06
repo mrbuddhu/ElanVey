@@ -4,10 +4,8 @@ import {
   SparkleIcon,
   WhiteTriangleIcon,
 } from "@/components/brand/AudienceIcons";
-import { ElanVeyLogo } from "@/components/brand/ElanVeyLogo";
 import {
   audienceCategories,
-  teamBehindContent,
   type AudienceItem,
 } from "@/data/homeServices";
 import { Button } from "@/components/ui/Button";
@@ -90,13 +88,6 @@ export function SectionOne() {
       <div className="stamp-edge-bottom" aria-hidden />
 
       <section className="section-dark relative overflow-hidden px-4 pb-12 pt-6 max-sm:bg-transparent sm:px-8 sm:pb-20 sm:pt-8 lg:px-12 lg:pb-28" aria-labelledby="audience-title">
-        <header className="mx-auto flex max-w-7xl items-center justify-between rounded-full bg-ev-neon-pink px-5 py-3 sm:px-10 sm:py-4 lg:px-14 lg:py-5">
-          <ElanVeyLogo className="h-8 w-auto sm:h-10 lg:h-14" />
-          <a href="/contact" className="rounded-full bg-ev-neon-yellow px-4 py-2 text-center font-brutal text-xs font-bold uppercase leading-none text-ev-black sm:px-7 sm:py-3 sm:text-base lg:px-10 lg:py-4 lg:text-xl">
-            Subscribe<br />Now
-          </a>
-        </header>
-
         <div className="mx-auto max-w-7xl text-center">
           <h2 id="audience-title" className="max-sm:hidden mt-10 font-brutal text-3xl font-bold uppercase tracking-tight text-ev-white sm:mt-14 sm:text-5xl lg:mt-16 lg:text-7xl">
             Your spotlight won&apos;t wait.
@@ -111,26 +102,21 @@ export function SectionOne() {
             </div>
           </div>
 
-          <div className="relative mt-12 max-sm:-mx-4 max-sm:mt-0 max-sm:px-4 max-sm:pb-8 max-sm:pt-2 max-sm:paper-bg sm:mt-16">
-            <div className="hidden max-sm:block">
-              <span className="team-badge">{teamBehindContent.badge}</span>
-              <h3 className="mt-7 font-brutal text-4xl font-bold uppercase leading-[0.92] text-ev-black [text-shadow:2px_2px_0_#ffe600]">
-                {teamBehindContent.headline}
-              </h3>
-              <p className="mt-6 font-brutal text-base font-bold leading-tight text-ev-black">
-                {teamBehindContent.body}
-              </p>
-              <div className="caution-tape relative left-[-2rem] mt-10 w-[calc(100%+4rem)] max-w-none bg-ev-neon-yellow text-ev-neon-pink">
-                {teamBehindContent.tapePrimary}
-              </div>
+          <div className="relative mt-10 flex flex-col gap-5 overflow-hidden sm:mt-14 sm:gap-7">
+            <div className="relative w-[calc(100%+5rem)] -translate-x-10 rotate-[-5deg] whitespace-nowrap border-[3px] border-black px-4 py-3 text-left font-brutal text-base uppercase shadow-brutal bg-ev-neon-yellow text-ev-neon-pink sm:py-4 sm:text-xl">
+              <span className="tape-marquee inline-block">RESEARCH • IDEAS • SCRIPTING • HOOKS • RESEARCH • IDEAS • SCRIPTING • HOOKS • </span>
             </div>
-            <div className="max-sm:hidden">
-              <p className="font-brutal text-3xl font-bold uppercase leading-[0.9] text-ev-neon-cream sm:text-5xl lg:text-7xl">
-                And everyone<br />
-                <span className="text-ev-white">in between.</span>
-              </p>
-              <span aria-hidden className="pointer-events-none absolute -right-2 top-1/2 h-1 w-32 -rotate-12 bg-ev-neon-cream sm:right-24 sm:w-64" />
+            <div className="relative w-[calc(100%+5rem)] -translate-x-2 rotate-[4deg] whitespace-nowrap border-[3px] border-black px-4 py-3 text-left font-brutal text-base uppercase shadow-brutal bg-ev-black text-ev-neon-yellow sm:py-4 sm:text-xl">
+              <span className="tape-marquee tape-marquee-reverse inline-block">EDITING • DESIGN • PUBLISHING • ANALYSIS • EDITING • DESIGN • PUBLISHING • ANALYSIS • </span>
             </div>
+          </div>
+
+          <div className="relative mt-12 sm:mt-16">
+            <p className="font-brutal text-3xl font-bold uppercase leading-[0.9] text-ev-neon-cream sm:text-5xl lg:text-7xl">
+              And everyone<br />
+              <span className="text-ev-white">in between.</span>
+            </p>
+            <span aria-hidden className="pointer-events-none absolute -right-2 top-1/2 h-1 w-32 -rotate-12 bg-ev-neon-cream sm:right-24 sm:w-64" />
           </div>
         </div>
       </section>
