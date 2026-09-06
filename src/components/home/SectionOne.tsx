@@ -103,21 +103,14 @@ export function SectionOne() {
           </div>
 
           <div className="relative mt-10 flex flex-col gap-5 overflow-hidden sm:mt-14 sm:gap-7">
-            <div className="relative w-[calc(100%+5rem)] -translate-x-10 rotate-[-5deg] whitespace-nowrap border-[3px] border-black px-4 py-3 text-left font-brutal text-base uppercase shadow-brutal bg-ev-neon-yellow text-ev-neon-pink sm:py-4 sm:text-xl">
+            <div className="relative left-1/2 w-screen -translate-x-1/2 rotate-[-5deg] whitespace-nowrap border-[3px] border-black px-4 py-3 text-left font-brutal text-base uppercase shadow-brutal bg-ev-neon-yellow text-ev-neon-pink sm:py-4 sm:text-xl">
               <span className="tape-marquee inline-block">RESEARCH • IDEAS • SCRIPTING • HOOKS • RESEARCH • IDEAS • SCRIPTING • HOOKS • </span>
             </div>
-            <div className="relative w-[calc(100%+5rem)] -translate-x-2 rotate-[4deg] whitespace-nowrap border-[3px] border-black px-4 py-3 text-left font-brutal text-base uppercase shadow-brutal bg-ev-black text-ev-neon-yellow sm:py-4 sm:text-xl">
+            <div className="relative left-1/2 w-screen -translate-x-1/2 rotate-[4deg] whitespace-nowrap border-[3px] border-black px-4 py-3 text-left font-brutal text-base uppercase shadow-brutal bg-ev-black text-ev-neon-yellow sm:py-4 sm:text-xl">
               <span className="tape-marquee tape-marquee-reverse inline-block">EDITING • DESIGN • PUBLISHING • ANALYSIS • EDITING • DESIGN • PUBLISHING • ANALYSIS • </span>
             </div>
           </div>
 
-          <div className="relative mt-12 sm:mt-16">
-            <p className="font-brutal text-3xl font-bold uppercase leading-[0.9] text-ev-neon-cream sm:text-5xl lg:text-7xl">
-              And everyone<br />
-              <span className="text-ev-white">in between.</span>
-            </p>
-            <span aria-hidden className="pointer-events-none absolute -right-2 top-1/2 h-1 w-32 -rotate-12 bg-ev-neon-cream sm:right-24 sm:w-64" />
-          </div>
         </div>
       </section>
     </>
