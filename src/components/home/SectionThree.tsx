@@ -15,14 +15,28 @@ export function SectionThree() {
           </p>
         </div>
 
+        {/* Full-width chessboard strip - square squares, same width as diagonal strips */}
+        <div className="relative my-8 overflow-visible md:my-12 lg:my-16">
+          <div className="absolute left-1/2 -translate-x-1/2 w-[150vw] grid grid-cols-32 gap-0">
+            {Array.from({ length: 128 }).map((_, i) => (
+              <div
+                key={i}
+                className={`aspect-square ${
+                  (Math.floor(i / 32) + i) % 2 === 0 ? 'bg-ev-black' : 'bg-ev-neon-cream'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
         <div className="checkerboard-divider my-12 md:my-16 lg:my-20" aria-hidden />
 
         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16 lg:gap-24 xl:gap-28">
-          <ul className="space-y-5 md:space-y-6 lg:space-y-7">
+          <ul className="space-y-6 md:space-y-8 lg:space-y-10">
             {homeServices.map((service) => (
-              <li key={service.id} className="flex items-center gap-5 lg:gap-7">
+              <li key={service.id} className="flex items-center gap-6 lg:gap-8">
                 <ServiceIcon icon={service.icon} />
-                <span className="font-brutal text-base uppercase tracking-wide text-ev-black md:text-lg lg:text-xl">
+                <span className="font-brutal text-xl font-bold uppercase tracking-wide text-ev-black md:text-2xl lg:text-3xl">
                   {service.name}
                 </span>
               </li>
@@ -30,7 +44,11 @@ export function SectionThree() {
           </ul>
 
           <div className="flex items-center justify-center md:justify-end">
-            <LanternStamp className="h-52 w-52 sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 xl:h-96 xl:w-96" />
+            <img
+              src="/images/Lantern.png"
+              alt="Lantern"
+              className="h-52 w-52 sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 xl:h-96 xl:w-96 object-contain"
+            />
           </div>
         </div>
       </div>

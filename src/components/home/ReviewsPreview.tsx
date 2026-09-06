@@ -2,13 +2,13 @@ import Link from "next/link";
 import { testimonials } from "@/data/testimonials";
 import { Section } from "@/components/ui/Section";
 
-function StarRating({ rating }: { rating: number }) {
+function StarRating({ rating, color }: { rating: number; color?: string }) {
   return (
     <div className="flex gap-1" aria-label={`${rating} out of 5 stars`}>
       {Array.from({ length: 5 }).map((_, i) => (
         <span
           key={i}
-          className={`text-lg ${i < rating ? "text-ev-neon-pink" : "text-ev-black/20"}`}
+          className={`text-lg ${i < rating ? color || "text-ev-neon-pink" : "text-ev-black/20"}`}
           aria-hidden
         >
           ★
@@ -49,7 +49,7 @@ export function ReviewsPreview() {
                   i === 0 ? "bg-ev-neon-pink" : "bg-ev-neon-cream text-ev-black"
                 }`}
               >
-                <StarRating rating={testimonial.rating} />
+                <StarRating rating={testimonial.rating} color={i === 0 ? "text-white" : undefined} />
                 <p
                   className={`mt-6 flex-1 font-bold leading-relaxed ${
                     i === 0 ? "text-white" : "text-ev-black"

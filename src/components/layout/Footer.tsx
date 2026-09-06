@@ -14,7 +14,7 @@ export function Footer() {
               <img
                 src="/images/Logo_text.png"
                 alt="Elan Vey"
-                className="h-24 w-auto md:h-32 object-contain drop-shadow-[3px_3px_0_rgba(0,0,0,1)]"
+                className="h-48 w-auto md:h-64 object-contain drop-shadow-[3px_3px_0_rgba(0,0,0,1)]"
               />
             </Link>
             <p className="mt-3 max-w-sm text-sm font-bold leading-relaxed text-white/70">

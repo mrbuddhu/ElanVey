@@ -13,7 +13,7 @@ function PillHeader({
 }) {
   return (
     <div className="pill-nav w-full max-w-2xl">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center">
           <img
             src="/images/Logo_text.png"
@@ -24,7 +24,7 @@ function PillHeader({
 
         <button
           type="button"
-          className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden mx-auto"
+          className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
           onClick={onToggleMenu}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
@@ -47,10 +47,16 @@ function PillHeader({
 
         <Link
           href="/subscription"
-          className="subscribe-btn inline-flex ml-auto"
+          className="subscribe-btn inline-flex md:hidden"
         >
-          <span className="hidden md:inline">Subscribe Now</span>
-          <span className="md:hidden">Subscribe</span>
+          <span>Subscribe</span>
+        </Link>
+
+        <Link
+          href="/subscription"
+          className="subscribe-btn inline-flex hidden md:flex"
+        >
+          <span>Subscribe Now</span>
         </Link>
       </div>
     </div>
