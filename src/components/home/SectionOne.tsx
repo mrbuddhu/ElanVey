@@ -104,10 +104,10 @@ export function SectionOne() {
 
           <div className="relative mt-10 flex flex-col gap-5 overflow-hidden sm:mt-14 sm:gap-7">
             <div className="relative left-1/2 w-screen -translate-x-1/2 rotate-[-5deg] whitespace-nowrap border-[3px] border-black px-4 py-3 text-left font-brutal text-base uppercase shadow-brutal bg-ev-neon-yellow text-ev-neon-pink sm:py-4 sm:text-xl">
-              <span className="tape-marquee inline-block">RESEARCH • IDEAS • SCRIPTING • HOOKS • RESEARCH • IDEAS • SCRIPTING • HOOKS • </span>
+              <span className="tape-track tape-marquee">RESEARCH • IDEAS • SCRIPTING • HOOKS • RESEARCH • IDEAS • SCRIPTING • HOOKS • RESEARCH • IDEAS • SCRIPTING • HOOKS • </span>
             </div>
             <div className="relative left-1/2 w-screen -translate-x-1/2 rotate-[4deg] whitespace-nowrap border-[3px] border-black px-4 py-3 text-left font-brutal text-base uppercase shadow-brutal bg-ev-black text-ev-neon-yellow sm:py-4 sm:text-xl">
-              <span className="tape-marquee tape-marquee-reverse inline-block">EDITING • DESIGN • PUBLISHING • ANALYSIS • EDITING • DESIGN • PUBLISHING • ANALYSIS • </span>
+              <span className="tape-track tape-marquee tape-marquee-reverse">EDITING • DESIGN • PUBLISHING • ANALYSIS • EDITING • DESIGN • PUBLISHING • ANALYSIS • EDITING • DESIGN • PUBLISHING • ANALYSIS • </span>
             </div>
           </div>
 

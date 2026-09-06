@@ -291,8 +291,14 @@
     @apply inline-block rotate-[-8deg] border-[3px] border-black bg-ev-neon-pink px-6 py-3 font-brutal text-sm uppercase text-ev-neon-yellow shadow-brutal md:px-8 md:py-4 md:text-base;
   }
 
+  .tape-track {
+    display: inline-flex;
+    min-width: max-content;
+    will-change: transform;
+  }
+
   .tape-marquee {
-    animation: tapeMarquee 18s linear infinite;
+    animation: tapeMarquee 22s linear infinite;
   }
 
   .tape-marquee-reverse {
@@ -304,7 +310,13 @@
       transform: translateX(0);
     }
     to {
-      transform: translateX(-35%);
+      transform: translateX(-33.333%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tape-marquee {
+      animation-play-state: paused;
     }
   }
 
