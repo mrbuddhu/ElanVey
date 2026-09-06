@@ -1,55 +1,6 @@
-import {
-  BlueStarIcon,
-  PacManIcon,
-  SparkleIcon,
-  WhiteTriangleIcon,
-} from "@/components/brand/AudienceIcons";
-import { audienceCategories, type AudienceItem } from "@/data/homeServices";
 import { Button } from "@/components/ui/Button";
-import Link from "next/link";
-
-function AudienceCell({ item }: { item: AudienceItem }) {
-  if (item.type === "pill") {
-    const colorClass =
-      item.color === "cream"
-        ? "audience-pill-cream"
-        : item.color === "pink"
-          ? "audience-pill-pink"
-          : item.color === "yellow"
-            ? "audience-pill-yellow"
-            : "audience-pill-cyan";
-
-    return (
-      <div
-        className={`${colorClass} flex min-w-[200px] items-center justify-center px-8 py-4 sm:min-w-[280px] sm:px-12 sm:py-5 md:min-w-[320px] md:px-16 md:py-6 lg:min-w-[400px] lg:px-20 lg:py-8 border-[4px] border-black shadow-brutal-xl hover-lift transition-all`}
-      >
-        <span className="font-brutal text-base uppercase text-ev-black sm:text-lg md:text-xl lg:text-2xl font-bold tracking-wider">
-          {item.label}
-        </span>
-      </div>
-    );
-  }
-
-  const icons = {
-    pacman: <PacManIcon />,
-    star: <BlueStarIcon />,
-    triangle: <WhiteTriangleIcon />,
-    sparkle: <SparkleIcon />,
-  };
-
-  return (
-    <div className="flex items-center justify-center px-3 sm:px-4">
-      {icons[item.icon]}
-    </div>
-  );
-}
 
 export function SectionOne() {
-  const rows: AudienceItem[][] = [];
-  for (let i = 0; i < audienceCategories.length; i += 2) {
-    rows.push(audienceCategories.slice(i, i + 2));
-  }
-
   return (
     <>
       <section className="paper-bg relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24 lg:pb-32">
@@ -96,32 +47,21 @@ export function SectionOne() {
 
       <div className="stamp-edge-bottom" aria-hidden />
 
-      <section className="relative bg-ev-black pb-16 pt-14 md:pb-24 md:pt-20 lg:pb-32 lg:pt-24">
-        <div className="container-content px-5 md:px-8 lg:px-12">
-          <h2 className="text-center font-brutal text-2xl font-bold uppercase tracking-wide text-ev-white sm:text-3xl md:text-4xl lg:text-5xl">
-            Who is Elan Vey for?
-          </h2>
-
-          <div className="mx-auto mt-12 max-w-md space-y-8 md:mt-16 md:max-w-3xl md:space-y-10 lg:mt-20 lg:max-w-6xl lg:grid lg:grid-cols-2 lg:gap-x-20 lg:gap-y-14 lg:space-y-0">
-            {rows.map((row, rowIndex) => (
-              <div
-                key={rowIndex}
-                className="grid grid-cols-2 items-center gap-6 md:gap-10"
-              >
-                {row.map((item) => (
-                  <div
-                    key={item.id}
-                    className={`flex ${
-                      item.side === "left" ? "justify-start" : "justify-end"
-                    }`}
-                  >
-                    <AudienceCell item={item} />
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
+      <section className="relative bg-ev-black" aria-labelledby="audience-mockup-title">
+        <h2 id="audience-mockup-title" className="sr-only">
+          Who is Elan Vey for?
+        </h2>
+        <picture className="block w-full">
+          <source
+            media="(max-width: 767px)"
+            srcSet="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/M2-KMTcwIAz9cJayY7gfhlgLfDrCGPu7s.jpeg"
+          />
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/W2-IZ81j9UgMPVaODsWPCX40disIjcVol.jpeg"
+            alt="Elan Vey audience overview for creators, dreamers, artists, businesses, and everyone in between"
+            className="block h-auto w-full"
+          />
+        </picture>
       </section>
     </>
   );
