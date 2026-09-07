@@ -1,4 +1,4 @@
-export function AnimatedPacManRow({ className = &apos;&apos; }: { className?: string }) {
+export function AnimatedPacManRow({ className = '' }: { className?: string }) {
   return (
     <div className={`pacman-row relative flex h-20 w-full items-center md:h-24 lg:h-28 ${className}`} aria-hidden>
       {/* Three static dots eaten in sequence */}
