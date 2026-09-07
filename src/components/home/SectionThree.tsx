@@ -3,8 +3,45 @@ import { ServiceIcon, LanternStamp } from "@/components/brand/ServiceIcons";
 
 export function SectionThree() {
   return (
-    <section className="paper-bg relative overflow-hidden py-16 md:py-24 lg:py-32">
-      <div className="container-content px-5 md:px-8 lg:px-12">
+    <>
+      {/* SVG SCALLOPED / PUNCH-CARD strip at the very top — black background, semicircle notches punched DOWN. 100% visible on mobile because it's SVG, no CSS mask tricks. */}
+      <div className="relative w-full overflow-hidden bg-ev-black">
+        <svg
+          className="block h-12 w-full md:h-16 lg:h-20"
+          viewBox="0 0 1200 64"
+          preserveAspectRatio="none"
+          aria-hidden
+        >
+          <path
+            d="
+              M0 0 L1200 0
+              L1200 32
+              L1176 32 C1176 45.2 1165.2 56 1152 56 C1138.8 56 1128 45.2 1128 32
+              L1104 32 C1104 45.2 1093.2 56 1080 56 C1066.8 56 1056 45.2 1056 32
+              L1032 32 C1032 45.2 1021.2 56 1008 56 C994.8 56 984 45.2 984 32
+              L960 32 C960 45.2 949.2 56 936 56 C922.8 56 912 45.2 912 32
+              L888 32 C888 45.2 877.2 56 864 56 C850.8 56 840 45.2 840 32
+              L816 32 C816 45.2 805.2 56 792 56 C778.8 56 768 45.2 768 32
+              L744 32 C744 45.2 733.2 56 720 56 C706.8 56 696 45.2 696 32
+              L672 32 C672 45.2 661.2 56 648 56 C634.8 56 624 45.2 624 32
+              L600 32 C600 45.2 589.2 56 576 56 C562.8 56 552 45.2 552 32
+              L528 32 C528 45.2 517.2 56 504 56 C490.8 56 480 45.2 480 32
+              L456 32 C456 45.2 445.2 56 432 56 C418.8 56 408 45.2 408 32
+              L384 32 C384 45.2 373.2 56 360 56 C346.8 56 336 45.2 336 32
+              L312 32 C312 45.2 301.2 56 288 56 C274.8 56 264 45.2 264 32
+              L240 32 C240 45.2 229.2 56 216 56 C202.8 56 192 45.2 192 32
+              L168 32 C168 45.2 157.2 56 144 56 C130.8 56 120 45.2 120 32
+              L96 32 C96 45.2 85.2 56 72 56 C58.8 56 48 45.2 48 32
+              L24 32 C24 45.2 13.2 56 0 56 L0 32 Z
+            "
+            fill="#000000"
+          />
+        </svg>
+      </div>
+
+      <section className="paper-bg relative overflow-hidden pb-16 md:pb-24 lg:pb-32">
+        <div className="container-content px-5 md:px-8 lg:px-12">
+
         <div className="mx-auto max-w-5xl text-center lg:max-w-6xl">
           <h2 className="brutal-text brutal-text-lg text-4xl text-ev-neon-yellow sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
             THE VEY
@@ -62,5 +99,6 @@ export function SectionThree() {
         </div>
       </div>
     </section>
+    </>
   );
 }
