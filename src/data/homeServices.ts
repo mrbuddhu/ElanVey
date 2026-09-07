@@ -5,13 +5,47 @@ export interface HomeService {
 }
 
 export const homeServices: HomeService[] = [
-  { id: "1", name: "Personal Look & Style", icon: "star" },
-  { id: "2", name: "See What Others Do", icon: "sun" },
-  { id: "3", name: "Growing Your Followers", icon: "triangle" },
-  { id: "4", name: "Post Ideas Planning", icon: "snowflake" },
-  { id: "5", name: "Getting Better Results", icon: "diamond" },
-  { id: "6", name: "Fun Post Ideas", icon: "rocket" },
-  { id: "7", name: "Reaching More People", icon: "flame" },
+  { id: "m1", name: "Personal Branding", icon: "star" },
+  { id: "m2", name: "Competitor Analysis", icon: "sun" },
+  { id: "m3", name: "Audience Building", icon: "triangle" },
+  { id: "m4", name: "Content Strategy", icon: "snowflake" },
+  { id: "m5", name: "Growth Optimisation", icon: "diamond" },
+  { id: "m6", name: "Content Ideation", icon: "rocket" },
+  { id: "m7", name: "Paid Growth", icon: "flame" },
+];
+
+export interface DesktopRow1 {
+  id: string;
+  name: string;
+  icon: "diamond" | "triangle" | "sun";
+}
+
+export const desktopRow1: DesktopRow1[] = [
+  { id: "d1a", name: "Content Ideation", icon: "diamond" },
+  { id: "d1b", name: "Paid Growth", icon: "triangle" },
+  { id: "d1c", name: "Audience Building", icon: "sun" },
+];
+
+export interface DesktopRow2 {
+  id: string;
+  name: string;
+  icon: "star" | "snowflake";
+}
+
+export const desktopRow2: DesktopRow2[] = [
+  { id: "d2a", name: "Competitor Analysis", icon: "star" },
+  { id: "d2b", name: "Content Strategy", icon: "snowflake" },
+];
+
+export interface DesktopRow3 {
+  id: string;
+  name: string;
+  icon: "rocket" | "flame";
+}
+
+export const desktopRow3: DesktopRow3[] = [
+  { id: "d3a", name: "Growth Optimisation", icon: "rocket" },
+  { id: "d3b", name: "Editing/Designing", icon: "flame" },
 ];
 
 type AudiencePill = {
