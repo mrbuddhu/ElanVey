@@ -71,21 +71,20 @@ export function SectionOne() {
           {/* Mobile: AND EVERYONE IN BETWEEN as dominant headline */}
           <div className="mb-8 text-center md:mb-12 lg:mb-16 lg:hidden">
             <div className="relative inline-block">
-              {/* Orbital Swoosh */}
-              <svg className="absolute -left-12 -top-8 h-32 w-32" viewBox="0 0 200 200" aria-hidden>
-                <ellipse cx="100" cy="100" rx="90" ry="60" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="2" transform="rotate(-15 100 100)" />
-              </svg>
-              
-              <h1 className="font-brutal text-4xl font-bold uppercase tracking-tight text-white/95 sm:text-5xl md:text-6xl">
+              {/* Ringstars PNG behind the text */}
+              <img
+                src="/images/Ringstars.png"
+                alt=""
+                aria-hidden
+                className="pointer-events-none absolute left-1/2 top-1/2 h-[140%] w-[130%] -translate-x-1/2 -translate-y-1/2 object-contain sm:h-[150%] sm:w-[135%] md:h-[160%] md:w-[140%]"
+              />
+
+              <h1 className="font-brutal text-4xl font-bold uppercase tracking-tight text-white/95 sm:text-5xl md:text-6xl relative z-10">
                 AND EVERYONE
               </h1>
-              <h1 className="font-brutal text-5xl font-bold uppercase tracking-tight text-white/95 sm:text-6xl md:text-7xl" style={{ textShadow: '4px 4px 0 #FF0066' }}>
+              <h1 className="font-brutal text-5xl font-bold uppercase tracking-tight text-white/95 sm:text-6xl md:text-7xl relative z-10" style={{ textShadow: '4px 4px 0 #FF0066' }}>
                 IN BETWEEN.
               </h1>
-              
-              {/* Sparkle decorations */}
-              <div className="absolute -right-6 top-0 text-white/50">✦</div>
-              <div className="absolute -left-6 bottom-0 text-white/50">✦</div>
             </div>
           </div>
 
@@ -145,21 +144,20 @@ export function SectionOne() {
           {/* Desktop: AND EVERYONE IN BETWEEN Statement */}
           <div className="relative mt-12 text-center md:mt-16 lg:mt-20 hidden lg:block">
             <div className="relative inline-block">
-              {/* Orbital Swoosh */}
-              <svg className="absolute -left-20 -top-10 h-40 w-40 md:-left-32 md:-top-16 md:h-56 md:w-56 lg:-left-40 lg:-top-20 lg:h-72 lg:w-72" viewBox="0 0 200 200" aria-hidden>
-                <ellipse cx="100" cy="100" rx="90" ry="60" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="2" transform="rotate(-15 100 100)" />
-              </svg>
-              
-              <h2 className="font-brutal text-4xl font-bold uppercase tracking-tight text-white/95 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+              {/* Ringstars PNG behind the text */}
+              <img
+                src="/images/Ringstars.png"
+                alt=""
+                aria-hidden
+                className="pointer-events-none absolute left-1/2 top-1/2 h-[160%] w-[135%] -translate-x-1/2 -translate-y-1/2 object-contain xl:h-[170%] xl:w-[140%]"
+              />
+
+              <h2 className="font-brutal text-4xl font-bold uppercase tracking-tight text-white/95 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl relative z-10">
                 AND EVERYONE
               </h2>
-              <h2 className="font-brutal text-5xl font-bold uppercase tracking-tight text-white/95 sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl" style={{ textShadow: '4px 4px 0 #FF0066' }}>
+              <h2 className="font-brutal text-5xl font-bold uppercase tracking-tight text-white/95 sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl relative z-10" style={{ textShadow: '4px 4px 0 #FF0066' }}>
                 IN BETWEEN.
               </h2>
-              
-              {/* Sparkle decorations */}
-              <div className="absolute -right-8 top-0 text-white/50 md:-right-12 lg:-right-16">✦</div>
-              <div className="absolute -left-8 bottom-0 text-white/50 md:-left-12 lg:-left-16">✦</div>
             </div>
           </div>
         </div>

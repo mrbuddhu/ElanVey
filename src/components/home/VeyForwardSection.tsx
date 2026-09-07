@@ -37,19 +37,15 @@ export function VeyForwardSection() {
           </p>
         </div>
 
-        {/* CHECKERED FINISH TAPE DIVIDER — two rows of alternating squares */}
-        <div
-          className="mx-auto my-10 w-full md:my-14 lg:my-16"
-          aria-hidden
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, #0a0a0a 50%, transparent 50%), linear-gradient(to right, transparent 50%, #0a0a0a 50%)",
-            backgroundSize: "48px 32px, 48px 32px",
-            backgroundPosition: "0 0, 24px 32px",
-            backgroundRepeat: "repeat-x",
-            height: "64px",
-          }}
-        />
+        {/* CHECKERED FINISH TAPE DIVIDER — PNG racetrack strip */}
+        <div className="mx-auto my-10 w-full overflow-hidden md:my-14 lg:my-16" aria-hidden>
+          <img
+            src="/images/Racetrack.png"
+            alt=""
+            aria-hidden
+            className="h-16 w-full object-cover object-left md:h-20 lg:h-24"
+          />
+        </div>
 
         {/* MOBILE: Vertical list on LEFT + Red Lantern illustration on RIGHT */}
         <div className="lg:hidden">
