@@ -33,18 +33,82 @@ export function ServiceIcon({ icon }: { icon: HomeService["icon"] }) {
     );
   }
 
+  if (icon === "flame") {
+    return (
+      <span className="inline-flex shrink-0">
+        <svg viewBox="0 0 48 48" className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16" aria-hidden>
+          <path
+            d="M24 44c8 0 14-6 14-14 0-6-4-10-8-14-2 4-6 6-6 6s-2-8-6-12c-4 6-8 14-8 20 0 8 6 14 14 14z"
+            fill="#FF6A00"
+            stroke="#000000"
+            strokeWidth="1.5"
+          />
+          <path
+            d="M24 38c4 0 6-3 6-7 0-3-2-5-4-7-1 2-3 3-3 3s-1-4-3-6c-1 3-3 7-3 10 0 4 3 7 7 7z"
+            fill="#FFCC00"
+          />
+        </svg>
+      </span>
+    );
+  }
+
+  if (icon === "sparkle") {
+    return (
+      <span className="inline-flex shrink-0">
+        <svg viewBox="0 0 48 48" className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16" aria-hidden>
+          <path
+            d="M24 2 L28 20 L46 24 L28 28 L24 46 L20 28 L2 24 L20 20 Z"
+            fill="#5B58FF"
+            stroke="#000000"
+            strokeWidth="1.5"
+          />
+        </svg>
+      </span>
+    );
+  }
+
+  if (icon === "bolt") {
+    return (
+      <span className="inline-flex shrink-0">
+        <svg viewBox="0 0 48 48" className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16" aria-hidden>
+          <path
+            d="M26 2 L8 28 h12 l-4 18 L40 20 H28 l2 -18 z"
+            fill="#FFE500"
+            stroke="#000000"
+            strokeWidth="1.5"
+          />
+        </svg>
+      </span>
+    );
+  }
+
+  if (icon === "target") {
+    return (
+      <span className="inline-flex shrink-0">
+        <svg viewBox="0 0 48 48" className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16" aria-hidden>
+          <circle cx="24" cy="24" r="20" fill="#FF3D6E" stroke="#000000" strokeWidth="1.5" />
+          <circle cx="24" cy="24" r="13" fill="#ffffff" stroke="#000000" strokeWidth="1.2" />
+          <circle cx="24" cy="24" r="7" fill="#FF3D6E" stroke="#000000" strokeWidth="1" />
+          <circle cx="24" cy="24" r="2" fill="#000000" />
+        </svg>
+      </span>
+    );
+  }
+
   return (
     <span className="inline-flex shrink-0">
       <svg viewBox="0 0 48 48" className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16" aria-hidden>
         <path
-          d="M24 44c8 0 14-6 14-14 0-6-4-10-8-14-2 4-6 6-6 6s-2-8-6-12c-4 6-8 14-8 20 0 8 6 14 14 14z"
+          d="M10 14 C10 14 4 18 4 24 C4 30 10 34 10 34 L10 38 L22 32 C23 33 26 34 30 34 C38 34 44 30 44 24 C44 18 38 14 30 14 C26 14 23 15 22 16 Z"
           fill="#FF6A00"
           stroke="#000000"
           strokeWidth="1.5"
         />
         <path
-          d="M24 38c4 0 6-3 6-7 0-3-2-5-4-7-1 2-3 3-3 3s-1-4-3-6c-1 3-3 7-3 10 0 4 3 7 7 7z"
-          fill="#FFCC00"
+          d="M4 22 C2 22 2 26 4 26 L10 26 Z"
+          fill="#FF6A00"
+          stroke="#000000"
+          strokeWidth="1"
         />
       </svg>
     </span>

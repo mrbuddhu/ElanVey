@@ -1,51 +1,140 @@
 export interface HomeService {
   id: string;
   name: string;
-  icon: "star" | "sun" | "triangle" | "snowflake" | "diamond" | "rocket" | "flame";
+  description: string;
+  icon:
+    | "star"
+    | "sun"
+    | "triangle"
+    | "snowflake"
+    | "diamond"
+    | "rocket"
+    | "flame"
+    | "sparkle"
+    | "bolt"
+    | "target"
+    | "megaphone";
 }
 
 export const homeServices: HomeService[] = [
-  { id: "m1", name: "Personal Branding", icon: "star" },
-  { id: "m2", name: "Competitor Analysis", icon: "sun" },
-  { id: "m3", name: "Audience Building", icon: "triangle" },
-  { id: "m4", name: "Content Strategy", icon: "snowflake" },
-  { id: "m5", name: "Growth Optimisation", icon: "diamond" },
-  { id: "m6", name: "Content Ideation", icon: "rocket" },
-  { id: "m7", name: "Paid Growth", icon: "flame" },
+  {
+    id: "s1",
+    name: "Content Strategy",
+    description:
+      "What to create, where to post & why.",
+    icon: "star",
+  },
+  {
+    id: "s2",
+    name: "Content Ideation",
+    description:
+      "Hooks, concepts, formats & creative direction.",
+    icon: "sun",
+  },
+  {
+    id: "s3",
+    name: "Content Creation",
+    description:
+      "Reels, carousels, creatives & visual content.",
+    icon: "triangle",
+  },
+  {
+    id: "s4",
+    name: "Social Media Management",
+    description:
+      "Posting, scheduling & platform optimization.",
+    icon: "snowflake",
+  },
+  {
+    id: "s5",
+    name: "Trend & Competitor Intelligence",
+    description:
+      "What&apos;s working in your niche and why.",
+    icon: "diamond",
+  },
+  {
+    id: "s6",
+    name: "Analytics & Performance",
+    description:
+      "Track, decode & improve what actually performs.",
+    icon: "rocket",
+  },
+  {
+    id: "s7",
+    name: "Audience Building",
+    description:
+      "Positioning, engagement & community growth.",
+    icon: "flame",
+  },
+  {
+    id: "s8",
+    name: "Personal Branding",
+    description:
+      "Build a recognizable digital identity around you.",
+    icon: "sparkle",
+  },
+  {
+    id: "s9",
+    name: "Paid Growth",
+    description:
+      "Meta/Instagram ads, targeting, budgets & ROAS optimization.",
+    icon: "bolt",
+  },
+  {
+    id: "s10",
+    name: "Monetization Strategy",
+    description:
+      "Turn your audience into revenue.",
+    icon: "target",
+  },
+  {
+    id: "s11",
+    name: "Growth Optimization",
+    description:
+      "Continuously test, refine & scale what works.",
+    icon: "megaphone",
+  },
 ];
 
 export interface DesktopRow1 {
   id: string;
   name: string;
-  icon: "diamond" | "triangle" | "sun";
+  description: string;
+  icon: HomeService["icon"];
 }
 
 export const desktopRow1: DesktopRow1[] = [
-  { id: "d1a", name: "Content Ideation", icon: "diamond" },
-  { id: "d1b", name: "Paid Growth", icon: "triangle" },
-  { id: "d1c", name: "Audience Building", icon: "sun" },
+  { ...homeServices[0], id: "d1a" },
+  { ...homeServices[1], id: "d1b" },
+  { ...homeServices[2], id: "d1c" },
 ];
 
 export interface DesktopRow2 {
   id: string;
   name: string;
-  icon: "star" | "snowflake";
+  description: string;
+  icon: HomeService["icon"];
 }
 
 export const desktopRow2: DesktopRow2[] = [
-  { id: "d2a", name: "Competitor Analysis", icon: "star" },
-  { id: "d2b", name: "Content Strategy", icon: "snowflake" },
+  { ...homeServices[3], id: "d2a" },
+  { ...homeServices[4], id: "d2b" },
+  { ...homeServices[5], id: "d2c" },
 ];
 
 export interface DesktopRow3 {
   id: string;
   name: string;
-  icon: "rocket" | "flame";
+  description: string;
+  icon: HomeService["icon"];
 }
 
 export const desktopRow3: DesktopRow3[] = [
-  { id: "d3a", name: "Growth Optimisation", icon: "rocket" },
-  { id: "d3b", name: "Editing/Designing", icon: "flame" },
+  { ...homeServices[6], id: "d3a" },
+  { ...homeServices[7], id: "d3b" },
+  { ...homeServices[8], id: "d3c" },
+  { ...homeServices[9], id: "d3d" },
+  { ...homeServices[10], id: "d3e" },
 ];
 
 type AudiencePill = {
@@ -87,5 +176,5 @@ export const teamBehindContent = {
 export const howWeWorkIntro = {
   title: "How we work.",
   subtitle: "The procedure.",
-  body: "You bring the vision. We learn what you're building, make a simple plan around it, work with you on every piece, and use the results to keep improving and growing with you.",
+  body: "You bring the vision. We learn what you&apos;re building, make a simple plan around it, work with you on every piece, and use the results to keep improving and growing with you.",
 };

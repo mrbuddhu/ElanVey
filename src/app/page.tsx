@@ -3,7 +3,6 @@ import { SectionThree } from "@/components/home/SectionThree";
 import { SectionFour } from "@/components/home/SectionFour";
 import { LaventSection } from "@/components/home/LaventSection";
 import { SubscriptionPreview } from "@/components/home/SubscriptionPreview";
-import { ReviewsPreview } from "@/components/home/ReviewsPreview";
 import { FinalCTA } from "@/components/home/FinalCTA";
 
 export default function HomePage() {
@@ -14,7 +13,6 @@ export default function HomePage() {
       <SectionFour />
       <LaventSection />
       <SubscriptionPreview />
-      <ReviewsPreview />
       <FinalCTA />
     </>
   );

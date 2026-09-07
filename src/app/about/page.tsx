@@ -10,74 +10,81 @@ import { siteConfig } from "@/data/site";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Elan Vey — who we are, what drives us, and how we help people just like you bring their ideas to life.",
+    "Elan Vey exists for people who have a vision but don&apos;t have a path to make the world see it.",
   alternates: { canonical: `${siteConfig.url}/about` },
 };
 
-const values = [
+const differentiators = [
   {
-    title: "Mission",
-    content:
-      "To give every person and small idea the creative tools and honest guidance they need to stand out, grow, and feel proud of what they share with the world.",
-    accent: "pink" as const,
+    title: "Built for every kind of dream — business, skill, art or idea.",
+    icon: "◆",
+    color: "bg-ev-neon-pink text-white",
   },
   {
-    title: "Vision",
+    title: "Bold, eye-catching design — no boring templates.",
+    icon: "▲",
+    color: "bg-ev-neon-cyan",
+  },
+  {
+    title: "Real marketing access via our Lavent Marketing connection.",
+    icon: "●",
+    color: "bg-ev-neon-yellow",
+  },
+  {
+    title: "Simple, honest planning — no confusing jargon.",
+    icon: "■",
+    color: "bg-ev-neon-cream",
+  },
+  {
+    title: "Full content journey: ideas → creation → posting → growth.",
+    icon: "★",
+    color: "bg-ev-neon-pink text-white",
+  },
+  {
+    title: "Custom-made around you, not generic best-practice checklists.",
+    icon: "✦",
+    color: "bg-ev-neon-cyan",
+  },
+];
+
+const sloganBadgeColors = [
+  "bg-ev-neon-pink text-white",
+  "bg-ev-neon-cyan",
+  "bg-ev-neon-yellow",
+  "bg-ev-neon-cream",
+];
+
+const slogans = [
+  "We Make Good Look Unmissable.",
+  "Your Vision. Our Visionary Chaos.",
+  "Less &quot;Marketing.&quot; More &quot;Damn, Who Made This?&quot;",
+  "Your Voice — Louder, Bolder, Seen.",
+];
+
+const values = [
+  {
+    title: "Our Mission",
     content:
-      "A world where great design and smart planning aren&apos;t luxuries for a select few — but something anyone with a dream can access.",
-    accent: "cyan" as const,
+      "Turn ideas into content. Turn content into a presence. We take care of the whole content game — from what to create to how to put it out there and make it better.",
+    accent: "pink" as const,
   },
   {
     title: "Philosophy",
     content:
-      "We believe good work comes from care, not complexity. Every choice — from the colors we pick to the words we write — should have a clear, honest purpose.",
+      "We believe everyone has something worth sharing. Content isn&apos;t about being the youngest, having the biggest following, or being perfect on camera. It&apos;s about having an idea, finding your own voice, and knowing how to bring it to life.",
+    accent: "cyan" as const,
+  },
+  {
+    title: "Vision",
+    content:
+      "To create a world where everyone has the confidence to create, share, and grow. No matter your age or experience, we want to make it easier for people to put their ideas out there, find their people, and build something of their own.",
     accent: "yellow" as const,
   },
   {
     title: "Approach",
     content:
-      "We combine bold, eye-catching design with down-to-earth planning. No confusing jargon. No copy-paste templates. Every project is custom-made just for you.",
+      "You bring the personality. We build the presence. We understand what makes you different and turn it into content that feels like you. From ideas and creation to posting, branding, and growth, we take care of the content journey.",
     accent: "cream" as const,
-  },
-];
-
-const stats = [
-  { number: "50+", label: "Happy Clients", color: "bg-ev-neon-pink text-white" },
-  { number: "7+", label: "Years Active", color: "bg-ev-neon-cyan" },
-  { number: "100%", label: "Client Retention", color: "bg-ev-neon-yellow" },
-  { number: "2×", label: "Avg. Growth", color: "bg-ev-neon-cream" },
-];
-
-const differentiators = [
-  {
-    title: "Bold, eye-catching designs",
-    icon: "◆",
-    color: "bg-ev-neon-pink text-white",
-  },
-  {
-    title: "Simple, honest planning first",
-    icon: "▲",
-    color: "bg-ev-neon-cyan",
-  },
-  {
-    title: "Lavent Marketing learning access",
-    icon: "●",
-    color: "bg-ev-neon-yellow",
-  },
-  {
-    title: "Month-to-month subscription plan",
-    icon: "■",
-    color: "bg-ev-neon-cream",
-  },
-  {
-    title: "Top quality in every single thing we make",
-    icon: "★",
-    color: "bg-ev-neon-pink text-white",
-  },
-  {
-    title: "Custom made — never generic templates",
-    icon: "✦",
-    color: "bg-ev-neon-cyan",
   },
 ];
 
@@ -89,66 +96,86 @@ export default function AboutPage() {
     <>
       <PageHero
         label="About Us"
-        title="Built for people like you"
-        subtitle="Elan Vey lives where creative spark meets clear thinking — helping you show the world who you are and where you&apos;re going."
+        title="The World Doesn&apos;t Discover What It Can&apos;t See."
+        subtitle="Elan Vey exists for people who have a vision, but don&apos;t have a path to make the world see it."
         large
         accent="mixed"
         badge="Here For You Since Day One"
       />
 
+      {/* --- "What sets us apart?" section --- */}
       <Section tone="paper" className="!pt-0" staggerChildren staggerDelay={70}>
         <div className="container-content">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 pb-12 md:pb-20">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className={`stagger-child stat-pill ${stat.color} hover-lift`}
-              >
-                <span className="font-brutal text-3xl md:text-4xl">
-                  {stat.number}
-                </span>
-                <span className="mt-2 text-xs font-brutal uppercase tracking-wider opacity-80">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
+          <div className="max-w-5xl mx-auto">
+            <h2 className="brutal-text brutal-text-charcoal text-2xl text-ev-neon-pink md:text-4xl stagger-child">
+              What sets us apart?
+            </h2>
+            <p className="mt-6 text-lg md:text-xl font-bold leading-relaxed text-ev-black/80 stagger-child max-w-4xl">
+              Elan Vey is built for anyone with something worth putting into the world — a product, business, skill, idea, craft, or personal vision — but without the time, expertise, or path to present it the way it deserves.
+            </p>
+
+            {/* 6 differentiator cards */}
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 staggerChildren">
+              {differentiators.map((item, i) => (
+                <div
+                  key={item.title}
+                  className={`stagger-child flex items-start gap-4 border-[3px] border-black p-5 sm:p-6 shadow-brutal hover-lift ${item.color}`}
+                  style={{ transitionDelay: `${i * 50}ms` }}
+                >
+                  <span className="font-brutal text-2xl md:text-3xl flex-shrink-0">
+                    {item.icon}
+                  </span>
+                  <p className="font-brutal text-sm md:text-base uppercase leading-snug">
+                    {item.title}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* 4 Slogan banners (big, impactful) */}
+            <div className="mt-16 md:mt-20 space-y-5 md:space-y-6 lg:space-y-8 staggerChildren">
+              {slogans.map((slogan, i) => (
+                <div
+                  key={slogan}
+                  className={`stagger-child border-[3px] border-black px-6 py-6 sm:px-10 sm:py-8 md:px-14 md:py-10 lg:px-20 lg:py-14 shadow-brutal hover-lift ${sloganBadgeColors[i % sloganBadgeColors.length]}`}
+                  style={{ transitionDelay: `${i * 80}ms` }}
+                >
+                  <p
+                    className="font-brutal text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black uppercase leading-[0.95] tracking-tight text-center"
+                    dangerouslySetInnerHTML={{ __html: slogan }}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="grid gap-12 lg:grid-cols-2">
-            <div className="animate-on-scroll-slow">
-              <h2 className="brutal-text brutal-text-charcoal text-2xl text-ev-neon-pink md:text-4xl">
-                Our story
-              </h2>
-              <div className="mt-8 space-y-6 font-bold leading-relaxed text-ev-black/80">
-                <p>
-                  Elan Vey started with a simple belief: everyone deserves a
-                  creative partner who actually listens. Not someone who talks
-                  in confusing terms. Not one-size-fits-all templates. A real
-                  team invested in your success, whatever that means to you.
-                </p>
-                <p>
-                  We saw too many hardworking people struggle because they
-                  didn&apos;t know how to present themselves online. So we set
-                  out to change that — making great design and smart strategy
-                  friendly, affordable, and accessible to everyone.
-                </p>
-                <p>
-                  Today, we work with individuals, families, small shop owners,
-                  students, and dreamers from all walks of life — giving them
-                  the design help, planning, and exclusive real-world marketing
-                  opportunities through our connection with Lavent Marketing.
-                </p>
-              </div>
+          {/* EV stamp block */}
+          <div className="mt-20 md:mt-28 mx-auto grid gap-12 lg:grid-cols-2 items-center max-w-6xl animate-on-scroll-slow">
+            <div className="space-y-6 md:space-y-8 font-bold leading-relaxed text-ev-black/80">
+              <p>
+                We started Elan Vey because the best content game in the world should
+                not be reserved for people who already know how to play it.
+              </p>
+              <p>
+                If you&apos;re holding an idea, a skill, a shop, a craft, or even just a
+                feeling that the world should know who you are — you&apos;re exactly who
+                we&apos;re here for.
+              </p>
+              <p>
+                No confusing terms. No agency-sized promises. Just a real team
+                that actually listens and a whole real-world marketing connection
+                through Lavent Marketing that keeps the learning honest.
+              </p>
             </div>
-            <div className="relative animate-on-scroll-slow">
+            <div className="relative animate-on-scroll-slow mx-auto">
               <BrutalPanel
                 variant="yellow"
-                className="flex aspect-[4/5] flex-col justify-between hover-lift"
+                className="flex aspect-[4/5] w-full max-w-sm flex-col justify-between hover-lift"
               >
-                <p className="font-brutal text-8xl text-ev-neon-red opacity-40">
+                <p className="font-brutal text-8xl md:text-9xl text-ev-neon-red opacity-40">
                   EV
                 </p>
-                <p className="font-brutal text-sm uppercase tracking-widest text-ev-black">
+                <p className="font-brutal text-sm md:text-base uppercase tracking-widest text-ev-black">
                   Creative · Honest · For Everyone
                 </p>
               </BrutalPanel>
@@ -163,11 +190,12 @@ export default function AboutPage() {
 
       <div className="checkerboard-divider" aria-hidden />
 
+      {/* --- Mission / Philosophy / Vision / Approach --- */}
       <Section tone="dark" staggerChildren staggerDelay={90}>
         <div className="container-content">
           <p className="brutal-label-dark stagger-child">What drives us</p>
           <h2 className="brutal-text brutal-text-pink mb-12 mt-4 text-3xl text-ev-neon-yellow md:text-5xl stagger-child">
-            Mission & values
+            Mission &amp; values
           </h2>
           <div className="grid gap-6 md:grid-cols-2">
             {values.map((item, i) => (
@@ -184,7 +212,7 @@ export default function AboutPage() {
                 }`}
               >
                 <span
-                  className={`font-brutal text-5xl ${
+                  className={`font-brutal text-5xl md:text-6xl ${
                     item.accent === "pink"
                       ? "text-ev-neon-pink"
                       : item.accent === "cyan"
@@ -196,10 +224,10 @@ export default function AboutPage() {
                 >
                   0{i + 1}
                 </span>
-                <h3 className="brutal-text brutal-text-grey mt-2 text-xl text-white md:text-2xl">
+                <h3 className="brutal-text brutal-text-grey mt-2 text-xl text-white md:text-2xl lg:text-3xl">
                   {item.title}
                 </h3>
-                <p className="mt-4 font-bold leading-relaxed text-white/70">
+                <p className="mt-4 font-bold leading-relaxed text-white/75 md:text-lg lg:text-xl">
                   {item.content}
                 </p>
               </div>
@@ -210,38 +238,8 @@ export default function AboutPage() {
 
       <div className="stamp-edge-top" aria-hidden />
 
-      <Section tone="paper" staggerChildren staggerDelay={70}>
-        <div className="container-content max-w-5xl">
-          <h2 className="brutal-text brutal-text-orange text-2xl text-ev-neon-yellow md:text-4xl stagger-child">
-            What sets us apart
-          </h2>
-          <p className="mt-6 max-w-2xl text-lg font-bold leading-relaxed text-ev-black/80 stagger-child">
-            Elan Vey isn&apos;t another big agency making promises we can&apos;t
-            keep. We&apos;re a friendly creative team focused on real quality,
-            honest conversations, and giving you real opportunities through
-            Lavent Marketing.
-          </p>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2">
-            {differentiators.map((item) => (
-              <div
-                key={item.title}
-                className={`stagger-child flex items-start gap-4 border-[3px] border-black p-5 shadow-brutal hover-lift ${item.color}`}
-              >
-                <span className="font-brutal text-2xl flex-shrink-0">
-                  {item.icon}
-                </span>
-                <p className="font-brutal text-sm uppercase leading-snug">
-                  {item.title}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      <div className="checkerboard-divider" aria-hidden />
-
-      <Section id="founders" tone="paper" className="!pt-0" staggerChildren staggerDelay={120}>
+      {/* --- Founders Section --- */}
+      <Section id="founders" tone="paper" staggerChildren staggerDelay={120}>
         <div className="container-content">
           <div className="mb-12 md:mb-16 stagger-child">
             <p className="brutal-label">The Team</p>
@@ -339,57 +337,6 @@ export default function AboutPage() {
               </article>
             ))}
           </div>
-        </div>
-      </Section>
-
-      <div className="checkerboard-divider" aria-hidden />
-
-      <Section tone="dark">
-        <div className="container-content max-w-4xl relative animate-on-scroll-slow">
-          <span
-            className="absolute -top-4 -left-2 font-brutal text-8xl md:text-9xl text-ev-neon-pink/20 leading-none select-none"
-            aria-hidden
-          >
-            &ldquo;
-          </span>
-          <div className="relative">
-            <h2 className="brutal-text brutal-text-charcoal text-3xl text-ev-neon-pink md:text-4xl lg:text-5xl">
-              Our promise to you
-            </h2>
-            <p className="mt-8 text-lg md:text-xl font-bold leading-relaxed text-white/80 pl-4 md:pl-8 border-l-[3px] border-ev-neon-yellow/60">
-              Elan Vey exists for the dreamers, the doers, the small shop
-              owners, the students, the parents with side hustles, and anyone
-              who&apos;s ever felt like their ideas deserve to be seen. We
-              promise to always be honest, always be friendly, and always give
-              you our best work. Your success is our success, and we&apos;ll
-              treat every project with the same care we&apos;d give our own.
-            </p>
-            <div className="mt-8 flex items-center gap-4 pl-4 md:pl-8">
-              <div className="flex -space-x-2">
-                {founders.map((f) => (
-                  <div
-                    key={f.id}
-                    className="flex h-10 w-10 items-center justify-center border-[3px] border-ev-black bg-ev-neon-cyan font-brutal text-xs"
-                  >
-                    {f.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .slice(0, 2)
-                      .join("")}
-                  </div>
-                ))}
-              </div>
-              <p className="font-brutal text-xs uppercase text-ev-neon-yellow tracking-widest">
-                — Elan Vey Founders
-              </p>
-            </div>
-          </div>
-          <span
-            className="absolute -bottom-16 right-0 font-brutal text-8xl md:text-9xl text-ev-neon-yellow/20 leading-none select-none rotate-180"
-            aria-hidden
-          >
-            &ldquo;
-          </span>
         </div>
       </Section>
 
