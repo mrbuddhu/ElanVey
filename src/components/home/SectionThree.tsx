@@ -1,5 +1,5 @@
 import { homeServices } from "@/data/homeServices";
-import { LanternStamp, ServiceIcon } from "@/components/brand/ServiceIcons";
+import { ServiceIcon } from "@/components/brand/ServiceIcons";
 
 export function SectionThree() {
   return (
@@ -15,18 +15,18 @@ export function SectionThree() {
           </p>
         </div>
 
-        {/* Full-width chessboard strip - square squares, same width as diagonal strips */}
-        <div className="relative my-8 overflow-visible md:my-12 lg:my-16">
-          <div className="absolute left-1/2 -translate-x-1/2 w-[150vw] grid grid-cols-32 gap-0">
-            {Array.from({ length: 128 }).map((_, i) => (
-              <div
-                key={i}
-                className={`aspect-square ${
-                  (Math.floor(i / 32) + i) % 2 === 0 ? 'bg-ev-black' : 'bg-ev-neon-cream'
-                }`}
-              />
-            ))}
-          </div>
+        {/* Full-width chessboard strip - pure CSS conic-gradient tile, no DOM nodes */}
+        <div className="relative my-8 overflow-visible md:my-12 lg:my-16 h-[18vw] max-h-[260px] min-h-[100px]">
+          <div
+            className="absolute left-1/2 top-0 -translate-x-1/2 w-[150vw] h-full"
+            style={{
+              backgroundImage: `
+                repeating-conic-gradient(#0a0a0a 0% 25%, #F5F0E1 0% 50%)
+              `,
+              backgroundSize: 'calc(100% / 32) calc(100% / 4)',
+              backgroundPosition: '0 0',
+            }}
+          />
         </div>
 
         <div className="checkerboard-divider my-12 md:my-16 lg:my-20" aria-hidden />

@@ -203,7 +203,7 @@ export function SectionOne() {
       </div>
 
       {/* White Paper Section */}
-      <section className="relative bg-white overflow-hidden pb-20 pt-16 md:pb-32 md:pt-24 lg:pb-40 lg:pt-28">
+      <section className="relative bg-white overflow-x-hidden pb-20 pt-16 md:pb-32 md:pt-24 lg:pb-40 lg:pt-28">
         {/* Paper Texture Overlay */}
         <div className="absolute inset-0 opacity-30" style={{
           backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22 opacity=%220.5%22/%3E%3C/svg%3E")'
@@ -232,9 +232,9 @@ export function SectionOne() {
           </div>
 
           {/* Diagonal Crossing Tape Strips */}
-          <div className="relative mt-12 overflow-visible md:mt-16 lg:mt-20" style={{ height: '300px' }}>
+          <div className="relative mt-12 overflow-visible md:mt-16 lg:mt-20" style={{ height: '380px' }}>
             {/* Yellow Strip - Centered X extending beyond both sides with animated text */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[150vw] -rotate-8 bg-ev-neon-yellow border-[3px] border-black shadow-brutal-lg">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] -rotate-8 bg-ev-neon-yellow border-[3px] border-black shadow-brutal-lg z-10">
               <div className="flex items-center gap-8 py-6 animate-marquee whitespace-nowrap md:gap-12 md:py-8 lg:gap-16 lg:py-10">
                 <span className="font-brutal text-xl font-bold uppercase tracking-wider text-ev-neon-pink md:text-2xl lg:text-3xl" style={{ textShadow: '2px 2px 0 #000' }}>
                   RESEARCH IDEAS • SCRIPTING • RESEARCH IDEAS • SCRIPTING • RESEARCH IDEAS • SCRIPTING • RESEARCH IDEAS • SCRIPTING • RESEARCH IDEAS • SCRIPTING
@@ -243,7 +243,7 @@ export function SectionOne() {
             </div>
 
             {/* Black Strip - Centered X extending beyond both sides crossing yellow strip with animated text */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-[50%] w-[150vw] rotate-8 bg-ev-black border-[3px] border-ev-neon-yellow shadow-brutal-lg">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] rotate-8 bg-ev-black border-[3px] border-ev-neon-yellow shadow-brutal-lg z-20">
               <div className="flex items-center gap-8 py-6 animate-marquee-reverse whitespace-nowrap md:gap-12 md:py-8 lg:gap-16 lg:py-10">
                 <span className="font-brutal text-xl font-bold uppercase tracking-wider text-ev-neon-yellow md:text-2xl lg:text-3xl">
                   HOOKS • STRATEGY • HOOKS • STRATEGY • HOOKS • STRATEGY • HOOKS • STRATEGY • HOOKS • STRATEGY
