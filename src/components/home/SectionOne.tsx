@@ -23,11 +23,11 @@ export function SectionOne() {
               <p className="hero-stagger-subtitle mt-6 max-w-xl text-lg font-bold leading-relaxed text-ev-black/85 sm:text-xl md:text-2xl">
                 The hook for people with a vision and something worth sharing.
               </p>
-              <div className="hero-stagger-children mt-8 flex flex-col gap-4 sm:flex-row sm:gap-6">
-                <Button href="/contact" variant="primary" size="lg">
+              <div className="hero-stagger-children mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4 md:gap-6">
+                <Button href="/contact" variant="primary" size="lg" className="whitespace-nowrap">
                   Start The Vey
                 </Button>
-                <Button href="/subscription" variant="secondary" size="lg">
+                <Button href="/subscription" variant="secondary" size="lg" className="whitespace-nowrap">
                   See Subscription
                 </Button>
               </div>
@@ -69,20 +69,9 @@ export function SectionOne() {
 
       {/* DARK SECTION: Who is Elan Vey For? + One Vey between You & Being Seen. */}
       <section className="relative bg-ev-black overflow-hidden pb-20 pt-16 md:pb-28 md:pt-24 lg:pb-36 lg:pt-28">
-        {/* Graph Paper Grid Background */}
-        <div className="absolute inset-0 opacity-40">
-          <div className="h-full w-full" style={{
-            backgroundImage: `
-              linear-gradient(to right, rgba(255,255,255,0.15) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(255,255,255,0.15) 1px, transparent 1px)
-            `,
-            backgroundSize: '48px 48px'
-          }} />
-        </div>
-
         <div className="container-content relative px-5 md:px-8 lg:px-12">
-          {/* DESKTOP + MOBILE Header matching Mockup 1 */}
-          <div className="text-center mb-10 md:mb-16 lg:mb-20">
+          {/* Header text inside container */}
+          <div className="text-center mb-8 md:mb-12">
             <h1 className="font-brutal text-3xl font-black uppercase tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
               YOUR SPOTLIGHT WON&apos;T WAIT.
             </h1>
@@ -90,55 +79,113 @@ export function SectionOne() {
               Who is Elan Vey for?
             </p>
           </div>
+        </div>
 
-          {/* Audience Pills Grid matching Mockup 1 */}
-          <div className="mx-auto w-full max-w-5xl relative flex flex-col gap-6 sm:gap-8 md:gap-12">
-            {/* Top row: Triangle + CREATORS */}
-            <div className="flex items-center justify-center sm:justify-end md:pr-12 gap-2.5 sm:gap-4">
-              <WhiteTriangleIcon />
-              <div className="audience-pill-cream flex items-center justify-center rounded-full px-5 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 border-[3px] sm:border-[4px] border-black shadow-brutal flex-shrink-0">
-                <span className="font-brutal text-lg font-black uppercase tracking-wider text-black sm:text-2xl md:text-3xl lg:text-4xl">CREATORS</span>
+        {/* 3-Row Grid Box Container — Full Width Touching Side Borders */}
+        <div className="relative w-full border-y-2 border-white/30 my-4 sm:my-6 overflow-hidden py-2 sm:py-3 md:py-4">
+          {/* 2D Grid Background — EXACTLY 3 HORIZONTAL ROWS OF BOXES vertically from border to border */}
+          <div
+            className="absolute inset-0 pointer-events-none opacity-30 z-0"
+            style={{
+              backgroundImage: `
+                linear-gradient(to right, rgba(255,255,255,0.3) 1.5px, transparent 1.5px),
+                linear-gradient(to bottom, rgba(255,255,255,0.3) 1.5px, transparent 1.5px)
+              `,
+              backgroundSize: '56px calc(100% / 3)'
+            }}
+          />
+
+          {/* Button Rows Container matching Mockup layout: 3 distinct rows across all screens */}
+          <div className="max-w-6xl mx-auto relative z-10 px-2 sm:px-8 flex flex-col gap-3 sm:gap-6 md:gap-8">
+            {/* ROW 1: CREATORS (Right) */}
+            <div className="flex items-center justify-end">
+              <div className="flex items-center gap-1.5 sm:gap-4 pr-0 sm:pr-4 md:pr-8">
+                <WhiteTriangleIcon />
+                <div className="audience-pill-cream flex items-center justify-center rounded-full px-3 py-1.5 xs:px-4 xs:py-2 sm:px-7 sm:py-3 md:px-9 md:py-3.5 border-[2px] sm:border-[4px] border-black shadow-brutal flex-shrink-0 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-105 hover:shadow-brutal-lg cursor-pointer select-none">
+                  <span className="font-brutal text-xs xs:text-sm sm:text-xl md:text-2xl lg:text-3xl font-black uppercase tracking-wider text-black">CREATORS</span>
+                </div>
               </div>
             </div>
 
-            {/* Middle row: Yellow Star + DREAMERS */}
-            <div className="flex items-center justify-center sm:justify-start md:pl-8 gap-2.5 sm:gap-4">
-              <SparkleIcon />
-              <div className="audience-pill-yellow flex items-center justify-center rounded-full px-5 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 border-[3px] sm:border-[4px] border-black shadow-brutal flex-shrink-0">
-                <span className="font-brutal text-lg font-black uppercase tracking-wider text-black sm:text-2xl md:text-3xl lg:text-4xl">DREAMERS</span>
+            {/* ROW 2: DREAMERS (Left) */}
+            <div className="flex items-center justify-start">
+              <div className="flex items-center gap-1.5 sm:gap-4 pl-0 sm:pl-4 md:pl-8">
+                <SparkleIcon />
+                <div className="audience-pill-yellow flex items-center justify-center rounded-full px-3 py-1.5 xs:px-4 xs:py-2 sm:px-7 sm:py-3 md:px-9 md:py-3.5 border-[2px] sm:border-[4px] border-black shadow-brutal flex-shrink-0 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-105 hover:shadow-brutal-lg cursor-pointer select-none">
+                  <span className="font-brutal text-xs xs:text-sm sm:text-xl md:text-2xl lg:text-3xl font-black uppercase tracking-wider text-black">DREAMERS</span>
+                </div>
               </div>
             </div>
 
-            {/* Bottom row: Blue Star + ARTISTS · Pac-Man + BUSINESSES */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-12 pt-2">
-              {/* Blue Star + ARTISTS */}
-              <div className="flex items-center gap-2.5 sm:gap-4">
+            {/* ROW 3: ARTISTS (Left) & BUSINESSES (Right) — Single Row on Mobile */}
+            <div className="flex flex-row items-center justify-between gap-1 xs:gap-2 sm:gap-6">
+              {/* Left: Blue Star + ARTISTS */}
+              <div className="flex items-center gap-1 sm:gap-4 pl-0 sm:pl-12 md:pl-20">
                 <BlueStarIcon />
-                <div className="audience-pill-cyan flex items-center justify-center rounded-full px-5 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 border-[3px] sm:border-[4px] border-black shadow-brutal flex-shrink-0">
-                  <span className="font-brutal text-lg font-black uppercase tracking-wider text-black sm:text-2xl md:text-3xl lg:text-4xl">ARTISTS</span>
+                <div className="audience-pill-cyan flex items-center justify-center rounded-full px-2.5 py-1.5 xs:px-4 xs:py-2 sm:px-7 sm:py-3 md:px-9 md:py-3.5 border-[2px] sm:border-[4px] border-black shadow-brutal flex-shrink-0 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-105 hover:shadow-brutal-lg cursor-pointer select-none">
+                  <span className="font-brutal text-[10px] xs:text-xs sm:text-xl md:text-2xl lg:text-3xl font-black uppercase tracking-wider text-black">ARTISTS</span>
                 </div>
               </div>
 
-              {/* Pac-Man + BUSINESSES */}
-              <div className="flex items-center gap-2 sm:gap-3">
+              {/* Right: Pac-Man + BUSINESSES */}
+              <div className="flex items-center gap-1 sm:gap-4 pr-0 sm:pr-2 md:pr-4">
                 <AnimatedPacManPillIcon />
-                <div className="audience-pill-pink flex items-center justify-center rounded-full px-5 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 border-[3px] sm:border-[4px] border-black shadow-brutal flex-shrink-0">
-                  <span className="font-brutal text-lg font-black uppercase tracking-wider text-black sm:text-2xl md:text-3xl lg:text-4xl">BUSINESSES</span>
+                <div className="audience-pill-pink flex items-center justify-center rounded-full px-2.5 py-1.5 xs:px-4 xs:py-2 sm:px-7 sm:py-3 md:px-9 md:py-3.5 border-[2px] sm:border-[4px] border-black shadow-brutal flex-shrink-0 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-105 hover:shadow-brutal-lg cursor-pointer select-none">
+                  <span className="font-brutal text-[10px] xs:text-xs sm:text-xl md:text-2xl lg:text-3xl font-black uppercase tracking-wider text-black">BUSINESSES</span>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* AND EVERYONE IN BETWEEN */}
+        <div className="container-content relative px-5 md:px-8 lg:px-12">
+
+          {/* AND EVERYONE IN BETWEEN — 3D Revolving Star Orbit */}
           <div className="mt-14 text-center md:mt-20 lg:mt-24">
-            <div className="relative inline-block">
+            <div className="relative inline-block px-6 py-4 [perspective:1000px] [transform-style:preserve-3d]">
+              {/* 3D Ring Orbit Path Layer (BACK - z-0) */}
               <img
                 src="/images/Ringstars.png"
                 alt=""
                 aria-hidden
-                className="pointer-events-none absolute left-1/2 top-1/2 h-[160%] w-[140%] -translate-x-1/2 -translate-y-1/2 object-contain"
+                className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[240%] w-[180%] sm:h-[280%] sm:w-[220%] max-w-none object-contain z-0 opacity-75 drop-shadow-[0_0_16px_rgba(255,230,0,0.5)]"
+                style={{ clipPath: "inset(0 0 48% 0)" }}
               />
-              <h2 className="relative z-10 font-brutal text-3xl font-black uppercase tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+
+              {/* REVOLVING 3D ORBITING STARS — physically revolving around text */}
+              <div className="absolute inset-0 pointer-events-none flex items-center justify-center [transform-style:preserve-3d] [transform:rotateX(20deg)_rotateZ(-5deg)]">
+                {/* Star 1 - Yellow Star */}
+                <div
+                  className="absolute animate-orbit-star drop-shadow-[0_0_12px_#FFE600]"
+                  style={{ animationDelay: "0s", ["--orbit-r" as string]: "clamp(120px, 35vw, 240px)" }}
+                >
+                  <img src="/images/Star.png" alt="" className="h-6 w-6 sm:h-10 sm:w-10 object-contain" aria-hidden />
+                </div>
+                {/* Star 2 - Cyan Diamond */}
+                <div
+                  className="absolute animate-orbit-star drop-shadow-[0_0_12px_#00E5FF]"
+                  style={{ animationDelay: "-2s", ["--orbit-r" as string]: "clamp(120px, 35vw, 240px)" }}
+                >
+                  <img src="/images/Diamond.png" alt="" className="h-6 w-6 sm:h-10 sm:w-10 object-contain" aria-hidden />
+                </div>
+                {/* Star 3 - Yellow Star */}
+                <div
+                  className="absolute animate-orbit-star drop-shadow-[0_0_12px_#FFE600]"
+                  style={{ animationDelay: "-4s", ["--orbit-r" as string]: "clamp(120px, 35vw, 240px)" }}
+                >
+                  <img src="/images/Star.png" alt="" className="h-6 w-6 sm:h-10 sm:w-10 object-contain" aria-hidden />
+                </div>
+                {/* Star 4 - Pink Diamond */}
+                <div
+                  className="absolute animate-orbit-star drop-shadow-[0_0_12px_#FF176B]"
+                  style={{ animationDelay: "-6s", ["--orbit-r" as string]: "clamp(120px, 35vw, 240px)" }}
+                >
+                  <img src="/images/Diamond.png" alt="" className="h-6 w-6 sm:h-10 sm:w-10 object-contain" aria-hidden />
+                </div>
+              </div>
+
+              {/* 3D Warped Text Layer (MIDDLE - z-10) */}
+              <h2 className="relative z-10 font-brutal text-3xl font-black uppercase tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
                 AND EVERYONE
               </h2>
               <h2
@@ -146,11 +193,20 @@ export function SectionOne() {
                 style={{
                   color: "#FF176B",
                   WebkitTextStroke: "2px #FFFFFF",
-                  textShadow: "4px 4px 0 #000000"
+                  textShadow: "4px 4px 0 #000000, 8px 8px 0 rgba(0,0,0,0.6)"
                 }}
               >
                 IN BETWEEN.
               </h2>
+
+              {/* 3D Ring Orbit Path Layer (FRONT - z-20) */}
+              <img
+                src="/images/Ringstars.png"
+                alt=""
+                aria-hidden
+                className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[240%] w-[180%] sm:h-[280%] sm:w-[220%] max-w-none object-contain z-20 opacity-75 drop-shadow-[0_0_16px_rgba(255,230,0,0.5)]"
+                style={{ clipPath: "inset(48% 0 0 0)" }}
+              />
             </div>
           </div>
         </div>
@@ -164,7 +220,7 @@ export function SectionOne() {
       </div>
 
       {/* White Paper Section — Team Behind Your Content */}
-      <section className="relative pb-20 pt-16 md:pb-32 md:pt-24 lg:pb-40 lg:pt-28" style={{ backgroundImage: "url('/images/Bg_paper.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
+      <section className="relative overflow-hidden pb-20 pt-16 md:pb-32 md:pt-24 lg:pb-40 lg:pt-28" style={{ backgroundImage: "url('/images/Bg_paper.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
         {/* Paper Texture Overlay */}
         <div className="absolute inset-0 opacity-30" />
 
@@ -189,35 +245,35 @@ export function SectionOne() {
               We empower creators, entrepreneurs, and individuals of every age from ambitious teenagers to vibrant seniors. We research what works, build your strategy, find ideas, refine your scripts, edit &amp; design your content, help you publish, analyse the results, and use what we learn to grow the next one.
             </p>
           </div>
+        </div>
 
-          {/* Diagonal Crossing Tape Strips — both anchored to SHARED center so they actually cross */}
-          <div className="relative mt-12 md:mt-16 lg:mt-20 overflow-visible" aria-hidden>
-            <div className="relative mx-auto h-72 w-full overflow-visible md:h-80 lg:h-96">
-              {/* BLACK TAPE — anchored to true center, positive angle, layered BEHIND */}
-              <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-[260vw] rotate-[12deg] border-[4px] border-ev-neon-yellow bg-ev-black shadow-[8px_8px_0_#000]">
-                <div className="flex overflow-hidden py-3 md:py-5 lg:py-6">
-                  <div className="flex shrink-0 animate-marquee items-center whitespace-nowrap md:gap-14 gap-10 lg:gap-20">
-                    <span className="font-brutal px-6 text-lg font-black uppercase tracking-widest text-ev-neon-yellow md:text-2xl lg:text-4xl" style={{ WebkitTextStroke: '1px #000', textShadow: '3px 3px 0 #FF0066' }}>
-                      •&nbsp;HOOKS&nbsp;•&nbsp;STRATEGY&nbsp;•&nbsp;BRANDING&nbsp;•&nbsp;VIRAL IDEAS&nbsp;•&nbsp;PRODUCTION&nbsp;•&nbsp;POSTING&nbsp;•&nbsp;COLLABS&nbsp;•&nbsp;TRENDS&nbsp;•&nbsp;TARGETING&nbsp;•&nbsp;CONVERSIONS&nbsp;•&nbsp;&nbsp;
-                    </span>
-                    <span className="font-brutal px-6 text-lg font-black uppercase tracking-widest text-ev-neon-yellow md:text-2xl lg:text-4xl" style={{ WebkitTextStroke: '1px #000', textShadow: '3px 3px 0 #FF0066' }}>
-                      •&nbsp;HOOKS&nbsp;•&nbsp;STRATEGY&nbsp;•&nbsp;BRANDING&nbsp;•&nbsp;VIRAL IDEAS&nbsp;•&nbsp;PRODUCTION&nbsp;•&nbsp;POSTING&nbsp;•&nbsp;COLLABS&nbsp;•&nbsp;TRENDS&nbsp;•&nbsp;TARGETING&nbsp;•&nbsp;CONVERSIONS&nbsp;•&nbsp;&nbsp;
-                    </span>
-                  </div>
+        {/* Diagonal Crossing Tape Strips — full width edge-to-edge touching left & right screen borders */}
+        <div className="relative mt-8 sm:mt-12 md:mt-16 lg:mt-20 w-full overflow-hidden" aria-hidden>
+          <div className="relative mx-auto h-56 sm:h-72 md:h-80 lg:h-96 w-full flex items-center justify-center">
+            {/* BLACK TAPE — anchored to true center, positive angle, layered BEHIND */}
+            <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-[280vw] rotate-[8deg] sm:rotate-[10deg] md:rotate-[12deg] border-[3px] sm:border-[4px] border-ev-neon-yellow bg-ev-black shadow-[4px_4px_0_#000] sm:shadow-[8px_8px_0_#000]">
+              <div className="flex overflow-hidden py-2.5 sm:py-4 md:py-5 lg:py-6">
+                <div className="flex shrink-0 animate-marquee items-center whitespace-nowrap gap-6 sm:gap-10 md:gap-14 lg:gap-20">
+                  <span className="font-brutal px-4 sm:px-6 text-sm sm:text-lg md:text-2xl lg:text-4xl font-black uppercase tracking-widest text-ev-neon-yellow" style={{ WebkitTextStroke: '1px #000', textShadow: '2px 2px 0 #FF0066' }}>
+                    •&nbsp;HOOKS&nbsp;•&nbsp;STRATEGY&nbsp;•&nbsp;BRANDING&nbsp;•&nbsp;VIRAL IDEAS&nbsp;•&nbsp;PRODUCTION&nbsp;•&nbsp;POSTING&nbsp;•&nbsp;COLLABS&nbsp;•&nbsp;TRENDS&nbsp;•&nbsp;TARGETING&nbsp;•&nbsp;CONVERSIONS&nbsp;•&nbsp;&nbsp;
+                  </span>
+                  <span className="font-brutal px-4 sm:px-6 text-sm sm:text-lg md:text-2xl lg:text-4xl font-black uppercase tracking-widest text-ev-neon-yellow" style={{ WebkitTextStroke: '1px #000', textShadow: '2px 2px 0 #FF0066' }}>
+                    •&nbsp;HOOKS&nbsp;•&nbsp;STRATEGY&nbsp;•&nbsp;BRANDING&nbsp;•&nbsp;VIRAL IDEAS&nbsp;•&nbsp;PRODUCTION&nbsp;•&nbsp;POSTING&nbsp;•&nbsp;COLLABS&nbsp;•&nbsp;TRENDS&nbsp;•&nbsp;TARGETING&nbsp;•&nbsp;CONVERSIONS&nbsp;•&nbsp;&nbsp;
+                  </span>
                 </div>
               </div>
+            </div>
 
-              {/* YELLOW TAPE — anchored to true center, negative angle, layered ON TOP so they cross perfectly */}
-              <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[260vw] -rotate-[12deg] border-[4px] border-black bg-ev-neon-yellow shadow-[8px_8px_0_#000]">
-                <div className="flex overflow-hidden py-4 md:py-6 lg:py-7">
-                  <div className="flex shrink-0 animate-marquee-reverse items-center whitespace-nowrap md:gap-14 gap-10 lg:gap-20">
-                    <span className="font-brutal px-6 text-xl font-black uppercase tracking-widest text-[#FF1744] md:text-3xl lg:text-5xl" style={{ WebkitTextStroke: '1.5px #FFE600', textShadow: '3px 3px 0 #000000, 1.5px 1.5px 0 #000000' }}>
-                      •&nbsp;RESEARCH&nbsp;•&nbsp;IDEAS&nbsp;•&nbsp;SCRIPTING&nbsp;•&nbsp;EDITING&nbsp;•&nbsp;DESIGN&nbsp;•&nbsp;PUBLISH&nbsp;•&nbsp;ANALYSE&nbsp;•&nbsp;GROW&nbsp;•&nbsp;AUDIENCES&nbsp;•&nbsp;&nbsp;
-                    </span>
-                    <span className="font-brutal px-6 text-xl font-black uppercase tracking-widest text-[#FF1744] md:text-3xl lg:text-5xl" style={{ WebkitTextStroke: '1.5px #FFE600', textShadow: '3px 3px 0 #000000, 1.5px 1.5px 0 #000000' }}>
-                      •&nbsp;RESEARCH&nbsp;•&nbsp;IDEAS&nbsp;•&nbsp;SCRIPTING&nbsp;•&nbsp;EDITING&nbsp;•&nbsp;DESIGN&nbsp;•&nbsp;PUBLISH&nbsp;•&nbsp;ANALYSE&nbsp;•&nbsp;GROW&nbsp;•&nbsp;AUDIENCES&nbsp;•&nbsp;&nbsp;
-                    </span>
-                  </div>
+            {/* YELLOW TAPE — anchored to true center, negative angle, layered ON TOP so they cross perfectly */}
+            <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[280vw] -rotate-[8deg] sm:-rotate-[10deg] md:-rotate-[12deg] border-[3px] sm:border-[4px] border-black bg-ev-neon-yellow shadow-[4px_4px_0_#000] sm:shadow-[8px_8px_0_#000]">
+              <div className="flex overflow-hidden py-3 sm:py-4 md:py-6 lg:py-7">
+                <div className="flex shrink-0 animate-marquee-reverse items-center whitespace-nowrap gap-6 sm:gap-10 md:gap-14 lg:gap-20">
+                  <span className="font-brutal px-4 sm:px-6 text-base sm:text-xl md:text-3xl lg:text-5xl font-black uppercase tracking-widest text-[#FF1744]" style={{ WebkitTextStroke: '1px #FFE600', textShadow: '2px 2px 0 #000000' }}>
+                    •&nbsp;RESEARCH&nbsp;•&nbsp;IDEAS&nbsp;•&nbsp;SCRIPTING&nbsp;•&nbsp;EDITING&nbsp;•&nbsp;DESIGN&nbsp;•&nbsp;PUBLISH&nbsp;•&nbsp;ANALYSE&nbsp;•&nbsp;GROW&nbsp;•&nbsp;AUDIENCES&nbsp;•&nbsp;&nbsp;
+                  </span>
+                  <span className="font-brutal px-4 sm:px-6 text-base sm:text-xl md:text-3xl lg:text-5xl font-black uppercase tracking-widest text-[#FF1744]" style={{ WebkitTextStroke: '1px #FFE600', textShadow: '2px 2px 0 #000000' }}>
+                    •&nbsp;RESEARCH&nbsp;•&nbsp;IDEAS&nbsp;•&nbsp;SCRIPTING&nbsp;•&nbsp;EDITING&nbsp;•&nbsp;DESIGN&nbsp;•&nbsp;PUBLISH&nbsp;•&nbsp;ANALYSE&nbsp;•&nbsp;GROW&nbsp;•&nbsp;AUDIENCES&nbsp;•&nbsp;&nbsp;
+                  </span>
                 </div>
               </div>
             </div>

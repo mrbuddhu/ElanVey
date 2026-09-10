@@ -70,7 +70,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const isDisabled = disabled || loading;
-    const classes = `inline-flex items-center justify-center gap-2 transition-transform duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ev-neon-pink ${variants[variant]} ${sizes[size]} ${isDisabled ? "pointer-events-none opacity-60" : ""} ${className}`;
+    const classes = `inline-flex items-center justify-center whitespace-nowrap gap-2 transition-transform duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ev-neon-pink ${variants[variant]} ${sizes[size]} ${isDisabled ? "pointer-events-none opacity-60" : ""} ${className}`;
 
     const content = (
       <>
