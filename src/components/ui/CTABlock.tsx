@@ -5,6 +5,7 @@ interface CTABlockProps {
   description?: string;
   children?: ReactNode;
   dark?: boolean;
+  className?: string;
 }
 
 export function CTABlock({
@@ -12,9 +13,10 @@ export function CTABlock({
   description,
   children,
   dark = true,
+  className = "",
 }: CTABlockProps) {
   return (
-    <div className={`section-padding ${dark ? "section-dark" : "paper-bg"}`}>
+    <div className={`section-padding ${dark ? "section-dark" : ""} ${className}`} style={!dark ? { backgroundImage: "url('/images/Bg_paper.png')", backgroundSize: "cover", backgroundPosition: "center" } : {}}>
       <div className="container-content text-center">
         <h2
           className={`brutal-text mx-auto max-w-4xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl ${

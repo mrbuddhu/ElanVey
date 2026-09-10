@@ -69,8 +69,9 @@ export function Section({
       ref={ref}
       id={id}
       className={`section-padding ${
-        tone === "dark" ? "section-dark" : "paper-bg"
+        tone === "dark" ? "section-dark" : ""
       } ${className}`}
+      style={tone === "paper" ? { backgroundImage: "url('/images/Bg_paper.png')", backgroundSize: "cover", backgroundPosition: "center" } : {}}
     >
       {children}
     </section>

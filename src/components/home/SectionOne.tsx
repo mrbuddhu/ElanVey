@@ -1,5 +1,5 @@
 import {
-  AnimatedPacManRow,
+  AnimatedPacManPillIcon,
   BlueStarIcon,
   SparkleIcon,
   WhiteTriangleIcon,
@@ -10,15 +10,15 @@ export function SectionOne() {
   return (
     <>
       {/* Original Hero Section — NEW HOOK: Architect Your Limelight. */}
-      <section className="paper-bg relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24 lg:pb-28">
+      <section className="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24 lg:pb-28" style={{ backgroundImage: "url('/images/Bg_paper.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
         <div className="container-content px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-20 xl:gap-24">
             {/* Hero Text - Left */}
             <div className="flex flex-col justify-center order-2 lg:order-1">
-              <h1 className="hero-stagger-title font-brutal text-4xl font-black uppercase tracking-tight text-ev-black sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+              <h1 className="hero-stagger-title font-brutal text-4xl font-black uppercase leading-[0.95] tracking-tight text-ev-black sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl">
                 Architect Your
                 <br />
-                <span className="inline-block text-ev-neon-red">Limelight.</span>
+                <span className="inline-block text-ev-neon-red mt-2">Limelight.</span>
               </h1>
               <p className="hero-stagger-subtitle mt-6 max-w-xl text-lg font-bold leading-relaxed text-ev-black/85 sm:text-xl md:text-2xl">
                 The hook for people with a vision and something worth sharing.
@@ -38,7 +38,7 @@ export function SectionOne() {
               <div className="hero-stagger-children overflow-hidden border-[3px] border-black shadow-brutal-xl md:shadow-brutal-xl">
                 <video
                   className="block h-auto w-full object-contain"
-                  src="/videos/ElanVeyHeroVideo.mp4"
+                  src="/videos/Website_homepage.mp4"
                   autoPlay
                   muted
                   loop
@@ -67,107 +67,87 @@ export function SectionOne() {
         </div>
       </section>
 
-      <div className="stamp-edge-bottom" aria-hidden />
-
       {/* DARK SECTION: Who is Elan Vey For? + One Vey between You & Being Seen. */}
       <section className="relative bg-ev-black overflow-hidden pb-20 pt-16 md:pb-28 md:pt-24 lg:pb-36 lg:pt-28">
         {/* Graph Paper Grid Background */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-40">
           <div className="h-full w-full" style={{
             backgroundImage: `
-              linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)
+              linear-gradient(to right, rgba(255,255,255,0.15) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(255,255,255,0.15) 1px, transparent 1px)
             `,
-            backgroundSize: '40px 40px'
+            backgroundSize: '48px 48px'
           }} />
         </div>
 
         <div className="container-content relative px-5 md:px-8 lg:px-12">
-          {/* DESKTOP: Full headline block (Who Is label + One Vey headline + sub-paragraphs + Subscribe Now CTA) */}
-          <div className="text-center mb-10 md:mb-14 lg:mb-20">
-            <p className="brutal-label-dark stagger-child">Who is Elan Vey for</p>
-            <h1 className="mt-4 font-brutal text-4xl font-black uppercase tracking-tight text-white/95 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" style={{ textShadow: '4px 4px 0 #FF0066' }}>
-              One Vey between
-              <br className="sm:hidden" />
-              <span className="sm:ml-4 sm:mr-4">&nbsp;You &amp; Being Seen.&nbsp;</span>
+          {/* DESKTOP + MOBILE Header matching Mockup 1 */}
+          <div className="text-center mb-10 md:mb-16 lg:mb-20">
+            <h1 className="font-brutal text-3xl font-black uppercase tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+              YOUR SPOTLIGHT WON&apos;T WAIT.
             </h1>
-            <p className="mt-8 mx-auto max-w-3xl font-brutal text-lg font-bold leading-tight text-ev-neon-yellow sm:text-xl md:text-2xl lg:text-3xl">
-              A subscription that keeps your content moving.
+            <p className="mt-2 font-brutal text-xl font-bold text-white sm:text-3xl md:text-4xl">
+              Who is Elan Vey for?
             </p>
-            <p className="mt-6 mx-auto max-w-3xl text-base font-bold leading-relaxed text-white/80 sm:text-lg md:text-xl lg:text-2xl">
-              proven strategies, scripting, editing, practical tips and creative insights.
-            </p>
-            <p className="mt-4 mx-auto max-w-3xl text-base font-bold leading-relaxed text-white/70 sm:text-lg md:text-xl lg:text-2xl">
-              All built around you and what you want to create.
-            </p>
-            <p className="mt-4 mx-auto max-w-3xl font-brutal text-lg font-black uppercase leading-snug text-white/95 sm:text-xl md:text-2xl lg:text-3xl">
-              You bring the vision. We bring it to life.
-            </p>
-            <div className="mt-10 flex justify-center">
-              <Button href="/subscription" variant="primary" size="lg">
-                Subscribe Now
-              </Button>
-            </div>
           </div>
 
-          {/* Audience Pills — Alternating LEFT/RIGHT rows (mobile + desktop shared) */}
-          <div className="mx-auto w-full max-w-4xl space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8">
-            {/* ROW 1: CREATORS pill LEFT · ANIMATED PAC-MAN + dots RIGHT */}
-            <div className="flex w-full items-center justify-between gap-3 sm:gap-4">
-              <div className="audience-pill-cream flex min-w-0 flex-[0_0_58%] sm:flex-[0_0_55%] items-center justify-start rounded-full px-5 py-4 sm:px-8 sm:py-5 md:px-10 md:py-6 lg:px-14 lg:py-7 xl:px-16 xl:py-8 border-[4px] border-black shadow-brutal-xl hover:-translate-y-1 transition-transform">
-                <span className="font-brutal text-xl font-bold uppercase tracking-wider text-black sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl truncate">CREATORS</span>
-              </div>
-              <div className="flex-[0_0_38%] sm:flex-[0_0_40%] max-w-[45%]">
-                <AnimatedPacManRow />
+          {/* Audience Pills Grid matching Mockup 1 */}
+          <div className="mx-auto w-full max-w-5xl relative flex flex-col gap-6 sm:gap-8 md:gap-12">
+            {/* Top row: Triangle + CREATORS */}
+            <div className="flex items-center justify-center sm:justify-end md:pr-12 gap-2.5 sm:gap-4">
+              <WhiteTriangleIcon />
+              <div className="audience-pill-cream flex items-center justify-center rounded-full px-5 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 border-[3px] sm:border-[4px] border-black shadow-brutal flex-shrink-0">
+                <span className="font-brutal text-lg font-black uppercase tracking-wider text-black sm:text-2xl md:text-3xl lg:text-4xl">CREATORS</span>
               </div>
             </div>
 
-            {/* ROW 2: BLUE STAR icon LEFT-ish · BUSINESSES pill RIGHT */}
-            <div className="flex w-full items-center justify-between gap-3 sm:gap-4">
-              <div className="flex-[0_0_25%] sm:flex-[0_0_22%] flex justify-start pl-2 sm:pl-4 md:pl-6 lg:pl-8">
+            {/* Middle row: Yellow Star + DREAMERS */}
+            <div className="flex items-center justify-center sm:justify-start md:pl-8 gap-2.5 sm:gap-4">
+              <SparkleIcon />
+              <div className="audience-pill-yellow flex items-center justify-center rounded-full px-5 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 border-[3px] sm:border-[4px] border-black shadow-brutal flex-shrink-0">
+                <span className="font-brutal text-lg font-black uppercase tracking-wider text-black sm:text-2xl md:text-3xl lg:text-4xl">DREAMERS</span>
+              </div>
+            </div>
+
+            {/* Bottom row: Blue Star + ARTISTS · Pac-Man + BUSINESSES */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-12 pt-2">
+              {/* Blue Star + ARTISTS */}
+              <div className="flex items-center gap-2.5 sm:gap-4">
                 <BlueStarIcon />
+                <div className="audience-pill-cyan flex items-center justify-center rounded-full px-5 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 border-[3px] sm:border-[4px] border-black shadow-brutal flex-shrink-0">
+                  <span className="font-brutal text-lg font-black uppercase tracking-wider text-black sm:text-2xl md:text-3xl lg:text-4xl">ARTISTS</span>
+                </div>
               </div>
-              <div className="audience-pill-pink flex min-w-0 flex-[0_0_70%] sm:flex-[0_0_73%] items-center justify-center rounded-full px-5 py-4 sm:px-8 sm:py-5 md:px-10 md:py-6 lg:px-14 lg:py-7 xl:px-16 xl:py-8 border-[4px] border-black shadow-brutal-xl hover:-translate-y-1 transition-transform">
-                <span className="font-brutal text-xl font-bold uppercase tracking-wider text-black sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl truncate">BUSINESSES</span>
-              </div>
-            </div>
 
-            {/* ROW 3: DREAMERS pill LEFT · WHITE TRIANGLE icon RIGHT */}
-            <div className="flex w-full items-center justify-between gap-3 sm:gap-4">
-              <div className="audience-pill-yellow flex min-w-0 flex-[0_0_62%] sm:flex-[0_0_60%] items-center justify-start rounded-full px-5 py-4 sm:px-8 sm:py-5 md:px-10 md:py-6 lg:px-14 lg:py-7 xl:px-16 xl:py-8 border-[4px] border-black shadow-brutal-xl hover:-translate-y-1 transition-transform">
-                <span className="font-brutal text-xl font-bold uppercase tracking-wider text-black sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl truncate">DREAMERS</span>
-              </div>
-              <div className="flex-[0_0_30%] sm:flex-[0_0_32%] flex justify-end pr-2 sm:pr-4 md:pr-6 lg:pr-8">
-                <WhiteTriangleIcon />
-              </div>
-            </div>
-
-            {/* ROW 4: SPARKLE icon LEFT-ish · ARTISTS pill RIGHT */}
-            <div className="flex w-full items-center justify-between gap-3 sm:gap-4">
-              <div className="flex-[0_0_30%] sm:flex-[0_0_28%] flex justify-start pl-2 sm:pl-4 md:pl-6 lg:pl-8">
-                <SparkleIcon />
-              </div>
-              <div className="audience-pill-cyan flex min-w-0 flex-[0_0_65%] sm:flex-[0_0_66%] items-center justify-center rounded-full px-5 py-4 sm:px-8 sm:py-5 md:px-10 md:py-6 lg:px-14 lg:py-7 xl:px-16 xl:py-8 border-[4px] border-black shadow-brutal-xl hover:-translate-y-1 transition-transform">
-                <span className="font-brutal text-xl font-bold uppercase tracking-wider text-black sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl truncate">ARTISTS</span>
+              {/* Pac-Man + BUSINESSES */}
+              <div className="flex items-center gap-2 sm:gap-3">
+                <AnimatedPacManPillIcon />
+                <div className="audience-pill-pink flex items-center justify-center rounded-full px-5 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 border-[3px] sm:border-[4px] border-black shadow-brutal flex-shrink-0">
+                  <span className="font-brutal text-lg font-black uppercase tracking-wider text-black sm:text-2xl md:text-3xl lg:text-4xl">BUSINESSES</span>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* AND EVERYONE IN BETWEEN — appears on BOTH mobile & desktop, ALWAYS AFTER the pills */}
-          <div className="mt-12 text-center md:mt-16 lg:mt-20">
+          {/* AND EVERYONE IN BETWEEN */}
+          <div className="mt-14 text-center md:mt-20 lg:mt-24">
             <div className="relative inline-block">
               <img
                 src="/images/Ringstars.png"
                 alt=""
                 aria-hidden
-                className="pointer-events-none absolute left-1/2 top-1/2 h-[150%] w-[135%] -translate-x-1/2 -translate-y-1/2 object-contain sm:h-[160%] sm:w-[140%] md:h-[165%] md:w-[140%] xl:h-[170%] xl:w-[140%]"
+                className="pointer-events-none absolute left-1/2 top-1/2 h-[160%] w-[140%] -translate-x-1/2 -translate-y-1/2 object-contain"
               />
-              <h2 className="relative z-10 font-brutal text-4xl font-bold uppercase tracking-tight text-white/95 sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+              <h2 className="relative z-10 font-brutal text-3xl font-black uppercase tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
                 AND EVERYONE
               </h2>
               <h2
-                className="relative z-10 font-brutal text-5xl font-bold uppercase tracking-tight text-white/95 sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
-                style={{ textShadow: '4px 4px 0 #FF0066' }}
+                className="relative z-10 font-brutal text-5xl font-black uppercase tracking-tight sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl mt-1"
+                style={{
+                  color: "#FF176B",
+                  WebkitTextStroke: "2px #FFFFFF",
+                  textShadow: "4px 4px 0 #000000"
+                }}
               >
                 IN BETWEEN.
               </h2>
@@ -184,11 +164,9 @@ export function SectionOne() {
       </div>
 
       {/* White Paper Section — Team Behind Your Content */}
-      <section className="relative bg-white pb-20 pt-16 md:pb-32 md:pt-24 lg:pb-40 lg:pt-28">
+      <section className="relative pb-20 pt-16 md:pb-32 md:pt-24 lg:pb-40 lg:pt-28" style={{ backgroundImage: "url('/images/Bg_paper.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
         {/* Paper Texture Overlay */}
-        <div className="absolute inset-0 opacity-30" style={{
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22 opacity=%220.5%22/%3E%3C/svg%3E")'
-        }} />
+        <div className="absolute inset-0 opacity-30" />
 
         <div className="container-content relative px-5 md:px-8 lg:px-12">
           {/* Heading with Pink Sticker */}
@@ -213,16 +191,16 @@ export function SectionOne() {
           </div>
 
           {/* Diagonal Crossing Tape Strips — both anchored to SHARED center so they actually cross */}
-          <div className="relative mt-12 md:mt-16 lg:mt-20 overflow-hidden" aria-hidden>
+          <div className="relative mt-12 md:mt-16 lg:mt-20 overflow-visible" aria-hidden>
             <div className="relative mx-auto h-72 w-full overflow-visible md:h-80 lg:h-96">
               {/* BLACK TAPE — anchored to true center, positive angle, layered BEHIND */}
               <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-[260vw] rotate-[12deg] border-[4px] border-ev-neon-yellow bg-ev-black shadow-[8px_8px_0_#000]">
-                <div className="flex overflow-hidden py-5 md:py-8 lg:py-10">
+                <div className="flex overflow-hidden py-3 md:py-5 lg:py-6">
                   <div className="flex shrink-0 animate-marquee items-center whitespace-nowrap md:gap-14 gap-10 lg:gap-20">
-                    <span className="font-brutal px-6 text-xl font-black uppercase tracking-widest text-ev-neon-yellow md:text-3xl lg:text-5xl" style={{ WebkitTextStroke: '1.5px #000', textShadow: '3px 3px 0 #FF0066' }}>
+                    <span className="font-brutal px-6 text-lg font-black uppercase tracking-widest text-ev-neon-yellow md:text-2xl lg:text-4xl" style={{ WebkitTextStroke: '1px #000', textShadow: '3px 3px 0 #FF0066' }}>
                       •&nbsp;HOOKS&nbsp;•&nbsp;STRATEGY&nbsp;•&nbsp;BRANDING&nbsp;•&nbsp;VIRAL IDEAS&nbsp;•&nbsp;PRODUCTION&nbsp;•&nbsp;POSTING&nbsp;•&nbsp;COLLABS&nbsp;•&nbsp;TRENDS&nbsp;•&nbsp;TARGETING&nbsp;•&nbsp;CONVERSIONS&nbsp;•&nbsp;&nbsp;
                     </span>
-                    <span className="font-brutal px-6 text-xl font-black uppercase tracking-widest text-ev-neon-yellow md:text-3xl lg:text-5xl" style={{ WebkitTextStroke: '1.5px #000', textShadow: '3px 3px 0 #FF0066' }}>
+                    <span className="font-brutal px-6 text-lg font-black uppercase tracking-widest text-ev-neon-yellow md:text-2xl lg:text-4xl" style={{ WebkitTextStroke: '1px #000', textShadow: '3px 3px 0 #FF0066' }}>
                       •&nbsp;HOOKS&nbsp;•&nbsp;STRATEGY&nbsp;•&nbsp;BRANDING&nbsp;•&nbsp;VIRAL IDEAS&nbsp;•&nbsp;PRODUCTION&nbsp;•&nbsp;POSTING&nbsp;•&nbsp;COLLABS&nbsp;•&nbsp;TRENDS&nbsp;•&nbsp;TARGETING&nbsp;•&nbsp;CONVERSIONS&nbsp;•&nbsp;&nbsp;
                     </span>
                   </div>
@@ -231,12 +209,12 @@ export function SectionOne() {
 
               {/* YELLOW TAPE — anchored to true center, negative angle, layered ON TOP so they cross perfectly */}
               <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[260vw] -rotate-[12deg] border-[4px] border-black bg-ev-neon-yellow shadow-[8px_8px_0_#000]">
-                <div className="flex overflow-hidden py-6 md:py-9 lg:py-12">
+                <div className="flex overflow-hidden py-4 md:py-6 lg:py-7">
                   <div className="flex shrink-0 animate-marquee-reverse items-center whitespace-nowrap md:gap-14 gap-10 lg:gap-20">
-                    <span className="font-brutal px-6 text-2xl font-black uppercase tracking-widest text-[#FF1744] md:text-4xl lg:text-6xl" style={{ WebkitTextStroke: '2px #FFE600', textShadow: '4px 4px 0 #000000, 2px 2px 0 #000000' }}>
+                    <span className="font-brutal px-6 text-xl font-black uppercase tracking-widest text-[#FF1744] md:text-3xl lg:text-5xl" style={{ WebkitTextStroke: '1.5px #FFE600', textShadow: '3px 3px 0 #000000, 1.5px 1.5px 0 #000000' }}>
                       •&nbsp;RESEARCH&nbsp;•&nbsp;IDEAS&nbsp;•&nbsp;SCRIPTING&nbsp;•&nbsp;EDITING&nbsp;•&nbsp;DESIGN&nbsp;•&nbsp;PUBLISH&nbsp;•&nbsp;ANALYSE&nbsp;•&nbsp;GROW&nbsp;•&nbsp;AUDIENCES&nbsp;•&nbsp;&nbsp;
                     </span>
-                    <span className="font-brutal px-6 text-2xl font-black uppercase tracking-widest text-[#FF1744] md:text-4xl lg:text-6xl" style={{ WebkitTextStroke: '2px #FFE600', textShadow: '4px 4px 0 #000000, 2px 2px 0 #000000' }}>
+                    <span className="font-brutal px-6 text-xl font-black uppercase tracking-widest text-[#FF1744] md:text-3xl lg:text-5xl" style={{ WebkitTextStroke: '1.5px #FFE600', textShadow: '3px 3px 0 #000000, 1.5px 1.5px 0 #000000' }}>
                       •&nbsp;RESEARCH&nbsp;•&nbsp;IDEAS&nbsp;•&nbsp;SCRIPTING&nbsp;•&nbsp;EDITING&nbsp;•&nbsp;DESIGN&nbsp;•&nbsp;PUBLISH&nbsp;•&nbsp;ANALYSE&nbsp;•&nbsp;GROW&nbsp;•&nbsp;AUDIENCES&nbsp;•&nbsp;&nbsp;
                     </span>
                   </div>

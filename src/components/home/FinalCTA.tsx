@@ -5,6 +5,7 @@ export function FinalCTA() {
   return (
     <CTABlock
       dark={false}
+      className="!py-10 md:!py-16 lg:!py-20"
       title="Ready to get started?"
       description="Join Elan Vey and build the presence, strategy, and growth your ideas deserve."
     >

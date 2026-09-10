@@ -12,53 +12,50 @@ function PillHeader({
   onToggleMenu: () => void;
 }) {
   return (
-    <div className="pill-nav w-full max-w-2xl">
-      <div className="flex items-center justify-between gap-4">
-        <Link href="/" className="flex items-center">
-          <img
-            src="/images/Logo_text.png"
-            alt="Elan Vey"
-            className="h-16 w-auto md:h-20 object-contain"
-          />
-        </Link>
+    <div className="pill-nav w-full px-3 py-1.5 flex items-center justify-between gap-1.5 sm:gap-3 box-border">
+      {/* Left: Logo */}
+      <Link href="/" className="flex items-center shrink-0">
+        <img
+          src="/images/Logo_text.png"
+          alt="Elan Vey"
+          className="h-6 sm:h-8 w-auto object-contain max-w-[120px] sm:max-w-[150px]"
+        />
+      </Link>
 
-        <button
-          type="button"
-          className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 md:hidden"
-          onClick={onToggleMenu}
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={menuOpen}
-        >
+      {/* Center: Menu Option */}
+      <button
+        type="button"
+        className="flex items-center gap-1.5 rounded-full px-2 py-1 text-[11px] sm:text-xs font-brutal uppercase tracking-wider text-black hover:bg-black/10 transition-colors shrink-0"
+        onClick={onToggleMenu}
+        aria-label={menuOpen ? "Close menu" : "Open menu"}
+        aria-expanded={menuOpen}
+      >
+        <span className="font-extrabold">MENU</span>
+        <div className="flex flex-col gap-1 w-3.5">
           <span
-            className={`block h-0.5 w-5 rounded-full transition-all duration-300 ${
+            className={`block h-0.5 w-full rounded-full transition-all duration-300 ${
               menuOpen
-                ? "translate-y-[3.5px] rotate-45 bg-ev-white"
-                : "bg-ev-black"
+                ? "translate-y-[2px] rotate-45 bg-black"
+                : "bg-black"
             }`}
           />
           <span
-            className={`block h-0.5 w-5 rounded-full transition-all duration-300 ${
+            className={`block h-0.5 w-full rounded-full transition-all duration-300 ${
               menuOpen
-                ? "-translate-y-[3.5px] -rotate-45 bg-ev-white"
-                : "bg-ev-black"
+                ? "-translate-y-[2px] -rotate-45 bg-black"
+                : "bg-black"
             }`}
           />
-        </button>
+        </div>
+      </button>
 
-        <Link
-          href="/subscription"
-          className="subscribe-btn inline-flex md:hidden"
-        >
-          <span>Subscribe</span>
-        </Link>
-
-        <Link
-          href="/subscription"
-          className="subscribe-btn inline-flex hidden md:flex"
-        >
-          <span>Subscribe Now</span>
-        </Link>
-      </div>
+      {/* Right: Subscribe Button */}
+      <Link
+        href="/subscription"
+        className="subscribe-btn text-[11px] sm:text-xs inline-flex items-center justify-center shrink-0 whitespace-nowrap leading-none !px-3 !py-1"
+      >
+        <span>Subscribe</span>
+      </Link>
     </div>
   );
 }
@@ -83,16 +80,16 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ${
-          scrolled && !menuOpen ? "py-3 md:py-4" : "py-4 md:py-5"
+        className={`fixed left-0 right-0 top-0 z-50 flex justify-center transition-all duration-500 ${
+          scrolled && !menuOpen ? "py-2.5 sm:py-3" : "py-3 sm:py-4"
         }`}
       >
         <nav
-          className="container-content relative flex items-center justify-center px-5 md:px-8 lg:justify-center lg:px-12"
+          className="w-full max-w-7xl px-2 sm:px-6 flex items-center justify-center overflow-visible"
           aria-label="Main navigation"
         >
           {/* Mobile: pill header with hamburger inside */}
-          <div className="w-full max-w-md lg:hidden">
+          <div className="w-full max-w-[calc(100vw-1.5rem)] sm:max-w-md lg:hidden mx-auto">
             <PillHeader
               menuOpen={menuOpen}
               onToggleMenu={() => setMenuOpen(!menuOpen)}
