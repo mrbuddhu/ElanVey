@@ -226,7 +226,7 @@
   }
 
   .audience-pill {
-    @apply h-12 rounded-full md:h-14 lg:h-16;
+    @apply h-12 rounded-full md:h-14 lg:h-16 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-105 hover:shadow-brutal-lg cursor-pointer select-none;
   }
 
   .audience-pill-cream {

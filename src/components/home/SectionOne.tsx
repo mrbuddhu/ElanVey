@@ -69,17 +69,6 @@ export function SectionOne() {
 
       {/* DARK SECTION: Who is Elan Vey For? + One Vey between You & Being Seen. */}
       <section className="relative bg-ev-black overflow-hidden pb-20 pt-16 md:pb-28 md:pt-24 lg:pb-36 lg:pt-28">
-        {/* Graph Paper Grid Background */}
-        <div className="absolute inset-0 opacity-40">
-          <div className="h-full w-full" style={{
-            backgroundImage: `
-              linear-gradient(to right, rgba(255,255,255,0.15) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(255,255,255,0.15) 1px, transparent 1px)
-            `,
-            backgroundSize: '48px 48px'
-          }} />
-        </div>
-
         <div className="container-content relative px-5 md:px-8 lg:px-12">
           {/* DESKTOP + MOBILE Header matching Mockup 1 */}
           <div className="text-center mb-10 md:mb-16 lg:mb-20">
@@ -91,30 +80,42 @@ export function SectionOne() {
             </p>
           </div>
 
-          {/* Audience Pills Grid matching Mockup 1 */}
-          <div className="mx-auto w-full max-w-5xl relative flex flex-col gap-6 sm:gap-8 md:gap-12">
+          {/* Audience Pills Grid matching Mockup 1 with scoped box layout grid background */}
+          <div className="mx-auto w-full max-w-5xl relative flex flex-col gap-6 sm:gap-8 md:gap-12 p-6 sm:p-10 md:p-14 rounded-3xl overflow-hidden">
+            {/* Box Layout Grid Pattern — scoped ONLY behind the audience pills/words */}
+            <div
+              className="absolute inset-0 opacity-30 pointer-events-none rounded-3xl"
+              style={{
+                backgroundImage: `
+                  linear-gradient(to right, rgba(255,255,255,0.2) 1px, transparent 1px),
+                  linear-gradient(to bottom, rgba(255,255,255,0.2) 1px, transparent 1px)
+                `,
+                backgroundSize: '48px 48px'
+              }}
+            />
+
             {/* Top row: Triangle + CREATORS */}
-            <div className="flex items-center justify-center sm:justify-end md:pr-12 gap-2.5 sm:gap-4">
+            <div className="relative z-10 flex items-center justify-center sm:justify-end md:pr-12 gap-2.5 sm:gap-4">
               <WhiteTriangleIcon />
-              <div className="audience-pill-cream flex items-center justify-center rounded-full px-5 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 border-[3px] sm:border-[4px] border-black shadow-brutal flex-shrink-0">
+              <div className="audience-pill-cream flex items-center justify-center rounded-full px-5 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 border-[3px] sm:border-[4px] border-black shadow-brutal flex-shrink-0 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-105 hover:shadow-brutal-lg cursor-pointer select-none">
                 <span className="font-brutal text-lg font-black uppercase tracking-wider text-black sm:text-2xl md:text-3xl lg:text-4xl">CREATORS</span>
               </div>
             </div>
 
             {/* Middle row: Yellow Star + DREAMERS */}
-            <div className="flex items-center justify-center sm:justify-start md:pl-8 gap-2.5 sm:gap-4">
+            <div className="relative z-10 flex items-center justify-center sm:justify-start md:pl-8 gap-2.5 sm:gap-4">
               <SparkleIcon />
-              <div className="audience-pill-yellow flex items-center justify-center rounded-full px-5 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 border-[3px] sm:border-[4px] border-black shadow-brutal flex-shrink-0">
+              <div className="audience-pill-yellow flex items-center justify-center rounded-full px-5 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 border-[3px] sm:border-[4px] border-black shadow-brutal flex-shrink-0 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-105 hover:shadow-brutal-lg cursor-pointer select-none">
                 <span className="font-brutal text-lg font-black uppercase tracking-wider text-black sm:text-2xl md:text-3xl lg:text-4xl">DREAMERS</span>
               </div>
             </div>
 
             {/* Bottom row: Blue Star + ARTISTS · Pac-Man + BUSINESSES */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-12 pt-2">
+            <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 md:gap-12 pt-2">
               {/* Blue Star + ARTISTS */}
               <div className="flex items-center gap-2.5 sm:gap-4">
                 <BlueStarIcon />
-                <div className="audience-pill-cyan flex items-center justify-center rounded-full px-5 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 border-[3px] sm:border-[4px] border-black shadow-brutal flex-shrink-0">
+                <div className="audience-pill-cyan flex items-center justify-center rounded-full px-5 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 border-[3px] sm:border-[4px] border-black shadow-brutal flex-shrink-0 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-105 hover:shadow-brutal-lg cursor-pointer select-none">
                   <span className="font-brutal text-lg font-black uppercase tracking-wider text-black sm:text-2xl md:text-3xl lg:text-4xl">ARTISTS</span>
                 </div>
               </div>
@@ -122,7 +123,7 @@ export function SectionOne() {
               {/* Pac-Man + BUSINESSES */}
               <div className="flex items-center gap-2 sm:gap-3">
                 <AnimatedPacManPillIcon />
-                <div className="audience-pill-pink flex items-center justify-center rounded-full px-5 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 border-[3px] sm:border-[4px] border-black shadow-brutal flex-shrink-0">
+                <div className="audience-pill-pink flex items-center justify-center rounded-full px-5 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 border-[3px] sm:border-[4px] border-black shadow-brutal flex-shrink-0 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-105 hover:shadow-brutal-lg cursor-pointer select-none">
                   <span className="font-brutal text-lg font-black uppercase tracking-wider text-black sm:text-2xl md:text-3xl lg:text-4xl">BUSINESSES</span>
                 </div>
               </div>
