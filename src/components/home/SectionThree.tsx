@@ -74,58 +74,63 @@ export function SectionThree() {
         </div>
 
         <div className="container-content px-5 md:px-8 lg:px-12">
-          {/* Horizontal Capabilities Rows matching Mockup 2 */}
-          <div className="mx-auto w-full max-w-6xl border-t-2 border-black/80 mt-1 mb-6 sm:mt-2 sm:mb-8 md:mt-3 md:mb-12 px-1 sm:px-2">
-            {/* ROW 1: CONTENT IDEATION | PAID GROWTH | AUDIENCE BUILDING */}
-            <div className="flex items-center justify-between sm:justify-around gap-1 sm:gap-3 md:gap-6 py-3 sm:py-4 md:py-6 border-b-2 border-black/80 text-center w-full flex-nowrap whitespace-nowrap overflow-x-auto sm:overflow-visible scrollbar-none">
+          {/* Horizontal Capabilities Rows matching Mockup 2 & Mobile Requirement D */}
+          <div className="relative mx-auto w-full max-w-6xl border-t-2 border-black/80 mt-1 mb-6 sm:mt-2 sm:mb-8 md:mt-3 md:mb-12 px-1 sm:px-2">
+            {/* Red Lantern Graphic on the right side */}
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10 pointer-events-none hidden sm:block">
+              <LanternStamp className="h-16 w-16 md:h-24 md:w-24 object-contain" />
+            </div>
+
+            {/* ROW 1: PERSONAL BRANDING | COMPETITOR ANALYSIS | AUDIENCE BUILDING */}
+            <div className="flex items-center justify-between sm:justify-around gap-2 sm:gap-3 md:gap-6 py-3 sm:py-4 md:py-6 border-b-2 border-black/80 text-center w-full flex-nowrap whitespace-nowrap overflow-x-auto sm:overflow-visible scrollbar-none">
               <div className="flex items-center gap-1.5 sm:gap-2.5 md:gap-3 shrink-0">
-                <img src="/images/Diamond.png" alt="" className="h-5 w-5 xs:h-6 xs:w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-11 lg:w-11 object-contain shrink-0" aria-hidden />
+                <img src="/images/Star.png" alt="" className="h-5 w-5 xs:h-6 xs:w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-11 lg:w-11 object-contain shrink-0" aria-hidden />
                 <span className="font-brutal text-[10px] xs:text-[12px] sm:text-lg md:text-2xl lg:text-3xl font-black uppercase text-black tracking-tight whitespace-nowrap">
-                  CONTENT IDEATION
-                </span>
-              </div>
-              <div className="flex items-center gap-1.5 sm:gap-2.5 md:gap-3 shrink-0">
-                <img src="/images/Triangle.png" alt="" className="h-5 w-5 xs:h-6 xs:w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-11 lg:w-11 object-contain shrink-0" aria-hidden />
-                <span className="font-brutal text-[10px] xs:text-[12px] sm:text-lg md:text-2xl lg:text-3xl font-black uppercase text-black tracking-tight whitespace-nowrap">
-                  PAID GROWTH
+                  PERSONAL BRANDING
                 </span>
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2.5 md:gap-3 shrink-0">
                 <img src="/images/Sun.png" alt="" className="h-5 w-5 xs:h-6 xs:w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-11 lg:w-11 object-contain shrink-0" aria-hidden />
+                <span className="font-brutal text-[10px] xs:text-[12px] sm:text-lg md:text-2xl lg:text-3xl font-black uppercase text-black tracking-tight whitespace-nowrap">
+                  COMPETITOR ANALYSIS
+                </span>
+              </div>
+              <div className="flex items-center gap-1.5 sm:gap-2.5 md:gap-3 shrink-0">
+                <img src="/images/Triangle.png" alt="" className="h-5 w-5 xs:h-6 xs:w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-11 lg:w-11 object-contain shrink-0" aria-hidden />
                 <span className="font-brutal text-[10px] xs:text-[12px] sm:text-lg md:text-2xl lg:text-3xl font-black uppercase text-black tracking-tight whitespace-nowrap">
                   AUDIENCE BUILDING
                 </span>
               </div>
             </div>
 
-            {/* ROW 2: COMPETITOR ANALYSIS | CONTENT STRATEGY */}
+            {/* ROW 2: CONTENT STRATEGY | GROWTH OPTIMISATION */}
             <div className="flex items-center justify-center gap-4 xs:gap-6 sm:gap-12 md:gap-16 lg:gap-20 py-3 sm:py-4 md:py-6 border-b-2 border-black/80 text-center w-full flex-nowrap whitespace-nowrap overflow-x-auto sm:overflow-visible scrollbar-none">
-              <div className="flex items-center gap-1.5 sm:gap-2.5 md:gap-3 shrink-0">
-                <img src="/images/Star.png" alt="" className="h-5 w-5 xs:h-6 xs:w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-11 lg:w-11 object-contain shrink-0" aria-hidden />
-                <span className="font-brutal text-[10px] xs:text-[12px] sm:text-lg md:text-2xl lg:text-3xl font-black uppercase text-black tracking-tight whitespace-nowrap">
-                  COMPETITOR ANALYSIS
-                </span>
-              </div>
               <div className="flex items-center gap-1.5 sm:gap-2.5 md:gap-3 shrink-0">
                 <img src="/images/Frost.png" alt="" className="h-5 w-5 xs:h-6 xs:w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-11 lg:w-11 object-contain shrink-0" aria-hidden />
                 <span className="font-brutal text-[10px] xs:text-[12px] sm:text-lg md:text-2xl lg:text-3xl font-black uppercase text-black tracking-tight whitespace-nowrap">
                   CONTENT STRATEGY
                 </span>
               </div>
+              <div className="flex items-center gap-1.5 sm:gap-2.5 md:gap-3 shrink-0">
+                <img src="/images/Diamond.png" alt="" className="h-5 w-5 xs:h-6 xs:w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-11 lg:w-11 object-contain shrink-0" aria-hidden />
+                <span className="font-brutal text-[10px] xs:text-[12px] sm:text-lg md:text-2xl lg:text-3xl font-black uppercase text-black tracking-tight whitespace-nowrap">
+                  GROWTH OPTIMISATION
+                </span>
+              </div>
             </div>
 
-            {/* ROW 3: GROWTH OPTIMISATION | EDITING/DESIGNING */}
+            {/* ROW 3: CONTENT IDEATION | PAID GROWTH */}
             <div className="flex items-center justify-center gap-4 xs:gap-6 sm:gap-12 md:gap-16 lg:gap-20 py-3 sm:py-4 md:py-6 border-b-2 border-black/80 text-center w-full flex-nowrap whitespace-nowrap overflow-x-auto sm:overflow-visible scrollbar-none">
               <div className="flex items-center gap-1.5 sm:gap-2.5 md:gap-3 shrink-0">
                 <ServiceIcon icon="rocket" className="h-5 w-5 xs:h-6 xs:w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-11 lg:w-11" />
                 <span className="font-brutal text-[10px] xs:text-[12px] sm:text-lg md:text-2xl lg:text-3xl font-black uppercase text-black tracking-tight whitespace-nowrap">
-                  GROWTH OPTIMISATION
+                  CONTENT IDEATION
                 </span>
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2.5 md:gap-3 shrink-0">
                 <ServiceIcon icon="flame" className="h-5 w-5 xs:h-6 xs:w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 lg:h-11 lg:w-11" />
                 <span className="font-brutal text-[10px] xs:text-[12px] sm:text-lg md:text-2xl lg:text-3xl font-black uppercase text-black tracking-tight whitespace-nowrap">
-                  EDITING/DESIGNING
+                  PAID GROWTH
                 </span>
               </div>
             </div>

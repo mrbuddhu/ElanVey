@@ -95,43 +95,85 @@ export function SectionOne() {
             }}
           />
 
-          {/* Button Rows Container matching Mockup layout: 3 distinct rows across all screens */}
-          <div className="max-w-6xl mx-auto relative z-10 px-2 sm:px-8 flex flex-col gap-3 sm:gap-6 md:gap-8">
+          {/* Button Rows Container matching Mockup layout: Desktop 3-row, Mobile exact mockup order */}
+          {/* DESKTOP VIEW (hidden on mobile) */}
+          <div className="hidden sm:flex max-w-6xl mx-auto relative z-10 px-8 flex-col gap-6 md:gap-8">
             {/* ROW 1: CREATORS (Right) */}
             <div className="flex items-center justify-end">
-              <div className="flex items-center gap-1.5 sm:gap-4 pr-0 sm:pr-4 md:pr-8">
+              <div className="flex items-center gap-4 pr-4 md:pr-8">
                 <WhiteTriangleIcon />
-                <div className="audience-pill-cream flex items-center justify-center rounded-full px-3 py-1.5 xs:px-4 xs:py-2 sm:px-7 sm:py-3 md:px-9 md:py-3.5 border-[2px] sm:border-[4px] border-black shadow-brutal flex-shrink-0 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-105 hover:shadow-brutal-lg cursor-pointer select-none">
-                  <span className="font-brutal text-xs xs:text-sm sm:text-xl md:text-2xl lg:text-3xl font-black uppercase tracking-wider text-black">CREATORS</span>
+                <div className="audience-pill-cream flex items-center justify-center rounded-full px-7 py-3 md:px-9 md:py-3.5 border-[4px] border-black shadow-brutal flex-shrink-0 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-105 hover:shadow-brutal-lg cursor-pointer select-none">
+                  <span className="font-brutal text-xl md:text-2xl lg:text-3xl font-black uppercase tracking-wider text-black">CREATORS</span>
                 </div>
               </div>
             </div>
 
             {/* ROW 2: DREAMERS (Left) */}
             <div className="flex items-center justify-start">
-              <div className="flex items-center gap-1.5 sm:gap-4 pl-0 sm:pl-4 md:pl-8">
+              <div className="flex items-center gap-4 pl-4 md:pl-8">
                 <SparkleIcon />
-                <div className="audience-pill-yellow flex items-center justify-center rounded-full px-3 py-1.5 xs:px-4 xs:py-2 sm:px-7 sm:py-3 md:px-9 md:py-3.5 border-[2px] sm:border-[4px] border-black shadow-brutal flex-shrink-0 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-105 hover:shadow-brutal-lg cursor-pointer select-none">
-                  <span className="font-brutal text-xs xs:text-sm sm:text-xl md:text-2xl lg:text-3xl font-black uppercase tracking-wider text-black">DREAMERS</span>
+                <div className="audience-pill-yellow flex items-center justify-center rounded-full px-7 py-3 md:px-9 md:py-3.5 border-[4px] border-black shadow-brutal flex-shrink-0 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-105 hover:shadow-brutal-lg cursor-pointer select-none">
+                  <span className="font-brutal text-xl md:text-2xl lg:text-3xl font-black uppercase tracking-wider text-black">DREAMERS</span>
                 </div>
               </div>
             </div>
 
-            {/* ROW 3: ARTISTS (Left) & BUSINESSES (Right) — Single Row on Mobile */}
-            <div className="flex flex-row items-center justify-between gap-1 xs:gap-2 sm:gap-6">
-              {/* Left: Blue Star + ARTISTS */}
-              <div className="flex items-center gap-1 sm:gap-4 pl-0 sm:pl-12 md:pl-20">
+            {/* ROW 3: ARTISTS (Left) & BUSINESSES (Right) */}
+            <div className="flex flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-4 pl-12 md:pl-20">
                 <BlueStarIcon />
-                <div className="audience-pill-cyan flex items-center justify-center rounded-full px-2.5 py-1.5 xs:px-4 xs:py-2 sm:px-7 sm:py-3 md:px-9 md:py-3.5 border-[2px] sm:border-[4px] border-black shadow-brutal flex-shrink-0 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-105 hover:shadow-brutal-lg cursor-pointer select-none">
-                  <span className="font-brutal text-[10px] xs:text-xs sm:text-xl md:text-2xl lg:text-3xl font-black uppercase tracking-wider text-black">ARTISTS</span>
+                <div className="audience-pill-cyan flex items-center justify-center rounded-full px-7 py-3 md:px-9 md:py-3.5 border-[4px] border-black shadow-brutal flex-shrink-0 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-105 hover:shadow-brutal-lg cursor-pointer select-none">
+                  <span className="font-brutal text-xl md:text-2xl lg:text-3xl font-black uppercase tracking-wider text-black">ARTISTS</span>
                 </div>
               </div>
 
-              {/* Right: Pac-Man + BUSINESSES */}
-              <div className="flex items-center gap-1 sm:gap-4 pr-0 sm:pr-2 md:pr-4">
+              <div className="flex items-center gap-4 pr-2 md:pr-4">
                 <AnimatedPacManPillIcon />
-                <div className="audience-pill-pink flex items-center justify-center rounded-full px-2.5 py-1.5 xs:px-4 xs:py-2 sm:px-7 sm:py-3 md:px-9 md:py-3.5 border-[2px] sm:border-[4px] border-black shadow-brutal flex-shrink-0 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-105 hover:shadow-brutal-lg cursor-pointer select-none">
-                  <span className="font-brutal text-[10px] xs:text-xs sm:text-xl md:text-2xl lg:text-3xl font-black uppercase tracking-wider text-black">BUSINESSES</span>
+                <div className="audience-pill-pink flex items-center justify-center rounded-full px-7 py-3 md:px-9 md:py-3.5 border-[4px] border-black shadow-brutal flex-shrink-0 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-105 hover:shadow-brutal-lg cursor-pointer select-none">
+                  <span className="font-brutal text-xl md:text-2xl lg:text-3xl font-black uppercase tracking-wider text-black">BUSINESSES</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* MOBILE VIEW (iPhone 16 Pro Max, ~375-440px): Exact Mockup Order & Icon Pairings */}
+          <div className="flex sm:hidden max-w-md mx-auto relative z-10 px-3 flex-col gap-3">
+            {/* 1. CREATORS pill (cream) + Pac-Man icon to its RIGHT */}
+            <div className="flex items-center justify-end">
+              <div className="flex items-center gap-2">
+                <div className="audience-pill-cream flex items-center justify-center rounded-full px-4 py-2 border-[3px] border-black shadow-brutal flex-shrink-0">
+                  <span className="font-brutal text-xs font-black uppercase tracking-wider text-black">CREATORS</span>
+                </div>
+                <AnimatedPacManPillIcon />
+              </div>
+            </div>
+
+            {/* 2. Blue Star icon on LEFT + BUSINESSES pill (pink) to its RIGHT */}
+            <div className="flex items-center justify-start">
+              <div className="flex items-center gap-2">
+                <BlueStarIcon />
+                <div className="audience-pill-pink flex items-center justify-center rounded-full px-4 py-2 border-[3px] border-black shadow-brutal flex-shrink-0">
+                  <span className="font-brutal text-xs font-black uppercase tracking-wider text-black">BUSINESSES</span>
+                </div>
+              </div>
+            </div>
+
+            {/* 3. DREAMERS pill (yellow) + Triangle icon to its RIGHT */}
+            <div className="flex items-center justify-end">
+              <div className="flex items-center gap-2">
+                <div className="audience-pill-yellow flex items-center justify-center rounded-full px-4 py-2 border-[3px] border-black shadow-brutal flex-shrink-0">
+                  <span className="font-brutal text-xs font-black uppercase tracking-wider text-black">DREAMERS</span>
+                </div>
+                <WhiteTriangleIcon />
+              </div>
+            </div>
+
+            {/* 4. Sparkle icon on LEFT + ARTISTS pill (cyan) to its RIGHT */}
+            <div className="flex items-center justify-start">
+              <div className="flex items-center gap-2">
+                <SparkleIcon />
+                <div className="audience-pill-cyan flex items-center justify-center rounded-full px-4 py-2 border-[3px] border-black shadow-brutal flex-shrink-0">
+                  <span className="font-brutal text-xs font-black uppercase tracking-wider text-black">ARTISTS</span>
                 </div>
               </div>
             </div>
@@ -212,10 +254,10 @@ export function SectionOne() {
         </div>
       </section>
 
-      {/* Scalloped Paper Edge Transition */}
-      <div className="relative h-8 bg-ev-black">
-        <svg className="absolute bottom-0 left-0 h-full w-full" viewBox="0 0 1200 32" preserveAspectRatio="none" aria-hidden>
-          <path d="M0,32 L0,16 C20,8 40,8 60,16 C80,24 100,24 120,16 C140,8 160,8 180,16 C200,24 220,24 240,16 C260,8 280,8 300,16 C320,24 340,24 360,16 C380,8 400,8 420,16 C440,24 460,24 480,16 C500,8 520,8 540,16 C560,24 580,24 600,16 C620,8 640,8 660,16 C680,24 700,24 720,16 C740,8 760,8 780,16 C800,24 820,24 840,16 C860,8 880,8 900,16 C920,24 940,24 960,16 C980,8 1000,8 1020,16 C1040,24 1060,24 1080,16 C1100,8 1120,8 1140,16 C1160,24 1180,24 1200,16 L1200,32 Z" fill="white" />
+      {/* Sharp Jagged Sawtooth Paper Edge Transition — Zero border leak */}
+      <div className="relative w-full bg-ev-black leading-none overflow-hidden">
+        <svg className="block w-full h-8 md:h-12" viewBox="0 0 1200 32" preserveAspectRatio="none" aria-hidden>
+          <path d="M0,32 L0,0 L30,32 L60,0 L90,32 L120,0 L150,32 L180,0 L210,32 L240,0 L270,32 L300,0 L330,32 L360,0 L390,32 L420,0 L450,32 L480,0 L510,32 L540,0 L570,32 L600,0 L630,32 L660,0 L690,32 L720,0 L750,32 L780,0 L810,32 L840,0 L870,32 L900,0 L930,32 L960,0 L990,32 L1020,0 L1050,32 L1080,0 L1110,32 L1140,0 L1170,32 L1200,0 L1200,32 Z" fill="#ffffff" />
         </svg>
       </div>
 
