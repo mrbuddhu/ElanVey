@@ -4,7 +4,6 @@ import { Section } from "@/components/ui/Section";
 export function LaventSection() {
   return (
     <>
-      <div className="checkerboard-divider" aria-hidden />
       <Section tone="dark">
         <div className="container-content max-w-5xl text-center">
           <p className="brutal-label-dark">Exclusive Benefit</p>
@@ -14,6 +13,9 @@ export function LaventSection() {
               Lavent Marketing
             </span>
           </h2>
+          <div className="flex justify-center mt-8">
+            <img src="/images/Project Name 188.png" alt="Lavent Marketing" className="h-24 sm:h-32 md:h-40 lg:h-48 object-contain drop-shadow-[8px_8px_0_rgba(0,0,0,1)]" />
+          </div>
           <p className="mt-10 text-lg font-bold leading-relaxed text-white/80 md:text-xl lg:text-2xl">
             When you onboard with Elan Vey, you gain real-world marketing exposure and learning opportunities connected with Lavent Marketing.
           </p>
@@ -27,7 +29,6 @@ export function LaventSection() {
           </div>
         </div>
       </Section>
-      <div className="stamp-edge-top" aria-hidden />
     </>
   );
 }

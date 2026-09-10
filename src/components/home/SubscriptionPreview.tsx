@@ -6,8 +6,7 @@ import { Section } from "@/components/ui/Section";
 export function SubscriptionPreview() {
   return (
     <>
-      <div className="checkerboard-divider" aria-hidden />
-      <Section tone="paper">
+      <Section tone="paper" staggerChildren staggerDelay={60}>
         <div className="container-content">
           {/* HEADLINE block */}
           <div className="mx-auto max-w-5xl text-center">
