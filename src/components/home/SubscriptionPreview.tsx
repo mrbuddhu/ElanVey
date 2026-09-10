@@ -1,6 +1,4 @@
 import { Button } from "@/components/ui/Button";
-import { homeServices } from "@/data/homeServices";
-import { ServiceIcon } from "@/components/brand/ServiceIcons";
 import { Section } from "@/components/ui/Section";
 
 export function SubscriptionPreview() {
@@ -48,34 +46,7 @@ export function SubscriptionPreview() {
             </div>
           </div>
 
-          {/* 11 Bullet blocks — MOBILE: stacked list. DESKTOP: 2-column grid. */}
-          <div className="mt-16 md:mt-20 lg:mt-24 mx-auto max-w-6xl grid gap-5 sm:gap-6 md:grid-cols-2 lg:gap-7">
-            {homeServices.map((svc, i) => (
-              <div
-                key={svc.id}
-                className={`stagger-child flex items-start gap-4 sm:gap-5 border-[3px] border-black p-5 sm:p-6 md:p-7 lg:p-8 shadow-brutal hover-lift ${
-                  i % 3 === 0
-                    ? "bg-ev-neon-yellow"
-                    : i % 3 === 1
-                      ? "bg-ev-neon-cyan"
-                      : "bg-ev-neon-cream"
-                }`}
-              >
-                <div className="shrink-0 translate-y-1">
-                  <ServiceIcon icon={svc.icon} />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-brutal text-lg font-black uppercase tracking-wide text-ev-black sm:text-xl md:text-2xl lg:text-3xl">
-                    {svc.name}
-                  </h3>
-                  <p
-                    className="mt-2 text-sm font-bold leading-relaxed text-ev-black/75 sm:text-base md:text-lg lg:text-xl"
-                    dangerouslySetInnerHTML={{ __html: svc.description }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
+
 
           {/* Pricing card block */}
           <div className="mt-16 md:mt-20 lg:mt-24 flex flex-col items-center gap-8 text-center">

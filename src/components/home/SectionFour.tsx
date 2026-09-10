@@ -9,17 +9,19 @@ export function SectionFour() {
         {/* Pink intro card */}
         <div className="relative flex h-full min-h-[400px] md:min-h-[500px] flex-col overflow-hidden rounded-[3rem] bg-[#FF176B] shadow-[12px_12px_0_0_#FFE600] border-none p-8 md:p-10 lg:p-12">
           
-          {/* Centered Moon Graphic */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <img
-              src="/images/Moon.png"
-              alt="Moon graphic"
-              className="h-[120%] max-w-[120%] object-contain opacity-80"
-              style={{ mixBlendMode: 'luminosity', filter: 'contrast(1.2) brightness(1.1)' }}
-            />
-            <span className="absolute text-ev-neon-yellow text-4xl md:text-5xl" style={{ top: '38%', left: '42%' }}>
-              ✦
-            </span>
+          {/* Scaled & Positioned Moon Graphic */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+            <div className="relative flex items-center justify-center w-full h-full">
+              <img
+                src="/images/Moon.png"
+                alt="Moon graphic"
+                className="w-[65%] sm:w-[55%] md:w-[50%] max-w-[340px] h-auto object-contain opacity-75 transition-transform duration-700 hover:scale-105"
+                style={{ mixBlendMode: 'luminosity', filter: 'contrast(1.2) brightness(1.15)' }}
+              />
+              <span className="absolute text-ev-neon-yellow text-3xl sm:text-4xl md:text-5xl animate-pulse" style={{ top: '42%', left: '44%' }}>
+                ✦
+              </span>
+            </div>
           </div>
 
           {/* Top Left: Title & Subtitle */}

@@ -22,28 +22,28 @@ function PillHeader({
         />
       </Link>
 
-      {/* Center: Menu Option */}
+      {/* Center: 3-Line Hamburger Menu Button */}
       <button
         type="button"
-        className="flex items-center gap-1.5 rounded-full px-2 py-1 text-[11px] sm:text-xs font-brutal uppercase tracking-wider text-black hover:bg-black/10 transition-colors shrink-0"
+        className="flex items-center justify-center p-2 rounded-full hover:bg-black/10 transition-colors shrink-0"
         onClick={onToggleMenu}
         aria-label={menuOpen ? "Close menu" : "Open menu"}
         aria-expanded={menuOpen}
       >
-        <span className="font-extrabold">MENU</span>
-        <div className="flex flex-col gap-1 w-3.5">
+        <div className="flex flex-col justify-center gap-1 w-4 h-4">
           <span
-            className={`block h-0.5 w-full rounded-full transition-all duration-300 ${
-              menuOpen
-                ? "translate-y-[2px] rotate-45 bg-black"
-                : "bg-black"
+            className={`block h-0.5 w-full rounded-full bg-black transition-all duration-300 ${
+              menuOpen ? "translate-y-[6px] rotate-45" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-full rounded-full transition-all duration-300 ${
-              menuOpen
-                ? "-translate-y-[2px] -rotate-45 bg-black"
-                : "bg-black"
+            className={`block h-0.5 w-full rounded-full bg-black transition-all duration-300 ${
+              menuOpen ? "opacity-0" : "opacity-100"
+            }`}
+          />
+          <span
+            className={`block h-0.5 w-full rounded-full bg-black transition-all duration-300 ${
+              menuOpen ? "-translate-y-[6px] -rotate-45" : ""
             }`}
           />
         </div>
