@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode, useEffect, useRef } from "react";
+import { ScallopDivider } from "@/components/ui/ScallopDivider";
 
 interface SectionProps {
   children: ReactNode;
@@ -65,15 +66,19 @@ export function Section({
   }, [animate, staggerChildren, staggerDelay, variant]);
 
   return (
-    <section
-      ref={ref}
-      id={id}
-      className={`section-padding ${
-        tone === "dark" ? "section-dark" : ""
-      } ${className}`}
-      style={tone === "paper" ? { backgroundImage: "url('/images/Bg_paper.png')", backgroundSize: "cover", backgroundPosition: "center" } : {}}
-    >
-      {children}
-    </section>
+    <>
+      {tone === "dark" && <ScallopDivider position="top" />}
+      <section
+        ref={ref}
+        id={id}
+        className={`section-padding ${
+          tone === "dark" ? "section-dark" : ""
+        } ${className}`}
+        style={tone === "paper" ? { backgroundImage: "url('/images/Bg_paper.jpg')", backgroundSize: "550px auto", backgroundRepeat: "repeat" } : {}}
+      >
+        {children}
+      </section>
+      {tone === "dark" && <ScallopDivider position="bottom" />}
+    </>
   );
 }

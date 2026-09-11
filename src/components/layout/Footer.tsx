@@ -2,10 +2,13 @@ import Link from "next/link";
 import { footerNavigation } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
 import { Button } from "@/components/ui/Button";
+import { ScallopDivider } from "@/components/ui/ScallopDivider";
 
 export function Footer() {
   return (
-    <footer className="bg-ev-black text-white relative border-t-4 border-ev-neon-pink">
+    <>
+      <ScallopDivider position="top" />
+      <footer className="bg-ev-black text-white relative">
       {/* Main Footer Content */}
       <div className="container-content px-6 md:px-10 lg:px-16 pt-16 md:pt-24 pb-12 md:pb-16">
 
@@ -135,5 +138,6 @@ export function Footer() {
         </div>
       </div>
     </footer>
+    </>
   );
 }

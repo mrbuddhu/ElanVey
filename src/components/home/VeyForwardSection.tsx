@@ -39,8 +39,6 @@ export function VeyForwardSection() {
             className="font-brutal leading-[0.9] font-black uppercase text-ev-neon-yellow tracking-tight"
             style={{
               fontSize: "clamp(3rem, 12vw, 9rem)",
-              textShadow:
-                "4px 4px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 6px 6px 0 #000, 8px 8px 0 #000000aa",
               WebkitTextStroke: "1.5px #000",
             }}
           >
@@ -87,10 +85,6 @@ export function VeyForwardSection() {
                   <ServiceIcon icon={svc.icon} />
                   <span
                     className="font-brutal text-xl font-black uppercase tracking-wide text-ev-black sm:text-2xl md:text-3xl"
-                    style={{
-                      textShadow:
-                        "2px 2px 0 #ffffff, 4px 4px 0 #00000022",
-                    }}
                   >
                     {svc.name}
                   </span>
@@ -131,10 +125,6 @@ export function VeyForwardSection() {
                   <ServiceIcon icon={svc.icon} />
                   <span
                     className="font-brutal text-2xl font-black uppercase tracking-wide text-ev-black md:text-3xl lg:text-3xl xl:text-4xl"
-                    style={{
-                      textShadow:
-                        "2px 2px 0 #ffffff, 4px 4px 0 #00000022",
-                    }}
                   >
                     {svc.name}
                   </span>
@@ -152,10 +142,6 @@ export function VeyForwardSection() {
                   <ServiceIcon icon={svc.icon} />
                   <span
                     className="font-brutal text-2xl font-black uppercase tracking-wide text-ev-black md:text-3xl lg:text-3xl xl:text-4xl"
-                    style={{
-                      textShadow:
-                        "2px 2px 0 #ffffff, 4px 4px 0 #00000022",
-                    }}
                   >
                     {svc.name}
                   </span>
@@ -173,10 +159,6 @@ export function VeyForwardSection() {
                   <ServiceIcon icon={svc.icon} />
                   <span
                     className="font-brutal text-2xl font-black uppercase tracking-wide text-ev-black md:text-3xl lg:text-3xl xl:text-4xl"
-                    style={{
-                      textShadow:
-                        "2px 2px 0 #ffffff, 4px 4px 0 #00000022",
-                    }}
                   >
                     {svc.name}
                   </span>

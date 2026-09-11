@@ -1,70 +1,96 @@
+"use client";
+
 import Link from "next/link";
-import { howWeWorkIntro } from "@/data/homeServices";
 import { processSteps } from "@/data/process";
 
 export function SectionFour() {
   return (
-    <section className="px-5 py-16 md:px-8 md:py-24 lg:px-12 lg:py-32" style={{ backgroundImage: "url('/images/Bg_paper.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
-      <div className="container-content space-y-8 md:space-y-10 lg:grid lg:grid-cols-2 lg:gap-12 lg:space-y-0">
-        {/* Pink intro card */}
-        <div className="relative flex h-full min-h-[400px] md:min-h-[500px] flex-col overflow-hidden rounded-[3rem] bg-[#FF176B] shadow-[12px_12px_0_0_#FFE600] border-none p-8 md:p-10 lg:p-12">
+    <section
+      className="relative overflow-visible py-12 md:py-20 lg:py-28"
+      style={{ backgroundImage: "url('/images/Bg_paper.jpg')", backgroundSize: "550px auto", backgroundRepeat: "repeat" }}
+    >
+      <div className="container-content px-4 sm:px-6 md:px-8 mx-auto max-w-7xl">
+        
+        {/* PARALLAX STACKING CONTAINER */}
+        <div className="relative w-full">
           
-          {/* Scaled & Positioned Moon Graphic */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-            <div className="relative flex items-center justify-center w-full h-full">
-              <img
-                src="/images/Moon.png"
-                alt="Moon graphic"
-                className="w-[65%] sm:w-[55%] md:w-[50%] max-w-[340px] h-auto object-contain opacity-75 transition-transform duration-700 hover:scale-105"
-                style={{ mixBlendMode: 'luminosity', filter: 'contrast(1.2) brightness(1.15)' }}
-              />
-              <span className="absolute text-ev-neon-yellow text-3xl sm:text-4xl md:text-5xl animate-pulse" style={{ top: '42%', left: '44%' }}>
-                ✦
-              </span>
+          {/* CARD 1 — "How We Work" Red Card (Sticky) */}
+          {/* Using sticky top-[10%] so it stays in place while Card 2 slides over it */}
+          <div className="sticky top-20 sm:top-24 md:top-32 z-10 w-full mb-24 md:mb-40 shadow-[12px_12px_0_0_#FFE600] rounded-[2rem] md:rounded-[3rem] bg-[#FF176B] overflow-hidden">
+            <div className="flex flex-col lg:flex-row items-center justify-between p-8 sm:p-10 md:p-14 lg:p-16 min-h-[500px]">
+              
+              {/* Left Side: Title & Subtitle */}
+              <div className="relative z-10 flex-1 flex flex-col justify-center w-full lg:w-1/2 pr-0 lg:pr-8">
+                <h2 className="font-brutal text-[3rem] sm:text-[5rem] md:text-[6.5rem] lg:text-[7.5rem] font-black uppercase leading-[0.85] text-ev-neon-yellow">
+                  <span className="block">HOW WE</span>
+                  <span className="block">WORK.</span>
+                </h2>
+                <p className="mt-2 font-serif text-2xl sm:text-3xl md:text-[3rem] italic leading-none text-ev-neon-yellow" style={{ fontFamily: 'Georgia, serif' }}>
+                  The procedure.
+                </p>
+
+                <p className="mt-12 md:mt-20 max-w-lg text-base sm:text-lg md:text-xl font-bold leading-snug text-ev-neon-yellow">
+                  You bring the vision. We learn what you&apos;re building, build the strategy around it, work with you on every piece of content, and use the results to keep improving and growing.
+                </p>
+              </div>
+
+              {/* Right Side: Moon Graphic */}
+              <div className="relative z-0 flex-1 flex items-center justify-center w-full lg:w-1/2 mt-12 lg:mt-0">
+                <div className="relative w-full max-w-[350px] md:max-w-[450px] aspect-square flex items-center justify-center">
+                  <img
+                    src="/images/Moon.png"
+                    alt="Moon graphic"
+                    className="w-full h-full object-contain opacity-85"
+                    style={{ mixBlendMode: 'luminosity', filter: 'contrast(1.2) brightness(1.15)' }}
+                  />
+                  <span className="absolute text-ev-neon-yellow text-4xl sm:text-5xl md:text-6xl animate-pulse" style={{ top: '42%', left: '44%' }}>
+                    ✦
+                  </span>
+                </div>
+              </div>
+
             </div>
           </div>
 
-          {/* Top Left: Title & Subtitle */}
-          <div className="relative z-10 flex-1 flex flex-col justify-start">
-            <h2 className="flex flex-col font-brutal text-[4rem] font-black uppercase leading-[0.85] text-ev-neon-yellow md:text-[5.5rem] lg:text-[6.5rem]">
-              <span style={{ textShadow: '4px 4px 0 #CC0044' }}>HOW WE</span>
-              <span style={{ textShadow: '4px 4px 0 #CC0044' }}>WORK.</span>
-            </h2>
-            <p className="mt-2 font-serif text-[2rem] italic leading-none text-ev-neon-yellow md:text-[2.75rem] lg:text-[3.25rem]" style={{ fontFamily: 'Georgia, serif' }}>
-              The procedure.
-            </p>
-          </div>
-
-          {/* Bottom Right: Body Copy */}
-          <div className="relative z-10 mt-16 flex justify-end">
-            <p className="w-full max-w-[65%] text-[0.95rem] font-bold leading-snug text-ev-neon-yellow sm:text-base md:text-xl lg:text-[1.35rem] lg:max-w-[58%]">
-              You bring the vision. We learn what you&apos;re building, build the strategy around it, work with you on every piece of content, and use the results to keep improving and growing.
-            </p>
-          </div>
-        </div>
-
-        {/* Black process steps card */}
-        <div className="rounded-[2.5rem] border-[3px] border-black bg-ev-black p-6 shadow-brutal-xl md:p-8 lg:p-10">
-          <div className="space-y-4 md:space-y-5 lg:space-y-6">
-            {processSteps.map((step) => (
-              <article key={step.index} className="flex items-start gap-4 md:gap-6 lg:gap-8">
-                <span className="process-step-number shrink-0 text-5xl md:text-6xl lg:text-7xl">{step.index}</span>
-                <div className="flex-1">
-                  <h3 className="process-step-title mt-0 md:mt-0 lg:mt-0 text-lg md:text-xl lg:text-2xl">{step.title}</h3>
-                  <p className="mt-2 text-sm font-bold leading-relaxed text-ev-neon-yellow md:text-base lg:text-lg">
+          {/* CARD 2-6: The 5 Process Steps as separate stacking cards */}
+          {processSteps.map((step, idx) => (
+            <div
+              key={step.index}
+              className="sticky w-full rounded-[2rem] md:rounded-[3rem] border-[3px] border-black bg-ev-black shadow-[12px_12px_0_0_rgba(0,0,0,0.8)] p-8 sm:p-10 md:p-14 lg:p-16 mb-24 md:mb-40 flex items-center justify-center min-h-[500px]"
+              style={{ 
+                top: `calc(100px + ${idx * 40}px)`, 
+                zIndex: (idx + 2) * 10 
+              }}
+            >
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-12 w-full max-w-4xl mx-auto">
+                <span className="font-brutal text-7xl sm:text-8xl md:text-[8rem] lg:text-[10rem] font-black text-[#FF1744] leading-none shrink-0 drop-shadow-md">
+                  {step.index}
+                </span>
+                <div className="flex flex-col justify-center text-center md:text-left mt-2 md:mt-6">
+                  <h3 className="font-brutal text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase text-[#FFE600] leading-tight">
+                    {step.title}
+                  </h3>
+                  <p className="mt-4 md:mt-6 text-lg sm:text-xl md:text-2xl font-bold leading-relaxed text-ev-neon-yellow/80">
                     {step.description}
                   </p>
+                  
+                  {/* If it's the last step, show the CTA link */}
+                  {idx === processSteps.length - 1 && (
+                    <div className="mt-10 md:mt-12">
+                      <Link
+                        href="/services#process"
+                        className="font-brutal text-base sm:text-lg md:text-xl font-black uppercase tracking-wider text-[#FFE600] hover:text-white transition-colors inline-flex items-center gap-3"
+                      >
+                        LEARN MORE ABOUT OUR PROCESS
+                        <span className="text-2xl">→</span>
+                      </Link>
+                    </div>
+                  )}
                 </div>
-              </article>
-            ))}
-          </div>
+              </div>
+            </div>
+          ))}
 
-          <Link
-            href="/services#process"
-            className="mt-6 inline-block font-brutal text-sm uppercase tracking-wider text-white transition-colors hover:text-ev-neon-yellow md:mt-8 md:text-base"
-          >
-            Learn more about our process →
-          </Link>
         </div>
       </div>
     </section>
