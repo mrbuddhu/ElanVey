@@ -34,9 +34,10 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ["var(--font-display)", "system-ui", "sans-serif"],
-        brutal: ["var(--font-brutal)", "Impact", "system-ui", "sans-serif"],
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        display: ["'OBO Star'", "var(--font-display)", "system-ui", "sans-serif"],
+        brutal: ["'OBO Star'", "var(--font-brutal)", "Impact", "system-ui", "sans-serif"],
+        obo: ["'OBO Star'", "Impact", "sans-serif"],
+        sans: ["'Halenoir'", "var(--font-sans)", "system-ui", "sans-serif"],
         serif: ["var(--font-serif)", "Georgia", "serif"],
       },
       backgroundImage: {

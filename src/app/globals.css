@@ -1,8 +1,152 @@
- @tailwind base;
+@font-face {
+  font-family: 'Halenoir';
+  src: url('/fonts/halenoir-font-family/Halenoir-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Halenoir';
+  src: url('/fonts/halenoir-font-family/Halenoir-ThinItalic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Halenoir';
+  src: url('/fonts/halenoir-font-family/Halenoir-ExtraLight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Halenoir';
+  src: url('/fonts/halenoir-font-family/Halenoir-ExtraLightItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Halenoir';
+  src: url('/fonts/halenoir-font-family/Halenoir-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Halenoir';
+  src: url('/fonts/halenoir-font-family/Halenoir-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Halenoir';
+  src: url('/fonts/halenoir-font-family/Halenoir-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Halenoir';
+  src: url('/fonts/halenoir-font-family/Halenoir-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Halenoir';
+  src: url('/fonts/halenoir-font-family/Halenoir-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Halenoir';
+  src: url('/fonts/halenoir-font-family/Halenoir-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Halenoir';
+  src: url('/fonts/halenoir-font-family/Halenoir-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Halenoir';
+  src: url('/fonts/halenoir-font-family/Halenoir-SemiBoldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Halenoir';
+  src: url('/fonts/halenoir-font-family/Halenoir-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Halenoir';
+  src: url('/fonts/halenoir-font-family/Halenoir-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Halenoir';
+  src: url('/fonts/halenoir-font-family/Halenoir-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Halenoir';
+  src: url('/fonts/halenoir-font-family/Halenoir-ExtraBoldItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Halenoir';
+  src: url('/fonts/halenoir-font-family/Halenoir-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Halenoir';
+  src: url('/fonts/halenoir-font-family/Halenoir-BlackItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'OBO Star';
+  src: url('/fonts/obostartest-regular.otf') format('opentype'),
+       url('/fonts/OBOStar.otf') format('opentype'),
+       local('OBO Star'), local('OBOStar'),
+       url('/fonts/OBOStar.woff2') format('woff2'),
+       url('/fonts/OBOStar.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
+  h1, h2, h3, h4, h5, h6, .font-brutal, .brutal-text, .heading-display {
+    font-family: 'OBO Star', var(--font-brutal), Impact, sans-serif;
+    text-shadow: none !important;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -23,11 +167,11 @@
   body {
     @apply text-ev-black antialiased;
     overflow-x: hidden;
-    background-color: #e8e8e4;
-    background-image: url("/Backgeound.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #f4f2eb;
+    background-image: url("/images/Bg_paper.jpg");
+    background-size: 550px auto;
+    background-position: center top;
+    background-repeat: repeat;
   }
 
   @media (min-width: 768px) {
@@ -51,7 +195,7 @@
   }
 
   .heading-display {
-    @apply font-brutal uppercase leading-[0.9] tracking-tight;
+    @apply font-brutal uppercase leading-[1.08] tracking-normal;
   }
 
   .link-brutal {
@@ -68,44 +212,31 @@
   }
 
   .brutal-text {
-    @apply font-brutal uppercase leading-[0.9] tracking-tight;
-    text-shadow: 2px 2px 0 #2a2a2a, 3.5px 3.5px 0 #141414, 5px 5px 0 #000000;
+    @apply font-brutal uppercase leading-[1.08] tracking-normal;
   }
 
   .brutal-text-lg {
-    text-shadow: 2.5px 2.5px 0 #2a2a2a, 4px 4px 0 #141414, 5.5px 5.5px 0 #000000;
   }
 
   .brutal-text-charcoal {
-    text-shadow: 2px 2px 0 #3a3a3a, 3.5px 3.5px 0 #222222, 5px 5px 0 #0a0a0a;
   }
 
   .brutal-text-grey {
-    text-shadow: 2px 2px 0 #555555, 3.5px 3.5px 0 #333333, 5px 5px 0 #111111;
   }
 
   .brutal-text-pink {
-    text-shadow: 2px 2px 0 #ff3388, 3.5px 3.5px 0 #cc0044, 5px 5px 0 #660022;
   }
 
   .brutal-text-cyan {
-    text-shadow: 2px 2px 0 #00ddff, 3.5px 3.5px 0 #0088bb, 5px 5px 0 #004466;
   }
 
   .brutal-text-yellow {
-    text-shadow: 2px 2px 0 #ffcc00, 3.5px 3.5px 0 #ff8800, 5px 5px 0 #cc4400;
   }
 
   .brutal-text-orange {
-    text-shadow: 2px 2px 0 #ffaa00, 3.5px 3.5px 0 #ff6600, 5px 5px 0 #cc3300;
   }
 
   .brutal-text-yellow-bg {
-    text-shadow:
-      1.5px 1.5px 0 #ffee00,
-      3px 3px 0 #ffdd00,
-      4px 4px 0 #ffbb00,
-      5px 5px 0 #ff8800;
   }
 
   .brutal-card {
@@ -158,7 +289,7 @@
   }
 
   .nav-pill-link {
-    @apply relative rounded-full px-5 py-2.5 font-brutal text-base uppercase tracking-[0.15em] text-ev-black transition-all xl:px-6 xl:text-lg;
+    @apply relative rounded-full px-3 py-2 font-brutal text-sm uppercase tracking-[0.12em] text-ev-black transition-all xl:px-5 xl:py-2.5 xl:text-base;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
   }
 
@@ -176,7 +307,7 @@
   }
 
   .subscribe-btn {
-    @apply relative rounded-full border border-white/70 px-8 py-3 font-brutal text-base uppercase tracking-wide text-ev-neon-red transition-transform hover:scale-105 md:px-10 md:py-3.5 md:text-lg;
+    @apply relative rounded-full border border-white/70 px-5 py-2 font-brutal text-sm uppercase tracking-wide text-ev-neon-red transition-transform hover:scale-105 md:px-6 md:py-2.5 md:text-base;
     background: linear-gradient(180deg, #fff56a 0%, #ffe600 42%, #f0c400 100%);
     box-shadow:
       0 8px 16px rgba(255, 0, 51, 0.18),
@@ -426,6 +557,17 @@
   .animate-on-scroll-slow.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Bumaga-style background architectural grid guidelines */
+  .bg-grid-lines-light {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+    background-size: clamp(120px, 20vw, 240px) 100%;
+  }
+
+  .bg-grid-lines-dark {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: clamp(120px, 20vw, 240px) 100%;
   }
 }
 

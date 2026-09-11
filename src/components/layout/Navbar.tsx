@@ -119,7 +119,7 @@ export function Navbar() {
 
               <Link
                 href="/subscription"
-                className="subscribe-btn !px-6 !py-2.5 flex-shrink-0"
+                className="subscribe-btn flex-shrink-0"
               >
                 Subscribe Now
               </Link>
@@ -153,7 +153,6 @@ export function Navbar() {
                       ? "translate-y-0 opacity-100"
                       : "translate-y-8 opacity-0"
                   }`}
-                  style={{ textShadow: "3px 3px 0 #000" }}
                   onClick={() => setMenuOpen(false)}
                   tabIndex={menuOpen ? 0 : -1}
                 >

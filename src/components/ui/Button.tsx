@@ -26,9 +26,9 @@ const variants: Record<ButtonVariant, string> = {
 };
 
 const sizes: Record<ButtonSize, string> = {
-  sm: "px-5 py-2.5 text-sm",
-  md: "px-8 py-4 text-base",
-  lg: "px-10 py-5 text-lg",
+  sm: "px-4 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-sm",
+  md: "px-6 py-3 md:px-8 md:py-4 text-sm md:text-base",
+  lg: "px-6 py-4 md:px-10 md:py-5 text-sm md:text-lg",
 };
 
 const Spinner = () => (
@@ -70,7 +70,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const isDisabled = disabled || loading;
-    const classes = `inline-flex items-center justify-center whitespace-nowrap gap-2 transition-transform duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ev-neon-pink ${variants[variant]} ${sizes[size]} ${isDisabled ? "pointer-events-none opacity-60" : ""} ${className}`;
+    const classes = `inline-flex text-center items-center justify-center gap-2 transition-transform duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ev-neon-pink ${variants[variant]} ${sizes[size]} ${isDisabled ? "pointer-events-none opacity-60" : ""} ${className}`;
 
     const content = (
       <>

@@ -93,7 +93,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${display.variable} ${brutal.variable} ${sans.variable} ${serif.variable}`}>
-      <body className="font-sans">
+      <body className="font-sans overflow-x-hidden w-full">
         <Navbar />
         <main>{children}</main>
         <Footer />
