@@ -52,9 +52,9 @@ export function SubscriptionPreview() {
         {/* LAYOUT — single column on mobile, 2-col on desktop */}
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 md:gap-10 items-stretch mx-auto">
           
-          {/* LEFT / TOP: Video card (edge-to-edge, no top/bottom padding, matches hero video border) */}
+          {/* LEFT / TOP: Video card (portrait phone aspect, no left/right crop, no top/bottom bars, matches hero frame border) */}
           <div
-            className="relative flex min-h-[320px] overflow-hidden rounded-[28px] md:min-h-[380px] border-[3px] border-black"
+            className="relative flex w-full max-w-xs mx-auto lg:max-w-none overflow-hidden rounded-[28px] aspect-[3/4] border-[3px] border-black"
             style={{
               boxShadow:
                 "3px 3px 0 #FFE600, 6px 6px 0 #FF1744, 10px 10px 0 #000000",
@@ -67,7 +67,6 @@ export function SubscriptionPreview() {
               muted
               loop
               playsInline
-              controls
               preload="metadata"
               aria-label="Elan Vey video"
             />

@@ -55,15 +55,14 @@ export function SectionOne() {
 
             {/* Hero Video/Image - Right */}
             <div className="order-1 lg:order-2 lg:col-span-5 xl:col-span-5 w-full flex justify-center lg:justify-end">
-              <div className="hero-stagger-children w-full max-w-md lg:max-w-none overflow-hidden border-[3px] border-black shadow-brutal-xl rounded-2xl sm:rounded-3xl">
+              <div className="hero-stagger-children w-full max-w-md lg:max-w-none overflow-hidden border-[3px] border-black shadow-brutal-xl rounded-2xl sm:rounded-3xl aspect-video">
                 <video
-                  className="block h-auto w-full object-cover animate-[spin_30s_linear_infinite] scale-[1.45]"
-                  src="/videos/ElanVeyHeroVideo.MP4"
+                  className="block h-full w-full object-cover animate-[spin_30s_linear_infinite] scale-[1.45]"
+                  src="/videos/ElanVeyHeroVideo.mp4"
                   autoPlay
                   muted
                   loop
                   playsInline
-                  controls={false}
                 >
                   Your browser does not support the video tag.
                 </video>
