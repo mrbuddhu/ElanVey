@@ -52,9 +52,9 @@ export function SubscriptionPreview() {
         {/* LAYOUT — single column on mobile, 2-col on desktop */}
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 md:gap-10 items-stretch mx-auto">
           
-          {/* LEFT / TOP: Video card (landscape aspect, no left/right crop, no top/bottom bars, matches hero frame border) */}
+          {/* LEFT / TOP: Video card (landscape aspect, full width, no left/right crop, no top/bottom bars, matches hero frame border) */}
           <div
-            className="relative flex w-full max-w-xs mx-auto lg:max-w-none overflow-hidden rounded-[28px] aspect-video border-[3px] border-black"
+            className="relative flex w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto lg:max-w-none overflow-hidden rounded-[28px] aspect-video border-[3px] border-black"
             style={{
               boxShadow:
                 "3px 3px 0 #FFE600, 6px 6px 0 #FF1744, 10px 10px 0 #000000",
@@ -62,7 +62,7 @@ export function SubscriptionPreview() {
           >
             <video
               className="h-full w-full object-cover"
-              src="/videos/IMG_1043.MP4"
+              src="/videos/IMG_1043.mp4"
               autoPlay
               muted
               loop
