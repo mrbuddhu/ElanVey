@@ -348,7 +348,7 @@ export function SectionOne() {
             <h2 className="font-brutal uppercase leading-[0.95] text-ev-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
               <span className="relative inline-block">
                 THE TEAM BEHIND
-                <div className="absolute -right-4 -top-10 rotate-[10deg] md:-right-8 md:-top-[3.25rem] lg:-right-16 lg:-top-[4.25rem] z-10">
+                <div className="absolute -right-4 -top-16 rotate-[10deg] md:-right-8 md:-top-[5rem] lg:-right-16 lg:-top-[6.5rem] z-10">
                   <span className="inline-block rounded-full bg-ev-neon-pink px-3 py-1.5 font-brutal text-[10px] uppercase tracking-wider text-ev-neon-yellow sm:px-4 sm:py-2 sm:text-xs md:px-5 md:py-2.5 md:text-sm lg:px-7 lg:py-3.5 lg:text-base border-[2px] border-black shadow-brutal-sm">
                     GET YOUR TEAM
                   </span>
