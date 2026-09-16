@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { RacetrackStrip } from "@/components/ui/RacetrackStrip";
+import { Button } from "@/components/ui/Button";
 
 export function SubscriptionPreview() {
   const [showCapture, setShowCapture] = useState(false);
@@ -30,29 +31,37 @@ export function SubscriptionPreview() {
     <section className="relative overflow-hidden bg-[#0a0a0a] py-12 md:py-24">
       <div className="container-content px-4 sm:px-6 md:px-8 mx-auto max-w-6xl">
         
-        {/* TITLE BLOCK */}
+        {/* TITLE BLOCK — 3 lines: ONE VEY / BETWEEN YOU / & BEING SEEN! */}
         <div className="w-full text-center mb-8 md:mb-16">
-          <h2 className="font-brutal text-2xl sm:text-5xl md:text-7xl lg:text-[6rem] font-black uppercase text-[#FFE600] leading-[1.05] inline-block"
+          <h2 className="font-brutal text-2xl sm:text-5xl md:text-7xl lg:text-[6rem] font-black uppercase text-[#FFE600] leading-[0.95] inline-block"
               style={{ textShadow: "2px 2px 0 #FF1744, 4px 4px 0 #FF1744, 6px 6px 0 #FF1744" }}>
             <span className="relative inline-block pr-8 sm:pr-12 md:pr-16">
-              ONE VEY BETWEEN YOU
+              ONE VEY
               {/* Lightning Bolt */}
               <svg viewBox="0 0 32 32" className="absolute right-0 md:-right-4 top-0 md:-top-2 w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 fill-[#FF1744]" style={{ filter: "drop-shadow(2px 2px 0 #0a0a0a)" }}>
                 <path d="M18 2 L2 18 H14 L10 30 L28 12 H16 L22 2 Z"/>
               </svg>
             </span>
             <br />
-            <span className="inline-block mt-1 md:mt-2">AND BEING SEEN!</span>
+            BETWEEN YOU
+            <br />
+            <span className="inline-block mt-1 md:mt-2">&amp; BEING SEEN!</span>
           </h2>
         </div>
 
         {/* LAYOUT — single column on mobile, 2-col on desktop */}
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 md:gap-10 items-stretch mx-auto">
           
-          {/* LEFT / TOP: Red Card with Shield */}
-          <div className="relative flex min-h-[320px] overflow-hidden rounded-[28px] md:min-h-[380px]">
+          {/* LEFT / TOP: Video card (edge-to-edge, no top/bottom padding, matches hero video border) */}
+          <div
+            className="relative flex min-h-[320px] overflow-hidden rounded-[28px] md:min-h-[380px] border-[3px] border-black"
+            style={{
+              boxShadow:
+                "3px 3px 0 #FFE600, 6px 6px 0 #FF1744, 10px 10px 0 #000000",
+            }}
+          >
             <video
-              className="h-full w-full rounded-[28px] object-contain"
+              className="h-full w-full object-cover"
               src="/videos/IMG_1043.MP4"
               autoPlay
               muted
@@ -104,11 +113,16 @@ export function SubscriptionPreview() {
                 </span>
               </button>
               {/* KNOW MORE Button */}
-              <div className="w-28 md:w-32 shrink-0 bg-[#FF1744] rounded-full flex items-center justify-center py-2.5 md:py-3 cursor-pointer transition-transform hover:scale-[1.02]">
-                <span className="font-sans text-xs md:text-sm font-black text-[#FFE600] text-center leading-[1.15] uppercase">
-                  KNOW<br/>MORE
+              <Button
+                href="/waitlist"
+                size="sm"
+                className="!w-28 md:!w-32 !shrink-0 !rounded-full !bg-ev-neon-pink !border-black !px-2 !py-3 md:!py-4 !min-h-[52px] md:!min-h-[64px] hover:!scale-[1.05]"
+              >
+                <span className="font-brutal uppercase text-ev-neon-yellow text-center leading-[1.05] tracking-wide">
+                  <span className="block text-sm sm:text-base md:text-lg">KNOW</span>
+                  <span className="block text-sm sm:text-base md:text-lg">MORE</span>
                 </span>
-              </div>
+              </Button>
             </div>
 
             {/* 5. Bottom separator */}

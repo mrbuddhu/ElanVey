@@ -64,7 +64,6 @@ export function SectionOne() {
                   loop
                   playsInline
                   controls={false}
-                  poster="/images/sections/Section1.jpeg"
                 >
                   Your browser does not support the video tag.
                 </video>
@@ -76,14 +75,14 @@ export function SectionOne() {
 
       {/* DARK SECTION: Who is Elan Vey For? + One Vey between You & Being Seen. */}
       <ScallopDivider position="top" />
-      <section className="ev-spot" aria-labelledby="ev-title">
+      <section className="ev-spot bg-grid-lines-dark" aria-labelledby="ev-title">
         <style
           dangerouslySetInnerHTML={{
             __html: `
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Rubik+Mono+One&display=swap');
           
           .ev-spot{
-            --ev-bg:#0d0f0a; --ev-line:rgba(255,255,255,.3);
+            --ev-bg:#0a0a0a; --ev-line:rgba(255,255,255,.3);
             --ev-yellow:#f7f928; --ev-cream:#fcf8e0; --ev-cyan:#10f8f7; --ev-pink:#f4256f;
             --ev-red:#f82145; --ev-blue:#5366f0; --ev-shadow:#d9336f; --ev-ink:#0d0f0a;
             --ev-head:"Inter","Helvetica Neue",Arial,sans-serif;
@@ -175,13 +174,14 @@ export function SectionOne() {
             100% { opacity: 1; }
           }
 
-          /* "and everyone in between." (box = mockup x 318->763, y 325->468) */
+          /* "ONE VEY BETWEEN YOU / AND BEING SEEN!" — 3 lines (box = mockup x 318->763, y 325->468) */
           .ev-everyone{position:absolute; left:calc(318 * var(--u)); top:calc(325 * var(--u)); width:calc(445 * var(--u)); height:calc(143 * var(--u))}
           .ev-everyone svg{position:absolute; inset:0; width:100%; height:100%}
           .ev-line{position:absolute; left:0; right:0; text-align:center; font-family:var(--ev-display); line-height:1; color:var(--ev-cream); white-space:nowrap}
-          .ev-l1{top:calc(25.7 * var(--u)); font-size:calc(37 * var(--u)); letter-spacing:-.07em; word-spacing:-.32em; text-shadow:calc(1.5 * var(--u)) calc(1.5 * var(--u)) 0 var(--ev-shadow)}
-          .ev-l2{top:calc(57.7 * var(--u)); font-size:calc(51 * var(--u)); letter-spacing:-.065em; word-spacing:-.3em; transform:translateX(calc(6.5 * var(--u))); text-shadow:calc(2.2 * var(--u)) calc(2.2 * var(--u)) 0 var(--ev-shadow)}
-          .ev-l2 span{margin-left:-.22em}
+          .ev-l1{top:calc(10 * var(--u));  font-size:calc(33 * var(--u)); letter-spacing:-.08em;  word-spacing:-.32em; text-shadow:calc(1.5 * var(--u)) calc(1.5 * var(--u)) 0 var(--ev-shadow)}
+          .ev-l2{top:calc(46 * var(--u));  font-size:calc(39 * var(--u)); letter-spacing:-.075em; word-spacing:-.3em;  text-shadow:calc(2 * var(--u))   calc(2 * var(--u))   0 var(--ev-shadow)}
+          .ev-l3{top:calc(88 * var(--u));  font-size:calc(39 * var(--u)); letter-spacing:-.065em; word-spacing:-.28em; text-shadow:calc(2.2 * var(--u)) calc(2.2 * var(--u)) 0 var(--ev-shadow)}
+          .ev-l3 span{margin-left:-.18em}
 
           /* ---------- phones: stack it ---------- */
           @container ev (max-width: 640px){
@@ -323,9 +323,10 @@ export function SectionOne() {
                 style={{ fill: "var(--ev-cream)" }}
               />
             </svg>
-            <p className="ev-line ev-l1">AND EVERYONE</p>
-            <p className="ev-line ev-l2">
-              IN BETWEEN<span>.</span>
+            <p className="ev-line ev-l1">ONE VEY</p>
+            <p className="ev-line ev-l2">BETWEEN YOU</p>
+            <p className="ev-line ev-l3">
+              &amp; BEING SEEN<span>!</span>
             </p>
           </div>
         </div>
@@ -337,41 +338,32 @@ export function SectionOne() {
       <section
         className="relative overflow-x-clip pb-20 pt-16 md:pb-32 md:pt-24 lg:pb-40 lg:pt-28"
         style={{
-          backgroundImage: "url('/images/Bg_paper.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundImage: "url('/images/Bg_paper.jpg')",
+          backgroundSize: "550px auto",
+          backgroundRepeat: "repeat",
         }}
       >
-        {/* Paper Texture Overlay */}
-        <div className="absolute inset-0 opacity-30" />
-
         <div className="container-content relative px-5 md:px-8 lg:px-12">
-          {/* Heading with Pink Sticker */}
+          {/* Heading with Pink Sticker — 2 lines · font-brutal */}
           <div className="relative mb-8 text-center md:mb-12 lg:mb-16">
-            <h2 className="font-halenoir font-black text-4xl uppercase tracking-tight text-black sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+            <h2 className="font-brutal uppercase leading-[0.95] text-ev-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
               <span className="relative inline-block">
-                THE TEAM
-                <div className="absolute -right-6 -top-14 rotate-[10deg] md:-right-10 md:-top-[5rem] lg:-right-20 lg:-top-[6.75rem] z-10">
-                  <span className="inline-block rounded-full bg-ev-neon-pink px-4 py-2 text-xs font-bold uppercase tracking-wider text-ev-neon-yellow md:px-6 md:py-3 md:text-sm lg:px-8 lg:py-4 lg:text-base border-[2px] border-black shadow-brutal-sm">
+                THE TEAM BEHIND
+                <div className="absolute -right-4 -top-10 rotate-[10deg] md:-right-8 md:-top-[3.25rem] lg:-right-16 lg:-top-[4.25rem] z-10">
+                  <span className="inline-block rounded-full bg-ev-neon-pink px-3 py-1.5 font-brutal text-[10px] uppercase tracking-wider text-ev-neon-yellow sm:px-4 sm:py-2 sm:text-xs md:px-5 md:py-2.5 md:text-sm lg:px-7 lg:py-3.5 lg:text-base border-[2px] border-black shadow-brutal-sm">
                     GET YOUR TEAM
                   </span>
                 </div>
               </span>
               <br />
-              BEHIND
-              <br />
               YOUR CONTENT.
             </h2>
           </div>
 
-          {/* Body Copy */}
+          {/* Body Copy — standard Halenoir (via font-bold) same as About/Services heroes */}
           <div className="mx-auto max-w-3xl text-center md:max-w-4xl lg:max-w-5xl">
-            <p className="font-halenoir font-medium uppercase text-base leading-relaxed text-black md:text-lg lg:text-xl xl:text-2xl">
-              We empower creators, entrepreneurs, and individuals of every age
-              from ambitious teenagers to vibrant seniors. We research what
-              works, build your strategy, find ideas, refine your scripts, edit
-              &amp; design your content, help you publish, analyse the results,
-              and use what we learn to grow the next one.
+            <p className="font-bold leading-relaxed text-ev-black/80 text-lg md:text-xl lg:text-2xl xl:text-3xl">
+              We empower creators, entrepreneurs, and individuals of every age — from ambitious teenagers to vibrant seniors. We research what works, build your strategy, find ideas, refine your scripts, edit &amp; design your content, help you publish, analyse the results, and use what we learn to grow the next one.
             </p>
           </div>
         </div>
