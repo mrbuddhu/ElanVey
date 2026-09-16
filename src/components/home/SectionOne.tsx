@@ -53,19 +53,21 @@ export function SectionOne() {
               </div>
             </div>
 
-            {/* Hero Video/Image - Right */}
+            {/* Hero Video/Image - Right. Outer = frame (border/shadow). Inner = exact 16:9. Inner radius < outer radius − border so corners align perfectly with no gap. */}
             <div className="order-1 lg:order-2 lg:col-span-5 xl:col-span-5 w-full flex justify-center lg:justify-end">
-              <div className="hero-stagger-children w-full max-w-md lg:max-w-none overflow-hidden border-[3px] border-black shadow-brutal-xl rounded-2xl sm:rounded-3xl aspect-video">
-                <video
-                  className="block h-full w-full object-cover animate-[spin_30s_linear_infinite] scale-[1.45]"
-                  src="/videos/ElanVeyHeroVideo.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                >
-                  Your browser does not support the video tag.
-                </video>
+              <div className="hero-stagger-children w-full max-w-md lg:max-w-none rounded-2xl sm:rounded-3xl border-[3px] border-black shadow-brutal-xl bg-black">
+                <div className="box-content w-full aspect-[16/9] overflow-hidden rounded-[13px] sm:rounded-[21px]">
+                  <video
+                    className="block h-full w-full object-contain"
+                    src="/videos/ElanVeyHeroVideo.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
               </div>
             </div>
           </div>
@@ -343,19 +345,17 @@ export function SectionOne() {
         }}
       >
         <div className="container-content relative px-5 md:px-8 lg:px-12">
-          {/* Heading with Pink Sticker — 2 lines · font-brutal */}
-          <div className="relative mb-8 text-center md:mb-12 lg:mb-16">
-            <h2 className="font-brutal uppercase leading-[0.95] text-ev-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+          {/* Heading — single line · font-brutal · maroon top-to-bottom gradient text · GET YOUR TEAM sticker */}
+          <div className="relative mb-8 text-center md:mb-12 lg:mb-16 overflow-visible">
+            <h2 className="font-brutal uppercase leading-[0.95] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-[#5B1118] via-[#800020] to-[#3A0A10]">
               <span className="relative inline-block">
-                THE TEAM BEHIND
-                <div className="absolute -right-4 -top-20 rotate-[10deg] md:-right-8 md:-top-[6.5rem] lg:-right-16 lg:-top-[8.5rem] z-10">
-                  <span className="inline-block rounded-full bg-ev-neon-pink px-3 py-1.5 font-brutal text-[10px] uppercase tracking-wider text-ev-neon-yellow sm:px-4 sm:py-2 sm:text-xs md:px-5 md:py-2.5 md:text-sm lg:px-7 lg:py-3.5 lg:text-base border-[2px] border-black shadow-brutal-sm">
+                EVERYTHING BEHIND YOUR VISION
+                <div className="absolute -right-2 sm:-right-4 -top-16 sm:-top-20 rotate-[10deg] md:-right-6 md:-top-[6.5rem] lg:-right-10 lg:-top-[8.5rem] z-10">
+                  <span className="inline-block rounded-full bg-ev-neon-pink px-3 py-1.5 font-brutal text-[10px] uppercase tracking-wider text-ev-neon-yellow sm:px-4 sm:py-2 sm:text-xs md:px-5 md:py-2.5 md:text-sm lg:px-7 lg:py-3.5 lg:text-base border-[2px] border-black shadow-brutal">
                     GET YOUR TEAM
                   </span>
                 </div>
               </span>
-              <br />
-              YOUR CONTENT.
             </h2>
           </div>
 

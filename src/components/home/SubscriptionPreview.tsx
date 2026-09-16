@@ -50,26 +50,28 @@ export function SubscriptionPreview() {
         </div>
 
         {/* LAYOUT — single column on mobile, 2-col on desktop */}
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 md:gap-10 items-stretch mx-auto">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 md:gap-10 items-stretch lg:items-center mx-auto">
           
-          {/* LEFT / TOP: Video card (landscape aspect, full width, no left/right crop, no top/bottom bars, matches hero frame border) */}
+          {/* LEFT / TOP: Video card. Outer = frame (border/shadow). Inner = exact 16:9. Inner radius = outer − border so corners align perfectly with no gap. */}
           <div
-            className="relative flex w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto lg:max-w-none overflow-hidden rounded-[28px] aspect-video border-[3px] border-black"
+            className="relative w-full max-w-md sm:max-w-lg md:max-w-xl mx-auto lg:max-w-none rounded-[28px] border-[3px] border-black bg-black"
             style={{
               boxShadow:
                 "3px 3px 0 #FFE600, 6px 6px 0 #FF1744, 10px 10px 0 #000000",
             }}
           >
-            <video
-              className="h-full w-full object-cover"
-              src="/videos/IMG_1043.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              aria-label="Elan Vey video"
-            />
+            <div className="box-content w-full aspect-[16/9] overflow-hidden rounded-[25px] bg-black">
+              <video
+                className="block h-full w-full object-contain"
+                src="/videos/Subscription.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Elan Vey video"
+              />
+            </div>
           </div>
 
           {/* RIGHT / BOTTOM: Pricing, Checkerboard, Buttons, Details */}
