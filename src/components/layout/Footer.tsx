@@ -124,14 +124,15 @@ export function Footer() {
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
           <p className="text-xs font-brutal uppercase tracking-[0.1em] text-white/40">
-            Crafted with care by{" "}
+            Crafted with{" "}
+            <span role="img" aria-label="heart">❤️</span>{" "}
             <a
               href="https://www.sanganakhq.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-bold"
+              className="text-ev-neon-pink transition-colors hover:text-ev-neon-yellow"
             >
-              SanganakHQ
+              @SanganakHQ
             </a>
           </p>
           <ul className="flex gap-6">
