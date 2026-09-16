@@ -91,18 +91,27 @@ export default function SubscriptionPage() {
       </section>
 
       <section className="relative overflow-hidden px-5 py-8 md:px-8 md:py-12">
-        <div className="mx-auto max-w-5xl overflow-hidden rounded-[20px]">
-          <video
-            className="mx-auto block max-h-[620px] w-full rounded-[20px] object-contain"
-            src="/videos/IMG_1043.MP4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            controls
-            preload="metadata"
-            aria-label="Elan Vey subscription video"
-          />
+        <div className="mx-auto max-w-5xl">
+          <div
+            className="relative w-full rounded-[28px] border-[3px] border-black bg-black"
+            style={{
+              boxShadow:
+                "3px 3px 0 #FFE600, 6px 6px 0 #FF1744, 10px 10px 0 #000000",
+            }}
+          >
+            <div className="box-content w-full aspect-[16/9] overflow-hidden rounded-[25px] bg-black">
+              <video
+                className="block h-full w-full object-contain"
+                src="/videos/Subscription.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Elan Vey subscription video"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

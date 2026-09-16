@@ -77,26 +77,34 @@ export default function WaitlistPage() {
       </section>
       <RacetrackStrip />
 
-      <section className="relative overflow-hidden px-5 py-8 md:px-8 md:py-12" style={paperBg}>
-        <div className="mx-auto max-w-5xl overflow-hidden rounded-[28px]">
-          <video
-            className="mx-auto block max-h-[620px] w-full rounded-[28px] object-contain"
-            src="/videos/IMG_1043.MP4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            controls
-            preload="metadata"
-            aria-label="Elan Vey waitlist video"
-          />
-        </div>
-      </section>
-
       <section className="relative overflow-hidden bg-[#0a0a0a] py-10 text-center text-white md:py-14">
         <div className="container-content px-5 md:px-8 lg:px-12">
           <p className="font-brutal text-xs uppercase tracking-[0.3em] text-ev-neon-cyan">You heard it first 👀</p>
-          <h2 className="mt-4 font-brutal text-3xl uppercase leading-tight text-ev-neon-yellow sm:text-4xl md:text-5xl">
+
+          <div className="mx-auto mt-8 max-w-5xl">
+            <div
+              className="relative w-full rounded-[28px] border-[3px] border-black bg-black"
+              style={{
+                boxShadow:
+                  "3px 3px 0 #FFE600, 6px 6px 0 #FF1744, 10px 10px 0 #000000",
+              }}
+            >
+              <div className="box-content w-full aspect-[16/9] overflow-hidden rounded-[25px] bg-black">
+                <video
+                  className="block h-full w-full object-contain"
+                  src="/videos/Subscription.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label="Elan Vey subscription video"
+                />
+              </div>
+            </div>
+          </div>
+
+          <h2 className="mt-8 font-brutal text-3xl uppercase leading-tight text-ev-neon-yellow sm:text-4xl md:text-5xl">
             Early access offer
           </h2>
           <p className="mt-4 whitespace-nowrap font-brutal text-4xl text-ev-neon-pink sm:text-5xl md:text-6xl">
