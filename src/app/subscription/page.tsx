@@ -93,7 +93,7 @@ export default function SubscriptionPage() {
       <section className="relative overflow-hidden px-5 py-8 md:px-8 md:py-12">
         <div className="mx-auto max-w-5xl">
           <div
-            className="relative w-full rounded-[28px] border-[3px] border-black bg-black"
+            className="relative w-full rounded-[28px] border-[3px] border-black bg-black md:max-w-4xl md:mx-auto"
             style={{
               boxShadow:
                 "3px 3px 0 #FFE600, 6px 6px 0 #FF1744, 10px 10px 0 #000000",
@@ -148,33 +148,38 @@ export default function SubscriptionPage() {
             </Reveal>
 
             <Reveal variant="right" className="relative">
-              <div className="relative rounded-[1.5rem] border-[3px] border-black bg-ev-neon-yellow p-7 shadow-brutal-xl hover-lift md:p-9">
-                <span className="ribbon-badge bg-ev-neon-pink text-ev-neon-yellow">
-                  Best Value
-                </span>
-                <p className="font-brutal text-xs uppercase tracking-widest text-ev-black">
-                  Investment
-                </p>
-                <div className="mt-4 flex items-baseline gap-2">
-                  <p className="font-brutal text-3xl text-ev-neon-red md:text-4xl">
-                    ₹1799/month
+              <div className="relative overflow-hidden rounded-[1.5rem] border-[3px] border-black bg-ev-neon-yellow p-7 shadow-brutal-xl hover-lift md:p-9 text-ev-black">
+                <div className="pointer-events-none absolute inset-0 rounded-[1.35rem]" aria-hidden style={{
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0.06) 40%, rgba(255,255,255,0) 60%)"
+                }} />
+                <div className="relative z-10">
+                  <span className="ribbon-badge bg-ev-neon-pink text-ev-neon-yellow">
+                    Best Value
+                  </span>
+                  <p className="font-brutal text-xs uppercase tracking-widest text-ev-black">
+                    Investment
                   </p>
-                </div>
-                <p className="mt-2 text-sm font-bold text-ev-black/70">
-                  Monthly · No lock-in contracts
-                </p>
-                <div className="mt-4 inline-flex items-center gap-2 rounded-full border-[3px] border-black bg-ev-neon-cream px-3 py-1">
-                  <span className="font-brutal text-xs text-ev-neon-red">
-                    SAVE 20%
-                  </span>
-                  <span className="text-xs font-bold">
-                    vs. one-off projects
-                  </span>
-                </div>
-                <div className="mt-8">
-                  <Button href="/waitlist" className="w-full">
-                    Join the Waitlist
-                  </Button>
+                  <div className="mt-4 flex items-baseline gap-2">
+                    <p className="font-brutal text-3xl text-ev-neon-red md:text-4xl">
+                      ₹1799/month
+                    </p>
+                  </div>
+                  <p className="mt-2 text-sm font-bold text-ev-black/80">
+                    Monthly · No lock-in contracts
+                  </p>
+                  <div className="mt-4 inline-flex items-center gap-2 rounded-full border-[3px] border-black bg-ev-neon-cream px-3 py-1">
+                    <span className="font-brutal text-xs text-ev-neon-red">
+                      SAVE 20%
+                    </span>
+                    <span className="text-xs font-bold text-ev-black">
+                      vs. one-off projects
+                    </span>
+                  </div>
+                  <div className="mt-8">
+                    <Button href="/waitlist" className="w-full">
+                      Join the Waitlist
+                    </Button>
+                  </div>
                 </div>
               </div>
             </Reveal>
@@ -182,43 +187,150 @@ export default function SubscriptionPage() {
         </div>
       </section>
 
-      {/* ============ ALL BENEFITS (dark) ============ */}
+      {/* ============ WHAT HAPPENS AFTER YOU JOIN (dark) ============ */}
       <RacetrackStrip />
       <section className="relative overflow-hidden bg-[#0a0a0a] py-16 text-white md:py-24">
         <div className="container-content px-5 md:px-8 lg:px-12">
           <Reveal>
-            <p className="font-brutal text-xs uppercase tracking-[0.3em] text-ev-neon-yellow">
-              All Benefits Included
-            </p>
             <h2
-              className="mt-4 mb-12 font-brutal text-3xl uppercase text-ev-neon-yellow md:text-5xl"
+              className="mb-12 font-brutal text-3xl uppercase text-ev-neon-yellow md:text-5xl"
               style={yellowShadow}
             >
-              Everything you need to{" "}
-              <span className="text-ev-neon-pink">thrive</span>
+              WHAT HAPPENS AFTER YOU JOIN?
             </h2>
           </Reveal>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {subscriptionBenefits.map((benefit, i) => {
-              const accent = benefitAccents[i % benefitAccents.length];
-              return (
-                <Reveal
-                  key={benefit.title}
-                  delay={i * 70}
-                  className={`rounded-[1rem] border-[3px] border-black p-6 shadow-brutal hover-lift md:p-8 ${accent.color}`}
-                >
+            <Reveal delay={0 * 70}>
+              <div
+                className="relative overflow-hidden rounded-[1rem] border-[3px] border-black p-6 shadow-brutal hover-lift md:p-8 text-white"
+                style={{ background: "linear-gradient(135deg, #FF1744 0%, #b91c3d 100%)" }}
+              >
+                <div className="pointer-events-none absolute inset-0 rounded-[0.85rem]" aria-hidden style={{
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.02) 40%, rgba(255,255,255,0) 60%)"
+                }} />
+                <div className="relative z-10">
                   <div className="flex items-start gap-3">
-                    <span className="font-brutal text-3xl">{accent.icon}</span>
-                    <h3 className="pt-1 font-brutal text-base uppercase">
-                      {benefit.title}
+                    <span className="font-brutal text-5xl md:text-6xl text-[#FFE600]">01</span>
+                    <h3 className="pt-1 font-brutal text-base md:text-lg uppercase leading-[0.95]">
+                      TELL US WHAT YOU WANT TO DO
                     </h3>
                   </div>
-                  <p className="mt-4 text-sm font-bold opacity-80">
-                    {benefit.description}
+                  <p className="mt-4 text-sm font-bold leading-relaxed opacity-95">
+                    Got an idea? A YouTube channel? A business? A product? Music? Art? A personal brand? Or haven&apos;t even started yet? Tell us everything through our Form — your goals, needs, expectations, niche, experience, platform, and what you want to achieve.
                   </p>
-                </Reveal>
-              );
-            })}
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={1 * 70}>
+              <div
+                className="relative overflow-hidden rounded-[1rem] border-[3px] border-black p-6 shadow-brutal hover-lift md:p-8 text-ev-black"
+                style={{ background: "linear-gradient(135deg, #22d3ee 0%, #0ea5c8 100%)" }}
+              >
+                <div className="pointer-events-none absolute inset-0 rounded-[0.85rem]" aria-hidden style={{
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.04) 40%, rgba(255,255,255,0) 60%)"
+                }} />
+                <div className="relative z-10">
+                  <div className="flex items-start gap-3">
+                    <span className="font-brutal text-5xl md:text-6xl text-ev-neon-pink">02</span>
+                    <h3 className="pt-1 font-brutal text-base md:text-lg uppercase leading-[0.95]">
+                      WE FIGURE OUT WHERE TO BEGIN
+                    </h3>
+                  </div>
+                  <p className="mt-4 text-sm font-bold leading-relaxed opacity-95">
+                    You don&apos;t need a strategy or a content plan. You don&apos;t even need to know exactly what you&apos;re doing yet. That&apos;s what you have us for. We understand where you are and figure out what needs to happen next.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={2 * 70}>
+              <div
+                className="relative overflow-hidden rounded-[1rem] border-[3px] border-black p-6 shadow-brutal hover-lift md:p-8 text-ev-black"
+                style={{ background: "linear-gradient(135deg, #FFE600 0%, #e6c800 100%)" }}
+              >
+                <div className="pointer-events-none absolute inset-0 rounded-[0.85rem]" aria-hidden style={{
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0) 60%)"
+                }} />
+                <div className="relative z-10">
+                  <div className="flex items-start gap-3">
+                    <span className="font-brutal text-5xl md:text-6xl text-ev-neon-pink">03</span>
+                    <h3 className="pt-1 font-brutal text-base md:text-lg uppercase leading-[0.95]">
+                      YOU BRING THE IDEAS
+                    </h3>
+                  </div>
+                  <p className="mt-4 text-sm font-bold leading-relaxed opacity-95">
+                    You bring the vision and ideas, your preferable area/niche/category of content. You create the thing, record the video, build the product, make the art, or start the business. You stay focused on what you&apos;re good at.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={3 * 70}>
+              <div
+                className="relative overflow-hidden rounded-[1rem] border-[3px] border-black p-6 shadow-brutal hover-lift md:p-8 text-white"
+                style={{ background: "linear-gradient(135deg, #FF1744 0%, #b91c3d 100%)" }}
+              >
+                <div className="pointer-events-none absolute inset-0 rounded-[0.85rem]" aria-hidden style={{
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.02) 40%, rgba(255,255,255,0) 60%)"
+                }} />
+                <div className="relative z-10">
+                  <div className="flex items-start gap-3">
+                    <span className="font-brutal text-5xl md:text-6xl text-[#FFE600]">04</span>
+                    <h3 className="pt-1 font-brutal text-base md:text-lg uppercase leading-[0.95]">
+                      WE BUILD YOUR PATH
+                    </h3>
+                  </div>
+                  <p className="mt-4 text-sm font-bold leading-relaxed opacity-95">
+                    We create a personalised strategy around your vision — how you should create, who you should reach, how you should present it, and what direction makes sense for you.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={4 * 70}>
+              <div
+                className="relative overflow-hidden rounded-[1rem] border-[3px] border-black p-6 shadow-brutal hover-lift md:p-8 text-ev-black"
+                style={{ background: "linear-gradient(135deg, #22d3ee 0%, #0ea5c8 100%)" }}
+              >
+                <div className="pointer-events-none absolute inset-0 rounded-[0.85rem]" aria-hidden style={{
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.04) 40%, rgba(255,255,255,0) 60%)"
+                }} />
+                <div className="relative z-10">
+                  <div className="flex items-start gap-3">
+                    <span className="font-brutal text-5xl md:text-6xl text-ev-neon-pink">05</span>
+                    <h3 className="pt-1 font-brutal text-base md:text-lg uppercase leading-[0.95]">
+                      YOUR TEAM KICKS IN
+                    </h3>
+                  </div>
+                  <p className="mt-4 text-sm font-bold leading-relaxed opacity-95">
+                    This is where we take over. Scripting, editing, thumbnails, titles, captions, research, positioning, strategy, analytics, and optimisation — whatever your content needs, we work on it with you.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={5 * 70}>
+              <div
+                className="relative overflow-hidden rounded-[1rem] border-[3px] border-black p-6 shadow-brutal hover-lift md:p-8 text-ev-black"
+                style={{ background: "linear-gradient(135deg, #FFE600 0%, #e6c800 100%)" }}
+              >
+                <div className="pointer-events-none absolute inset-0 rounded-[0.85rem]" aria-hidden style={{
+                  background: "linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0) 60%)"
+                }} />
+                <div className="relative z-10">
+                  <div className="flex items-start gap-3">
+                    <span className="font-brutal text-5xl md:text-6xl text-ev-neon-pink">06</span>
+                    <h3 className="pt-1 font-brutal text-base md:text-lg uppercase leading-[0.95]">
+                      WE REVIEW &amp; OPTIMISE
+                    </h3>
+                  </div>
+                  <p className="mt-4 text-sm font-bold leading-relaxed opacity-95">
+                    We look at what happens after you put your content out. We analyse the response, identify what&apos;s working, figure out what isn&apos;t, and adjust the strategy accordingly. Your vision gets a team behind it for as long as you&apos;re building it.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -238,17 +350,23 @@ export default function SubscriptionPage() {
               <Reveal
                 key={item.step}
                 delay={i * 90}
-                className="relative rounded-[1.25rem] border-[3px] border-black bg-ev-neon-cream p-6 shadow-brutal hover-lift md:p-8"
               >
-                <span className="font-brutal text-5xl text-ev-neon-pink md:text-6xl">
-                  {item.step}
-                </span>
-                <h3 className="mt-4 font-brutal text-xl uppercase text-ev-black md:text-2xl">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm font-bold leading-relaxed text-ev-black/70 md:text-base">
-                  {item.desc}
-                </p>
+                <div className="relative overflow-hidden rounded-[1.25rem] border-[3px] border-black bg-ev-neon-cream p-6 shadow-brutal hover-lift md:p-8 text-ev-black">
+                  <div className="pointer-events-none absolute inset-0 rounded-[1.1rem]" aria-hidden style={{
+                    background: "linear-gradient(135deg, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.08) 40%, rgba(255,255,255,0) 60%)"
+                  }} />
+                  <div className="relative z-10">
+                    <span className="font-brutal text-5xl text-ev-neon-pink md:text-6xl">
+                      {item.step}
+                    </span>
+                    <h3 className="mt-4 font-brutal text-xl uppercase text-ev-black md:text-2xl leading-[0.95]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 text-sm font-bold leading-relaxed text-ev-black/80 md:text-base">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
               </Reveal>
             ))}
           </div>
