@@ -8,19 +8,26 @@ export function SubscriptionPreview() {
   const [showCapture, setShowCapture] = useState(false);
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [leadError, setLeadError] = useState("Please try again.");
 
   async function submitLead(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("loading");
+    setLeadError("Please try again.");
     try {
       const response = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
-      if (!response.ok) throw new Error("Unable to save lead");
+      const data = await response.json().catch(() => null);
+      if (!response.ok) {
+        const msg = data && typeof data.error === "string" ? data.error : "Unable to save lead";
+        throw new Error(msg);
+      }
       setStatus("success");
-    } catch {
+    } catch (err) {
+      setLeadError(err instanceof Error ? err.message : "Please try again.");
       setStatus("error");
     }
   }
@@ -157,7 +164,7 @@ export function SubscriptionPreview() {
             <form onSubmit={submitLead} className="mt-6 space-y-4">
               <label htmlFor="lead-email" className="block font-brutal text-xs uppercase">Email address</label>
               <input id="lead-email" type="email" required value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" className="brutal-input" />
-              {status === "error" && <p className="text-sm font-bold text-ev-neon-red">Please try again.</p>}
+              {status === "error" && <p className="text-sm font-bold text-ev-neon-red">{leadError}</p>}
               <button type="submit" disabled={status === "loading"} className="w-full border-[3px] border-black bg-ev-neon-yellow px-5 py-3 font-brutal uppercase text-ev-neon-red shadow-brutal disabled:opacity-60">{status === "loading" ? "Saving…" : "SAVE MY SPOT!"}</button>
             </form>
           )}
