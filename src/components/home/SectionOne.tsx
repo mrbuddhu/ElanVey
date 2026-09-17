@@ -348,18 +348,7 @@ export function SectionOne() {
           {/* Heading — always visible · moving gradient · GET YOUR TEAM sticker */}
           <div className="relative mb-8 text-center md:mb-12 lg:mb-16">
             <div className="relative inline-block">
-              <h2
-                className="font-brutal uppercase leading-[0.95] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl bg-clip-text text-transparent animate-gradient-vey"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(110deg, #5B1118 0%, #800020 20%, #FF0066 40%, #FFE600 60%, #FF0066 80%, #800020 95%, #3A0A10 100%)",
-                  backgroundSize: "300% 300%",
-                  WebkitBackgroundClip: "text",
-                  backgroundClip: "text",
-                  color: "transparent",
-                  animation: "gradientVey 10s ease-in-out infinite",
-                }}
-              >
+              <h2 className="font-brutal uppercase leading-[0.95] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl vey-gradient-heading">
                 EVERYTHING BEHIND YOUR VISION
               </h2>
               <div className="pointer-events-none absolute -right-2 sm:-right-4 -top-16 sm:-top-20 rotate-[10deg] md:-right-6 md:-top-[6.5rem] lg:-right-10 lg:-top-[8.5rem] z-10">
@@ -369,13 +358,6 @@ export function SectionOne() {
               </div>
             </div>
           </div>
-
-          <style jsx>{`
-            @keyframes gradientVey {
-              0%, 100% { background-position: 0% 50%; }
-              50% { background-position: 100% 50%; }
-            }
-          `}</style>
 
           {/* Body Copy — standard Halenoir (via font-bold) same as About/Services heroes */}
           <div className="mx-auto max-w-3xl text-center md:max-w-4xl lg:max-w-5xl">
