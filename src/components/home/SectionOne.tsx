@@ -172,15 +172,15 @@ export function SectionOne() {
           }
 
           /* "AND EVERYONE / IN BETWEEN" — 2 lines */
-          .ev-everyone{position:absolute; left:calc(180 * var(--u)); top:calc(325 * var(--u)); width:calc(700 * var(--u)); height:calc(100 * var(--u))}
+          .ev-everyone{position:absolute; left:calc(180 * var(--u)); top:calc(340 * var(--u)); width:calc(700 * var(--u)); height:calc(120 * var(--u))}
           .ev-everyone svg{position:absolute; left:50%; top:0; height:100%; width:auto; transform:translateX(-50%)}
           .ev-line{position:absolute; left:0; right:0; text-align:center; font-family:var(--ev-display); line-height:1; color:var(--ev-cream); white-space:nowrap}
-          .ev-l1{top:calc(15 * var(--u));  font-size:calc(36 * var(--u)); letter-spacing:-.075em; word-spacing:-.28em;  text-shadow:calc(2 * var(--u))   calc(2 * var(--u))   0 var(--ev-shadow)}
-          .ev-l2{top:calc(55 * var(--u));  font-size:calc(36 * var(--u)); letter-spacing:-.075em; word-spacing:-.28em;  text-shadow:calc(2 * var(--u))   calc(2 * var(--u))   0 var(--ev-shadow)}
+          .ev-l1{top:calc(20 * var(--u));  font-size:calc(40 * var(--u)); letter-spacing:-.075em; word-spacing:-.28em;  text-shadow:calc(2 * var(--u))   calc(2 * var(--u))   0 var(--ev-shadow)}
+          .ev-l2{top:calc(65 * var(--u));  font-size:calc(40 * var(--u)); letter-spacing:-.075em; word-spacing:-.28em;  text-shadow:calc(2 * var(--u))   calc(2 * var(--u))   0 var(--ev-shadow)}
 
           /* ---------- phones: stack it ---------- */
           @container ev (max-width: 640px){
-            .ev-inner{--u:min(calc((100cqw - 32px) / 445), .8px); width:100%; height:auto; padding:32px 0 40px; display:flex; flex-direction:column; align-items:center; overflow:hidden;}
+            .ev-inner{--u:min(calc((100cqw - 32px) / 445), .8px); width:100%; height:auto; padding:32px 0 48px; display:flex; flex-direction:column; align-items:center; overflow:hidden;}
             .ev-grid{display:none}
             .ev-title,.ev-sub{position:static; white-space:normal}
             .ev-sub{margin-top:12px}
@@ -217,7 +217,7 @@ export function SectionOne() {
             .ev-dreamers .ev-spark{ top: calc(285 * var(--u)); left: 20%; width: calc(50 * var(--u)); height: calc(50 * var(--u)); }
             .ev-artists .ev-pill  { top: calc(285 * var(--u)); right: 8%; }
 
-            .ev-everyone{position:relative; left:auto; top:auto; margin-top: 16px;}
+            .ev-everyone{position:relative; left:auto; top:auto; margin-top: 20px;}
           }
         `,
           }}
@@ -308,7 +308,7 @@ export function SectionOne() {
           </ul>
 
           <div className="ev-everyone">
-            <svg viewBox="0 0 445 143" aria-hidden="true">
+            <svg viewBox="0 0 445 171" aria-hidden="true">
               <path
                 d="M39.3 120.7 L35.5 120.6 L31.9 120.5 L28.5 120.3 L25.3 120.1 L22.3 119.9 L19.6 119.6 L17.0 119.2 L14.7 118.8 L12.6 118.6 L10.7 118.3 L9.0 117.9 L7.6 117.6 L6.5 117.2 L5.6 116.8 L5.0 116.5 L4.7 116.3 L4.7 116.2 L4.7 116.3 L4.7 116.5 L4.7 116.4 L4.8 116.0 L5.2 115.4 L5.8 114.7 L6.7 113.8 L7.8 112.9 L9.2 111.9 L10.8 110.8 L12.6 109.7 L14.7 108.5 L17.0 107.3 L19.5 106.1 L22.2 104.8 L25.1 103.5 L28.2 102.2 L31.5 100.8 L35.0 99.4 L38.7 98.0 L42.6 96.6 L46.6 95.2 L50.9 93.7 L55.3 92.2 L59.9 90.7 L64.7 89.2 L69.6 87.7 L74.6 86.1 L79.8 84.6 L85.2 83.0 L90.7 81.4 L96.3 79.9 L102.1 78.3 L107.9 76.7 L113.9 75.1 L120.0 73.5 L126.2 71.9 L132.5 70.3 L138.8 68.7 L145.3 67.1 L151.8 65.6 L158.4 64.0 L165.0 62.4 L171.7 60.9 L178.5 59.3 L185.3 57.8 L192.1 56.3 L199.0 54.8 L205.8 53.3 L212.7 51.8 L219.6 50.4 L226.5 49.0 L233.4 47.6 L240.2 46.3 L247.1 44.9 L253.9 43.6 L260.6 42.4 L267.4 41.1 L274.0 39.9 L280.7 38.8 L287.2 37.6 L293.7 36.6 L300.1 35.5 L306.4 34.5 L312.7 33.6 L318.8 32.6 L324.9 31.8 L330.8 31.0 L336.6 30.2 L342.3 29.5 L347.8 28.8 L353.2 28.1 L358.5 27.6 L363.7 27.0 L368.7 26.5 L373.5 26.1 L378.2 25.7 L382.7 25.3 L387.0 25.0 L391.1 24.8 L395.1 24.6 L398.9 24.4 L402.5 24.3 L405.9 24.2 L409.1 24.1 L412.1 24.1 L414.9 24.2 L417.5 24.3 L419.9 24.4 L422.1 24.5 L424.0 24.7 L425.7 24.9 L427.2 25.2 L428.4 25.5 L429.4 25.8 L430.1 26.1 L430.6 26.3 L430.8 26.5 L430.9 26.5 L431.0 26.6 L431.0 26.8 L430.9 27.3 L430.5 28.0 L429.9 28.7 L429.0 29.6 L427.8 30.5 L426.5 31.5 L424.8 32.6 L423.0 33.7 L421.0 34.8 L418.7 36.0 L416.2 37.1 L413.5 38.4 L410.6 39.6 L407.5 40.9 L404.2 42.2 L400.8 43.6 L397.1 44.9 L393.2 46.3 L389.2 47.8 L384.9 49.2 L380.5 50.6 L376.0 52.1 L371.2 53.6 L366.4 55.1 L361.3 56.6 L356.1 58.2 L350.8 59.8 L345.4 61.4 L339.8 63.1 L334.1 64.8 L328.3 66.5 L322.4 68.3 L322.4 68.3 L328.4 67.0 L334.3 65.5 L340.1 64.1 L345.7 62.6 L351.2 61.2 L356.6 59.7 L361.8 58.1 L366.8 56.6 L371.7 55.1 L376.5 53.6 L381.0 52.2 L385.4 50.7 L389.7 49.3 L393.8 47.9 L397.7 46.6 L401.4 45.2 L404.9 43.9 L408.2 42.6 L411.4 41.4 L414.3 40.2 L417.1 39.0 L419.6 37.9 L422.0 36.8 L424.1 35.7 L426.1 34.7 L427.8 33.7 L429.4 32.8 L430.7 31.8 L431.9 30.9 L432.9 30.0 L433.7 29.0 L434.3 28.0 L434.6 26.8 L434.6 25.5 L434.1 24.3 L433.3 23.3 L432.3 22.5 L431.1 21.8 L429.8 21.2 L428.3 20.8 L426.5 20.3 L424.6 20.0 L422.5 19.7 L420.2 19.5 L417.7 19.4 L415.0 19.3 L412.1 19.3 L409.1 19.3 L405.8 19.4 L402.3 19.5 L398.7 19.8 L394.8 20.0 L390.8 20.4 L386.6 20.8 L382.3 21.2 L377.8 21.7 L373.1 22.2 L368.3 22.8 L363.3 23.5 L358.1 24.2 L352.8 24.9 L347.4 25.7 L341.9 26.5 L336.2 27.4 L330.4 28.3 L324.5 29.3 L318.4 30.3 L312.3 31.3 L306.1 32.3 L299.8 33.4 L293.4 34.5 L286.9 35.7 L280.3 36.9 L273.7 38.1 L267.0 39.4 L260.3 40.6 L253.5 42.0 L246.7 43.3 L239.9 44.6 L233.0 46.0 L226.2 47.4 L219.3 48.9 L212.4 50.3 L205.5 51.8 L198.6 53.3 L191.8 54.8 L184.9 56.3 L178.1 57.8 L171.4 59.4 L164.7 60.9 L158.0 62.5 L151.4 64.1 L144.9 65.7 L138.5 67.3 L132.1 68.9 L125.8 70.4 L119.6 72.0 L113.5 73.6 L107.5 75.2 L101.7 76.8 L95.9 78.4 L90.3 79.9 L84.8 81.5 L79.4 83.0 L74.2 84.5 L69.1 86.1 L64.1 87.5 L59.4 89.0 L54.8 90.5 L50.3 91.9 L46.0 93.3 L41.9 94.6 L38.0 96.0 L34.2 97.3 L30.6 98.6 L27.2 99.8 L24.0 101.0 L21.0 102.2 L18.2 103.3 L15.6 104.4 L13.2 105.5 L11.0 106.5 L8.9 107.5 L7.1 108.5 L5.5 109.5 L4.0 110.4 L2.8 111.4 L1.7 112.3 L0.8 113.4 L0.1 114.5 L-0.3 115.9 L-0.2 117.4 L0.3 118.8 L1.2 119.9 L2.3 120.8 L3.5 121.4 L4.9 121.9 L6.4 122.3 L8.1 122.7 L10.0 122.9 L12.1 123.1 L14.4 123.2 L16.8 123.1 L19.5 123.0 L22.3 122.7 L25.4 122.4 L28.6 122.1 L32.0 121.8 L35.6 121.3 L39.3 120.7Z"
                 style={{ fill: "var(--ev-cream)" }}
@@ -339,12 +339,12 @@ export function SectionOne() {
           {/* Heading — always visible · moving gradient · GET YOUR TEAM sticker */}
           <div className="relative mb-8 text-center md:mb-12 lg:mb-16">
             <div className="relative inline-block">
-              <h2 className="font-bold uppercase leading-[0.98] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" style={{ fontFamily: 'Halenoir Black, sans-serif' }}>
-                <span className="vey-gradient-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">EVERYTHING BEHIND</span>
+              <h2 className="font-bold uppercase leading-[0.2] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" style={{ fontFamily: 'Halenoir Black, sans-serif' }}>
+                <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight" style={{ backgroundImage: 'linear-gradient(110deg, #1a1a1a 0%, #3d1f1f 20%, #5c2a2a 40%, #3d1f1f 60%, #1a1a1a 80%, #2d1515 95%, #1a0a0a 100%)', backgroundSize: '200% 200%', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent' }}>EVERYTHING BEHIND</span>
                 <br />
-                <span className="vey-gradient-heading">YOUR VISION.</span>
+                <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tight" style={{ backgroundImage: 'linear-gradient(110deg, #1a1a1a 0%, #3d1f1f 20%, #5c2a2a 40%, #3d1f1f 60%, #1a1a1a 80%, #2d1515 95%, #1a0a0a 100%)', backgroundSize: '200% 200%', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent' }}>YOUR VISION.</span>
               </h2>
-              <div className="pointer-events-none absolute right-0 top-0 translate-x-[3px] -translate-y-[3px] rotate-[10deg] z-10">
+              <div className="pointer-events-none absolute right-0 top-0 translate-x-[30px] sm:translate-x-[40px] -translate-y-[30px] sm:-translate-y-[40px] rotate-[10deg] z-10">
                 <span className="pointer-events-auto inline-block rounded-full bg-ev-neon-pink px-3 py-1.5 font-bold text-[10px] uppercase tracking-wider text-ev-neon-yellow sm:px-4 sm:py-2 sm:text-xs md:px-5 md:py-2.5 md:text-sm lg:px-7 lg:py-3.5 lg:text-base border-[2px] border-black shadow-brutal" style={{ fontFamily: 'Halenoir Black, sans-serif' }}>
                   GET YOUR TEAM
                 </span>

@@ -66,20 +66,18 @@ export default function SubscriptionPage() {
           <div className="mx-auto max-w-4xl text-center">
             <div className="hero-stagger-label mb-6 flex justify-center">
               <span className="inline-block rotate-[-2deg] border-[3px] border-black bg-ev-neon-cyan px-5 py-2 font-brutal text-xs uppercase tracking-wider shadow-brutal">
-                Limited Spots · Chat With Us Today
+                Your entire team. At fingertips.
               </span>
             </div>
             <p className="hero-stagger-label font-brutal text-xs uppercase tracking-[0.3em] text-ev-neon-pink">
               Subscription
             </p>
             <h1 className="hero-stagger-title mt-6 font-brutal uppercase leading-[0.95] text-ev-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-              Your ongoing
-              <br className="hidden md:block" /> creative{" "}
-              <span className="text-ev-neon-pink">partner</span>
+              You Bring The Vision.<br />
+              We Build The Rest.
             </h1>
             <p className="hero-stagger-subtitle mx-auto mt-8 max-w-2xl text-lg font-bold leading-relaxed text-ev-black/80 md:text-xl">
-              The Elan Vey subscription gives you steady guidance, great
-              designs, and growth help — month after month, with no stress.
+              The world doesn't need you to do everything nor do you. Just do the thing you're great at and let us figure out how to show it around the 🌍.
             </p>
           </div>
         </div>
