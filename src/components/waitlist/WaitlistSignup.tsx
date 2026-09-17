@@ -26,7 +26,7 @@ export function WaitlistSignup() {
     }
   }
 
-  if (state === "success") return <p className="mt-6 font-bold text-ev-black">You're on the list! We'll keep you posted.</p>;
+  if (state === "success") return <p className="mt-6 font-bold text-ev-black">You&apos;re on the list! We&apos;ll keep you posted.</p>;
 
   return (
     <form onSubmit={submit} className="mx-auto mt-7 flex max-w-xl flex-col gap-3 sm:flex-row sm:relative">
