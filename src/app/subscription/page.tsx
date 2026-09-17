@@ -77,7 +77,7 @@ export default function SubscriptionPage() {
               We Build The Rest.
             </h1>
             <p className="hero-stagger-subtitle mx-auto mt-8 max-w-2xl text-lg font-bold leading-relaxed text-ev-black/80 md:text-xl">
-              The world doesn't need you to do everything nor do you. Just do the thing you're great at and let us figure out how to show it around the 🌍.
+              The world doesn&apos;t need you to do everything nor do you. Just do the thing you&apos;re great at and let us figure out how to show it around the 🌍.
             </p>
           </div>
         </div>

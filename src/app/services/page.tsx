@@ -58,17 +58,17 @@ export default function ServicesPage() {
           <div className="mx-auto max-w-4xl text-center">
             <div className="hero-stagger-label mb-6 flex justify-center">
               <span className="inline-block rotate-[-2deg] border-[3px] border-black bg-ev-neon-cyan px-5 py-2 font-brutal text-xs uppercase tracking-wider shadow-brutal">
-                Let's break it down
+                Let&apos;s break it down
               </span>
             </div>
             <p className="hero-stagger-label font-brutal text-xs uppercase tracking-[0.3em] text-ev-neon-pink">
               Services
             </p>
             <h1 className="hero-stagger-title mt-6 font-brutal uppercase leading-[0.95] text-ev-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-              So, What's Included
+              So, What&apos;s Included
             </h1>
             <p className="hero-stagger-subtitle mx-auto mt-8 max-w-2xl text-lg font-bold leading-relaxed text-ev-black/80 md:text-xl">
-              From the first idea to the final execution let's see what your subscription covers. From A to Z!
+              From the first idea to the final execution let&apos;s see what your subscription covers. From A to Z!
             </p>
           </div>
         </div>

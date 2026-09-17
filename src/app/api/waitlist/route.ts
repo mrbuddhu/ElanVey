@@ -96,7 +96,7 @@ export async function POST(request: Request) {
         "utf8",
       );
     } catch {
-      /* local fallback failed — non-fatal if sheets succeeded
+      /* local fallback failed — non-fatal if sheets succeeded */
     }
 
     const allFail = !sheetsSaved && !replySent;
