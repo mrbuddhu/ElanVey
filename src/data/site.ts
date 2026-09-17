@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Elan Vey",
-  tagline: "You were meant to create. Not spend your life figuring out how to be seen. Craft yourself. Let us handle “how-to”.",
+  tagline: "Architect Your Limelight.",
   description:
-    "Elan Vey helps people and small projects stand out with creative designs, smart planning, and real marketing experience connected to Lavent Marketing.",
+    "For anyone with a vision worth pursuing a skill, product, business, personal brand, idea, or anything you want the world to see. You bring the vision. We bring the team, the work, and the path to make it happen.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://elanvey.com",
   ogImage: "/og-image.png",
   contact: {
