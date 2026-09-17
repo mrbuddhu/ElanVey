@@ -23,16 +23,18 @@ const AUTO_REPLY_SENDER_NAME = "Elan Vey";
 const AUTO_REPLY_SUBJECT = "Fortune Favours the Bold. Welcome to Elan Vey.";
 const AUTO_REPLY_PREHEADER = "You're in. Early access secured + 12% founders' perk inside.";
 
-// IMPORTANT: Set AUTO_REPLY_FROM_ADDRESS to the email the user should see
-// in their "From" field. For this to work it MUST be either:
-//   (a) the exact Google Workspace / Gmail account the Apps Script runs as
-//       ("Execute as: Me" in the Web App deployment settings), OR
-//   (b) an address you've already added as a verified "Send mail as" alias
-//       under that Google account → Gmail Settings → Accounts → Send mail as.
-// If neither is true, GmailApp.sendEmail() throws an error and the reply
-// fails (column D will show "FAILED — …"). Leave "" to send from the
-// default Execute-as account.
-const AUTO_REPLY_FROM_ADDRESS = "vision@elanvey.com";
+// NOTE: Leaving AUTO_REPLY_FROM_ADDRESS = "" makes Gmail send the reply
+// FROM whatever account the Apps Script runs as ("Execute as: Me" in the
+// Web App deployment). Set this only if you:
+//   (a) have vision@elanvey.com as the "Execute as" account directly, OR
+//   (b) have already added vision@elanvey.com as a VERIFIED "Send mail as"
+//       alias inside the Gmail Settings → Accounts of the executing account.
+// Otherwise leave blank to avoid "No from address" send errors.
+// AUTO_REPLY_REPLY_TO = vision@elanvey.com is ALWAYS safe: it makes every
+// user's "Reply" button land in vision@elanvey.com, regardless of which
+// account actually sent the message. That way your personal inbox never
+// receives replies, and the brand still owns the conversation.
+const AUTO_REPLY_FROM_ADDRESS = "";
 const AUTO_REPLY_REPLY_TO = "vision@elanvey.com"; // optional – leave "" to use the default
 
 // Plain-text fallback (shown if recipient's email client blocks HTML).
