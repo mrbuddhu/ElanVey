@@ -5,6 +5,9 @@ import { sendAutoReply } from "@/lib/autoReply";
 
 const leadsPath = path.join(process.cwd(), ".data", "leads.json");
 
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+
 type LeadEntry = {
   email: string;
   source: string;
