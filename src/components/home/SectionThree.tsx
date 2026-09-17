@@ -26,7 +26,7 @@ export function SectionThree() {
       <div className={styles.intro}>
         <h2
           id="vey-forward-title"
-          className="font-brutal text-4xl uppercase leading-[0.9] text-ev-neon-yellow sm:text-5xl md:text-6xl lg:text-7xl"
+          className="font-brutal text-4xl uppercase leading-[0.95] text-ev-neon-yellow sm:text-5xl md:text-6xl lg:text-7xl"
           style={{ textShadow: "3px 3px 0 #000, 5px 5px 0 #000" }}
         >
           The Vey<br />Forward

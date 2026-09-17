@@ -23,12 +23,8 @@ export function SectionOne() {
           <div className="grid gap-8 sm:gap-10 items-start lg:grid-cols-12 lg:gap-10 xl:gap-14">
             {/* Hero Text - Left */}
             <div className="flex flex-col justify-center order-2 lg:order-1 lg:col-span-7 xl:col-span-7">
-              <h1 className="hero-stagger-title font-brutal text-4xl font-black uppercase leading-[1.08] tracking-normal text-ev-black sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
-                <span className="block">ARCHITECT</span>
-                <span className="block">YOUR</span>
-                <span className="inline-block text-ev-neon-red mt-1 sm:mt-2">
-                  LIMELIGHT.
-                </span>
+              <h1 className="hero-stagger-title font-brutal text-4xl font-black uppercase leading-[0.98] tracking-normal text-ev-black sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+                ARCHITECT<br />YOUR<br /><span className="text-ev-neon-red">LIMELIGHT.</span>
               </h1>
               <p className="hero-stagger-subtitle mt-6 max-w-xl text-lg font-bold leading-relaxed text-ev-black/85 sm:text-xl md:text-2xl">
                 For visions that refuse to stay small.
@@ -175,14 +171,13 @@ export function SectionOne() {
             100% { opacity: 1; }
           }
 
-          /* "ONE VEY BETWEEN YOU / AND BEING SEEN!" — 3 lines (box = mockup x 318->763, y 325->468) */
-          .ev-everyone{position:absolute; left:calc(318 * var(--u)); top:calc(325 * var(--u)); width:calc(445 * var(--u)); height:calc(143 * var(--u))}
-          .ev-everyone svg{position:absolute; inset:0; width:100%; height:100%}
+          /* "ONE VEY / BETWEEN YOU & / EVERYONE IN BETWEEN" — 3 lines */
+          .ev-everyone{position:absolute; left:calc(180 * var(--u)); top:calc(325 * var(--u)); width:calc(700 * var(--u)); height:calc(143 * var(--u))}
+          .ev-everyone svg{position:absolute; left:50%; top:0; height:100%; width:auto; transform:translateX(-50%)}
           .ev-line{position:absolute; left:0; right:0; text-align:center; font-family:var(--ev-display); line-height:1; color:var(--ev-cream); white-space:nowrap}
           .ev-l1{top:calc(10 * var(--u));  font-size:calc(33 * var(--u)); letter-spacing:-.08em;  word-spacing:-.32em; text-shadow:calc(1.5 * var(--u)) calc(1.5 * var(--u)) 0 var(--ev-shadow)}
-          .ev-l2{top:calc(46 * var(--u));  font-size:calc(39 * var(--u)); letter-spacing:-.075em; word-spacing:-.3em;  text-shadow:calc(2 * var(--u))   calc(2 * var(--u))   0 var(--ev-shadow)}
-          .ev-l3{top:calc(88 * var(--u));  font-size:calc(39 * var(--u)); letter-spacing:-.065em; word-spacing:-.28em; text-shadow:calc(2.2 * var(--u)) calc(2.2 * var(--u)) 0 var(--ev-shadow)}
-          .ev-l3 span{margin-left:-.18em}
+          .ev-l2{top:calc(46 * var(--u));  font-size:calc(36 * var(--u)); letter-spacing:-.075em; word-spacing:-.28em;  text-shadow:calc(2 * var(--u))   calc(2 * var(--u))   0 var(--ev-shadow)}
+          .ev-l3{top:calc(88 * var(--u));  font-size:calc(32 * var(--u)); letter-spacing:-.06em; word-spacing:-.22em; text-shadow:calc(2.2 * var(--u)) calc(2.2 * var(--u)) 0 var(--ev-shadow)}
 
           /* ---------- phones: stack it ---------- */
           @container ev (max-width: 640px){
@@ -325,10 +320,8 @@ export function SectionOne() {
               />
             </svg>
             <p className="ev-line ev-l1">ONE VEY</p>
-            <p className="ev-line ev-l2">BETWEEN YOU</p>
-            <p className="ev-line ev-l3">
-              &amp; BEING SEEN<span>!</span>
-            </p>
+            <p className="ev-line ev-l2">BETWEEN YOU &amp;</p>
+            <p className="ev-line ev-l3">EVERYONE IN BETWEEN</p>
           </div>
         </div>
       </section>
@@ -348,7 +341,7 @@ export function SectionOne() {
           {/* Heading — always visible · moving gradient · GET YOUR TEAM sticker */}
           <div className="relative mb-8 text-center md:mb-12 lg:mb-16">
             <div className="relative inline-block">
-              <h2 className="font-brutal uppercase leading-[0.95] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl vey-gradient-heading">
+              <h2 className="font-brutal uppercase leading-[0.98] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl vey-gradient-heading">
                 EVERYTHING BEHIND YOUR VISION
               </h2>
               <div className="pointer-events-none absolute -right-2 sm:-right-4 -top-16 sm:-top-20 rotate-[10deg] md:-right-6 md:-top-[6.5rem] lg:-right-10 lg:-top-[8.5rem] z-10">

@@ -60,9 +60,8 @@ export function SectionFour() {
               
               {/* Left Side: Title & Subtitle */}
               <div className="relative z-10 flex-1 flex flex-col justify-center w-full lg:w-1/2 pr-0 lg:pr-8">
-                <h2 className="font-brutal text-[3rem] sm:text-[5rem] md:text-[6.5rem] lg:text-[7.5rem] font-black uppercase leading-[0.85] text-ev-neon-yellow">
-                  <span className="block">HOW WE</span>
-                  <span className="block">WORK.</span>
+                <h2 className="font-brutal text-[3rem] sm:text-[5rem] md:text-[6.5rem] lg:text-[7.5rem] font-black uppercase leading-[0.92] text-ev-neon-yellow">
+                  HOW WE<br />WORK.
                 </h2>
                 <p className="mt-2 font-serif text-2xl sm:text-3xl md:text-[3rem] italic leading-none text-ev-neon-yellow" style={{ fontFamily: 'Georgia, serif' }}>
                   The procedure.
@@ -107,7 +106,7 @@ export function SectionFour() {
                     {step.index}
                   </span>
                   <div className="flex flex-col justify-center text-center md:text-left mt-2 md:mt-6">
-                    <h3 className="font-brutal text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase text-[#FFE600] leading-tight">
+                    <h3 className="font-brutal text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black uppercase text-[#FFE600] leading-[1.02]">
                       {step.title}
                     </h3>
                     <p className="mt-4 md:mt-6 text-lg sm:text-xl md:text-2xl font-bold leading-relaxed text-ev-neon-yellow/80">

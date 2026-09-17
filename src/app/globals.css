@@ -227,7 +227,7 @@
   }
 
   .brutal-text {
-    @apply font-brutal uppercase leading-[1.08] tracking-normal;
+    @apply font-brutal uppercase leading-[1.02] tracking-normal;
   }
 
   .brutal-text-lg {

@@ -40,7 +40,7 @@ export function SubscriptionPreview() {
         
         {/* TITLE BLOCK — 3 lines: ONE VEY / BETWEEN YOU / & BEING SEEN! */}
         <div className="w-full text-center mb-8 md:mb-16">
-          <h2 className="font-brutal text-2xl sm:text-5xl md:text-7xl lg:text-[6rem] font-black uppercase text-[#FFE600] leading-[0.95] inline-block"
+          <h2 className="font-brutal text-2xl sm:text-5xl md:text-7xl lg:text-[6rem] font-black uppercase text-[#FFE600] leading-[0.98] inline-block"
               style={{ textShadow: "2px 2px 0 #FF1744, 4px 4px 0 #FF1744, 6px 6px 0 #FF1744" }}>
             <span className="relative inline-block pr-8 sm:pr-12 md:pr-16">
               ONE VEY
@@ -52,7 +52,7 @@ export function SubscriptionPreview() {
             <br />
             BETWEEN YOU
             <br />
-            <span className="inline-block mt-1 md:mt-2">&amp; BEING SEEN!</span>
+            <span>&amp; BEING SEEN!</span>
           </h2>
         </div>
 
@@ -126,9 +126,8 @@ export function SubscriptionPreview() {
                 size="sm"
                 className="!w-28 md:!w-32 !shrink-0 !rounded-full !bg-ev-neon-pink !border-black !px-2 !py-3 md:!py-4 !min-h-[52px] md:!min-h-[64px] hover:!scale-[1.05]"
               >
-                <span className="font-brutal uppercase text-ev-neon-yellow text-center leading-[1.05] tracking-wide">
-                  <span className="block text-sm sm:text-base md:text-lg">KNOW</span>
-                  <span className="block text-sm sm:text-base md:text-lg">MORE</span>
+                <span className="font-brutal uppercase text-ev-neon-yellow text-center leading-[1.0] tracking-wide whitespace-nowrap">
+                  KNOW<br />MORE
                 </span>
               </Button>
             </div>
