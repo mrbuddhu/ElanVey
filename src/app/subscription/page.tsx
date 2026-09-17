@@ -168,7 +168,7 @@ export default function SubscriptionPage() {
                   </p>
                   <div className="mt-4 inline-flex items-center gap-2 rounded-full border-[3px] border-black bg-ev-neon-cream px-3 py-1">
                     <span className="font-brutal text-xs text-ev-neon-red">
-                      SAVE 20%
+                      SAVE 12%
                     </span>
                     <span className="text-xs font-bold text-ev-black">
                       vs. one-off projects
