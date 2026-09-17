@@ -41,7 +41,7 @@ export function Footer() {
               About
             </h4>
             <p className="text-sm font-medium leading-relaxed text-white/70 mb-6">
-              You were meant to create. Not spend your life figuring out how to be seen. Craft yourself. Let us handle “how-to”.
+              For anyone with a vision worth pursuing a skill, product, business, personal brand, idea, or anything you want the world to see. You bring the vision. We bring the team, the work, and the path to make it happen.
             </p>
             <p className="text-xs font-bold leading-relaxed text-white/40 uppercase tracking-wider">
               {siteConfig.contact.address}
