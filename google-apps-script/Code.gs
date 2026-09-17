@@ -23,19 +23,18 @@ const AUTO_REPLY_SENDER_NAME = "Elan Vey";
 const AUTO_REPLY_SUBJECT = "Fortune Favours the Bold. Welcome to Elan Vey.";
 const AUTO_REPLY_PREHEADER = "You're in. Early access secured + 12% founders' perk inside.";
 
-// NOTE: Leaving AUTO_REPLY_FROM_ADDRESS = "" makes Gmail send the reply
-// FROM whatever account the Apps Script runs as ("Execute as: Me" in the
-// Web App deployment). Set this only if you:
-//   (a) have vision@elanvey.com as the "Execute as" account directly, OR
-//   (b) have already added vision@elanvey.com as a VERIFIED "Send mail as"
-//       alias inside the Gmail Settings → Accounts of the executing account.
-// Otherwise leave blank to avoid "No from address" send errors.
-// AUTO_REPLY_REPLY_TO = vision@elanvey.com is ALWAYS safe: it makes every
-// user's "Reply" button land in vision@elanvey.com, regardless of which
-// account actually sent the message. That way your personal inbox never
-// receives replies, and the brand still owns the conversation.
-const AUTO_REPLY_FROM_ADDRESS = "";
-const AUTO_REPLY_REPLY_TO = "vision@elanvey.com"; // optional – leave "" to use the default
+// IMPORTANT: AUTO_REPLY_FROM_ADDRESS = vision@elanvey.com
+// For this to actually send without a "No from address" error when the
+// Apps Script executes as your PERSONAL dev Gmail (AryabhaattaJr@gmail.com)
+// you MUST FIRST add vision@elanvey.com as a VERIFIED "Send mail as" alias
+// inside AryabhaattaJr@gmail.com → Gmail Settings → Accounts → Send mail as.
+// Step-by-step for that is in google-apps-script/README.md or in the chat
+// walkthrough we just did.
+// AUTO_REPLY_REPLY_TO = vision@elanvey.com ensures every user's "Reply"
+// lands in the brand inbox, even if you temporarily blank out the FROM
+// address during debugging.
+const AUTO_REPLY_FROM_ADDRESS = "vision@elanvey.com";
+const AUTO_REPLY_REPLY_TO = "vision@elanvey.com";
 
 // Plain-text fallback (shown if recipient's email client blocks HTML).
 // Keep this in sync with the HTML copy so every user sees the same message.
