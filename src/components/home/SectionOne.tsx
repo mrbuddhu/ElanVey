@@ -345,19 +345,37 @@ export function SectionOne() {
         }}
       >
         <div className="container-content relative px-5 md:px-8 lg:px-12">
-          {/* Heading — single line · font-brutal · maroon top-to-bottom gradient text · GET YOUR TEAM sticker */}
-          <div className="relative mb-8 text-center md:mb-12 lg:mb-16 overflow-visible">
-            <h2 className="font-brutal uppercase leading-[0.95] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-[#5B1118] via-[#800020] to-[#3A0A10]">
-              <span className="relative inline-block">
+          {/* Heading — always visible · moving gradient · GET YOUR TEAM sticker */}
+          <div className="relative mb-8 text-center md:mb-12 lg:mb-16">
+            <div className="relative inline-block">
+              <h2
+                className="font-brutal uppercase leading-[0.95] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl bg-clip-text text-transparent animate-gradient-vey"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(110deg, #5B1118 0%, #800020 20%, #FF0066 40%, #FFE600 60%, #FF0066 80%, #800020 95%, #3A0A10 100%)",
+                  backgroundSize: "300% 300%",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
+                  animation: "gradientVey 10s ease-in-out infinite",
+                }}
+              >
                 EVERYTHING BEHIND YOUR VISION
-                <div className="absolute -right-2 sm:-right-4 -top-16 sm:-top-20 rotate-[10deg] md:-right-6 md:-top-[6.5rem] lg:-right-10 lg:-top-[8.5rem] z-10">
-                  <span className="inline-block rounded-full bg-ev-neon-pink px-3 py-1.5 font-brutal text-[10px] uppercase tracking-wider text-ev-neon-yellow sm:px-4 sm:py-2 sm:text-xs md:px-5 md:py-2.5 md:text-sm lg:px-7 lg:py-3.5 lg:text-base border-[2px] border-black shadow-brutal">
-                    GET YOUR TEAM
-                  </span>
-                </div>
-              </span>
-            </h2>
+              </h2>
+              <div className="pointer-events-none absolute -right-2 sm:-right-4 -top-16 sm:-top-20 rotate-[10deg] md:-right-6 md:-top-[6.5rem] lg:-right-10 lg:-top-[8.5rem] z-10">
+                <span className="pointer-events-auto inline-block rounded-full bg-ev-neon-pink px-3 py-1.5 font-brutal text-[10px] uppercase tracking-wider text-ev-neon-yellow sm:px-4 sm:py-2 sm:text-xs md:px-5 md:py-2.5 md:text-sm lg:px-7 lg:py-3.5 lg:text-base border-[2px] border-black shadow-brutal">
+                  GET YOUR TEAM
+                </span>
+              </div>
+            </div>
           </div>
+
+          <style jsx>{`
+            @keyframes gradientVey {
+              0%, 100% { background-position: 0% 50%; }
+              50% { background-position: 100% 50%; }
+            }
+          `}</style>
 
           {/* Body Copy — standard Halenoir (via font-bold) same as About/Services heroes */}
           <div className="mx-auto max-w-3xl text-center md:max-w-4xl lg:max-w-5xl">
