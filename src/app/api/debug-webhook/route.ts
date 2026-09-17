@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sendAutoReply } from "@/lib/autoReply";
 
 export const runtime = "nodejs";
 
@@ -45,6 +46,22 @@ export async function GET() {
     fetchError = err instanceof Error ? `${err.name}: ${err.message}` : String(err);
   }
 
+  // Quick SMTP configuration + test send — try with a throwaway email first so we
+  // don't spam debug recipients. If SMTP env vars are missing, report that cleanly.
+  const smtpConfigured = Boolean(
+    process.env.SMTP_HOST &&
+    process.env.SMTP_PORT &&
+    process.env.SMTP_USER &&
+    process.env.SMTP_PASS
+  );
+  let smtpResult: { configured: boolean; sendTest?: { sent: boolean; error?: string } } = {
+    configured: smtpConfigured,
+  };
+  if (smtpConfigured) {
+    const r = await sendAutoReply("smtp-config-check@elanvey-debug.test");
+    smtpResult.sendTest = r;
+  }
+
   const diagnosis: string[] = [];
   if (fetchError) diagnosis.push("Network-level error fetching the Apps Script URL. Check the URL is correct and ends with /exec.");
   if (status === 403 || status === 401) diagnosis.push("HTTP 401/403: Webhook is not publicly accessible. In Apps Script → Deploy → Manage deployments → set 'Who has access' to 'Anyone'.");
@@ -61,6 +78,20 @@ export async function GET() {
   }
   if (status && status >= 500) diagnosis.push("Apps Script threw a runtime exception. Open the Apps Script editor → Executions on the left, find the failed run, and read the error.");
 
+  if (!smtpConfigured) {
+    diagnosis.push(
+      "ℹ️ Auto-reply (SMTP) env vars not set yet: add SMTP_HOST / SMTP_PORT / SMTP_USER / SMTP_PASS to Vercel env vars (values are in the README). No reply will be sent until configured."
+    );
+  } else {
+    if (smtpResult.sendTest?.sent) {
+      diagnosis.push("✅ SMTP auto-reply configured correctly — test send succeeded. Welcome emails will arrive FROM vision@elanvey.com.");
+    } else {
+      diagnosis.push(
+        `⚠️ SMTP env vars are set but test send failed. Error: "${smtpResult.sendTest?.error || "unknown"}". Check SMTP_HOST/PORT/USER/PASS match vision@elanvey.com's actual GoDaddy / Microsoft 365 SMTP credentials (see README).`
+      );
+    }
+  }
+
   return NextResponse.json({
     configured: true,
     webhook: masked,
@@ -68,6 +99,7 @@ export async function GET() {
     fetch: fetchError
       ? { error: fetchError }
       : { status, statusText, body: responseJson ?? responseText },
+    smtp: smtpResult,
     diagnosis,
   });
 }

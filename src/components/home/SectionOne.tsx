@@ -27,7 +27,7 @@ export function SectionOne() {
                 ARCHITECT<br />YOUR<br /><span className="text-ev-neon-red">LIMELIGHT.</span>
               </h1>
               <p className="hero-stagger-subtitle mt-6 max-w-xl text-lg font-bold leading-relaxed text-ev-black/85 sm:text-xl md:text-2xl">
-                For visions that refuse to stay small.
+                For anyone with something worth putting into the world a skill, a product, a business, a personal brand, an idea, or a vision.
               </p>
               <div className="hero-stagger-children mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-4 md:gap-6">
                 <Button

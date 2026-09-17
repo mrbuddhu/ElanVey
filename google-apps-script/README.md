@@ -1,87 +1,162 @@
-# Google Sheets waitlist connection + auto-reply
+# Google Sheets waitlist store (SHEET-ONLY) + 100% client-owned auto-reply (SMTP via vision@elanvey.com)
 
-## Setup
+## Architecture
 
-1. Open the destination Google Sheet and create a tab named `Waitlist`.
-2. Add these first-row headers (column D is optional but recommended for auditing):
-   ```
-   A: Email   B: Source   C: Submitted At   D: Auto-Reply Sent
-   ```
-3. Open **Extensions → Apps Script**, replace the editor contents with `Code.gs`, and save the project.
-4. Select **Deploy → New deployment → Web app**:
-   - **Execute as**: Your account (the one whose Gmail will send the replies)
-   - **Who has access**: **Anyone**
-   - Click **Deploy** and authorize the script.
-   - You will be prompted for **two** permissions:
-     1. Access to your Google Sheets (to append rows).
-     2. Access to **Gmail** (to send the auto-replies).
-   - Approve both.
-5. Copy the URL ending in `/exec`.
-6. Add this variable to the production hosting environment (for example, Vercel project settings), then redeploy:
+The system now has two **separate** concerns, intentionally split so the auto-reply comes 100% FROM the client's real email address (vision@elanvey.com) with 0% involvement of any personal Gmail / Google SMTP.
 
-```env
-GOOGLE_SHEETS_WEBHOOK_URL=https://script.google.com/macros/s/DEPLOYMENT_ID/exec
-```
+### 1) Google Apps Script (Code.gs) → PURE STORAGE ONLY
 
-## How it works
+The Apps Script at [Code.gs](file:///c:/Users/msbuddhu/Desktop/ElanVey_Final_Build/ElanVey_Final_Build/google-apps-script/Code.gs) does **one thing only**:
+- Receives a POST `{ email, source, submittedAt }` from your Next.js site.
+- Validates the email format.
+- Checks for duplicates in the Waitlist sheet (skips duplicates).
+- Appends **one row** to the `Waitlist` sheet tab.
+- Returns:
+  - `{ ok: true, duplicate: true }` → already existed
+  - `{ ok: true, duplicate: false }` → appended successfully
+  - `{ ok: false, error: "..." }` → failed
 
-- The website server posts signup emails to the Apps Script webhook URL (never exposed to clients).
-- Duplicate emails are skipped silently (no duplicate reply sent).
-- Every **new** lead is appended to the `Waitlist` tab **and** automatically receives a branded welcome email from your connected Gmail account.
-- Column D tracks reply status: `pending` → `sent — <timestamp>` or `FAILED — <error>`.
+It **does NOT send emails, does NOT call GmailApp, does NOT need Gmail permissions.** This is a huge win:
+- No `gmail.send` OAuth scope to authorize or debug (old issue of "Required permissions: mail.google.com" is gone forever).
+- The Sheet owner's personal Gmail is never part of the mail pipeline.
+- You only authorize ONE permission: `spreadsheets` (read/write to the sheet).
 
-## Customizing the auto-reply
+### 2) Next.js API + `src/lib/autoReply.ts` → CLIENT-OWNED AUTO-REPLY
 
-Edit the constants at the top of `Code.gs`:
+Auto-reply dispatch lives entirely in Next.js server-side code at [autoReply.ts](file:///c:/Users/msbuddhu/Desktop/ElanVey_Final_Build/ElanVey_Final_Build/src/lib/autoReply.ts).
 
-| Constant                  | What it does                                                            |
-| ------------------------- | ----------------------------------------------------------------------- |
-| `ENABLE_AUTO_REPLY`       | `true` to send replies, `false` to just collect emails (no Gmail auth needed). |
-| `AUTO_REPLY_SENDER_NAME`  | Friendly "From" name shown to the recipient (e.g. "Elan Vey").          |
-| `AUTO_REPLY_SUBJECT`      | Email subject line.                                                     |
-| `AUTO_REPLY_PREHEADER`    | Short line shown under the subject in every inbox preview.              |
-| `AUTO_REPLY_REPLY_TO`     | Address that receives replies from the user. Leave `""` to use the default account. |
-| `AUTO_REPLY_PLAIN_TEXT`   | Plain-text fallback for email clients that block HTML.                  |
+It connects **directly to vision@elanvey.com's SMTP server on GoDaddy / Microsoft 365 for GoDaddy** using `nodemailer`, and sends the branded welcome email FROM `vision@elanvey.com`.
 
-The HTML email body is built by `buildAutoReplyHtml()` and uses your brand palette (neon pink / cyan / yellow) with the same brutalist card + multi-layer shadow style as the website. Edit the copy inside that function to change the welcome message.
-
-## Re-deploying after edits
-
-Any time you modify `Code.gs` in the Apps Script editor, click **Deploy → Manage deployments → the pencil icon → New version** and save. Keep the `/exec` URL the same (you do **not** need to update env vars).
+This guarantees:
+- **From header:** `Elan Vey <vision@elanvey.com>` — 100% client. No "via google", no "on behalf of", no personal Gmail fingerprints anywhere.
+- **Replies (Reply-To):** `vision@elanvey.com` automatically.
+- **Sent copy:** a copy of every welcome email is placed in **vision@elanvey.com's own GoDaddy Sent Items** folder (because it's sent through the actual SMTP server of that mailbox, not through Google).
+- **Deliverability:** SPF / DKIM / DMARC all pass for elanvey.com because the mail is actually sent through elanvey.com's real email host.
+- Zero touches of AryabhaattaJr@gmail.com or any personal account.
 
 ---
 
-## Works with every email provider (Gmail, Hotmail/Outlook, Yahoo, Apple, etc.)
+## Set up the Apps Script (SHEET-STORE ONLY)
 
-The script has **zero** dependency on the recipient's email provider. Replies are sent from your Google account's Gmail SMTP (which is whitelisted by every major provider) and delivered TO any address the user signs up with.
+1. In the Google Sheet, create the tab named `Waitlist` (case-sensitive).
+2. Add these first-row headers in columns A–C (Column D is no longer used for reply status; reply status now lives in the Next.js local JSON + the API response):
+   ```
+   A1 = Email        B1 = Source        C1 = Submitted At
+   ```
+3. From the Sheet → **Extensions → Apps Script.**
+4. Delete the default empty `Code.gs` in the Apps Script editor. Paste in the full contents of your local file [Code.gs](file:///c:/Users/msbuddhu/Desktop/ElanVey_Final_Build/ElanVey_Final_Build/google-apps-script/Code.gs). **Save (Ctrl+S).**
+5. (Optional but recommended to lock the scopes) In Apps Script editor left sidebar → **⚙️ Project Settings → ☑️ Show "appsscript.json" manifest in editor.** Go back to Editor, open `appsscript.json`, delete contents, paste [appsscript.json](file:///c:/Users/msbuddhu/Desktop/ElanVey_Final_Build/ElanVey_Final_Build/google-apps-script/appsscript.json). **Save.** This forces oauthScopes = only `spreadsheets`; you will NEVER be asked for Gmail permission again.
+6. **Deploy → New deployment → Web app:**
+   - **Execute as:** `Me` (the account you created the Sheet with — works even for AryabhaattaJr@gmail.com because it only needs Sheets access).
+   - **Who has access:** `Anyone` (NOT "Anyone with a Google account" — that would make the webhook private and break the site POSTs).
+   - Click **Deploy** → authorize only the single `Spreadsheets` permission when prompted.
+7. Copy the resulting `/exec` URL.
+8. Set this env var in Vercel (Settings → Environment Variables) and redeploy:
+   ```
+   GOOGLE_SHEETS_WEBHOOK_URL=https://script.google.com/macros/s/DEPLOYMENT_ID/exec
+   ```
 
-### Cross-client rendering (what each user sees)
+---
 
-| Provider / Client               | Card style                              |
-| ------------------------------- | --------------------------------------- |
-| Gmail web, iOS Mail, Apple Mail | Full brutalist card (rounded 28px, 3 layers of shadow, gradient divider, neon accents) |
-| Outlook 365 / Outlook.com web   | Full style (same as above)              |
-| Yahoo web, AOL web              | Full style, gradient divider falls back to solid pink if needed |
-| Outlook desktop (2016 / 2019)   | Clean flat white card with solid borders and pink accent bar (shadows + rounded corners not supported by Word engine; message is still identical) |
-| Any text-only / slow connection | `AUTO_REPLY_PLAIN_TEXT` fallback (mirrors the HTML copy line-for-line)  |
+## Set up the CLIENT'S AUTO-REPLY (SMTP via vision@elanvey.com GoDaddy inbox)
 
-### Deliverability & spam-avoidance checklist (do this once)
+You need **the actual SMTP credentials for vision@elanvey.com's mailbox.** These are NOT Google credentials — they are what you type into Outlook / Thunderbird / Apple Mail when you want to send email FROM vision@elanvey.com. These depend on which type of GoDaddy email it is:
 
-These steps dramatically lower the chance your welcome email lands in the "Junk" folder, **regardless of which provider the user uses:**
+### If vision@elanvey.com is on **Legacy GoDaddy Workspace Email** (older, smtpout.secureserver.net):
 
-1. **Use a Google Workspace custom-domain account** (not a @gmail.com address) as the "Execute as" account. Gmail deliverability is significantly better for custom domains.
-2. **Set `AUTO_REPLY_REPLY_TO` to a real, monitored inbox** (e.g. `hello@elanvey.com`) that actually receives replies. Outlook and Yahoo penalize "noreply" senders.
-3. **If you have a custom domain, publish these DNS records** for the sending domain (they take ~24h to propagate):
-   - **SPF** — add `include:_spf.google.com ~all` in a TXT record on `@`.
-   - **DKIM** — generate a key in admin.google.com → Apps → Gmail → Authenticate email, and add the CNAME records.
-   - **DMARC** — start with `v=DMARC1; p=none; rua=mailto:postmaster@elanvey.com` on `_dmarc`.
-4. **Send a test to yourself at Gmail + Outlook.com + Yahoo.com + iCloud.com** before launch. If any test lands in Junk, the user marking it as "Not Junk" once trains the filter for future recipients on that provider.
-5. **Never use "free money / win / guarantee / click here / $$$"** copy in the subject or body (already handled in the current template).
-6. **Avoid a noreply@ from-address.** Users can't reply, and providers interpret that as a low-trust signal. `noReply: false` is already set in the script.
+```env
+SMTP_HOST=smtpout.secureserver.net
+SMTP_PORT=465
+SMTP_SECURE=true
+SMTP_USER=vision@elanvey.com
+SMTP_PASS=<mailbox-password-for-vision>
+SMTP_FROM_NAME=Elan Vey
+SMTP_FROM_ADDRESS=vision@elanvey.com
+SMTP_REPLY_TO=vision@elanvey.com
+```
 
-### Provider-specific gotchas
+### If vision@elanvey.com is on **GoDaddy Microsoft 365 Email** (newer, email.office365.com / outlook.office365.com):
 
-- **Outlook / Hotmail / Live / MSN** — their filter is the most aggressive of the big providers. The #1 fix is SPF + DKIM + DMARC (step 3 above). After that, ask early Outlook users to right-click → "Junk → Never block sender" which raises your sender reputation for everyone on Outlook.
-- **Yahoo / AOL** — they heavily weight domain age and whether users actually open + reply to your mail. The in-email "quick question" callout (reply and tell us where you heard about us) actively helps here because real replies signal to Yahoo that this is legitimate mail.
-- **Apple iCloud / Mail Privacy Protection (MPP)** — open-tracking pixels are stripped by default on Apple Mail. The current template does **not** include tracking pixels, so there's nothing to block; delivery works normally regardless of MPP.
-- **Gmail promotions tab** — a transactional "you're on the waitlist" email should land in Primary 99% of the time. If a test lands in Promotions, dragging it into Primary once trains the classifier for other Gmail users.
+```env
+SMTP_HOST=smtp.office365.com
+SMTP_PORT=587
+SMTP_SECURE=false   # STARTTLS on port 587, not SSL on 465
+SMTP_USER=vision@elanvey.com
+SMTP_PASS=<mailbox-password-for-vision>
+SMTP_FROM_NAME=Elan Vey
+SMTP_FROM_ADDRESS=vision@elanvey.com
+SMTP_REPLY_TO=vision@elanvey.com
+```
+
+Copy-paste these exact variables into Vercel Project → **Settings → Environment Variables** (all scopes: Production + Preview + Development), click **Save**, then go to **Deployments → 3 dots on latest Ready deployment → Redeploy**.
+
+---
+
+## How to verify everything works
+
+Open `/api/debug-webhook` on your production site. The new diagnostic returns:
+
+```json
+{
+  "configured": true,
+  "webhook": "https://script.google.com/macros/s/***REDACTED***/exec",
+  "testPayload": { "...": "..." },
+  "fetch": {
+    "status": 200,
+    "statusText": "OK",
+    "body": { "ok": true, "duplicate": false }
+  },
+  "smtp": {
+    "configured": true,
+    "sendTest": { "sent": true }
+  },
+  "diagnosis": [
+    "✅ Webhook works correctly! Email appended (or duplicate skipped).",
+    "✅ SMTP auto-reply configured correctly — test send succeeded. Welcome emails will arrive FROM vision@elanvey.com."
+  ]
+}
+```
+
+Both `✅` lines need to appear. If either says "⚠️ … failed", follow the error text inside `diagnosis`:
+
+- Webhook error → fix Apps Script deploy "Who has access = Anyone".
+- SMTP error → `SMTP_HOST / SMTP_PORT / SMTP_USER / SMTP_PASS` don't match vision's real GoDaddy credentials. Double-check Workspace vs Microsoft 365 (the PORT + SECURE values change).
+
+---
+
+## End-to-end behavior
+
+When a user signs up through `/waitlist` page OR the homepage "SAVE MY SPOT" modal:
+
+1. Next.js API (`/api/waitlist` or `/api/leads`) validates the email, dedupes against local JSON, then:
+   - **(a)** POSTs to Apps Script webhook → 1 row appended to the Google Sheet.
+   - **(b)** Calls `sendAutoReply(email)` → connects to vision@elanvey.com's GoDaddy SMTP → sends branded welcome email FROM vision@elanvey.com TO the new user.
+   - **(c)** Saves a local JSON backup (`.data/waitlist.json` or `.data/leads.json`) recording:
+     `sheetsSaved / sheetsError / replySent / replyError`.
+2. User receives the welcome email in their inbox → "From" shows `Elan Vey <vision@elanvey.com>`, "Reply" routes to `vision@elanvey.com`, and a copy is in vision's GoDaddy "Sent Items".
+
+Duplicates (same email signed up twice) are skipped completely — no duplicate row added, no duplicate reply sent.
+
+---
+
+## Troubleshooting
+
+**`smtp.sendTest.sent = false, error = "Invalid login: 535 Authentication failed"`**
+  → `SMTP_USER` or `SMTP_PASS` are wrong for vision@elanvey.com's mailbox. Try resetting the mailbox password through GoDaddy → Workspace Email → Manage → Reset password, then paste the new one into Vercel.
+
+**`error = "Connection closed / ETIMEDOUT / connection timeout"`**
+  → Wrong SMTP_PORT / SMTP_SECURE combination. Rule of thumb:
+    - Port 465 → `SMTP_SECURE=true` (SSL).
+    - Port 587 → `SMTP_SECURE=false` (STARTTLS).
+    - Port 25 is usually blocked by cloud hosts (Vercel) — never use it.
+
+**Webhook 401/403 / HTML back instead of JSON**
+  → Apps Script deploy "Who has access" was set to "Anyone with a Google account". Go to Deploy → Manage deployments → pencil → set to **Anyone → Deploy as NEW VERSION.**
+
+---
+
+## Re-deploying after edits
+
+- **Apps Script (Code.gs changes):** Deploy → Manage deployments → pencil → Version = New version → Deploy. Same `/exec` URL. No changes to Vercel env vars.
+- **Next.js auto-reply copy (autoReply.ts or the APIs):** Commit + push to git. Vercel auto-redeploys from GitHub.
+- **SMTP env var changes:** After saving env vars in Vercel, remember to **Redeploy the latest successful deployment** (the env var change alone does NOT retroactively apply to running builds).
