@@ -76,13 +76,13 @@ export function SectionOne() {
         <style
           dangerouslySetInnerHTML={{
             __html: `
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Rubik+Mono+One&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
           
           .ev-spot{
             --ev-bg:#0a0a0a; --ev-line:rgba(255,255,255,.3);
             --ev-yellow:#f7f928; --ev-cream:#fcf8e0; --ev-cyan:#10f8f7; --ev-pink:#f4256f;
             --ev-red:#f82145; --ev-blue:#5366f0; --ev-shadow:#d9336f; --ev-ink:#0d0f0a;
-            --ev-head:"Inter","Helvetica Neue",Arial,sans-serif;
+            --ev-head:"Halenoir Black","Helvetica Neue",Arial,sans-serif;
             --ev-display:"Rubik Mono One","Arial Black","Helvetica Neue",sans-serif;
             --u:1px;                                   /* fallback for very old browsers */
             position:relative; width:100%; overflow:hidden;
@@ -171,13 +171,12 @@ export function SectionOne() {
             100% { opacity: 1; }
           }
 
-          /* "ONE VEY / BETWEEN YOU & / EVERYONE IN BETWEEN" — 3 lines */
-          .ev-everyone{position:absolute; left:calc(180 * var(--u)); top:calc(325 * var(--u)); width:calc(700 * var(--u)); height:calc(143 * var(--u))}
+          /* "AND EVERYONE / IN BETWEEN" — 2 lines */
+          .ev-everyone{position:absolute; left:calc(180 * var(--u)); top:calc(325 * var(--u)); width:calc(700 * var(--u)); height:calc(100 * var(--u))}
           .ev-everyone svg{position:absolute; left:50%; top:0; height:100%; width:auto; transform:translateX(-50%)}
           .ev-line{position:absolute; left:0; right:0; text-align:center; font-family:var(--ev-display); line-height:1; color:var(--ev-cream); white-space:nowrap}
-          .ev-l1{top:calc(10 * var(--u));  font-size:calc(33 * var(--u)); letter-spacing:-.08em;  word-spacing:-.32em; text-shadow:calc(1.5 * var(--u)) calc(1.5 * var(--u)) 0 var(--ev-shadow)}
-          .ev-l2{top:calc(46 * var(--u));  font-size:calc(36 * var(--u)); letter-spacing:-.075em; word-spacing:-.28em;  text-shadow:calc(2 * var(--u))   calc(2 * var(--u))   0 var(--ev-shadow)}
-          .ev-l3{top:calc(88 * var(--u));  font-size:calc(32 * var(--u)); letter-spacing:-.06em; word-spacing:-.22em; text-shadow:calc(2.2 * var(--u)) calc(2.2 * var(--u)) 0 var(--ev-shadow)}
+          .ev-l1{top:calc(15 * var(--u));  font-size:calc(36 * var(--u)); letter-spacing:-.075em; word-spacing:-.28em;  text-shadow:calc(2 * var(--u))   calc(2 * var(--u))   0 var(--ev-shadow)}
+          .ev-l2{top:calc(55 * var(--u));  font-size:calc(36 * var(--u)); letter-spacing:-.075em; word-spacing:-.28em;  text-shadow:calc(2 * var(--u))   calc(2 * var(--u))   0 var(--ev-shadow)}
 
           /* ---------- phones: stack it ---------- */
           @container ev (max-width: 640px){
@@ -319,9 +318,8 @@ export function SectionOne() {
                 style={{ fill: "var(--ev-cream)" }}
               />
             </svg>
-            <p className="ev-line ev-l1">ONE VEY</p>
-            <p className="ev-line ev-l2">BETWEEN YOU &amp;</p>
-            <p className="ev-line ev-l3">EVERYONE IN BETWEEN</p>
+            <p className="ev-line ev-l1">AND EVERYONE</p>
+            <p className="ev-line ev-l2">IN BETWEEN</p>
           </div>
         </div>
       </section>
@@ -341,11 +339,13 @@ export function SectionOne() {
           {/* Heading — always visible · moving gradient · GET YOUR TEAM sticker */}
           <div className="relative mb-8 text-center md:mb-12 lg:mb-16">
             <div className="relative inline-block">
-              <h2 className="font-brutal uppercase leading-[0.98] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl vey-gradient-heading">
-                EVERYTHING BEHIND YOUR VISION
+              <h2 className="font-bold uppercase leading-[0.98] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl" style={{ fontFamily: 'Halenoir Black, sans-serif' }}>
+                <span className="vey-gradient-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">EVERYTHING BEHIND</span>
+                <br />
+                <span className="vey-gradient-heading">YOUR VISION.</span>
               </h2>
-              <div className="pointer-events-none absolute -right-2 sm:-right-4 -top-16 sm:-top-20 rotate-[10deg] md:-right-6 md:-top-[6.5rem] lg:-right-10 lg:-top-[8.5rem] z-10">
-                <span className="pointer-events-auto inline-block rounded-full bg-ev-neon-pink px-3 py-1.5 font-brutal text-[10px] uppercase tracking-wider text-ev-neon-yellow sm:px-4 sm:py-2 sm:text-xs md:px-5 md:py-2.5 md:text-sm lg:px-7 lg:py-3.5 lg:text-base border-[2px] border-black shadow-brutal">
+              <div className="pointer-events-none absolute right-0 top-0 translate-x-[3px] -translate-y-[3px] rotate-[10deg] z-10">
+                <span className="pointer-events-auto inline-block rounded-full bg-ev-neon-pink px-3 py-1.5 font-bold text-[10px] uppercase tracking-wider text-ev-neon-yellow sm:px-4 sm:py-2 sm:text-xs md:px-5 md:py-2.5 md:text-sm lg:px-7 lg:py-3.5 lg:text-base border-[2px] border-black shadow-brutal" style={{ fontFamily: 'Halenoir Black, sans-serif' }}>
                   GET YOUR TEAM
                 </span>
               </div>
@@ -354,7 +354,7 @@ export function SectionOne() {
 
           {/* Body Copy — standard Halenoir (via font-bold) same as About/Services heroes */}
           <div className="mx-auto max-w-3xl text-center md:max-w-4xl lg:max-w-5xl">
-            <p className="font-bold leading-relaxed text-ev-black/80 text-lg md:text-xl lg:text-2xl xl:text-3xl">
+            <p className="font-bold leading-relaxed text-ev-black/80 text-lg md:text-xl lg:text-2xl xl:text-3xl" style={{ fontFamily: 'Halenoir Black, sans-serif' }}>
               We empower creators, entrepreneurs, and individuals of every age — from ambitious teenagers to vibrant seniors. We research what works, build your strategy, find ideas, refine your scripts, edit &amp; design your content, help you publish, analyse the results, and use what we learn to grow the next one.
             </p>
           </div>

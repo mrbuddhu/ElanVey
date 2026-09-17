@@ -48,12 +48,7 @@ const howItWorks = [
   },
 ];
 
-const subPerks = [
-  "Cancel anytime, no hidden fees",
-  "Monthly friendly check-ins",
-  "Direct WhatsApp / email support",
-  "Quarterly progress update",
-];
+
 
 export default function SubscriptionPage() {
   return (
@@ -127,12 +122,18 @@ export default function SubscriptionPage() {
                 What&apos;s included
               </h2>
               <p className="mt-6 text-base font-bold leading-relaxed text-ev-black/80 md:text-lg">
-                A friendly all-in-one partnership for anyone who wants steady,
-                long-term progress. Every subscription includes planning help,
-                design work, and online support tailored to what you need.
+                Your subscription gives you ongoing access to strategy, creative, editing, design, feedback, testing, analytics, collaborations & growth guidance all built around you, your goals, and your platform.
               </p>
               <ul className="mt-8 space-y-3">
-                {subPerks.map((item, i) => (
+                {[
+                  "Personalised Strategy & Direction",
+                  "Scripting & Content Development",
+                  "Editing & Creative Support",
+                  "Titles, Thumbnails & Captions",
+                  "Analytics & Actionable Feedback",
+                  "Ongoing Support & Optimisation",
+                  "Flexible Subscription: Cancel anytime!"
+                ].map((item, i) => (
                   <li
                     key={item}
                     className="flex items-center gap-3 font-bold"

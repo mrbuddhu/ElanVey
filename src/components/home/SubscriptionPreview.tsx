@@ -40,8 +40,8 @@ export function SubscriptionPreview() {
         
         {/* TITLE BLOCK — 3 lines: ONE VEY / BETWEEN YOU / & BEING SEEN! */}
         <div className="w-full text-center mb-8 md:mb-16">
-          <h2 className="font-brutal text-2xl sm:text-5xl md:text-7xl lg:text-[6rem] font-black uppercase text-[#FFE600] leading-[0.98] inline-block"
-              style={{ textShadow: "2px 2px 0 #FF1744, 4px 4px 0 #FF1744, 6px 6px 0 #FF1744" }}>
+          <h2 className="font-bold text-2xl sm:text-5xl md:text-7xl lg:text-[6rem] uppercase text-[#FFE600] leading-[0.98] inline-block"
+              style={{ fontFamily: 'Halenoir Black, sans-serif', textShadow: "2px 2px 0 #FF1744, 4px 4px 0 #FF1744, 6px 6px 0 #FF1744" }}>
             <span className="relative inline-block pr-8 sm:pr-12 md:pr-16">
               ONE VEY
               {/* Lightning Bolt */}
@@ -85,8 +85,8 @@ export function SubscriptionPreview() {
           <div className="flex flex-col justify-center text-center lg:text-left">
             
             <div className="mb-6 border-y-2 border-[#FFE600] py-4">
-              <p className="font-brutal text-xl uppercase text-[#FFE600] sm:text-2xl">YOU HEARD IT FIRST 👀</p>
-              <p className="mt-3 max-w-xl text-sm font-bold leading-relaxed text-white/80 sm:text-base">
+              <p className="font-bold text-xl uppercase text-[#FFE600] sm:text-2xl" style={{ fontFamily: 'Halenoir Black, sans-serif' }}>YOU HEARD IT FIRST 👀</p>
+              <p className="mt-3 max-w-xl text-sm font-bold leading-relaxed text-white/80 sm:text-base" style={{ fontFamily: 'Halenoir Black, sans-serif' }}>
                 Elan Vey is almost here. Something new is about to begin. And trust us, you’ll want to be there from day one. Get early access and be part of what’s coming.
               </p>
             </div>
@@ -137,10 +137,10 @@ export function SubscriptionPreview() {
 
             {/* 6. Footer Text — centered on mobile, left-aligned on desktop */}
             <div>
-              <h4 className="font-brutal text-xl sm:text-2xl md:text-2xl font-black text-[#FFE600] uppercase tracking-tight leading-none">
+              <h4 className="font-bold text-xl sm:text-2xl md:text-2xl text-[#FFE600] uppercase tracking-tight leading-none" style={{ fontFamily: 'Halenoir Black, sans-serif' }}>
                 YOUR TEAM ASSEMBLED
               </h4>
-              <p className="mt-2 text-xs sm:text-sm md:text-sm font-bold text-gray-300 leading-relaxed max-w-[95%] mx-auto lg:mx-0">
+              <p className="mt-2 text-xs sm:text-sm md:text-sm font-bold text-gray-300 leading-relaxed max-w-[95%] mx-auto lg:mx-0" style={{ fontFamily: 'Halenoir Black, sans-serif' }}>
                 Once you subscribe, your vision gets backed by creators, strategists, content writers, performance marketers, designers, analysts, and industry experts—all working to build, position, market, and grow it.
               </p>
             </div>
@@ -154,14 +154,14 @@ export function SubscriptionPreview() {
       <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/70 p-5" role="dialog" aria-modal="true" aria-labelledby="lead-title">
         <div className="w-full max-w-lg border-[3px] border-black bg-ev-neon-cream p-6 shadow-brutal-xl sm:p-10">
           <div className="flex items-start justify-between gap-4">
-            <h2 id="lead-title" className="font-brutal text-2xl uppercase text-ev-neon-red sm:text-3xl">Save your spot</h2>
+            <h2 id="lead-title" className="font-bold text-2xl uppercase text-ev-neon-red sm:text-3xl" style={{ fontFamily: 'Halenoir Black, sans-serif' }}>Save your spot</h2>
             <button type="button" onClick={() => setShowCapture(false)} aria-label="Close" className="font-brutal text-2xl">×</button>
           </div>
           {status === "success" ? (
             <p className="mt-6 font-bold text-ev-black">You’re on the list. We’ll be in touch soon.</p>
           ) : (
             <form onSubmit={submitLead} className="mt-6 space-y-4">
-              <label htmlFor="lead-email" className="block font-brutal text-xs uppercase">Email address</label>
+              <label htmlFor="lead-email" className="block font-bold text-xs uppercase" style={{ fontFamily: 'Halenoir Black, sans-serif' }}>Email address</label>
               <input id="lead-email" type="email" required value={email} onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" className="brutal-input" />
               {status === "error" && <p className="text-sm font-bold text-ev-neon-red">{leadError}</p>}
               <button type="submit" disabled={status === "loading"} className="w-full border-[3px] border-black bg-ev-neon-yellow px-5 py-3 font-brutal uppercase text-ev-neon-red shadow-brutal disabled:opacity-60">{status === "loading" ? "Saving…" : "SAVE MY SPOT!"}</button>
