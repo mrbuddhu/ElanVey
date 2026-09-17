@@ -1,32 +1,23 @@
+import { Resend } from "resend";
 import nodemailer from "nodemailer";
 
 // ---------------------------------------------------------------------------
-// Auto-reply dispatcher — sends the branded "Welcome to Elan Vey" email
-// DIRECTLY FROM the client's vision@elanvey.com inbox via GoDaddy SMTP.
+// Auto-reply dispatcher — sends the branded "Welcome to Elan Vey" email.
 //
-// No Google / Gmail / Apps Script SMTP involved in the reply-sending path.
-// This means:
-//   - From header is 100% vision@elanvey.com (no "via gmail" or "on behalf of")
-//   - A copy of every welcome email is placed in vision's GoDaddy "Sent Items"
-//   - SPF / DKIM / DMARC all pass for elanvey.com
-//   - 0% touch of AryabhaattaJr@gmail.com's mail stream
+// PRIMARY PATH — Resend (RECOMMENDED):
+//   - Just set RESEND_API_KEY env var (1 secret instead of 8 SMTP vars).
+//   - From header is 100% "Elan Vey <vision@elanvey.com>" via Resend +
+//     verified elanvey.com domain (SPF / DKIM / DMARC all pass).
+//   - Zero impact if/when you change your vision@elanvey.com mailbox password.
+//   - Sign up at https://resend.com → verify elanvey.com → paste API key.
 //
-// Configure env vars (Vercel Project Settings → Environment Variables):
-//   SMTP_HOST=smtpout.secureserver.net
-//   SMTP_PORT=465
-//   SMTP_SECURE=true
-//   SMTP_USER=vision@elanvey.com
-//   SMTP_PASS=<password for vision@elanvey.com (GoDaddy mailbox password)>
-//   SMTP_FROM_NAME=Elan Vey
-//   SMTP_FROM_ADDRESS=vision@elanvey.com
-//   SMTP_REPLY_TO=vision@elanvey.com
-//
-// Standard GoDaddy / Microsoft 365 for GoDaddy ports:
-//   - Legacy GoDaddy Workspace Email  : smtpout.secureserver.net  port 465 (SSL)
-//   - GoDaddy Microsoft 365 Email      : smtp.office365.com       port 587 (STARTTLS, SMTP_SECURE=false)
+// FALLBACK PATH — nodemailer + SMTP (kept for backwards compatibility):
+//   - Set SMTP_HOST / SMTP_PORT / SMTP_SECURE / SMTP_USER / SMTP_PASS /
+//     SMTP_FROM_NAME / SMTP_FROM_ADDRESS / SMTP_REPLY_TO in Vercel env.
+//   - Used ONLY when RESEND_API_KEY is NOT set.
 // ---------------------------------------------------------------------------
 
-type SendResult = { sent: boolean; error?: string };
+type SendResult = { sent: boolean; error?: string; transport?: "resend" | "smtp" | "none"; id?: string };
 
 const AUTO_REPLY_SUBJECT = "Fortune Favours the Bold. Welcome to Elan Vey.";
 const YEAR = new Date().getFullYear();
@@ -164,9 +155,61 @@ function buildHtmlBody(): string {
 }
 
 // ----------------------------------------------------------------------------
-// DISPATCHER
+// RESEND PRIMARY DISPATCHER
 // ----------------------------------------------------------------------------
-export async function sendAutoReply(toEmail: string): Promise<SendResult> {
+async function sendViaResend(
+  toEmail: string,
+): Promise<{ sent: boolean; error?: string; transport: "resend"; id?: string }> {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    return {
+      sent: false,
+      error: "RESEND_API_KEY not set — create one at https://resend.com/api-keys",
+      transport: "resend",
+    };
+  }
+  const fromName = process.env.SMTP_FROM_NAME || "Elan Vey";
+  const fromAddress =
+    process.env.SMTP_FROM_ADDRESS || process.env.SMTP_USER || "vision@elanvey.com";
+  const replyTo = process.env.SMTP_REPLY_TO || fromAddress;
+
+  try {
+    const resend = new Resend(apiKey);
+    const { data, error } = await resend.emails.send({
+      from: `"${fromName}" <${fromAddress}>`,
+      to: [toEmail],
+      replyTo: replyTo,
+      subject: AUTO_REPLY_SUBJECT,
+      text: buildPlainText(),
+      html: buildHtmlBody(),
+      headers: { "X-Mailer": "ElanVey-Waitlist" },
+    });
+    if (error) {
+      return {
+        sent: false,
+        error:
+          typeof error === "string"
+            ? error
+            : `${error.name || "ResendError"}: ${error.message || JSON.stringify(error)}`,
+        transport: "resend",
+      };
+    }
+    return { sent: true, transport: "resend", id: data?.id ?? undefined };
+  } catch (err) {
+    return {
+      sent: false,
+      error: err instanceof Error ? err.message : String(err),
+      transport: "resend",
+    };
+  }
+}
+
+// ----------------------------------------------------------------------------
+// SMTP FALLBACK DISPATCHER (used when RESEND_API_KEY is blank)
+// ----------------------------------------------------------------------------
+async function sendViaSmtp(
+  toEmail: string,
+): Promise<{ sent: boolean; error?: string; transport: "smtp" }> {
   const host = process.env.SMTP_HOST;
   const portRaw = process.env.SMTP_PORT;
   const secure = envFlag(process.env.SMTP_SECURE);
@@ -180,13 +223,16 @@ export async function sendAutoReply(toEmail: string): Promise<SendResult> {
     return {
       sent: false,
       error:
-        "SMTP credentials not configured (set SMTP_HOST / SMTP_PORT / SMTP_USER / SMTP_PASS env vars",
+        "SMTP credentials not configured — set SMTP_HOST / SMTP_PORT / SMTP_USER / SMTP_PASS env vars or switch to RESEND_API_KEY.",
+      transport: "smtp",
     };
   }
 
   const port = Number(portRaw);
   const isPortValid = Number.isFinite(port) && port > 0 && port < 65536;
-  if (!isPortValid) return { sent: false, error: `Invalid SMTP_PORT: ${portRaw}` };
+  if (!isPortValid) {
+    return { sent: false, error: `Invalid SMTP_PORT: ${portRaw}`, transport: "smtp" };
+  }
 
   let transporter;
   try {
@@ -197,7 +243,11 @@ export async function sendAutoReply(toEmail: string): Promise<SendResult> {
       auth: { user, pass },
     });
   } catch (err) {
-    return { sent: false, error: err instanceof Error ? err.message : String(err) };
+    return {
+      sent: false,
+      error: err instanceof Error ? err.message : String(err),
+      transport: "smtp",
+    };
   }
 
   try {
@@ -210,10 +260,34 @@ export async function sendAutoReply(toEmail: string): Promise<SendResult> {
       html: buildHtmlBody(),
       headers: { "X-Mailer": "ElanVey-Waitlist" },
     });
-    return { sent: true };
+    return { sent: true, transport: "smtp" };
   } catch (err) {
-    return { sent: false, error: err instanceof Error ? err.message : String(err) };
+    return {
+      sent: false,
+      error: err instanceof Error ? err.message : String(err),
+      transport: "smtp",
+    };
   }
 }
 
-export { AUTO_REPLY_SUBJECT };
+// ----------------------------------------------------------------------------
+// PUBLIC DISPATCHER  (Resend first, SMTP fallback)
+// ----------------------------------------------------------------------------
+export async function sendAutoReply(toEmail: string): Promise<SendResult> {
+  if (process.env.RESEND_API_KEY) {
+    return sendViaResend(toEmail);
+  }
+  const smtp = await sendViaSmtp(toEmail);
+  if (smtp.sent) return smtp;
+  if (!process.env.SMTP_HOST && !process.env.RESEND_API_KEY) {
+    return {
+      sent: false,
+      transport: "none",
+      error:
+        "No email transport configured. Set RESEND_API_KEY (recommended) — or set SMTP_HOST + SMTP_PORT + SMTP_USER + SMTP_PASS.",
+    };
+  }
+  return smtp;
+}
+
+export { AUTO_REPLY_SUBJECT, buildPlainText, buildHtmlBody };
