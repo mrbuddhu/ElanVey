@@ -203,10 +203,17 @@ export default function SubscriptionPage() {
             <Reveal delay={0 * 70}>
               <div
                 className="relative overflow-hidden rounded-[1rem] border-[3px] border-black p-6 shadow-brutal hover-lift md:p-8 text-white"
-                style={{ background: "linear-gradient(135deg, #FF1744 0%, #b91c3d 100%)" }}
+                style={{
+                  background: "linear-gradient(135deg, #FF1744 0%, #b91c3d 100%)",
+                  boxShadow: "inset 1px 1px 0 rgba(255,255,255,0.55), inset -1px -1px 0 rgba(0,0,0,0.35)",
+                }}
               >
-                <div className="pointer-events-none absolute inset-0 rounded-[0.85rem]" aria-hidden style={{
-                  background: "linear-gradient(135deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.02) 40%, rgba(255,255,255,0) 60%)"
+                <div className="pointer-events-none absolute inset-0" aria-hidden style={{
+                  background:
+                    "linear-gradient(135deg, rgba(255,255,255,0.48) 0%, rgba(255,255,255,0.16) 22%, rgba(255,255,255,0.02) 45%, rgba(255,255,255,0) 58%), linear-gradient(315deg, rgba(255, 70, 110, 0.55) 0%, rgba(120, 0, 30, 0.35) 55%, rgba(40, 0, 12, 0.2) 100%)",
+                }} />
+                <div className="pointer-events-none absolute inset-[2px] rounded-[calc(1rem-2px)]" aria-hidden style={{
+                  boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.28)"
                 }} />
                 <div className="relative z-10">
                   <div className="flex items-start gap-3">
@@ -225,10 +232,17 @@ export default function SubscriptionPage() {
             <Reveal delay={1 * 70}>
               <div
                 className="relative overflow-hidden rounded-[1rem] border-[3px] border-black p-6 shadow-brutal hover-lift md:p-8 text-ev-black"
-                style={{ background: "linear-gradient(135deg, #22d3ee 0%, #0ea5c8 100%)" }}
+                style={{
+                  background: "linear-gradient(135deg, #22d3ee 0%, #0ea5c8 100%)",
+                  boxShadow: "inset 1px 1px 0 rgba(255,255,255,0.65), inset -1px -1px 0 rgba(0,0,0,0.28)",
+                }}
               >
-                <div className="pointer-events-none absolute inset-0 rounded-[0.85rem]" aria-hidden style={{
-                  background: "linear-gradient(135deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.04) 40%, rgba(255,255,255,0) 60%)"
+                <div className="pointer-events-none absolute inset-0" aria-hidden style={{
+                  background:
+                    "linear-gradient(135deg, rgba(255,255,255,0.62) 0%, rgba(255,255,255,0.26) 22%, rgba(255,255,255,0.04) 45%, rgba(255,255,255,0) 58%), linear-gradient(315deg, rgba(140, 240, 255, 0.55) 0%, rgba(0, 110, 145, 0.4) 55%, rgba(0, 60, 80, 0.22) 100%)",
+                }} />
+                <div className="pointer-events-none absolute inset-[2px] rounded-[calc(1rem-2px)]" aria-hidden style={{
+                  boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.4)"
                 }} />
                 <div className="relative z-10">
                   <div className="flex items-start gap-3">
@@ -247,10 +261,17 @@ export default function SubscriptionPage() {
             <Reveal delay={2 * 70}>
               <div
                 className="relative overflow-hidden rounded-[1rem] border-[3px] border-black p-6 shadow-brutal hover-lift md:p-8 text-ev-black"
-                style={{ background: "linear-gradient(135deg, #FFE600 0%, #e6c800 100%)" }}
+                style={{
+                  background: "linear-gradient(135deg, #FFE600 0%, #e6c800 100%)",
+                  boxShadow: "inset 1px 1px 0 rgba(255,255,255,0.72), inset -1px -1px 0 rgba(0,0,0,0.25)",
+                }}
               >
-                <div className="pointer-events-none absolute inset-0 rounded-[0.85rem]" aria-hidden style={{
-                  background: "linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0) 60%)"
+                <div className="pointer-events-none absolute inset-0" aria-hidden style={{
+                  background:
+                    "linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.32) 22%, rgba(255,255,255,0.06) 45%, rgba(255,255,255,0) 58%), linear-gradient(315deg, rgba(255, 250, 150, 0.55) 0%, rgba(200, 160, 0, 0.35) 55%, rgba(130, 100, 0, 0.18) 100%)",
+                }} />
+                <div className="pointer-events-none absolute inset-[2px] rounded-[calc(1rem-2px)]" aria-hidden style={{
+                  boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.48)"
                 }} />
                 <div className="relative z-10">
                   <div className="flex items-start gap-3">
@@ -269,10 +290,17 @@ export default function SubscriptionPage() {
             <Reveal delay={3 * 70}>
               <div
                 className="relative overflow-hidden rounded-[1rem] border-[3px] border-black p-6 shadow-brutal hover-lift md:p-8 text-white"
-                style={{ background: "linear-gradient(135deg, #FF1744 0%, #b91c3d 100%)" }}
+                style={{
+                  background: "linear-gradient(135deg, #FF1744 0%, #b91c3d 100%)",
+                  boxShadow: "inset 1px 1px 0 rgba(255,255,255,0.55), inset -1px -1px 0 rgba(0,0,0,0.35)",
+                }}
               >
-                <div className="pointer-events-none absolute inset-0 rounded-[0.85rem]" aria-hidden style={{
-                  background: "linear-gradient(135deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.02) 40%, rgba(255,255,255,0) 60%)"
+                <div className="pointer-events-none absolute inset-0" aria-hidden style={{
+                  background:
+                    "linear-gradient(135deg, rgba(255,255,255,0.48) 0%, rgba(255,255,255,0.16) 22%, rgba(255,255,255,0.02) 45%, rgba(255,255,255,0) 58%), linear-gradient(315deg, rgba(255, 70, 110, 0.55) 0%, rgba(120, 0, 30, 0.35) 55%, rgba(40, 0, 12, 0.2) 100%)",
+                }} />
+                <div className="pointer-events-none absolute inset-[2px] rounded-[calc(1rem-2px)]" aria-hidden style={{
+                  boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.28)"
                 }} />
                 <div className="relative z-10">
                   <div className="flex items-start gap-3">
@@ -291,10 +319,17 @@ export default function SubscriptionPage() {
             <Reveal delay={4 * 70}>
               <div
                 className="relative overflow-hidden rounded-[1rem] border-[3px] border-black p-6 shadow-brutal hover-lift md:p-8 text-ev-black"
-                style={{ background: "linear-gradient(135deg, #22d3ee 0%, #0ea5c8 100%)" }}
+                style={{
+                  background: "linear-gradient(135deg, #22d3ee 0%, #0ea5c8 100%)",
+                  boxShadow: "inset 1px 1px 0 rgba(255,255,255,0.65), inset -1px -1px 0 rgba(0,0,0,0.28)",
+                }}
               >
-                <div className="pointer-events-none absolute inset-0 rounded-[0.85rem]" aria-hidden style={{
-                  background: "linear-gradient(135deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.04) 40%, rgba(255,255,255,0) 60%)"
+                <div className="pointer-events-none absolute inset-0" aria-hidden style={{
+                  background:
+                    "linear-gradient(135deg, rgba(255,255,255,0.62) 0%, rgba(255,255,255,0.26) 22%, rgba(255,255,255,0.04) 45%, rgba(255,255,255,0) 58%), linear-gradient(315deg, rgba(140, 240, 255, 0.55) 0%, rgba(0, 110, 145, 0.4) 55%, rgba(0, 60, 80, 0.22) 100%)",
+                }} />
+                <div className="pointer-events-none absolute inset-[2px] rounded-[calc(1rem-2px)]" aria-hidden style={{
+                  boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.4)"
                 }} />
                 <div className="relative z-10">
                   <div className="flex items-start gap-3">
@@ -313,10 +348,17 @@ export default function SubscriptionPage() {
             <Reveal delay={5 * 70}>
               <div
                 className="relative overflow-hidden rounded-[1rem] border-[3px] border-black p-6 shadow-brutal hover-lift md:p-8 text-ev-black"
-                style={{ background: "linear-gradient(135deg, #FFE600 0%, #e6c800 100%)" }}
+                style={{
+                  background: "linear-gradient(135deg, #FFE600 0%, #e6c800 100%)",
+                  boxShadow: "inset 1px 1px 0 rgba(255,255,255,0.72), inset -1px -1px 0 rgba(0,0,0,0.25)",
+                }}
               >
-                <div className="pointer-events-none absolute inset-0 rounded-[0.85rem]" aria-hidden style={{
-                  background: "linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.05) 40%, rgba(255,255,255,0) 60%)"
+                <div className="pointer-events-none absolute inset-0" aria-hidden style={{
+                  background:
+                    "linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.32) 22%, rgba(255,255,255,0.06) 45%, rgba(255,255,255,0) 58%), linear-gradient(315deg, rgba(255, 250, 150, 0.55) 0%, rgba(200, 160, 0, 0.35) 55%, rgba(130, 100, 0, 0.18) 100%)",
+                }} />
+                <div className="pointer-events-none absolute inset-[2px] rounded-[calc(1rem-2px)]" aria-hidden style={{
+                  boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.48)"
                 }} />
                 <div className="relative z-10">
                   <div className="flex items-start gap-3">
